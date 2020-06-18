@@ -1,0 +1,38 @@
+<div class="posts">
+    <div class="posts-options">
+        <a href="{{ url_for('posts') }}">MINHAS POSTAGENS</a>
+        <a class="selected" disabled>NOVA POSTAGEM</a>
+    </div>
+    <div class="posts-actions">
+        <div class="new-post">
+            <h1 class="new-info">Nova notícia</h1>
+            <div class="new-post-inputs">
+                {{ form.hidden_tag() }}
+                    <form action="" method="post" enctype="multipart/form-data" class="form-sub">
+                        {{ form.title(placeholder="Título", class_="new-post-title") }}
+                        {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
+                        <label for="">Selecione a imagem capa da matéria</label>
+                        {{ form.cover_image(class_="cover_image") }}
+                        <label for="">Seleciona a primeira imagem a ser mostrada no conteúdo da matéria</label>
+                        {{ form.pc_image(class_="pc_image") }}
+                        {{ form.pc_text(class_="new-post-text", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10", placeholder="Digite o texto inicial..." ) }}
+                        <label for="">Seleciona a ultima imagem a ser mostrada no conteúdo da matéria</label>
+                        {{ form.pc_last_image(class_="pc_last_image") }}
+                        {{ form.pc_last_text(class_="new-post-text", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10", placeholder="Digite o texto final..." ) }}
+                        <label id="game">Escolha o jogo referente a esta notícia&nbsp;</label>
+                        {{ form.game_id(for="game", class_="select-game") }}
+                    {{ form.submit(class_="submit", value="Enviar notícia" ) }}
+                </form>
+                <script>
+                    const form = document.querySelector('.form-sub');
+                    const submit = document.querySelector('.submit');
+                    form.addEventListener('submit', () => {
+                        submit.value = 'Enviando'
+                        submit.style.background = '#827189'
+                        submit.style.border = '1px solid #827189'
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

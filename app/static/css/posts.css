@@ -1,0 +1,189 @@
+.web .payload .posts {
+    display: block;
+    border-bottom: 1px solid #000000;
+    user-select: none;
+}
+
+.web .payload .posts .posts-options {
+    height: max-content;
+    width: 100%;
+    background: #000000;
+    margin-bottom: 40px;
+    padding: 10px 0; 
+    border-bottom: 2px solid #827189;
+    box-shadow: 0px 0px 10px #111111;
+}
+
+.web .payload .posts .posts-options a {
+    text-decoration: none;
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.web .payload .posts .posts-options .selected {
+    border-bottom: 2px solid #ffa31a;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.web .payload .posts .posts-options a:hover {
+    border-bottom: 2px solid #ffa31a;
+}
+
+.posts .posts-actions .new-post {
+    display: block;
+    width: 70%;
+    margin: 0 auto 60px auto;
+    height: fit-content;
+    padding: 15px;		
+}
+
+.posts .posts-actions .new-post .new-post-inputs {
+    display: block;
+    margin: 50px 50px;
+}
+
+.posts-actions .new-post .new-post-inputs input {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: #1b1b1b;
+}
+
+.posts-actions .new-post .new-post-inputs input:focus {
+    border: 1px solid #ffa31a;
+    outline: none;
+}
+
+.posts-actions .new-post .new-post-inputs .new-post-text {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    padding: 10px;
+    resize: none;
+    overflow-y: hidden;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: #1b1b1b;
+}
+
+.posts-actions .new-post .new-post-inputs .new-post-title {
+    font-size: 25px;
+}
+
+.posts-actions .new-post .new-post-inputs .new-post-subtitle {
+    font-size: 19px;
+}
+
+.posts-actions .new-post .new-post-inputs .select-game {
+    -webkit-appearance: none;
+    border: 1px transparent;
+    border-bottom: 1px solid #1b1b1b;
+    transition: all 0.1s linear;
+    font-size: 14px;
+    background-color: transparent;
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+}
+
+.posts-actions .new-post .new-post-inputs .select-game:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #000000;
+}
+
+.posts-actions .new-post .new-post-inputs .select-game:focus {
+    border: 0 none;
+    border-bottom: 1px solid #ffa31a;
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+.posts-actions .new-post .new-post-inputs .select-game option {
+    color: #1b1b1b;
+    font-size: 14px;
+}
+
+.posts-actions .new-post .new-post-inputs .select-game option:hover {
+    cursor: pointer;
+}
+
+.posts-actions .new-post .new-post-inputs .submit {
+    border-radius: 0;
+    border: 0 none;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: 7px 16px;
+    background: #ffa31a;
+    border: none;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin: 30px auto 0 auto;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+
+.posts-actions .new-post .new-post-inputs .submit:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (max-width: 1025px) {
+    .posts .posts-actions .new-post {
+        width: 100%;
+        padding: 0;
+    }
+
+    .posts .posts-actions .new-post .new-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .posts .posts-actions .new-post .new-post-inputs {
+        margin: 0;
+    }
+
+    .posts-actions .new-post .new-post-inputs label {
+        width: 90%;
+        margin-left: 20px;
+    }
+
+    .posts-actions .new-post .new-post-inputs input {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    .posts-actions .new-post .new-post-inputs .new-post-title {
+        font-size: 28px;
+    }
+
+    .posts-actions .new-post .new-post-inputs .new-post-text {
+        font-size: 18px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .posts-actions .new-post .new-post-inputs .select-game {
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .posts-actions .new-post .new-post-inputs .submit {
+        padding: 7px 16px;
+        border: 0 none;
+        border-radius: 0px;
+        -webkit-appearance: none;
+        font-size: 20px;
+    }
+}

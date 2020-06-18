@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
+        <meta property="og:image" content="{{ notice.cover_image }}" />
+        <meta property="og:title" content="{{ notice.title }}" />
+        <meta property="og:description" content="{{ notice.subtitle }}" />
+        {% include 'components/head.html' %}
+    </head>
+    <body>
+        <div class='web'>
+            {% include 'components/header.html' %}
+            <div class="payload">
+                <div class="notice">
+                    <div class="notice-header">
+                        <h1 class="header-title">{{ notice.title }}</h1>
+                        <div class="game">
+                                <img src="{{ game.icon }}" alt="{{ game.name }}">
+                                <h2 class="game">{{ game.name }}</h2>
+                        </div>
+                        <span class="posted-by">{{ user.name + ' ' + user.surname + ' - @' +user.username}}</span>
+                        <div class="notice-options">
+                            <p class="addedAt">{{ DatePost(notice.addedAt) }}</p>
+                            <div class="share">
+                                <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
+                                    <img src="{{ url_for('static', filename='/images/icons/facebook.svg') }}" alt="Facebook"/>
+                                </a>
+                                <a id="twitter" href="" target="_blank" title="Compartilhar esta notícia no Twitter">
+                                    <img src="{{ url_for('static', filename='/images/icons/twitter.svg') }}" alt="Twitter"/>
+                                </a>
+                                <a id="whatsapp" href="" target="_blank" title="Compartilhar esta notícia no WhatsApp">
+                                    <img src="{{ url_for('static', filename='/images/icons/whatsapp.svg') }}" alt="WhatsApp"/>
+                                </a>
+                                <script src="{{ url_for('static', filename='/javascript/noticeShare.js') }}"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
+                    {% for content in notice_content %}
+                        {% if content.type == 'IMG' %}
+                            <img src="{{ content.content }}" alt="{{ notice.title }}">
+                        {% elif content.type == 'TXT' %}
+                            <pre>{{ content.content }}</pre>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+            {% include 'components/footer.html' %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+.web {
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.web .payload {
+    background-color: #FFFFFF;
+}
+
+.web .payload .notice {
+    width: 45%;
+    margin: 20px auto;
+    min-width: 700px;
+    border-bottom: 2px solid #827189;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.web .payload .notice img {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.web .payload .notice pre {
+    margin: 0 3px;
+    max-width: 100%;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 10px auto;
+    font-size: 19px;
+    text-align: left;
+}
+
+.web .payload .notice span {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.payload .notice .notice-header {
+    border-bottom: 1px solid #827189;
+    margin-bottom: 20px;
+    height: max-content;
+}
+
+.payload .notice .notice-header .game {
+    width: max-content;
+    display: flex;
+}
+
+.notice .notice-header .game img {
+    position: relative;
+    top: 0px;
+    height: 40px;
+    width: initial;
+}
+
+.notice .notice-header .game h2 {
+    position: relative;
+    top: 15px;
+    left: 10px;
+    color: #404040;
+    min-width: max-content;
+}
+
+.payload .notice .notice-subtitle {
+    margin-bottom: 10px;
+}
+
+.payload .notice .notice-header .posted-by {
+    display: block;
+    margin-top: 10px;
+    color: #404040;
+}
+
+.notice .notice-header .notice-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.notice .notice-header .notice-options .addedAt {
+    font-size: 13px;
+    color: #827189;
+    float: left;
+}
+
+.payload .notice .notice-header .notice-options .share {
+    width: max-content;
+    float: right;
+    display: flex;
+}
+
+ .notice-header .notice-options .share a img {
+    width: initial;
+    height: 35px;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
+
+.notice-header .notice-options .share a img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.notice-header .notice-options .share a {
+    margin-left: 20px;
+}
+
+@media (max-width: 1025px) {
+    .web .payload .notice {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .payload .notice .notice-header {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .notice .notice-header .header-title {
+        font-size: 23px;
+    }
+
+    .notice .notice-header .game img {
+        height: 30px;
+    }
+    
+    .notice .notice-header .game h2 {
+        font-size: 18px;
+    }
+
+    .payload .notice .notice-subtitle {
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .web .payload .notice pre {
+        font-size: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

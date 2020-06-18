@@ -1,0 +1,135 @@
+<div class="header">
+    <div class="loader">
+        <div class="loader-figure">
+        </div>
+        <script>
+            window.addEventListener('load', () => {
+                const loader = document.querySelector('.loader');
+                loader.className += ' hidden';
+            });
+        </script>
+    </div>
+    <input type="checkbox" id="options1" onchange="dockCloser()">
+    <label for="options1"><div class="background-options"></div></label>
+    <div class="header-mobile">
+        <div class="search"></div>
+        <div class="logo">Logo</div>
+        <label for="options1" class="options"><svg width="35" height="35" class="options-button" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><path fill="#C7C7C7" d="M22 10v2H10v-2zM22 15v2H10v-2zM22 20v2H10v-2z"></path></svg></label>
+    </div>
+    <div class="header-1part">
+        <div class="header-1part-top">
+            <h1 class="logo">Logo</h1>
+            <label for="options1"><svg width="35" height="35" class="" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><g stroke="#C7C7C7" stroke-width="2"><path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path></g></svg></label>
+        </div>
+        {% if current_user.is_authenticated %}
+        <input type="checkbox" id="mo1" class="input-second-options-mobile">
+            <label for="mo1" class="header-1part-1opc" id="header-login">{{ current_user.name }} <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-right" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg></label>
+            <div class="second-options-mobile" id="som-1">
+                <div class="second-options-mobile-header">
+                    <label class="back" for="mo1"><svg width="8" height="5" viewBox="0 0 8 5" class="arrow-left" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>Voltar</label>
+                    <label class="exit" for="options1"><svg width="35" height="35" class="" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><g stroke="#C7C7C7" stroke-width="2"><path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path></g></svg></label>
+                </div>
+                    {% if current_user.is_admin == 1 %}
+                        <div class="options-mobile">
+                            <a href="{{ url_for('admin') }}" id="mo" class="post">PAINEL DE ADMINISTRADOR</a>
+                            <a href="{{ url_for('posts') }}" id="mo" class="post">POSTAGENS</a>
+                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
+                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
+                        </div>
+                    {% elif current_user.is_poster == 1 %}
+                        <div class="options-mobile">
+                            <a href="{{ url_for('posts') }}" id="mo" class="post">POSTAGENS</a>
+                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
+                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
+                        </div>
+                    {% else %}
+                        <div class="options-mobile">
+                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
+                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
+                        </div>
+                    {% endif %}
+            </div>
+            {% else %}
+            <div class="header-1part-1opc" id="header-login">
+                <a class="login" href="{{ url_for('login') }}">ENTRAR</a>
+                <a class="register" href="{{ url_for('register') }}">REGISTRAR-SE</a>
+            </div>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="header-1part-1opc">HOME</a>
+        <a href="{{ url_for('notices') }}" class="header-1part-1opc">PRINCIPAIS NOTÍCIAS</a>
+        <input type="checkbox" id="mo2" class="input-second-options-mobile">
+        <label for="mo2">
+            <div disabled="True" class="header-1part-2opc">
+            <a class="option-title">JOGOS</a>
+            <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
+            <div class="games-options">
+                {% for game in header_games %}
+                    <a href="{{ url_for('notices_by_game', name=game.name) }}" class="game-option">{{ game.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        </label>
+        <div class="second-options-mobile" id="som-2">
+            <div class="second-options-mobile-header">
+                <label class="back" for="mo2"><svg width="8" height="5" viewBox="0 0 8 5" class="arrow-left" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>Voltar</label>
+                <label class="exit" for="options1"><svg width="35" height="35" class="" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><g stroke="#C7C7C7" stroke-width="2"><path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path></g></svg></label>
+            </div>
+            <div class="options-mobile">
+                {% for game in header_games %}
+                    <a href="{{ url_for('notices_by_game', name=game.name) }}" id="mo" class="post">{{ game.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="header-2part">
+        <h1 class="logo">LOGO</h1>
+        <div class="search">
+            <form class="tsf nj" action="/search" data-submitfalse="q" id="tsf" method="GET" name="f" role="search">
+                <input name="q" type="search" class="search-input" placeholder="Buscar"/>
+                {{ g.search }}
+                <button type="submit"><img src="{{ url_for('static', filename='/images/search_icon.png') }}" alt="" class="search-icon"></button>
+            </form>
+        </div>
+        <div class="user-informations">
+            {% if current_user.is_authenticated %}
+                <div class="user">
+                    <div class="user-name">{{ current_user.name }}
+                        <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
+                        {% if current_user.is_admin == 1 %}
+                            <div class="user-options">
+                                <a href="{{ url_for('admin') }}" class="post">PAINEL DE ADMINISTRADOR</a>
+                                <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
+                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
+                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
+                            </div>
+                        {% elif current_user.is_poster == 1 %}
+                            <div class="user-options">
+                                <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
+                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
+                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
+                            </div>
+                        {% else %}
+                            <div class="user-options">
+                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
+                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="auth">
+                    <a href="{{ url_for('login') }}" class="signin">ENTRAR</a>
+                    <a href="{{ url_for('register') }}" class="signup">CADASTRAR</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='javascript/secondOptionsMobile.js') }}"></script>
+            

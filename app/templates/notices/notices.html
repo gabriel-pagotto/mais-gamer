@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'components/head.html' %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/notices.css') }}"> 
+    </head>
+    <body>
+        <div class='web'>
+            {% include 'components/header.html' %}
+            <div class="payload">
+                {% if game %}
+                    <div class="game">
+                        <img class="list-icon" src="{{ game.icon }}" alt="{{ game.name }}">
+                        <h1 class="list-game">{{ game.name }}</h1>
+                    </div>
+                {% endif %}
+                {% for notice in notices %}
+                    <div class="notice">
+                        <div class="cover_image">
+                            <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
+                        </div>
+                        <div class="notice-description">
+                            <h1 class="title">{{ notice.title }}</h1>
+                            <p class="subtitle">{{ notice.subtitle }}</p>
+                            <p class="addedAt">{{ DatePost(notice.addedAt) }}</p>
+                            <div class="itens">
+                                <a class="read-more" href="{{ url_for('notice', id = notice.id) }}"> Ler mais</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% include 'components/pagination.html' %}
+            </div>
+            {% include 'components/footer.html' %}
+        </div>
+    </body>
+</html>
