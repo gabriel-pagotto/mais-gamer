@@ -28,9 +28,9 @@ def sub_header_posts(option_number):
 @app.route('/posts', methods=['GET'])
 @login_required
 def posts():
-    print(sub_header_posts(1))
+    post_options = []
     for option in sub_header_posts(1):
-        print(option['url'])
+        post_options.append(option)
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
@@ -41,7 +41,7 @@ def posts():
         title = 'Postagens',
         selected = 'posts',
         header_games = header_games,
-        sub_header = sub_header_posts(1),
+        sub_header = post_options,
     )
 
 @app.route('/posts/new', methods=['GET', 'POST'])

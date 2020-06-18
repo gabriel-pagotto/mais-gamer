@@ -4,6 +4,7 @@
     box-shadow: 0px 0px 10px #111111;
     position: -webkit-sticky;
     bottom: -100%;
+    justify-content: end;
 }
 
 .web .footer .footer-1part {

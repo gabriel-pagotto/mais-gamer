@@ -86,7 +86,7 @@
     </div>
     <div class="header-2part">
         <h1 class="logo">LOGO</h1>
-        <div class="search">
+        <div class="search" style="display: none;">
             <form class="tsf nj" action="/search" data-submitfalse="q" id="tsf" method="GET" name="f" role="search">
                 <input name="q" type="search" class="search-input" placeholder="Buscar"/>
                 {{ g.search }}
@@ -132,4 +132,3 @@
     </div>
 </div>
 <script src="{{ url_for('static', filename='javascript/secondOptionsMobile.js') }}"></script>
-            
