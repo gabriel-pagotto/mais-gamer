@@ -11,3 +11,4 @@ class Config(object):
     AWS_REGION = os.getenv('AWS_REGION')
     S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
     USE_S3_DEBUG = bool(os.getenv('USE_S3_DEBUG') == 'True')
+    FLASK_DEBUG = bool(os.getenv('FLASK_DEBUG') == 'True')

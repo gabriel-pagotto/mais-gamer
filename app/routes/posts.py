@@ -22,8 +22,10 @@ def sub_header_posts(option_number):
     }
 
     sub_header_options[option_number]['selected'] = True
-
-    return (sub_header_options)
+    options = []
+    for option in sub_header_options:
+        options.append(option) 
+    return options
 
 @app.route('/posts', methods=['GET'])
 @login_required
@@ -41,7 +43,7 @@ def posts():
         title = 'Postagens',
         selected = 'posts',
         header_games = header_games,
-        sub_header = post_options,
+        sub_header = sub_header_posts(1),
     )
 
 @app.route('/posts/new', methods=['GET', 'POST'])
