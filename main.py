@@ -1,4 +1,3 @@
-print('okayss')
 import os
 from app import app
 from app.models import Users, Posts, Games

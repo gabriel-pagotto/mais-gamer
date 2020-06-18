@@ -9,6 +9,15 @@ from flask import render_template, redirect, flash, request, url_for
 @app.route('/', methods=['GET'])
 def index():
     posts = Posts.query.all()
+    if not posts or posts < 4:
+        return render_template(
+            'index.html',
+            title = 'Página inicial',
+            last_notices = None,
+            DatePost = DatePost,
+            header_games = header_games,
+            limit_notices = limit_notices,
+        ) 
     last_notices = []
     for post in posts:
         last_notices.append(post)

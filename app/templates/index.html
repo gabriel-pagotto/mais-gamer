@@ -8,6 +8,7 @@
         <div class='web'>
             {% include 'components/header.html' %}
             <div class="payload">
+                {% if last_notices != None %}
                 <div class="notices-body">
                     <div class="notices-top">
                         <div class="notice-itens">
@@ -84,6 +85,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                {% endif %}
             </div>
             {% include 'components/footer.html' %}
         </div>
