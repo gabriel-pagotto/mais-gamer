@@ -4,37 +4,13 @@ from app.models import Posts, Games, Post_Content
 from app.forms import NewPostForm
 from app.utils.aws_s3 import save_image_and_get_url
 from app.utils.header_games import header_games
+from app.utils.sub_header_options import sub_header
 from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_required
-
-def sub_header_posts(option_number):
-    sub_header_options = {
-        1: {
-            'title': 'MINHAS POSTAGENS',
-            'url': 'posts',
-            'selected': False,
-        },
-        2: {
-            'title': 'NOVA POAGEM',
-            'url': 'posts_new',
-            'selected': False,
-        },
-    }
-
-    sub_header_options[option_number]['selected'] = True
-    options = []
-    counter = 1
-    while counter < len(sub_header_options) + 1:
-        options.append(sub_header_options[counter])
-        counter = counter + 1
-    return options
 
 @app.route('/posts', methods=['GET'])
 @login_required
 def posts():
-    post_options = []
-    for option in sub_header_posts(1):
-        post_options.append(option)
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
@@ -45,7 +21,7 @@ def posts():
         title = 'Postagens',
         selected = 'posts',
         header_games = header_games,
-        sub_header = sub_header_posts(1),
+        sub_header = sub_header(1, 'posts'),
     )
 
 @app.route('/posts/new', methods=['GET', 'POST'])
@@ -59,7 +35,6 @@ def post_new():
     games = Games.query.all()
     games_choices = [
         ('', 'Selecione uma opção'),
-        (0, 'Nenhum'),
     ]
     for game in games:
         games_choices.append((game.id, game.name))
@@ -106,5 +81,5 @@ def post_new():
         form = form,
         choices = games_choices,
         header_games = header_games,
-        sub_header = sub_header_posts(2),
+        sub_header = sub_header(2, 'posts'),
     )

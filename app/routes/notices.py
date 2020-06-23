@@ -42,6 +42,9 @@ def notices_by_game(name):
     except AttributeError:
         return redirect(url_for('notices'))
     
+    if game.id == 0:
+        return redirect(url_for('index'))
+    
     next_url = url_for('notices_by_game', name=name, page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('notices_by_game', name=name, page=posts.prev_num) \

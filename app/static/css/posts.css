@@ -4,34 +4,6 @@
     user-select: none;
 }
 
-.web .payload .posts .posts-options {
-    height: max-content;
-    width: 100%;
-    background: #000000;
-    margin-bottom: 40px;
-    padding: 10px 0; 
-    border-bottom: 2px solid #827189;
-    box-shadow: 0px 0px 10px #111111;
-}
-
-.web .payload .posts .posts-options a {
-    text-decoration: none;
-    border: 2px solid #000000;
-    color: #ffffff;
-    font-size: 13px;
-    margin-left: 10px;
-}
-
-.web .payload .posts .posts-options .selected {
-    border-bottom: 2px solid #ffa31a;
-    cursor: default;
-    opacity: 0.6;
-}
-
-.web .payload .posts .posts-options a:hover {
-    border-bottom: 2px solid #ffa31a;
-}
-
 .posts .posts-actions .new-post {
     display: block;
     width: 70%;

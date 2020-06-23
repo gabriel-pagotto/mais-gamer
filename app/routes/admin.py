@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, redirect, url_for
 from flask_login import current_user, login_required
 from app.utils.header_games import header_games
+from app.utils.sub_header_options import sub_header
 
 @app.route('/admin', methods=['GET'])
 @login_required
@@ -34,7 +35,10 @@ def admin_notices():
         return redirect(url_for('login'))
     if current_user.is_admin != 1:
         return redirect(url_for('index'))
-    return 'Em breve...'
+    return render_template(
+        'admin/notices/notices.html',
+        title = 'Notícias - Administrador',
+    )
 
 @app.route('/admin/social-media')
 @login_required
