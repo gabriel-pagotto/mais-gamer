@@ -23,8 +23,10 @@ def sub_header_posts(option_number):
 
     sub_header_options[option_number]['selected'] = True
     options = []
-    for option in sub_header_options:
-        options.append(option) 
+    counter = 1
+    while counter < len(sub_header_options) + 1:
+        options.append(sub_header_options[counter])
+        counter = counter + 1
     return options
 
 @app.route('/posts', methods=['GET'])
