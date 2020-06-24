@@ -1,0 +1,18 @@
+.web .payload .notice-admin-options {
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.notice-admin-options {
+
+}
+
+@media (max-width: 1025px) {
+    .web .payload .notice-admin-options {
+        width: 100%;
+    }
+}
