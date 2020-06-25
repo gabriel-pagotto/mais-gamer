@@ -1,3 +1,4 @@
+from app import app
 from app.aws.s3 import s3
 
 def take_last_object():
