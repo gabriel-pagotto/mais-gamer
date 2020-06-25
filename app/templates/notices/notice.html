@@ -15,10 +15,12 @@
                 <div class="notice">
                     <div class="notice-header">
                         <h1 class="header-title">{{ notice.title }}</h1>
-                        <div class="game">
-                                <img src="{{ game.icon }}" alt="{{ game.name }}">
-                                <h2 class="game">{{ game.name }}</h2>
-                        </div>
+                        {% if game.id != 0 %}
+                            <div class="game">
+                                    <img src="{{ game.icon }}" alt="{{ game.name }}">
+                                    <h2 class="game">{{ game.name }}</h2>
+                            </div>
+                        {% endif %}
                         <span class="posted-by">{{ user.name + ' ' + user.surname + ' - @' +user.username}}</span>
                         <div class="notice-options">
                             <p class="addedAt">{{ DatePost(notice.addedAt) }}</p>
