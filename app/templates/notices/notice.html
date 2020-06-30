@@ -3,9 +3,14 @@
     <head>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
-        <meta property="og:image" content="{{ notice.cover_image }}" />
         <meta property="og:title" content="{{ notice.title }}" />
         <meta property="og:description" content="{{ notice.subtitle }}" />
+        <meta property="og:image" content="{{ notice.cover_image }}" />
+        <meta property="og:url" content="">
+        <meta property="twitter:title" content="{{ notice.title }}" />
+        <meta property="twitter:description" content="{{ notice.subtitle }}" />
+        <meta property="twitter:image" content="{{ notice.cover_image }}" />
+        <meta property="twitter:card" content="{{ notice.cover_image }}" />
         {% include 'components/head.html' %}
     </head>
     <body>

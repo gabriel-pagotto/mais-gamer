@@ -1,18 +1,41 @@
 .web .payload .notice-admin-options {
     align-items: center;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    display: flex;
-    width: 80%;
+    width: 40%;
     margin: 20px auto;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
-.notice-admin-options {
+.notice-admin-options a {
+    background-color: #000000;
+    text-decoration: none;
+    color: #ffa31a;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    display: block;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
 
+.notice-admin-options a:hover {
+    opacity: 0.8;
 }
 
 @media (max-width: 1025px) {
     .web .payload .notice-admin-options {
         width: 100%;
+        display: block;
+        grid-template-columns: 1fr;
+    }
+
+    .notice-admin-options a {
+        border-radius: 5px;
     }
 }

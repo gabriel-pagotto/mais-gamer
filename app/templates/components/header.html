@@ -33,21 +33,18 @@
                         <div class="options-mobile">
                             <a href="{{ url_for('admin') }}" id="mo" class="post">PAINEL DE ADMINISTRADOR</a>
                             <a href="{{ url_for('posts') }}" id="mo" class="post">POSTAGENS</a>
-                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
-                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
                         </div>
                     {% elif current_user.is_poster == 1 %}
                         <div class="options-mobile">
                             <a href="{{ url_for('posts') }}" id="mo" class="post">POSTAGENS</a>
-                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
-                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
                         </div>
                     {% else %}
                         <div class="options-mobile">
-                            <a href="{{ url_for('user') }}" id="mo" class="post">USUÁRIO</a>
-                            <a href="{{ url_for('config') }}" id="mo" class="config">CONFIGURAÇÕES</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout">ENCERRAR SESSÃO</a>
                         </div>
                     {% endif %}
@@ -106,21 +103,18 @@
                             <div class="user-options">
                                 <a href="{{ url_for('admin') }}" class="post">PAINEL DE ADMINISTRADOR</a>
                                 <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
-                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
-                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
                             </div>
                         {% elif current_user.is_poster == 1 %}
                             <div class="user-options">
                                 <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
-                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
-                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
                             </div>
                         {% else %}
                             <div class="user-options">
-                                <a href="{{ url_for('user') }}" class="post">USUÁRIO</a>
-                                <a href="{{ url_for('config') }}" class="config">CONFIGURAÇÕES</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
                             </div>
                         {% endif %}

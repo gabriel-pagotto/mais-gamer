@@ -39,3 +39,10 @@ class NewPostForm(FlaskForm):
     pc_last_image = FileField(FileRequired())
     pc_last_text = TextAreaField(data_required())
     submit = SubmitField()
+
+class ProfileForm(FlaskForm):
+    username = StringField(validators=[data_required()])
+    name = StringField(validators=[data_required()])
+    surname = StringField(validators=[data_required()])
+    email = StringField(validators=[data_required()])
+    submit = SubmitField()

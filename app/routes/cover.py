@@ -43,11 +43,3 @@ def index():
         header_games = header_games,
         limit_notices = limit_notices,
     )
-
-@app.route('/user', methods=['GET'])
-def user():
-    return 'user'
-
-@app.route('/config', methods=['GET'])
-def config():
-    return 'config'
