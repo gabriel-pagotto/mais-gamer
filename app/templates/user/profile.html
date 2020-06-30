@@ -11,27 +11,28 @@
                 <div class="profile">
                     <div class="profile-form">
                         <form action="" method="post" novalidate>
+                            <h1>Meus Dados</h1>
                             {{ form.hidden_tag() }}
                             <div>
                                 <label for="">NOME DE USUÁRIO</label>
-                                {{ form.username(type="text") }}
+                                {{ form.username(type="text", class="info-input") }}
                             </div>
                             <div>
                                 <label for="">NOME</label>
-                                {{ form.name(type="text") }}
+                                {{ form.name(type="text", class="info-input") }}
                             </div>
                             <div>
                                 <label for="">SOBRENOME</label>
-                                {{ form.surname(type="text") }}
+                                {{ form.surname(type="text", class="info-input") }}
                             </div>
                             <div>
                                 <label for="">EMAIL</label>
-                                {{ form.email(type="text") }}
+                                {{ form.email(type="text", class="info-input") }}
                             </div>
-
                         </form>
                     </div>
                 </div>
+                <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
             </div>
             {% include 'components/footer.html' %}
         </div>

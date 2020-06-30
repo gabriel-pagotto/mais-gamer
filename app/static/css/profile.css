@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #151515;
+    background-color: #FFFFFF;
 }
 
 .profile .profile-form {
@@ -17,32 +17,74 @@
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-    width: 70%;
+    width: 50%;
+    max-width: 800px;
+    border: 1px solid #DADCE0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #DADCE0;
+    padding: 10px 10px 40px 10px;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
+
+.profile .profile-form form h1 {
+    display: block;
+    width: fit-content;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 .profile .profile-form form div label {
     display: block;
     width: max-content;
     margin-top: 20px;
-    background-color: #151515;
+    background-color: #FFFFFF;
     position: relative;
-    top: 10px;
-    left: 15px;
-    font-size: 13px;
+    top: 8px;
+    left: 13%;
+    font-size: 12px;
     padding: 0 5px;
     color: #FFA31A;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 .profile .profile-form form div input {
     width: 70%;
     font-size: 22px;
     padding: 13px 30px;
-    border: 1px solid #FFA31A;
+    border: 1px solid #151515;
     border-radius: 5px;
-    background-color: #151515;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #8B9195;
+    display: block;
+    margin: 0 auto;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+}
+
+.profile .profile-form form div input:focus {
+    border: 1px solid #151515;
 }
 
 @media (max-width: 1025px) {
+    .profile .profile-form form {
+        width: 90%;
+    }
 
+    .profile .profile-form form h1 {
+        margin: 0 auto;
+    }
+
+    .profile .profile-form form div label {
+        left: 7.5%;
+    }
+
+    .profile .profile-form form div input {
+        width: 80%;
+    }
 }
