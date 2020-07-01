@@ -18,3 +18,8 @@ body, input, button, textarea, select, option, pre {
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
 }
+
+input {
+    -webkit-appearance: none;
+        appearance: none;
+}

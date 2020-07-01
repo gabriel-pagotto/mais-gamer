@@ -62,6 +62,7 @@
     color: #8B9195;
     display: block;
     margin: 0 auto;
+    user-select: none;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
