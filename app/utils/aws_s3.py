@@ -20,15 +20,5 @@ def save_image_and_get_url(filename):
 
 def delete_image(image_url):
     key = image_url.split('/')[-1]
-    print(app.config['S3_BUCKET_NAME'], '+', key)
-    #s3.Object(app.config['S3_BUCKET_NAME'], key).delete()
     client = boto3.client('s3')
     client.delete_object(Bucket=app.config['S3_BUCKET_NAME'], Key=key)
-
-def load():
-    files = s3.objects.all()
-    all_objects = []
-    for file in files:
-        print(file.key)
-        all_objects.append(file.key)
-    print(len(all_objects))

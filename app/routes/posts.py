@@ -2,10 +2,11 @@ import os, json
 from app import app, database
 from app.models import Posts, Games, Post_Content
 from app.forms import NewPostForm
-from app.utils.aws_s3 import save_image_and_get_url, delete_image, load
+from app.utils.aws_s3 import save_image_and_get_url, delete_image
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
+from app.utils.date_time import DatePost
 from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_required
 from sqlalchemy import desc
@@ -18,7 +19,7 @@ def posts():
     if current_user.is_admin != 1 and current_user.is_poster != 1:
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    posts = Posts.query.filter_by(user_id = current_user.id).order_by(desc('addedAt')).paginate(page, 8, True)
+    posts = Posts.query.filter_by(user_id = current_user.id).order_by(desc('addedAt')).paginate(page, 9, True)
 
     next_url = url_for('posts', page=posts.next_num) \
         if posts.has_next else None
@@ -27,6 +28,7 @@ def posts():
     
     return render_template(
         'posts/posts.html',
+        DatePost = DatePost,
         title = 'Postagens',
         selected = 'posts',
         header_games = header_games,
@@ -123,8 +125,3 @@ def delete_post(id):
     database.session.commit()
 
     return redirect(url_for('posts'))
-
-@app.route('/teste')
-def teste():
-    load()
-    return 'okay'

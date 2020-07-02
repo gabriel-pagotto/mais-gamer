@@ -1,0 +1,130 @@
+.myposts .m-title {
+    margin-left: 10%;
+}
+
+.my-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 20px auto;
+    max-width: 950px;
+}
+
+.my-posts .body-post {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #808080;
+    margin: 10px 5px;
+    padding: 5px 5px;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    height: max-content;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+
+.my-posts .body-post:hover {
+    z-index: 7;
+    box-shadow: 0 0 10px #808080;
+}
+
+.my-posts .body-post .title {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 15px;
+    width: fit-content;
+}
+
+.my-posts .body-post .cover {
+    max-width: 280px;
+}
+
+.my-posts .body-post .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.my-posts .body-post .options .delete {
+    margin: 10px 0;
+    margin-right: 5px;
+    font-size: 12px;
+    width: max-content;
+    display: block;
+    background-color: #dc143c;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 3px 6px;
+    border-radius: 5px;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+
+.my-posts .body-post .options .delete:hover {
+    opacity: 0.8;
+}
+
+.my-posts .body-post .options .edit {
+    margin: 10px 0;
+    margin-left: 5px;
+    font-size: 12px;
+    width: max-content;
+    display: block;
+    background-color: steelblue;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 3px 6px;
+    border-radius: 5px;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+
+.my-posts .body-post .options .edit:hover {
+    opacity: 0.8;
+}
+
+.my-posts .body-post p {
+    font-size: 13px;
+    color: #827189;
+    text-align: center;
+}
+
+@media (max-width: 1025px) {
+    .myposts .m-title {
+        text-align: center;
+    }
+
+    .my-posts {
+        display: block;
+        width: 90%;
+    }
+
+    .my-posts .body-post {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .my-posts .body-post .cover {
+        max-width: none;
+        width: 100%;
+    }
+
+    .my-posts .body-post .title {
+        margin: 10px auto 0 auto;
+        text-align: center;
+        font-size: 19px;
+        height: 100%;
+    }
+
+    .my-posts .body-post .options .delete, .my-posts .body-post .options .edit {
+        font-size: 15px;
+    }
+}
