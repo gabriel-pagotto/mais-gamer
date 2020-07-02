@@ -10,6 +10,7 @@ class Posts(database.Model):
     game_id = database.Column(database.Integer, database.ForeignKey('games.id'))
     user_id = database.Column(database.Integer, database.ForeignKey('users.id'))
     addedAt = database.Column(database.DateTime, default=datetime.utcnow)
+    views = database.Column(database.Integer, default=0)
 
     def __repr__(self):
         return '<Posts {}>'.format(self.posts)

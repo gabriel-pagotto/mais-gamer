@@ -1,5 +1,5 @@
 import os
-from app import app
+from app import app, database
 from app.models import Users, Posts, Games, Post_Content
 from app.utils.date_time import DatePost
 from app.utils.url_for_notices import url_for_notices
@@ -72,6 +72,13 @@ def notice(id):
     post_content = Post_Content.query.filter_by(post_id = id)
     game = Games.query.filter_by(id = post.game_id).first()
     user = Users.query.filter_by(id = post.user_id).first()
+
+    if post.views == None or not post.views:
+        post.views = 1
+    else:
+        post.views = post.views + 1
+
+    database.session.commit()
 
     return render_template (
         'notices/notice.html',
