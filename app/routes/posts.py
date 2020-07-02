@@ -119,6 +119,7 @@ def delete_post(id):
             delete_image(post_content.content)
         database.session.delete(post_content)
     
+    database.session.commit()
     delete_image(post.cover_image)
     
     database.session.delete(post)

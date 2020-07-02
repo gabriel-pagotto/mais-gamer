@@ -6,8 +6,9 @@
                 <img src="{{ post.cover_image }}" alt="" class="cover">
                 <h1 class="title">{{ post.title }}</h1>
                 <div class="options">
-                    <a href="{{ url_for('delete_post', id=post.id) }}" class="delete">DELETAR</a>
+                    <a href="{{ url_for('notice', id=post.id) }}" class="see">VER</a>
                     <a href="" class="edit">EDITAR</a>
+                    <a href="{{ url_for('delete_post', id=post.id) }}" class="delete">DELETAR</a>
                 </div>
                 <p>{{ DatePost(post.addedAt) }}</p>
             </div>

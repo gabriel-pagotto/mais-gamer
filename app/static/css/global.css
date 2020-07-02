@@ -7,16 +7,16 @@
 
 html, body, .web, .payload {
     background: #FFFFFF;
-    -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
 }
 
 body, input, button, textarea, select, option, pre {
     font-family: 'Belgrano', serif;
-    -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
 }
 
 input {

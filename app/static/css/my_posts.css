@@ -45,49 +45,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    margin: 15px 0;
     width: 100%;
 }
 
-.my-posts .body-post .options .delete {
-    margin: 10px 0;
-    margin-right: 5px;
+.my-posts .body-post .options a {
+    margin: 0 5px;
     font-size: 12px;
     width: max-content;
     display: block;
-    background-color: #dc143c;
-    color: #FFFFFF;
     text-decoration: none;
     padding: 3px 6px;
     border-radius: 5px;
+    color: #FFFFFF;
     -webkit-transition: all 0.1s linear;
         -moz-transition: all 0.1s linear;
             transition: all 0.1s linear;
 }
 
-.my-posts .body-post .options .delete:hover {
+.my-posts .body-post .options a:hover {
     opacity: 0.8;
+}
+
+
+.my-posts .body-post .options .see {
+    background-color: #FFA31A;
 }
 
 .my-posts .body-post .options .edit {
-    margin: 10px 0;
-    margin-left: 5px;
-    font-size: 12px;
-    width: max-content;
-    display: block;
-    background-color: steelblue;
-    color: #FFFFFF;
-    text-decoration: none;
-    padding: 3px 6px;
-    border-radius: 5px;
-    -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    background-color: #4685b4;
 }
 
-.my-posts .body-post .options .edit:hover {
-    opacity: 0.8;
-}
+.my-posts .body-post .options .delete {
+    background-color: #dc143c;
+}   
+
 
 .my-posts .body-post p {
     font-size: 13px;
@@ -124,7 +116,7 @@
         height: 100%;
     }
 
-    .my-posts .body-post .options .delete, .my-posts .body-post .options .edit {
+    .my-posts .body-post .options .delete, .my-posts .body-post .options .edit, .my-posts .body-post .options .see {
         font-size: 15px;
     }
 }
