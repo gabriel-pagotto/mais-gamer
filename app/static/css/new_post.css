@@ -1,6 +1,5 @@
 .web .payload .posts {
     display: block;
-    border-bottom: 1px solid #000000;
     user-select: none;
 }
 

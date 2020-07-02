@@ -94,11 +94,11 @@
 
     .my-posts {
         display: block;
-        width: 90%;
+        width: 100%;
     }
 
     .my-posts .body-post {
-        width: 100%;
+        width: 95%;
         align-items: center;
         text-align: center;
         margin-bottom: 15px;
