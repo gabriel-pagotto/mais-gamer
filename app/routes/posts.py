@@ -102,6 +102,11 @@ def post_new():
         sub_header = sub_header(2, 'posts'),
     )
 
+@app.route('/posts/edit/<int:id>')
+@login_required
+def edit_post(id):
+    return 'Disponível em breve...'
+
 @app.route('/posts/delete/<int:id>')
 @login_required
 def delete_post(id):
