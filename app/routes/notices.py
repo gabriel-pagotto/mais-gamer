@@ -7,7 +7,7 @@ from app.utils.header_games import header_games
 from flask import render_template, redirect, flash, request, url_for
 from sqlalchemy import desc
 
-@app.route('/notices', methods=['GET'])
+@app.route('/news', methods=['GET'])
 def notices():
     page = request.args.get('page', 1, type=int)
     posts_pages = Posts.query.order_by(desc('addedAt')).paginate(page, 8, True)
@@ -33,7 +33,7 @@ def notices():
         header_games = header_games,
     )
 
-@app.route('/notices/<name>', methods=['GET'])
+@app.route('/news/<name>', methods=['GET'])
 def notices_by_game(name):
     page = request.args.get('page', 1, type=int)
     try:
