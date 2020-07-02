@@ -23,3 +23,7 @@ input {
     -webkit-appearance: none;
         appearance: none;
 }
+
+input:focus {
+    border: 0 none;
+}

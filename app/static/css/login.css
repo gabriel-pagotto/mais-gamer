@@ -125,6 +125,8 @@
         padding: 7px 16px;
         border: 0 none;
         border-radius: 0;
+        -webkit-appearance: none;
+            appearance: none;
         font-size: 20px;
     }
 }

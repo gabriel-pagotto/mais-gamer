@@ -26,6 +26,7 @@
     display: block;
     white-space: pre-wrap;
     word-wrap: break-word;
+    word-break: break-all;
     margin: 10px auto;
     font-size: 19px;
     text-align: left;

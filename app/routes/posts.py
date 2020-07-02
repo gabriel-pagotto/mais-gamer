@@ -2,11 +2,13 @@ import os, json
 from app import app, database
 from app.models import Posts, Games, Post_Content
 from app.forms import NewPostForm
-from app.utils.aws_s3 import save_image_and_get_url
+from app.utils.aws_s3 import save_image_and_get_url, delete_image, load
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
+from app.utils.url_for_notices import url_for_notices
 from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_required
+from sqlalchemy import desc
 
 @app.route('/posts', methods=['GET'])
 @login_required
@@ -15,6 +17,13 @@ def posts():
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
         return redirect(url_for('index'))
+    page = request.args.get('page', 1, type=int)
+    posts = Posts.query.filter_by(user_id = current_user.id).order_by(desc('addedAt')).paginate(page, 8, True)
+
+    next_url = url_for('posts', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('posts', page=posts.prev_num) \
+        if posts.has_prev else None
     
     return render_template(
         'posts/posts.html',
@@ -22,6 +31,13 @@ def posts():
         selected = 'posts',
         header_games = header_games,
         sub_header = sub_header(1, 'posts'),
+        posts = posts.items,
+        posts_pages = posts,
+        page_number = page,
+        next_url = next_url,
+        prev_url = prev_url,
+        url_for_notices = url_for_notices,
+        last_param = None,
     )
 
 @app.route('/posts/new', methods=['GET', 'POST'])
@@ -83,3 +99,32 @@ def post_new():
         header_games = header_games,
         sub_header = sub_header(2, 'posts'),
     )
+
+@app.route('/posts/delete/<int:id>')
+@login_required
+def delete_post(id):
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    if current_user.is_admin != 1 and current_user.is_poster != 1:
+        return redirect(url_for('index'))
+
+    post = Posts.query.filter_by(id = id).first()
+    posts_content = Post_Content.query.filter_by(post_id = id).all()
+    
+
+    for post_content in posts_content:
+        if post_content.type == 'IMG':
+            delete_image(post_content.content)
+        database.session.delete(post_content)
+    
+    delete_image(post.cover_image)
+    
+    database.session.delete(post)
+    database.session.commit()
+
+    return redirect(url_for('posts'))
+
+@app.route('/teste')
+def teste():
+    load()
+    return 'okay'
