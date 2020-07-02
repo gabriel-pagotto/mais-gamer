@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     {% for game in games %}
-                        {% if game.id != 0 %}
+                        {% if game.id != 0 and limit_notices(game.id, last_notices) != None %}
                             <div class="all-notices">
                                 <div class="header-all-notices">
                                     <div class="notice-category">
