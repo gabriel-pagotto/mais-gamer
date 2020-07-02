@@ -4,7 +4,7 @@ from flask_login import UserMixin
 
 class Posts(database.Model):
     id = database.Column(database.Integer, primary_key=True)
-    title = database.Column(database.String(90))
+    title = database.Column(database.String(300))
     subtitle = database.Column(database.String(450))
     cover_image = database.Column(database.Text)
     game_id = database.Column(database.Integer, database.ForeignKey('games.id'))
