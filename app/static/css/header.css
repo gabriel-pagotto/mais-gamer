@@ -220,6 +220,7 @@
 }
 
 .web .header .header-2part .logo {
+    align-self: center;
     color: #FFFFFF;
     user-select: none;
     margin-left: 10px;
