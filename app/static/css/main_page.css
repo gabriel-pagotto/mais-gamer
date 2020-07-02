@@ -4,6 +4,8 @@
 }
 
 .payload .notices-body {
+    align-items: center;
+    justify-content: center;
     width: 60%;
     min-width: 1100px;
     margin: 35px auto 35px auto;
@@ -32,6 +34,8 @@
 .notices-top .notice-itens a .notice-1 {    
     display: flex;
     overflow: hidden;
+    min-width: 100%;
+    margin-left: 48px;
 }
 
 .notice-itens a .notice-1 .icon {
@@ -74,7 +78,7 @@ a .notice-1 .icon img {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-items: left;
+    justify-content: center;
 }
 
 .rest .notice-top-element {
@@ -156,6 +160,8 @@ a .notice-1 .icon img {
     top: -24px;
     background-color: #FFFFFF;
     padding-right: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .all-notices .header-all-notices .notice-category img {
@@ -194,6 +200,7 @@ a .notice-1 .icon img {
 .all-notices .elements {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .all-notices .elements .notice-element {
