@@ -281,6 +281,7 @@ a .notice-1 .icon img {
         display: block;
         width: 100%;
         margin-bottom: 25px;
+        margin-left: 0px;
     }
 
     .notice-itens a .notice-1 .icon {
