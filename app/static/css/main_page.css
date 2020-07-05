@@ -22,6 +22,7 @@
 }
 
 .notices-top .notice-itens a:hover > .notice-1 .icon img {
+    width: 100%;
     -webkit-transform: scale(1);
 	    -moz-transform: scale(1);
             transform: scale(1);
@@ -39,8 +40,8 @@
 }
 
 .notice-itens a .notice-1 .icon {
+    min-width: 450px;
     max-width: 500px;
-    max-height: 300px;
     overflow: hidden;
 }
 
