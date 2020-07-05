@@ -1,7 +1,7 @@
 from app import database
 from app.models import Users, Posts, Games
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileRequired
+from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, FileField, SelectField, TextAreaField
 from wtforms.validators import data_required, InputRequired, ValidationError
 
@@ -34,9 +34,9 @@ class NewPostForm(FlaskForm):
     subtitle = StringField(validators=[data_required()])
     cover_image = FileField(validators=[FileRequired()])
     game_id = SelectField(validators=[data_required()])
-    pc_image = FileField(FileRequired())  
+    pc_image = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Somente imagens JPG e PNG!')])  
     pc_text = TextAreaField()
-    pc_last_image = FileField(FileRequired())
+    pc_last_image = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Somente imagens JPG e PNG!')])
     pc_last_text = TextAreaField(data_required())
     submit = SubmitField()
 

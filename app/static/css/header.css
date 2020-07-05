@@ -478,9 +478,9 @@
         right: -900px;
         background-color: #111111;
         z-index: 5;
-        -webkit-transition: all 0.5s linear;
-            -moz-transition: all 0.5s linear;
-                transition: all 0.5s linear;
+        -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+                transition: all 0.3s linear;
     }
 
     .input-second-options-mobile {
@@ -613,9 +613,9 @@
         right: -900px;
         background-color: #111111;
         z-index: 5;
-        -webkit-transition: all 0.5s linear;
-            -moz-transition: all 0.5s linear;
-                transition: all 0.5s linear;
+        -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+                transition: all 0.3s linear;
     }
 
     .second-options-mobile .second-options-mobile-header {

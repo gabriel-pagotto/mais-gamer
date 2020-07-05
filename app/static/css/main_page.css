@@ -388,12 +388,14 @@ a .notice-1 .icon img {
 
     .all-notices .elements {
         display: block;
+        padding-bottom: 35px;
     }
 
     .all-notices .elements .notice-element {
         max-width: 100%;
         margin-right: 0px;
         margin-bottom: 25px;
+        height: max-content;
         height: max-content;
     }
 
@@ -430,6 +432,7 @@ a .notice-1 .icon img {
         width: max-content;
         background: #ffa31a;
         padding: 5px 15px;
+        border-radius: 3px;
         text-decoration: none;
         color: #FFFFFF;
         -webkit-transition: all 0.1s linear;

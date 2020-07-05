@@ -88,6 +88,7 @@
     padding: 7px 16px;
     background: #ffa31a;
     border: none;
+    border-radius: 3px;
     font-size: 15px;
     color: #FFFFFF;
     margin: 30px 0 0 auto;
@@ -109,10 +110,10 @@
 
     .web .payload .login-container {
         position: relative;
-        width: 90%;
+        width: 85%;
         height: 100%;
         margin: 0px;
-        padding: 5%;
+        padding: 7.5%;
     }
 
     .login-container .login-data form .form-inputs {
@@ -124,8 +125,9 @@
     .login-container .login-data form .submit {
         padding: 7px 16px;
         border: 0 none;
-        border-radius: 0;
+        border-radius: 3px;
         -webkit-appearance: none;
+            appearance: none;
         font-size: 20px;
     }
 }

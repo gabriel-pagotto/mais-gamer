@@ -101,9 +101,10 @@
     padding: 5px 15px;
     text-decoration: none;
     color: #FFFFFF;
-    -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    border-radius: 3px;
+    -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 .notice .notice-description .itens .read-more:hover {
@@ -183,9 +184,9 @@
         padding: 5px 15px;
         text-decoration: none;
         color: #FFFFFF;
-        -webkit-transition: all 0.1s linear;
-            -moz-transition: all 0.1s linear;
-                transition: all 0.1s linear;
+        -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+                transition: all 0.2s linear;
     }
 
 }

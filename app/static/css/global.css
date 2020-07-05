@@ -5,6 +5,10 @@
     padding: 0px;
 }
 
+body {
+    background: green;
+}
+
 html, body, .web, .payload {
     background: #FFFFFF;
     -webkit-transition: all 0.1s linear;
