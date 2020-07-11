@@ -9,7 +9,7 @@ from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/autenticação/entrar', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -38,7 +38,7 @@ def login():
         header_games = header_games,
     )
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/autenticação/registro', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -77,7 +77,7 @@ def register():
         header_games = header_games,
     )
 
-@app.route('/register/success', methods=['GET'])
+@app.route('/autenticação/registro/successo', methods=['GET'])
 @login_required
 def register_success():
     return render_template(
@@ -86,7 +86,7 @@ def register_success():
         header_games = header_games,
     )
 
-@app.route('/logout')
+@app.route('/autenticação/sair')
 def logout():
     logout_user()
     return redirect(url_for('index'))

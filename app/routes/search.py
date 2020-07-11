@@ -1,7 +1,7 @@
 from flask import render_template
 from app.forms import SearchForm
 
-@app.route('/search', methods=['GET'])
+@app.route('/buscar', methods=['GET'])
 def search():
     form = SearchForm
 

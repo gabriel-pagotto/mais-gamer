@@ -11,7 +11,7 @@ from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_required
 from sqlalchemy import desc
 
-@app.route('/posts', methods=['GET'])
+@app.route('/postagens', methods=['GET'])
 @login_required
 def posts():
     if not current_user.is_authenticated:
@@ -42,7 +42,7 @@ def posts():
         last_param = None,
     )
 
-@app.route('/posts/new', methods=['GET', 'POST'])
+@app.route('/postagens/novo', methods=['GET', 'POST'])
 @login_required
 def post_new():
     if not current_user.is_authenticated:
@@ -102,12 +102,12 @@ def post_new():
         sub_header = sub_header(2, 'posts'),
     )
 
-@app.route('/posts/edit/<int:id>')
+@app.route('/postagens/editar/<int:id>')
 @login_required
 def edit_post(id):
     return 'Disponível em breve...'
 
-@app.route('/posts/delete/<int:id>')
+@app.route('/postagens/deletar/<int:id>')
 @login_required
 def delete_post(id):
     if not current_user.is_authenticated:

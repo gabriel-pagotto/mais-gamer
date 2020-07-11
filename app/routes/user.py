@@ -5,7 +5,7 @@ from flask import render_template
 from flask_login import current_user, login_required
 
 
-@app.route('/profile', methods=['GET', 'POST'])
+@app.route('/perfil', methods=['GET', 'POST'])
 @login_required
 def profile():
     form = ProfileForm()

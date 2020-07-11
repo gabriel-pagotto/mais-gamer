@@ -4,7 +4,7 @@ from flask_login import current_user, login_required
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 
-@app.route('/admin', methods=['GET'])
+@app.route('/administrador', methods=['GET'])
 @login_required
 def admin():
     if not current_user.is_authenticated:
@@ -19,7 +19,7 @@ def admin():
         header_games = header_games,
     )
 
-@app.route('/admin/finances')
+@app.route('/administrador/finanças')
 @login_required
 def admin_finances():
     if not current_user.is_authenticated:
@@ -28,7 +28,7 @@ def admin_finances():
         return redirect(url_for('index'))
     return 'Em breve...'
 
-@app.route('/admin/notices')
+@app.route('/administrador/notícias')
 @login_required
 def admin_notices():
     if not current_user.is_authenticated:
@@ -40,7 +40,7 @@ def admin_notices():
         title = 'Notícias - Administrador',
     )
 
-@app.route('/admin/social-media')
+@app.route('/administrador/redes-sociais')
 @login_required
 def admin_social():
     if not current_user.is_authenticated:
@@ -49,7 +49,7 @@ def admin_social():
         return redirect(url_for('index'))
     return 'Em breve...'
 
-@app.route('/admin/users')
+@app.route('/administrador/usuários')
 @login_required
 def admin_users():
     if not current_user.is_authenticated:
