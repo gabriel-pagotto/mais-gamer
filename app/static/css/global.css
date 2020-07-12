@@ -9,11 +9,6 @@ body {
     background: green;
 }
 
-.web {
-    width: 100vw;
-    height: 100vh;
-}
-
 html, body, .web, .payload {
     background: #FFFFFF;
     -webkit-transition: all 0.1s linear;
