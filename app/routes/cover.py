@@ -12,7 +12,7 @@ def index():
     if not posts or len(posts) < 4:
         return render_template(
             'index.html',
-            title = 'Página inicial',
+            title = 'Mais Gamer',
             last_notices = None,
             DatePost = DatePost,
             header_games = header_games,
@@ -34,7 +34,7 @@ def index():
 
     return render_template(
         'index.html',
-        title = 'Página inicial',
+        title = 'Mais Gamer',
         last_notice = last_notice,
         rest_notices = rest_notices,
         last_notices = last_notices,
