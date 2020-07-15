@@ -131,3 +131,63 @@ def delete_post(id):
     database.session.commit()
 
     return redirect(url_for('posts'))
+
+@app.route('/postagens/novo/teste', methods=['GET', 'POST'])
+@login_required
+def post_new_test():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    if current_user.is_admin != 1 and current_user.is_poster != 1:
+        return redirect(url_for('index'))
+    form = NewPostForm()
+    games = Games.query.all()
+    games_choices = [
+        ('', 'Selecione uma opção'),
+    ]
+    for game in games:
+        games_choices.append((game.id, game.name))
+    form.game_id.choices = games_choices
+    if form.submit():
+        if request.method == 'POST':
+            cover_image_url = save_image_and_get_url(request.files[form.cover_image.data.name])
+            post = Posts(
+                title = form.title.data,
+                subtitle = form.subtitle.data,
+                cover_image = cover_image_url,
+                game_id = form.game_id.data,
+                user_id = current_user.id,
+            )
+
+            database.session.add(post)
+            database.session.commit()
+            database.session.refresh(post)
+
+            def add_content_database(content, position, type, post_id):
+                post_content = Post_Content(
+                    content = content,
+                    position = position,
+                    type = type,
+                    post_id = post_id,
+                )
+                return database.session.add(post_content)
+
+            pc_image = save_image_and_get_url(request.files[form.pc_image.data.name])
+            pc_last_image = save_image_and_get_url(request.files[form.pc_last_image.data.name])
+            add_content_database(pc_image, 1, 'IMG', post.id)
+            add_content_database(form.pc_text.data, 2, 'TXT', post.id)
+            add_content_database(pc_last_image, 3, 'IMG', post.id)
+            add_content_database(form.pc_last_text.data, 4, 'TXT', post.id)
+            
+            database.session.commit()
+
+            return redirect(url_for('notice', id=post.id))
+
+    return render_template(
+        'posts/new_post_test.html',
+        title = 'Nova postagem',
+        selected = 'new',
+        form = form,
+        choices = games_choices,
+        header_games = header_games,
+        sub_header = sub_header(2, 'posts'),
+    )

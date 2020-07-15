@@ -104,21 +104,18 @@
     display: flex;
     width: 100%;
     background: #000000;
-    border-bottom: 1px solid #ffa31a;
+    border-bottom: 1px solid #212121;
 }
 
 .header .header-1part .header-1part-1opc {
     text-decoration: none;
     color: #FFFFFF;
-    margin: 2px 0 2px 5px;
-    padding: 3px 10px 3px 10px;
-    border: 1px solid #000000;
-    border-radius: 2px;
-    font-size: 13px;
+    padding: 3px 10px;
+    font-size: 12px;
     user-select: none;
-    -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
 }
 
 .header .header-1part #header-login {
@@ -126,8 +123,7 @@
 }
 
 .header .header-1part .header-1part-1opc:hover {
-    background: #111111;
-    border: 1px solid #FFFFFF;
+    color: #ffa31a;
 }
 
 .header .header-1part .header-1part-2opc .option-title {
@@ -137,13 +133,10 @@
 }
 
 .header .header-1part .header-1part-2opc {
-    padding: 3px 10px 3px 10px;
-    margin: 2px 0 2px 5px;
+    padding: 3px 10px;
     width: min-content;
     height: 17px;
-    border: 1px solid #000000;
-    border-radius: 2px;
-    font-size: 13px;
+    font-size: 12px;
     user-select: none;
     overflow: hidden;
     -webkit-transition: all 0.2s linear;
@@ -177,6 +170,7 @@
 }
 
 .header-1part-2opc .games-options {
+    font-size: 11px;
     background-color: #111111;
     width: max-content;
     height: fit-content;
@@ -196,7 +190,7 @@
     display: block;
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
     padding: 10px 10px;
     user-select: none;
@@ -208,7 +202,6 @@
 
 .header-1part-2opc .games-options a:hover {
     background: #333333;
-    border-bottom: 1px solid #ffa31a;
 }
 
 
@@ -444,16 +437,16 @@
         align-items: center;
         background: #111111;
         width: 100%;
-        height: 80px;
+        height: 65px;
         color: #FFFFFF;
     }
 
     .header .header-mobile .logo {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .header .header-mobile .options {
-        font-size: 30px;
+        font-size: 20px;
         width: min-content;
         box-sizing: border-box;
         overflow: auto;
@@ -461,7 +454,7 @@
     }
 
     .header .header-mobile .options .options-button {
-        position: relative;
+        display: block;
     }
 
     .web .header .header-1part {
@@ -501,7 +494,7 @@
         margin: 0;
         width: 92%;
         padding: 18px 4%;
-        font-size: 17px;
+        font-size: 15px;
         background-color: #212121;
         border: 0 none;
         margin-top: 1px;
@@ -536,16 +529,16 @@
     }
 
     .header .header-1part #header-login .login {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .header .header-1part #header-login .register {
         background: #ffa31a;
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .header-1part .header-1part-top {
-        height: 76px;
+        height: 65px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -555,7 +548,10 @@
 
     .header-1part .header-1part-top h1 {
         color: #FFFFFF;
+        display: block;
         margin-left: 10px;
+        font-size: 20px;
+        min-width: max-content;
     }
 
     .header .header-1part .header-1part-2opc {
@@ -563,7 +559,7 @@
         margin: 0;
         width: 92%;
         padding: 18px 4%;
-        font-size: 17px;
+        font-size: 15px;
         background-color: #212121;
         border: 0 none;
         margin-top: 1px;
@@ -589,14 +585,10 @@
 
 
     .header-1part .header-1part-top label svg {
-        position: relative;
-        font-size: 30px;
-        width: min-content;
-        box-sizing: border-box;
+        align-self: center;
+        max-width: min-content;
         overflow: auto;
-        float: right;
-        top: -2px;
-        right: 10px;
+        margin-right: 10px;
     }
 
     .second-options-mobile {
@@ -620,7 +612,7 @@
     }
 
     .second-options-mobile .second-options-mobile-header {
-        height: 76px;
+        height: 65px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -629,18 +621,18 @@
     }
 
     .second-options-mobile .second-options-mobile-header .back {
-        font-size: 25px;
+        font-size: 20px;
         color: #FFFFFF;
     }
 
     .second-options-mobile .second-options-mobile-header .back svg {
         margin-left: 10px;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .second-options-mobile .second-options-mobile-header .exit {
         position: relative;
-        font-size: 30px;
+        font-size: 15px;
         width: min-content;
         box-sizing: border-box;
         overflow: auto;
@@ -660,7 +652,7 @@
         margin: 0;
         width: 92%;
         padding: 18px 4%;
-        font-size: 17px;
+        font-size: 15px;
         background-color: #212121;
         border: 0 none;
         margin-top: 1px;

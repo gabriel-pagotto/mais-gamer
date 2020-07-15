@@ -39,6 +39,7 @@
 
 .my-posts .body-post .cover {
     max-width: 280px;
+    border-radius: 5px;
 }
 
 .my-posts .body-post .options {
