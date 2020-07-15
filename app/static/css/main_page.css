@@ -143,7 +143,7 @@ a .notice-1 .icon img {
 }
 
 .payload .notices-body .all-notices {
-    border-top: 1px solid #827189;
+    border-top: 1px solid #EBE8EC;
     width: 100%;
     height: fit-content;
     margin-top: 90px;
@@ -283,6 +283,8 @@ a .notice-1 .icon img {
         width: 100%;
         margin-bottom: 25px;
         margin-left: 0px;
+        box-shadow: 0 0 5px #827189;
+        padding-bottom: 10px;
     }
 
     .notice-itens a .notice-1 .icon {
@@ -319,6 +321,8 @@ a .notice-1 .icon img {
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 25px;
+        box-shadow: 0 0 5px  #827189;
+        padding-bottom: 10px;
     }
 
     .notice-itens .rest .notice-top-url {
@@ -371,16 +375,21 @@ a .notice-1 .icon img {
         height: 30px;
         width: initial;
     }
+
+    .all-notices .header-all-notices .notice-category {
+        display: block;
+        width: min-content;
+        margin: 0 auto;
+    }
     
     .all-notices .header-all-notices .notice-category h1 {
+        justify-self: center;
+        display: block;
         font-size: 20px;
-        top: 0;
-        text-align: center;
         width: max-content;
         border: 0 none;
-        width: max-content;
-        margin: 0 auto;
-        min-width: max-content;
+        margin: 0;
+        left: 0;
     }
 
     .all-notices .header-all-notices .more-notices {
@@ -398,6 +407,8 @@ a .notice-1 .icon img {
         margin-bottom: 25px;
         height: max-content;
         height: max-content;
+        box-shadow: 0 0 5px  #827189;
+        padding-bottom: 10px;
     }
 
     .all-notices .elements .notice-element .notice-url {
