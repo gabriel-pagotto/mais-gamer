@@ -44,7 +44,7 @@
                             {% for error in form.confirm_password.errors %}
                                 <span class="error">[{{ error }}]</span>
                             {% endfor %}
-                            <span class="no-account">Já tem uma conta?&nbsp;<a href="/login" class="create-account">Entre!</a></span>
+                            <span class="no-account">Já tem uma conta?&nbsp;<a href="{{ url_for('login') }}" class="create-account">Entre!</a></span>
                             {{form.submit(type="submit", value="Registrar-se", class_="submit")}}
                         </form>
                     </div>
