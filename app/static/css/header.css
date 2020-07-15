@@ -502,6 +502,7 @@
     .header .header-1part .header-1part-1opc:hover {
         background: #212121;
         border: 0 none;
+        color: #FFFFFF;
     }
 
     .header .header-1part #header-login {
@@ -510,7 +511,7 @@
         justify-content: space-between;
         align-items: center;
         width: fit-content;
-        border-bottom: 1px solid  #212121;
+        border-bottom: 1px solid #212121;
     }
 
     .header .header-1part #header-login:hover {
@@ -572,6 +573,7 @@
     .header .header-1part .header-1part-2opc:hover {
         overflow: none;
         cursor: pointer;
+        color: #FFFFFF;
     }
     
     .header .header-1part .header-1part-2opc .arrow-down {
