@@ -1,4 +1,4 @@
-import os, cryptography
+import os
 from app import app
 from app.models import Users, Posts, Games
 from config import Config
