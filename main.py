@@ -4,6 +4,7 @@ from app.models import Users, Posts, Games
 from config import Config
 
 port = int(os.environ.get('PORT', 7000))
+
 app.run(host='0.0.0.0', port= port, debug=bool(os.environ.get('FLASK_DEBUG') == 'True'))
 
 @app.shell_context_processor
