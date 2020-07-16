@@ -6,7 +6,7 @@ from config import Config
 debug = bool(os.environ.get('FLASK_DEBUG') == 'True')
 port = int(os.environ.get('PORT', 7000))
 
-app.run(host='0.0.0.0', port= port, debug=debug, ssl_context='adhoc')
+app.run(host='0.0.0.0', port= port, debug=debug)
 
 @app.shell_context_processor
 def make_shell_context():
