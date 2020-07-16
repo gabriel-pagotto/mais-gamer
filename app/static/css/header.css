@@ -292,12 +292,12 @@
 }
 
 .header .header-2part .user .user-name {
+    position: absolute;
     width: 100%;
-    display: block;
+    display: flex;
     font-size: 19px;
     font-weight: 600;
     color: #FFFFFF;
-    margin-top: 15px;
     user-select: none;
     text-align: center;
 }
