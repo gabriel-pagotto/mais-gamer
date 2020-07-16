@@ -6,6 +6,12 @@ from flask_login import LoginManager
 from flask_sslify import SSLify
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config.from_object(Config)
+database = SQLAlchemy(app)
+migrate = Migrate(app, database)
+login = LoginManager(app)
+login.login_view = 'login'
 
 @app.before_request
 def before_request():
@@ -14,12 +20,5 @@ def before_request():
         code = 301
         return redirect(url, code=code)
 
-sslify = SSLify(app)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.config.from_object(Config)
-database = SQLAlchemy(app)
-migrate = Migrate(app, database)
-login = LoginManager(app)
-login.login_view = 'login'
 
 from app import routes, models
