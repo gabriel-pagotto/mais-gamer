@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -12,13 +12,5 @@ database = SQLAlchemy(app)
 migrate = Migrate(app, database)
 login = LoginManager(app)
 login.login_view = 'login'
-
-@app.before_request
-def before_request():
-    if not request.is_secure and app.env != "development":
-        url = request.url.replace("http://", "https://", 1)
-        code = 301
-        return redirect(url, code=code)
-
 
 from app import routes, models

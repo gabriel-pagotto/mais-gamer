@@ -12,3 +12,4 @@ class Config(object):
     S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
     USE_S3_DEBUG = bool(os.getenv('USE_S3_DEBUG') == 'True')
     FLASK_DEBUG = os.getenv('FLASK_DEBUG')
+    HTTPS_REDIRECT = os.getenv('HTTPS_REDIRECT')
