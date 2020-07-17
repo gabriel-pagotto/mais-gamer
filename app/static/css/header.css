@@ -216,6 +216,7 @@
 }
 
 .web .header .header-2part .logo {
+    width: 225px;
     align-self: center;
     color: #FFFFFF;
     user-select: none;
@@ -441,7 +442,7 @@
     }
 
     .header .header-mobile .logo {
-        font-size: 26px;
+        width: 175px;
     }
 
     .header .header-mobile .options {
@@ -529,6 +530,11 @@
         -webkit-transition: all 0.1s linear;
             -moz-transition: all 0.1s linear;
                 transition: all 0.1s linear;
+    }
+
+    .header-1part .header-1part-top .Favicon {
+        width: 50px;
+        margin-left: 10px;
     }
 
     .header .header-1part #header-login .login {
