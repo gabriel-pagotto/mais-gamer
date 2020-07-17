@@ -30,16 +30,15 @@
                         <div class="notice-options">
                             <p class="addedAt">{{ DatePost(notice.addedAt) }}</p>
                             <div class="share">
-                                <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
+                                <a id="facebook" href="{{ notice_share('facebook') }}" target="_blank" title="Compartilhar esta notícia no Facebook">
                                     <img src="{{ url_for('static', filename='/images/icons/facebook.svg') }}" alt="Facebook"/>
                                 </a>
-                                <a id="twitter" href="" target="_blank" title="Compartilhar esta notícia no Twitter">
+                                <a id="twitter" href="{{ notice_share('twitter') }}" target="_blank" title="Compartilhar esta notícia no Twitter">
                                     <img src="{{ url_for('static', filename='/images/icons/twitter.svg') }}" alt="Twitter"/>
                                 </a>
-                                <a id="whatsapp" href="" target="_blank" title="Compartilhar esta notícia no WhatsApp">
+                                <a id="whatsapp" href="{{ notice_share('whatsapp') }}" target="_blank" title="Compartilhar esta notícia no WhatsApp">
                                     <img src="{{ url_for('static', filename='/images/icons/whatsapp.svg') }}" alt="WhatsApp"/>
                                 </a>
-                                <script src="{{ url_for('static', filename='/javascript/noticeShare.js') }}"></script>
                             </div>
                         </div>
                     </div>

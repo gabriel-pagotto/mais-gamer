@@ -4,6 +4,7 @@ from app.models import Users, Posts, Games, Post_Content
 from app.utils.date_time import DatePost
 from app.utils.url_for_notices import url_for_notices
 from app.utils.header_games import header_games
+from app.utils.notice_share import notice_share
 from flask import render_template, redirect, flash, request, url_for
 from sqlalchemy import desc
 
@@ -89,4 +90,5 @@ def notice(id):
         DatePost = DatePost,
         game = game,
         header_games = header_games,
+        notice_share = notice_share,
     )
