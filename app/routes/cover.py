@@ -12,7 +12,7 @@ def index():
     if not posts or len(posts) < 4:
         return render_template(
             'index.html',
-            title = 'Mais Gamer',
+            title = 'Mais Gamer - Notícias para Gamers',
             last_notices = None,
             DatePost = DatePost,
             header_games = header_games,
