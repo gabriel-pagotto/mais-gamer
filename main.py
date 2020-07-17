@@ -5,11 +5,12 @@ from config import Config
 
 debug = bool(os.environ.get('FLASK_DEBUG') == 'True')
 port = int(os.environ.get('PORT', 7000))
+context = 'adhoc'
 
 if debug == True:
     app.run(host='0.0.0.0', port= port, debug=debug)
 elif debug == False:
-    app.run(host='0.0.0.0', port= port, debug=debug, ssl_context=('cert.pem', 'key.pem'))
+    app.run(host='0.0.0.0', port= port, debug=debug, ssl_context=context)
 
 @app.shell_context_processor
 def make_shell_context():
