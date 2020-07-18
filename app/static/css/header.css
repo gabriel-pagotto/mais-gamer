@@ -126,64 +126,78 @@
     opacity: 0.9;
 }
 
-.header .header-1part .header-1part-2opc .option-title {
-    text-align: center;
+.header .header-1part .prim-header {
+    display: inline-block;
+    position: relative; 
+}
+
+.header .header-1part .prim-header:hover {
+    overflow: visible;
+}
+
+.header .header-1part .header-1part-2opc .prim-header .option-title {
     text-decoration: none;
     color: #FFFFFF;
-}
-
-.header .header-1part .header-1part-2opc {
     padding: 3px 10px;
-    width: min-content;
-    height: 17px;
     font-size: 12px;
     user-select: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
     overflow: hidden;
-    -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    text-transform: capitalize;
+    transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98), border-color 0.5s cubic-bezier(0.06, 0.81, 0, 0.98);
+    font-weight: 400;
 }
 
-.header .header-1part .header-1part-2opc:hover {
-    overflow: visible;
-    cursor: pointer;
+.header-1part-2opc .prim-header:hover > .option-title {
+    opacity: 0.9;
+    color: #ffa31a;
 }
 
-.header .header-1part .header-1part-2opc:hover > .arrow-down {
+.header-1part-2opc .prim-header:hover > .option-title .arrow-down {
+    fill: #ffa31a;
+    opacity: 0.9;
     -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
             transform: rotate(180deg);
 }
 
 .header-1part .header-1part-2opc .arrow-down {
+    fill: #989898;
     position: relative;
-    left: 5px;
-    top: -3px;
+    left: 3px;
+    top: -2px;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
 }
 
-.header-1part-2opc:hover > .games-options {
-    top: 3px;
+.header-1part-2opc .prim-header:hover > .games-options {
+    visibility: visible;
     opacity: 1;
 }
 
 .header-1part-2opc .games-options {
-    font-size: 11px;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 25px;
     background-color: #111111;
-    width: max-content;
-    height: fit-content;
-    position: relative;
-    top: -10px;
-    opacity: 0;
     text-align: left;
-    border: 1px solid #1a1a1a;
-    box-shadow: 0px 0px 10px #111111;
+    font-size: 1rem;
+    min-width: 200px;
+    width: max-content;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.06, 0.81, 0, 0.98) 0s, visibility 0s;
     z-index: 3;
-    -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    box-shadow: 0px 0px 5px black;
+}
+
+.header-1part-2opc .games-options li {
+    color: #1d1d1d;
+    border-bottom: solid 2px #111111;
+    list-style-type: none;
 }
 
 .header-1part-2opc .games-options a {
@@ -203,7 +217,6 @@
 .header-1part-2opc .games-options a:hover {
     background: #333333;
 }
-
 
 .web .header .header-2part {
     justify-content: space-between;
@@ -282,9 +295,10 @@
 }
 
 .header .header-2part .user {
-    height: 100%;
-    width: 250px;
-    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    height: 63px;
+    align-items: center;
 }
 
 .header .header-2part .user:hover {
@@ -292,21 +306,26 @@
 }
 
 .header .header-2part .user .user-name {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    font-size: 19px;
-    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 0.95em;
+    margin-top: 14px;
+    align-self: center;
+    line-height: 30px;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-right: 35px;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98), border-color 0.5s cubic-bezier(0.06, 0.81, 0, 0.98);
+    font-weight: 400;
     color: #FFFFFF;
     user-select: none;
-    text-align: center;
 }
 
-.header .header-2part .user .user-name:hover {
-    cursor: pointer;
-}
-
-.header .header-2part .user .user-name:hover > .arrow-down {
+.header .header-2part .user:hover > .user-name .arrow-down {
     -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
             transform: rotate(180deg);
@@ -315,33 +334,40 @@
 .user .user-name .arrow-down {
     position: relative;
     left: 5px;
-    top: -3px;
+    top: -4px;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
 }
 
-.header .header-2part .user .user-name:hover > .user-options {
-    top: 23px;
+.header .header-2part .user:hover > .options {
+    visibility: visible;
     opacity: 1;
 }
 
-.header-2part .user .user-name .user-options {
-    background: #111111;
-    width: 100%;
-    height: fit-content;
-    position: relative;
-    top: 5px;
-    opacity: 0;
+.header-2part .user .options {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 62px;
+    background-color: #111111;
     text-align: left;
-    box-shadow: 0px 0px 10px #111111;
+    font-size: 1rem;
+    min-width: 200px;
+    width: max-content;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.06, 0.81, 0, 0.98) 0s, visibility 0s;
     z-index: 3;
-    -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    box-shadow: 0px 0px 5px black;
 }
 
-.user .user-name .user-options a {
+.user .options .user-options {
+    color: #1d1d1d;
+    border-bottom: solid 2px #111111;
+    list-style-type: none;
+}
+
+.user .options .user-options a {
     display: block;
     text-decoration: none;
     color: #FFFFFF;
@@ -355,7 +381,7 @@
             transition: all 0.1s linear;
 }
 
-.user .user-name .user-options a:hover {
+.user .options .user-options a:hover {
     background: #333333;
 }
 

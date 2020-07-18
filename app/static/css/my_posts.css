@@ -10,6 +10,15 @@
     max-width: 950px;
 }
 
+.myposts .none-posts {
+    display: block;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    color: #919191;
+    margin:100px auto;
+}
+
 .my-posts .body-post {
     border: 1px solid #808080;
     border-radius: 5px;

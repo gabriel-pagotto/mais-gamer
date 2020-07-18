@@ -59,16 +59,21 @@
         <input type="checkbox" id="mo2" class="input-second-options-mobile">
         <label for="mo2">
             <div disabled="True" class="header-1part-2opc">
-            <a class="option-title">JOGOS</a>
-            <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
-            <div class="games-options">
-                {% for game in header_games %}
-                    {% if game.id != 0 %}
-                        <a href="{{ url_for('notices_by_game', name=game.name) }}" class="game-option">{{ game.name }}</a>
-                    {% endif %}
-                {% endfor %}
+                <div class="prim-header">
+                    <a class="option-title">JOGOS
+                        <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
+                    </a>
+                    <ul class="games-options">
+                        {% for game in header_games %}
+                            {% if game.id != 0 %}
+                                <li>
+                                    <a href="{{ url_for('notices_by_game', name=game.name) }}" class="game-option">{{ game.name }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
-        </div>
         </label>
         <div class="second-options-mobile" id="som-2">
             <div class="second-options-mobile-header">
@@ -96,28 +101,42 @@
         <div class="user-informations">
             {% if current_user.is_authenticated %}
                 <div class="user">
-                    <div class="user-name">{{ current_user.name }}
+                    <a class="user-name">{{ current_user.name }}
                         <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
+                    </a>
+                    <ul class="options">
                         {% if current_user.is_admin == 1 %}
-                            <div class="user-options">
+                            <li class="user-options">
                                 <a href="{{ url_for('admin') }}" class="post">PAINEL DE ADMINISTRADOR</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
-                            </div>
+                            </li>
                         {% elif current_user.is_poster == 1 %}
-                            <div class="user-options">
+                            <li class="user-options">
                                 <a href="{{ url_for('posts') }}" class="post">POSTAGENS</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
-                            </div>
+                            </li>
                         {% else %}
-                            <div class="user-options">
+                            <li class="user-options">
                                 <a href="{{ url_for('profile') }}" id="mo" class="post">MEU USUÁRIO</a>
+                            </li>
+                            <li class="user-options">
                                 <a href="{{ url_for('logout') }}" class="logout">ENCERRAR SESSÃO</a>
-                            </div>
+                            </li>
                         {% endif %}
-                    </div>
+                    </ul>
                 </div>
             {% else %}
                 <div class="auth">

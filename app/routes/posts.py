@@ -34,6 +34,7 @@ def posts():
         header_games = header_games,
         sub_header = sub_header(1, 'posts'),
         posts = posts.items,
+        num_posts = len(posts.items),
         posts_pages = posts,
         page_number = page,
         next_url = next_url,
