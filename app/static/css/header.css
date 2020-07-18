@@ -142,7 +142,6 @@
     font-size: 12px;
     user-select: none;
     display: inline-block;
-    font-size: 12px;
     font-weight: 600;
     overflow: hidden;
     text-transform: capitalize;
@@ -447,6 +446,25 @@
         z-index: 4;
     }
 
+    .header .header-1part .header-1part-2opc .prim-header .option-title {
+        font-size: 16px;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .header-1part-2opc .prim-header:hover > .option-title {
+        opacity: 1;
+        color: #D2D2D2;
+    }
+    
+    .header-1part-2opc .prim-header:hover > .option-title .arrow-down {
+        fill: #D2D2D2;
+        opacity: 1;
+        -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+    }
+
     .games-options {
         display: none;
     }
@@ -516,6 +534,16 @@
 
     #mo2:checked ~ #som-2 {
         right: 0;
+    }
+
+    .header .header-1part #header-login {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .header .header-1part #header-login .arrow-right {
+        top: 1px;
+        left: 10px;
     }
 
     .header .header-1part .header-1part-1opc {
