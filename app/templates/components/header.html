@@ -1,19 +1,17 @@
 <div class="header">
-    <!--<div class="loader">
+    <div class="loader">
         <div class="loader-figure">
         </div>
-        <span>CARREGANDO</span>
         <script>
             window.addEventListener('load', () => {
                 const loader = document.querySelector('.loader');
                 loader.className += ' hidden';
             });
         </script>
-    </div>-->
+    </div>
     <input type="checkbox" id="options1" onchange="dockCloser()">
     <label for="options1"><div class="background-options"></div></label>
     <div class="header-mobile">
-        <div class="search"></div>
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Mais Gamer" class="logo">
         <label for="options1" class="options"><svg width="35" height="35" class="options-button" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><path fill="#C7C7C7" d="M22 10v2H10v-2zM22 15v2H10v-2zM22 20v2H10v-2z"></path></svg></label>
     </div>
