@@ -17,6 +17,8 @@
     justify-self: center;
     color: #919191;
     margin:100px auto;
+    padding: 0 10px;
+    text-align: center;
 }
 
 .my-posts .body-post {
@@ -99,6 +101,7 @@
 
 @media (max-width: 1025px) {
     .myposts .m-title {
+        margin: 0;
         text-align: center;
     }
 
