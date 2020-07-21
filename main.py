@@ -10,7 +10,7 @@ context = 'adhoc'
 if debug == True:
     app.run(host='0.0.0.0', port= port, debug=debug)
 elif debug == False:
-    app.run(host='0.0.0.0', port= port, debug=debug)
+    app.run(host='0.0.0.0', port= port, debug=debug, ssl_context='adhoc')
 
 @app.shell_context_processor
 def make_shell_context():
