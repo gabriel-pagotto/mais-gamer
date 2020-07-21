@@ -19,7 +19,7 @@ def posts():
     if current_user.is_admin != 1 and current_user.is_poster != 1:
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    posts = Posts.query.filter_by(user_id = current_user.id).order_by(desc('addedAt')).paginate(page, 3, True)
+    posts = Posts.query.filter_by(user_id = current_user.id).order_by(desc('addedAt')).paginate(page, 9, True)
 
     next_url = url_for('posts', page=posts.next_num) \
         if posts.has_next else None
