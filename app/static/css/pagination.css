@@ -7,10 +7,8 @@
 
 .payload .pagination .opc {
     text-decoration: none;
-    color: #FFFFFF;
-    background-color: #ffa31a;
-    padding: 5px 15px;
-    font-size: 15px;
+    color: #ffa31a;
+    font-size: 23px;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;

@@ -1,7 +1,7 @@
 <div class="pagination">
     {% if posts_pages.pages > 1 %}
         {% if prev_url %}
-            <a href="{{ prev_url }}" class="opc" title="Página anterior"><</a>
+            <a href="{{ prev_url }}" class="opc" title="Página anterior"><i class="fas fa-arrow-circle-left"></i></a>
         {% endif %}
             <div class="page-numbers">
                 {% if posts_pages.prev_num != None and posts_pages.prev_num - 1 > 0 %}
@@ -19,7 +19,7 @@
                 {% endif %}
             </div>
         {% if next_url %}
-            <a href="{{ next_url }}" class="opc" title="Próxima página">></a>
+            <a href="{{ next_url }}" class="opc" title="Próxima página"><i class="fas fa-arrow-circle-right"></i></a>
         {% endif %}
     {% endif %}
 </div>
