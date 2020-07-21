@@ -22,8 +22,8 @@
                         <h1 class="header-title">{{ notice.title }}</h1>
                         {% if game.id != 0 %}
                             <div class="game">
-                                    <img src="{{ game.icon }}" alt="{{ game.name }}">
-                                    <!--<h2 class="game">{{ game.name }}</h2>-->
+                                <img src="{{ game.icon }}" alt="{{ game.name }}">
+                                <!--<h2 class="game">{{ game.name }}</h2>-->
                             </div>
                         {% endif %}
                         <span class="posted-by">{{ user.name + ' ' + user.surname + ' - @' +user.username}}</span>
@@ -42,14 +42,15 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
-                    {% for content in notice_content %}
-                        {% if content.type == 'IMG' %}
-                            <img src="{{ content.content }}" alt="{{ notice.title }}">
-                        {% elif content.type == 'TXT' %}
-                            <pre>{{ content.content }}</pre>
-                        {% endif %}
-                    {% endfor %}
+                    <div class="notice-body">
+                        <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
+                        {% for content in notice_content %}
+                            {% if content.type == 'IMG' %}
+                                <img src="{{ content.content }}" alt="{{ notice.title }}">
+                            {% elif content.type == 'TXT' %}
+                                <pre>{{ content.content }}</pre>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             {% include 'components/footer.html' %}
