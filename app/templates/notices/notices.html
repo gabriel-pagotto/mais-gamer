@@ -23,7 +23,7 @@
                         <div class="notice-description">
                             <h1 class="title">{{ notice.title }}</h1>
                             <p class="subtitle">{{ notice.subtitle }}</p>
-                            <p class="addedAt">{{ DatePost(notice.addedAt) }}</p>
+                            <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
                             <div class="itens">
                                 <a class="read-more" href="{{ url_for('notice', id = notice.id) }}"> Ler mais</a>
                             </div>

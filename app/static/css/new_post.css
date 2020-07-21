@@ -145,6 +145,10 @@
     cursor: pointer;
 }
 
+.posts-actions .new-post .new-post-inputs #CK1 {
+    display: none;
+}
+
 .posts-actions .new-post .new-post-inputs .submit {
     border-radius: 0;
     border: 0 none;

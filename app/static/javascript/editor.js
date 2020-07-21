@@ -1,12 +1,6 @@
 function init() {
     render()
     enableEditMode();
-
-    $(function (){
-        $('.text-field').change(function () {
-            iframe.focus();
-        });
-    });
 };
 
 function enableEditMode() {
@@ -34,6 +28,11 @@ $(function () {
     });
 });
 
+function addDataOnTextArea(value) {
+    console.log('OKay')
+};
+
+
 function render() {
     const editor = document.querySelector('.editor')
 
@@ -53,7 +52,7 @@ function render() {
         <label id="paste"><i onclick="actions('paste')" class="fas fa-paste"></i></label>
         <label id="delete"><i onclick="actions('delete')" class="fa fa-trash-alt"></i></label>
     </div>
-    <iframe name="text-field" class="text-field" frameborder="0"></iframe>  
+    <iframe name="text-field" class="text-field" frameborder="0" onchange="addDataOnTextArea()"></iframe>  
     `
 };
 

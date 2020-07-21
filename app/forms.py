@@ -43,9 +43,9 @@ class NewPostForm(FlaskForm):
 class NewPostFormTest(FlaskForm):
     title = StringField(validators=[data_required()])
     subtitle = StringField(validators=[data_required()])
-    cover_image = FileField(validators=[FileRequired()])
+    cover_image = FileField(validators=[data_required(), FileRequired()])
     game_id = SelectField(validators=[data_required()])
-    post_content = TextAreaField()
+    post_content = TextAreaField(validators=[data_required()])
     submit = SubmitField()
 
 class ProfileForm(FlaskForm):

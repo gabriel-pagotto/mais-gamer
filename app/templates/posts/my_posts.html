@@ -11,7 +11,7 @@
                         <a href="{{ url_for('edit_post', id=post.id) }}" class="edit">EDITAR</a>
                         <a href="{{ url_for('delete_post', id=post.id) }}" class="delete">DELETAR</a>
                     </div>
-                    <p>{{ DatePost(post.addedAt) }}</p>
+                    <p><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(post.addedAt) }}</p>
                 </div>
             {% endfor %}
         </div>

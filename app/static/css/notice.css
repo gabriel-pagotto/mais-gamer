@@ -90,14 +90,26 @@
     width: max-content;
     float: right;
     display: flex;
+    margin-bottom: 5px;
 }
 
- .notice-header .notice-options .share a img {
-    width: initial;
-    height: 35px;
+ .notice-header .notice-options .share a i {
+    font-size: 30px;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
+}
+
+.notice-header .notice-options .share a #facebook {
+    color: #36589F;
+}
+
+.notice-header .notice-options .share a #twitter {
+    color: #1A91DA;
+}
+
+.notice-header .notice-options .share a #whatsapp {
+    color: #25CC63;
 }
 
 .notice-header .notice-options .share a img:hover {

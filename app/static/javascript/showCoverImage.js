@@ -9,7 +9,7 @@ $(function() {
             $('.image-cover').show();
             fileReader.readAsDataURL(file);
             imgCover.style.display = 'block';
-            imageCoverSelect.innerHTML = 'Trocar imagem &nbsp;<i class="fa fa-image"></i>'
+            imageCoverSelect.innerHTML = 'Trocar imagem &nbsp;<i class="fas fa-exchange-alt"></i>'
         } else {
             $('.image-cover').hide();
             imageCoverSelect.innerHTML = 'Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i>'

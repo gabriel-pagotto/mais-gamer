@@ -22,21 +22,21 @@
 }
 
 .footer .footer-2part a {
-    margin-left: 30px;
+    margin: 0 15px;
     text-decoration: none;
 }
 
-.footer .footer-2part a img {
-    width: 30px;
-    height: 30px;
+.footer .footer-2part a i {
+    font-size: 22px;
     opacity: 0.7;
+    color: #FFFFFF;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
 }
 
-.footer .footer-2part a img:hover {
-    opacity: 1; 
+.footer .footer-2part a i:hover {
+    opacity: 1;
 }
 
 .footer .footer-2part .site-name {
@@ -69,5 +69,9 @@
 
     .footer .footer-2part .site-name {
         margin: 0px;
+    }
+
+    .footer .footer-2part a i {
+        font-size: 25px;
     }
 }
