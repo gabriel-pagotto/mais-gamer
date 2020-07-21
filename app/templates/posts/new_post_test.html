@@ -4,14 +4,49 @@
         {% include 'components/head.html' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/my_posts.css') }}">   
         <link rel="stylesheet" href="{{ url_for('static', filename='css/new_post.css') }}">    
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}"></link>
+        <script src="https://kit.fontawesome.com/ed0f511ec4.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div class='web'>
             {% include 'components/header.html' %}
-            <div class="payload">
-                <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-                <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>   
-                <textarea name="" id="" cols="30" rows="10"></textarea>                             
+            <div class="payload">  
+                <div class="posts">
+                    <div class="posts-actions">
+                        <div class="new-post">
+                            <h1 class="new-info">Nova notícia</h1>
+                            <div class="new-post-inputs">
+                                {{ form.hidden_tag() }}
+                                    <form action="" method="post" enctype="multipart/form-data" class="form-sub">
+                                        {{ form.title(placeholder="Título", class_="new-post-title") }}
+                                        {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
+                                        {{ form.cover_image(class_="cover_image", id="cover_image") }}
+                                        <label for="cover_image" class="image-cover-select">Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i></label>
+                                        <img src="" alt="" class="image-cover">
+                                        <script src="{{ url_for('static', filename='javascript/showCoverImage.js') }}"></script>
+                                        <!--{{ form.post_content(class_="new-post-text", id="CK1", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10" ) }}-->
+                                        
+                                        <div class="editor"></div>
+                                        <script src="{{ url_for('static', filename='javascript/editor.js') }}"></script>
+                                        <label id="game">Escolha o jogo referente a esta notícia&nbsp;</label>
+                                        {{ form.game_id(for="game", class_="select-game") }}
+                                    {{ form.submit(class_="submit", value="Enviar notícia" ) }}
+                                </form>
+                                <script>
+                                    const form = document.querySelector('.form-sub');
+                                    const submit = document.querySelector('.submit');
+                                    form.addEventListener('submit', () => {
+                                        submit.value = 'Enviando'
+                                        submit.style.background = '#827189'
+                                        submit.style.border = '1px solid #827189'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            
             </div>
             {% include 'components/footer.html' %}
         </div>

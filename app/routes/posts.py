@@ -1,7 +1,7 @@
 import os, json
 from app import app, database
 from app.models import Posts, Games, Post_Content
-from app.forms import NewPostForm
+from app.forms import NewPostForm, NewPostFormTest
 from app.utils.aws_s3 import save_image_and_get_url, delete_image
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
@@ -136,11 +136,13 @@ def delete_post(id):
 @app.route('/postagens/novo/teste', methods=['GET', 'POST'])
 @login_required
 def post_new_test():
+    def teste():
+        return print('okaysadvsadv')
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
         return redirect(url_for('index'))
-    form = NewPostForm()
+    form = NewPostFormTest()
     games = Games.query.all()
     games_choices = [
         ('', 'Selecione uma opção'),
@@ -148,7 +150,17 @@ def post_new_test():
     for game in games:
         games_choices.append((game.id, game.name))
     form.game_id.choices = games_choices
+
     if form.submit():
+        if request.method == 'POST':
+            data = form.post_content.data
+
+            data = data.split('<')
+
+            print(data)
+
+
+    '''if form.submit():
         if request.method == 'POST':
             cover_image_url = save_image_and_get_url(request.files[form.cover_image.data.name])
             post = Posts(
@@ -181,7 +193,7 @@ def post_new_test():
             
             database.session.commit()
 
-            return redirect(url_for('notice', id=post.id))
+            return redirect(url_for('notice', id=post.id))'''
 
     return render_template(
         'posts/new_post_test.html',
@@ -191,4 +203,5 @@ def post_new_test():
         choices = games_choices,
         header_games = header_games,
         sub_header = sub_header(2, 'posts'),
+        teste = teste,
     )

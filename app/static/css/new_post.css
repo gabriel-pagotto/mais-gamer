@@ -19,24 +19,55 @@
 .posts-actions .new-post .new-post-inputs input {
     -webkit-appearance: none;
     display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #000000;
+    width: 95%;
+    padding: 1% 2.5%;
+    margin-bottom: 10px;
+    border: 1px solid #BBC0C4;
     border-radius: 5px;
-    color: #1b1b1b;
 }
 
 .posts-actions .new-post .new-post-inputs input:focus {
-    border: 1px solid #ffa31a;
-    outline: none;
+    box-shadow: 0 0 5px #BBC0C4;
+    border: 1px solid #BBC0C4;
+    outline: 0;
+}
+
+.posts-actions .new-post .new-post-inputs .cover_image {
+    display: none;
+}
+
+.posts-actions .new-post .new-post-inputs .image-cover-select {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 1.5% 5%;
+    border: 1px solid #BBC0C4;
+    border-radius: 20px;
+    align-items: center;
+    transition: all 0.1s linear;
+}
+
+.posts-actions .new-post .new-post-inputs .image-cover-select:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.posts-actions .new-post .new-post-inputs .image-cover-select:active {
+    background-color: #BBC0C4;
+}
+
+.posts-actions .new-post .new-post-inputs .image-cover {
+    display: none;
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0 0 5px #BBC0C4;
 }
 
 .posts-actions .new-post .new-post-inputs .new-post-text {
     display: block;
     width: 100%;
     height: fit-content;
-    margin-bottom: 20px;
     padding: 10px;
     resize: none;
     overflow-y: hidden;
@@ -46,11 +77,11 @@
 }
 
 .posts-actions .new-post .new-post-inputs .new-post-title {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .posts-actions .new-post .new-post-inputs .new-post-subtitle {
-    font-size: 19px;
+    font-size: 14px;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game {
@@ -134,8 +165,16 @@
         width: 90%;
     }
 
+    .posts-actions .new-post .new-post-inputs .image-cover {
+        width: 100%;
+    }
+
     .posts-actions .new-post .new-post-inputs .new-post-title {
-        font-size: 28px;
+        font-size: 22px;
+    }
+
+    .posts-actions .new-post .new-post-inputs .new-post-subtitle {
+        font-size: 18px;
     }
 
     .posts-actions .new-post .new-post-inputs .new-post-text {

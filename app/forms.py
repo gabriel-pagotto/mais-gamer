@@ -40,6 +40,14 @@ class NewPostForm(FlaskForm):
     pc_last_text = TextAreaField(data_required())
     submit = SubmitField()
 
+class NewPostFormTest(FlaskForm):
+    title = StringField(validators=[data_required()])
+    subtitle = StringField(validators=[data_required()])
+    cover_image = FileField(validators=[FileRequired()])
+    game_id = SelectField(validators=[data_required()])
+    post_content = TextAreaField()
+    submit = SubmitField()
+
 class ProfileForm(FlaskForm):
     username = StringField(validators=[data_required()])
     name = StringField(validators=[data_required()])
