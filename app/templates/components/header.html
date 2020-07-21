@@ -28,25 +28,39 @@
                     <label class="back" for="mo1"><svg width="8" height="5" viewBox="0 0 8 5" class="arrow-left" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>Voltar</label>
                     <label class="exit" for="options1"><svg width="35" height="35" class="" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><g stroke="#C7C7C7" stroke-width="2"><path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path></g></svg></label>
                 </div>
+                <ul class="options-mobile">
                     {% if current_user.is_admin == 1 %}
-                        <div class="options-mobile">
+                        <li>
                             <a href="{{ url_for('admin') }}" id="mo" class="post"><i class="fas fa-crown" style="margin-right: 10px;"></i>PAINEL DE ADMINISTRADOR</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
-                        </div>
+                        </li>
                     {% elif current_user.is_poster == 1 %}
-                        <div class="options-mobile">
+                        <li>
                             <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
-                        </div>
+                        </li>
                     {% else %}
-                        <div class="options-mobile">
+                        <li>
                             <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                        </li>
+                        <li>
                             <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
-                        </div>
+                        </li>
                     {% endif %}
+                </ul>
             </div>
             {% else %}
             <div class="header-1part-1opc" id="header-login">
@@ -80,13 +94,15 @@
                 <label class="back" for="mo2"><svg width="8" height="5" viewBox="0 0 8 5" class="arrow-left" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>Voltar</label>
                 <label class="exit" for="options1"><svg width="35" height="35" class="" viewBox="0 0 32 32"><circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle><g stroke="#C7C7C7" stroke-width="2"><path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path></g></svg></label>
             </div>
-            <div class="options-mobile">
+            <ul class="options-mobile">
                 {% for game in header_games %}
                     {% if game.id != 0 %}
-                        <a href="{{ url_for('notices_by_game', name=game.name) }}" id="mo" class="post">{{ game.name }}</a>
+                        <li>
+                            <a href="{{ url_for('notices_by_game', name=game.name) }}" id="mo" class="post">{{ game.name }}</a>
+                        </li>
                     {% endif %}
                 {% endfor %}
-            </div>
+            </ul>
         </div>
     </div>
     <div class="header-2part">
