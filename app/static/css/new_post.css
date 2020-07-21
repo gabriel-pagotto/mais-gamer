@@ -41,11 +41,12 @@
     width: max-content;
     margin: 0 auto;
     font-size: 16px;
-    padding: 1.5% 5%;
+    padding: 1% 5%;
     border: 1px solid #BBC0C4;
     border-radius: 20px;
     align-items: center;
     transition: all 0.1s linear;
+    margin-bottom: 10px;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover-select:hover {
@@ -60,7 +61,7 @@
 .posts-actions .new-post .new-post-inputs .image-cover {
     display: none;
     width: 50%;
-    margin: 20px auto;
+    margin: 0 auto 10px auto;
     box-shadow: 0 0 5px #BBC0C4;
 }
 
@@ -80,36 +81,64 @@
     font-size: 20px;
 }
 
+.posts-actions .new-post .new-post-inputs .new-post-title:hover {
+    opacity: 0.6;
+}
+
 .posts-actions .new-post .new-post-inputs .new-post-subtitle {
     font-size: 14px;
 }
 
+.posts-actions .new-post .new-post-inputs .new-post-subtitle:hover {
+    opacity: 0.6;
+}
+
+.posts-actions .new-post .new-post-inputs #game {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    font-size: 17px;
+} 
+
 .posts-actions .new-post .new-post-inputs .select-game {
     -webkit-appearance: none;
-    border: 1px transparent;
-    border-bottom: 1px solid #1b1b1b;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 1% 6%;
+    border: 1px solid #BBC0C4;
+    border-radius: 20px;
+    align-items: center;
     transition: all 0.1s linear;
-    font-size: 14px;
-    background-color: transparent;
-    -moz-transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
+    margin-bottom: 10px;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game:hover {
     cursor: pointer;
-    border-bottom: 1px solid #000000;
+    opacity: 0.6;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game:focus {
-    border: 0 none;
-    border-bottom: 1px solid #ffa31a;
-    outline: none;
-    box-shadow: 0 0 0;
+    box-shadow: 0 0 5px #BBC0C4;
+    border: 0 solid none;
+    outline: 0;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game option {
-    color: #1b1b1b;
-    font-size: 14px;
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 1% 5%;
+    border: 1px solid #BBC0C4;
+    border-radius: 20px;
+    align-items: center;
+    transition: all 0.1s linear;
+    margin-bottom: 10px;
+    color: #111111;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game option:hover {
@@ -166,7 +195,7 @@
     }
 
     .posts-actions .new-post .new-post-inputs .image-cover {
-        width: 100%;
+        width: 90%;
     }
 
     .posts-actions .new-post .new-post-inputs .new-post-title {

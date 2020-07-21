@@ -16,7 +16,9 @@
 
 .header .background-options {
     display: none;
-    opacity: 0;
+    opacity: 0.5;
+    transition: opacity 2s cubic-bezier(0.06, 0.81, 0, 0.98) 2s, visibility 2s;
+    animation-fill-mode: forwards;
 }
 
 .header-1part .header-1part-top {
@@ -444,6 +446,7 @@
         width: 100%;
         height: 100%;
         z-index: 4;
+        transition: opacity 0.5s cubic-bezier(0.06, 0.81, 0, 0.98)
     }
 
     .header .header-1part .header-1part-2opc .prim-header .option-title {

@@ -19,17 +19,17 @@
                             <div class="new-post-inputs">
                                 {{ form.hidden_tag() }}
                                     <form action="" method="post" enctype="multipart/form-data" class="form-sub">
-                                        {{ form.title(placeholder="Título", class_="new-post-title") }}
-                                        {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
                                         {{ form.cover_image(class_="cover_image", id="cover_image") }}
                                         <label for="cover_image" class="image-cover-select">Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i></label>
                                         <img src="" alt="" class="image-cover">
+                                        {{ form.title(placeholder="Título", class_="new-post-title") }}
+                                        {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
                                         <script src="{{ url_for('static', filename='javascript/showCoverImage.js') }}"></script>
                                         <!--{{ form.post_content(class_="new-post-text", id="CK1", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10" ) }}-->
                                         
                                         <div class="editor"></div>
                                         <script src="{{ url_for('static', filename='javascript/editor.js') }}"></script>
-                                        <label id="game">Escolha o jogo referente a esta notícia&nbsp;</label>
+                                        <label id="game">Escolha o jogo referente a esta notícia:</label>
                                         {{ form.game_id(for="game", class_="select-game") }}
                                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                                 </form>
