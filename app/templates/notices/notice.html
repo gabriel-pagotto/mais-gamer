@@ -42,8 +42,8 @@
                             </div>
                         </div>
                     </div>
+                    <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
                     <div class="notice-body">
-                        <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
                         {% for content in notice_content %}
                             {% if content.type == 'IMG' %}
                                 <img src="{{ content.content }}" alt="{{ notice.title }}">

@@ -131,6 +131,11 @@
         width: 100%;
         min-width: 0;
     }
+
+    .web .payload .notice .notice-body {
+        width: 100%;
+        margin: auto;
+    }
     
     .payload .notice .notice-header {
         margin-left: 10px;
