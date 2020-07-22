@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
         <meta property="og:title" content="{{ notice.title }}" />
         <meta property="og:description" content="{{ notice.subtitle }}" />
@@ -30,15 +29,16 @@
                         <div class="notice-options">
                             <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
                             <div class="share">
-                                <a id="facebook" href="{{ notice_share('facebook') }}" target="_blank" title="Compartilhar esta notícia no Facebook">
+                                <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
                                     <i class="fab fa-facebook" id="facebook"></i>
                                 </a>
-                                <a id="twitter" href="{{ notice_share('twitter') }}" target="_blank" title="Compartilhar esta notícia no Twitter">
+                                <a id="twitter" href="" target="_blank" title="Compartilhar esta notícia no Twitter">
                                     <i class="fab fa-twitter" id="twitter"></i>
                                 </a>
-                                <a id="whatsapp" href="{{ notice_share('whatsapp') }}" target="_blank" title="Compartilhar esta notícia no WhatsApp">
+                                <a id="whatsapp" href="" target="_blank" title="Compartilhar esta notícia no WhatsApp">
                                     <i class="fab fa-whatsapp" id="whatsapp"></i>
                                 </a>
+                                <script src="{{ url_for('static', filename='javascript/noticeShare.js') }}"></script>
                             </div>
                         </div>
                     </div>
