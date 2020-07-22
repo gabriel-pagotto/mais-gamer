@@ -80,12 +80,12 @@
 
 .loader .loader-figure {
     display: flex;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #111111;
     border-left-color: #ffa31a;
     border-radius: 50%;
-    animation: loaderFigure 1.5s linear infinite;
+    animation: loaderFigure 1s linear infinite;
     padding: 10px;
     justify-content: center;
     align-items: center;
@@ -95,6 +95,25 @@
     to {
         transform: rotate(360deg)
     }
+}
+
+.loader .loader-figure .center-logo {
+    position: fixed;
+    animation: logo 1s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes logo {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+.loader-figure .center-logo img {
+    width: 40px;
+    height: 40px;
 }
 
 .web .header .header-mobile {
