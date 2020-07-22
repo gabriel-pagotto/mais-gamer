@@ -56,4 +56,4 @@ def DatePost(date_before):
 def datetime_sao_paulo():
     datenow = datetime.now()
     zone = timezone('America/Sao_Paulo')
-    return datenow.astimezone(zone)
+    return datenow.utcnow() #datenow.astimezone(zone)
