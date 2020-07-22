@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta
+from pytz import timezone
 
 def DatePost(date_before):
-    date_now = datetime.utcnow()
+    date_now = datetime_sao_paulo()
 
     date_init = datetime(year=date_before.year, month=date_before.month, day=date_before.day)
     date_final = datetime(year=date_now.year, month=date_now.month, day=date_now.day, hour=date_now.hour)
@@ -51,3 +52,8 @@ def DatePost(date_before):
         }
 
         return str(date_before.day) + ' de ' + months[date_before.month] + ' de ' + str(date_before.year)
+
+def datetime_sao_paulo():
+    datenow = datetime.now()
+    zone = timezone('America/Sao_Paulo')
+    return datenow.astimezone(zone)
