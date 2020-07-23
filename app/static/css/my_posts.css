@@ -61,7 +61,8 @@
     width: 100%;
 }
 
-.my-posts .body-post .options a {
+.my-posts .body-post .options a, .my-posts .body-post .options button {
+    border: 0 none;
     margin: 0 5px;
     font-size: 12px;
     width: max-content;
@@ -75,10 +76,19 @@
             transition: all 0.1s linear;
 }
 
-.my-posts .body-post .options a:hover {
+.my-posts .body-post .options a:hover, .my-posts .body-post .options button:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
+.my-posts .body-post .options a:active, .my-posts .body-post .options button:active {
+    opacity: 0.6;
+}
+
+.my-posts .body-post .options button:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
 
 .my-posts .body-post .options .see {
     background-color: #FFA31A;
@@ -92,6 +102,17 @@
     background-color: #dc143c;
 }   
 
+.my-posts .body-post .options .delete-confirm {
+    display: none;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    transition: all 0.2s linear;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
 
 .my-posts .body-post p {
     font-size: 13px;

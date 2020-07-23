@@ -5,7 +5,7 @@ from app.forms import LoginForm, RegisterForm
 from app.utils.password_hash import set_password_hash, check_password_hash
 from app.utils.font_control import lower, first_letter_upper
 from app.utils.header_games import header_games
-from flask import render_template, redirect, flash, request, url_for
+from flask import render_template, redirect, flash, request, url_for, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 

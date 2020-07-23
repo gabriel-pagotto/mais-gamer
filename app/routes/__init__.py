@@ -1,2 +1,1 @@
-from app.routes import admin, auth, cover, notices, posts, user
-
+from app.routes import admin, ajax, auth, cover, notices, posts, user

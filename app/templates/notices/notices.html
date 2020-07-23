@@ -14,22 +14,32 @@
                         <h1 class="list-game">{{ game.name }}</h1>
                     </div>
                 {% endif %}
-                {% for notice in notices %}
-                    <div class="notice">
-                        <div class="cover_image">
-                            <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
-                        </div>
-                        <div class="notice-description">
-                            <h1 class="title">{{ notice.title }}</h1>
-                            <p class="subtitle">{{ notice.subtitle }}</p>
-                            <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
-                            <div class="itens">
-                                <a class="read-more" href="{{ url_for('notice', id = notice.id) }}"> Ler mais</a>
+                <div class="notices-body">
+                    <div class="all-notices">
+                        {% for notice in notices %}
+                            <div class="notice">
+                                <div class="cover_image">
+                                    <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
+                                </div>
+                                <div class="notice-description">
+                                    <h1 class="title">{{ notice.title }}</h1>
+                                    <p class="subtitle">{{ notice.subtitle }}</p>
+                                    <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
+                                    <div class="itens">
+                                        <a class="read-more" href="{{ url_for('notice', id = notice.id) }}"> Ler mais</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        {% endfor %}
+                        <!--{% include 'components/pagination.html' %}-->
                     </div>
-                {% endfor %}
-                {% include 'components/pagination.html' %}
+                </div>
+                {% if posts_pages.pages < 1 %}
+                {% else %}
+                    <button class="load-more">Carregar mais</button>
+                {% endif %}
+                <span class="final-notices">Fim das notícias</span>
+                <script src="{{ url_for('static', filename='javascript/loadMoreNotices.js') }}"></script>
             </div>
             {% include 'components/footer.html' %}
         </div>

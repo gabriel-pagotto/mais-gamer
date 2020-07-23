@@ -7,7 +7,7 @@ from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
 from app.utils.date_time import DatePost
-from flask import render_template, redirect, flash, request, url_for
+from flask import render_template, redirect, flash, request, url_for, jsonify
 from flask_login import current_user, login_required
 from sqlalchemy import desc
 
