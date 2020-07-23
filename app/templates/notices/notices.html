@@ -34,9 +34,9 @@
                         <!--{% include 'components/pagination.html' %}-->
                     </div>
                 </div>
-                {% if posts_pages.pages < 1 %}
+                {% if posts_pages.pages <= 1 %}
                 {% else %}
-                    <button class="load-more">Carregar mais</button>
+                    <button onclick="loadMore()" class="load-more">Carregar mais</button>
                 {% endif %}
                 <span class="final-notices">Fim das notícias</span>
                 <script src="{{ url_for('static', filename='javascript/loadMoreNotices.js') }}"></script>

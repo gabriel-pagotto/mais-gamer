@@ -27,7 +27,7 @@ def hours():
 def ajax():
     return render_template('ajax.html', title='ajax')
 
-@app.route('/carregar-mais-notícias', methods=['GET'])
+@app.route('/notícias/páginação', methods=['GET'])
 def load_more_notices():
     page = request.args.get('page', 1, type=int)
     posts_pages = Posts.query.order_by(desc('addedAt')).paginate(page, 8, True)
@@ -54,5 +54,42 @@ def load_more_notices():
             'data': all_posts,
         }
 
+
+    return jsonify(data)
+
+@app.route('/notícias/<name>/páginação', methods=['GET'])
+def load_more_notices_by_game(name):
+    page = request.args.get('page', 1, type=int)
+    try:
+        game = Games.query.filter_by(name = name).first()
+        posts_pages = Posts.query.filter_by(game_id = game.id).order_by(desc('addedAt')).paginate(page, 8, True)
+    except AttributeError:
+        return redirect(url_for('notices'))
+    
+    if game.id == 0:
+        return redirect(url_for('index'))
+
+    all_posts = []
+
+    posts = posts_pages.items
+
+    for post in posts:
+        post_data = {
+            'id': post.id,
+            'title': post.title,
+            'subtitle': post.subtitle,
+            'cover_image': post.cover_image,
+            'user_id': post.user_id,
+            'game_id': post.game_id,
+            'addedAt': DatePost(post.addedAt),
+            'views': post.views,
+        }
+
+        all_posts.append(post_data)
+
+        data = {
+            'total_pages': posts_pages.pages,
+            'data': all_posts,
+        }
 
     return jsonify(data)

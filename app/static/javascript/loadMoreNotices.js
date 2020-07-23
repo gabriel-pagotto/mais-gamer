@@ -5,7 +5,7 @@ const finalNotices = document.querySelector('.final-notices');
 let page = 1;
 
 function AJAX(urlExt, method) {
-    const url = (location.origin + urlExt)
+    const url = (location.href + urlExt)
     let XHR = new XMLHttpRequest();                    
     XHR.open(method, url, true);
     XHR.onreadystatechange = () => {
@@ -50,7 +50,7 @@ function AJAX(urlExt, method) {
     XHR.send();
 };
 
-loadMoreButton.addEventListener('click', () => {
-    AJAX(`/carregar-mais-notícias?page=${page}`, 'GET');
+function loadMore() {
     page = page + 1;
-});
+    AJAX(`/páginação?page=${page}`, 'GET');
+};
