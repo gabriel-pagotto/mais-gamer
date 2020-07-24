@@ -123,6 +123,7 @@
     color: #FFFFFF;
     font-size: 17px;
     border-radius: 3px;
+    align-items: center;
     -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
             transition: all 0.2s linear;
