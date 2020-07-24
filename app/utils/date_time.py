@@ -59,4 +59,4 @@ def datetime_sao_paulo():
     tz = pytz.timezone('America/Sao_Paulo')
     utc_time =utc_time.replace(tzinfo=pytz.UTC) 
     st_sao_paulo_time=utc_time.astimezone(tz)
-    return datetime.utcnow #st_sao_paulo_time
+    return datetime.utcnow() #st_sao_paulo_time
