@@ -2,8 +2,10 @@
 <html lang="pt-br">
     <head>
         {% include 'components/head.html' %}
-        <meta property="og:description" content="Maior site de notícias para gamers e e-esports" />
-        <meta name="twitter:description" content="Maior site de notícias para gamers e e-esports" />   
+        <meta property="description" content="Maior site de notícias para gamers e e-esports" />
+        <meta property="twitter:description" content="Maior site de notícias para gamers e e-esports" />  
+        <meta property="twitter:image" content="{{ url_for('static', filename='favicon_2.png') }}"> 
+        <meta property="og:image" content="{{ url_for('static', filename='favicon_2.png') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}"> 
     </head>
     <body>
