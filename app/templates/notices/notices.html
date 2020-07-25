@@ -10,28 +10,27 @@
             <div class="payload">
                 {% if game %}
                     <div class="game">
-                        <img class="list-icon" src="{{ game.icon }}" alt="{{ game.name }}">
                         <h1 class="list-game">{{ game.name }}</h1>
                     </div>
                 {% endif %}
                 <div class="notices-body">
                     <div class="all-notices">
                         {% for notice in notices %}
+                        <a href="{{ url_for('notice', id = notice.id) }}">
                             <div class="notice">
                                 <div class="cover_image">
                                     <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
                                 </div>
                                 <div class="notice-description">
                                     <h1 class="title">{{ notice.title }}</h1>
-                                    <p class="subtitle">{{ notice.subtitle }}</p>
-                                    <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
+                                    <h2 class="subtitle">{{ notice.subtitle }}</h2>
                                     <div class="itens">
-                                        <a class="read-more" href="{{ url_for('notice', id = notice.id) }}"> Ler mais</a>
+                                        <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
                                     </div>
                                 </div>
                             </div>
+                        </a>
                         {% endfor %}
-                        <!--{% include 'components/pagination.html' %}-->
                     </div>
                 </div>
                 {% if posts_pages.pages <= 1 %}

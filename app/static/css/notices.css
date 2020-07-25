@@ -37,6 +37,14 @@
     border-bottom: 1px solid #EBE8EC;
 }
 
+.web .payload .notice:hover {
+    cursor: pointer;
+}
+
+.web .payload a {
+    text-decoration: none;
+}
+
 .web .payload .notice .cover_image {
     overflow: hidden;
     width: 350px;
@@ -61,13 +69,17 @@
             transform: scale(1);
 }
 
+.payload .notice:hover > .notice-description .title {
+    text-decoration: underline;
+}
+
 .payload .notice .notice-description {
     margin-left: 20px;
     width: 65%;
 }
 
 .payload .notice .notice-description .title {
-    font-size: 20px;
+    font-size: 22px;
     color:#222222;
     margin-bottom: 10px;
     -webkit-transition: all 0.2s linear;
@@ -76,7 +88,8 @@
 }
 
 .payload .notice .notice-description .subtitle {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 400;
     color:#222222;
     margin-bottom: 10px;
 }
@@ -192,7 +205,7 @@
     }
     
     .payload .notice .notice-description .title {
-        font-size: 13px;
+        font-size: 15px;
         color:#222222;
         margin-bottom: 5px;
     }
@@ -209,25 +222,15 @@
         font-size: 13px;
         color: #827189;
         top: 100%;
-        display: none;
     }
     
     .payload .notice .notice-description .itens {
+        margin-top: 10px;
         width: max-content;
         position: sticky;
         top: 100%;
         float: right;
         display: flex;
-    }
-    
-    .notice .notice-description .itens .read-more {
-        background: #ffa31a;
-        padding: 5px 15px;
-        text-decoration: none;
-        color: #FFFFFF;
-        -webkit-transition: all 0.2s linear;
-            -moz-transition: all 0.2s linear;
-                transition: all 0.2s linear;
     }
 
     .web .payload .load-more {

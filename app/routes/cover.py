@@ -23,10 +23,20 @@ def index():
         last_notices.append(post)
     last_notices.reverse()
     last_notice = last_notices[0]
-    rest_notices = [last_notices[1], last_notices[2], last_notices[3]]
+    rest_notices = [
+        last_notices[1],
+        last_notices[2],
+        last_notices[3],
+        last_notices[4],
+        last_notices[5],
+        last_notices[6],
+    ]
 
     games = Games.query.order_by('name').all()
 
+    del(last_notices[0])
+    del(last_notices[0])
+    del(last_notices[0])
     del(last_notices[0])
     del(last_notices[0])
     del(last_notices[0])

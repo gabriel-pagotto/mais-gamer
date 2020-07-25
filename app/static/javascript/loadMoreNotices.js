@@ -17,19 +17,20 @@ function AJAX(urlExt, method) {
                 render = '';
                 renderNotices = notices.map((notice) => {
                     renderData = `
-                        <div class="notice">
-                            <div class="cover_image">
-                                <img src="${notice.cover_image}" alt="${notice.title}" class="cover_image">
-                            </div>
-                            <div class="notice-description">
-                                <h1 class="title">${notice.title}</h1>
-                                <p class="subtitle">${notice.subtitle}</p>
-                                <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>${notice.addedAt}</p>
-                                <div class="itens">
-                                    <a class="read-more" href="${location.origin + '/notícia/' + String(notice.id)}"> Ler mais</a>
+                        <a>
+                            <div class="notice">
+                                <div class="cover_image">
+                                    <img src="${notice.cover_image}" alt="${notice.title}" class="cover_image">
+                                </div>
+                                <div class="notice-description">
+                                    <h1 class="title">${notice.title}</h1>
+                                    <h2 class="subtitle">${notice.subtitle}</h2>
+                                    <div class="itens">
+                                        <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>${notice.addedAt}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     `
                     render = render + renderData;
                 });
