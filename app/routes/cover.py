@@ -34,7 +34,7 @@ def index():
 
     return render_template(
         'index.html',
-        title = 'Mais Gamer - Notícias para Gamers',
+        title = 'Mais Gamer - Notícias sobre Games e eSports',
         last_notice = last_notice,
         rest_notices = rest_notices,
         last_notices = last_notices,

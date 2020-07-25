@@ -66,7 +66,7 @@ def notices_by_game(name):
         header_games = header_games,
     )
 
-@app.route('/notícias/eSports', methods=['GET'])
+@app.route('/eSports', methods=['GET'])
 def notices_eSports():
     page = request.args.get('page', 1, type=int)
     posts_pages = Posts.query.filter_by(is_esport = 1).order_by(desc('addedAt')).paginate(page, 8, True)
