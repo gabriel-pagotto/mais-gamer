@@ -573,6 +573,10 @@
         left: 10px;
     }
 
+    .header .header-1part .header-items {
+        display: block;
+    }
+
     .header .header-1part .header-1part-1opc {
         display: block;
         margin: 0;

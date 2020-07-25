@@ -374,13 +374,7 @@ a .notice-1 .icon img {
         width: max-content;
         align-items: center;
     }
-    
-    .all-notices .header-all-notices .notice-category img {
-        position: relative;
-        top: 0;
-        height: 30px;
-        width: initial;
-    }
+
 
     .all-notices .header-all-notices .notice-category {
         display: block;
@@ -404,7 +398,7 @@ a .notice-1 .icon img {
 
     .all-notices .elements {
         display: block;
-        padding-bottom: 35px;
+        padding-bottom: 20px;
     }
 
     .all-notices .elements .notice-element {
@@ -413,7 +407,7 @@ a .notice-1 .icon img {
         margin-bottom: 25px;
         height: max-content;
         height: max-content;
-        box-shadow: 0 0 5px  #827189;
+        box-shadow: 0 0 5px #827189;
         padding-bottom: 10px;
     }
 
