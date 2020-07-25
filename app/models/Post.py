@@ -1,4 +1,5 @@
 from app import database
+from datetime import datetime
 from app.utils.date_time import datetime_sao_paulo
 from flask_login import UserMixin
 
@@ -9,7 +10,7 @@ class Posts(database.Model):
     cover_image = database.Column(database.Text)
     game_id = database.Column(database.Integer, database.ForeignKey('games.id'))
     user_id = database.Column(database.Integer, database.ForeignKey('users.id'))
-    addedAt = database.Column(database.DateTime, default=datetime_sao_paulo())
+    addedAt = database.Column(database.DateTime, default=datetime.utcnow())
     views = database.Column(database.Integer, default=0)
     is_esport = database.Column(database.Boolean)
 

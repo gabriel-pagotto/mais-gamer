@@ -66,6 +66,22 @@ def notices_by_game(name):
         header_games = header_games,
     )
 
+@app.route('/notícias/eSports', methods=['GET'])
+def notices_eSports():
+    page = request.args.get('page', 1, type=int)
+    posts_pages = Posts.query.filter_by(is_esport = 1).order_by(desc('addedAt')).paginate(page, 8, True)
+    posts = posts_pages.items
+
+    return render_template(
+        'notices/notices.html',
+        title = 'Todas as notícias',
+        def_name = 'notices',
+        notices = posts,
+        DatePost = DatePost,
+        posts_pages = posts_pages,
+        header_games = header_games,
+    )
+
 @app.route('/notícia/<id>', methods=['GET'])
 def notice(id):
     post = Posts.query.filter_by(id = id).first()

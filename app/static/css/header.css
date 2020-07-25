@@ -131,7 +131,7 @@
     text-decoration: none;
     color: #FFFFFF;
     padding: 3px 10px;
-    font-size: 12px;
+    font-size: 14px;
     user-select: none;
     -webkit-transition: all 0.1s linear;
         -moz-transition: all 0.1s linear;
@@ -160,7 +160,7 @@
     text-decoration: none;
     color: #FFFFFF;
     padding: 3px 10px;
-    font-size: 12px;
+    font-size: 14px;
     user-select: none;
     display: inline-block;
     font-weight: 600;
@@ -224,7 +224,7 @@
     display: block;
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
     padding: 10px 10px;
     user-select: none;
@@ -372,7 +372,7 @@
     top: 62px;
     background-color: #111111;
     text-align: left;
-    font-size: 1rem;
+    font-size: 3rem;
     min-width: 200px;
     width: max-content;
     opacity: 0;
@@ -391,7 +391,7 @@
     display: block;
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     padding: 20px 15px;
     user-select: none;

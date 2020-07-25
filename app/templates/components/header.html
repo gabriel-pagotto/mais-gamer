@@ -34,33 +34,33 @@
                 <ul class="options-mobile">
                     {% if current_user.is_admin == 1 %}
                         <li>
-                            <a href="{{ url_for('admin') }}" id="mo" class="post"><i class="fas fa-crown" style="margin-right: 10px;"></i>PAINEL DE ADMINISTRADOR</a>
+                            <a href="{{ url_for('admin') }}" id="mo" class="post"><i class="fas fa-crown" style="margin-right: 10px;"></i>Painel de administrador</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                            <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                         </li>
                     {% elif current_user.is_poster == 1 %}
                         <li>
-                            <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                            <a href="{{ url_for('posts') }}" id="mo" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                         </li>
                     {% else %}
                         <li>
-                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                            <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                            <a href="{{ url_for('logout') }}" id="mo" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -71,12 +71,13 @@
                 <a class="register" href="{{ url_for('register') }}"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
             </div>
         {% endif %}
-        <a href="{{ url_for('notices') }}" class="header-1part-1opc">PRINCIPAIS NOTÍCIAS</a>
+        <a href="{{ url_for('notices') }}" class="header-1part-1opc">Principais notícias</a>
+        <a href="{{ url_for('notices_eSports') }}" class="header-1part-1opc">eSports</a>
         <input type="checkbox" id="mo2" class="input-second-options-mobile">
         <label for="mo2">
             <div disabled="True" class="header-1part-2opc">
                 <div class="prim-header">
-                    <a class="option-title">JOGOS
+                    <a class="option-title">Jogos
                         <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
                     </a>
                     <ul class="games-options">
@@ -127,33 +128,33 @@
                     <ul class="options">
                         {% if current_user.is_admin == 1 %}
                             <li class="user-options">
-                                <a href="{{ url_for('admin') }}" class="post"><i class="fas fa-crown" style="margin-right: 10px;"></i>PAINEL DE ADMINISTRADOR</a>
+                                <a href="{{ url_for('admin') }}" class="post"><i class="fas fa-crown" style="margin-right: 10px;"></i>Painel de administrador</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('posts') }}" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                                <a href="{{ url_for('posts') }}" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                             </li>
                         {% elif current_user.is_poster == 1 %}
                             <li class="user-options">
-                                <a href="{{ url_for('posts') }}" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>POSTAGENS</a>
+                                <a href="{{ url_for('posts') }}" class="post"><i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                             </li>
                         {% else %}
                             <li class="user-options">
-                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>MEU USUÁRIO</a>
+                                <a href="{{ url_for('profile') }}" id="mo" class="post"><i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário</a>
                             </li>
                             <li class="user-options">
-                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>ENCERRAR SESSÃO</a>
+                                <a href="{{ url_for('logout') }}" class="logout"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão</a>
                             </li>
                         {% endif %}
                     </ul>
