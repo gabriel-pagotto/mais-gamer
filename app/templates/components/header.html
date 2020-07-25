@@ -71,27 +71,32 @@
                 <a class="register" href="{{ url_for('register') }}"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
             </div>
         {% endif %}
-        <a href="{{ url_for('notices') }}" class="header-1part-1opc">Principais notícias</a>
-        <a href="{{ url_for('notices_eSports') }}" class="header-1part-1opc">eSports</a>
-        <input type="checkbox" id="mo2" class="input-second-options-mobile">
-        <label for="mo2">
-            <div disabled="True" class="header-1part-2opc">
-                <div class="prim-header">
-                    <a class="option-title">Jogos
-                        <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
-                    </a>
-                    <ul class="games-options">
-                        {% for game in header_games %}
-                            {% if game.id != 0 %}
-                                <li>
-                                    <a href="{{ url_for('notices_by_game', name=game.name) }}" class="game-option">{{ game.name }}</a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </label>
+        <ul class="header-items">
+            <li><a href="{{ url_for('index') }}" class="header-1part-1opc">Página inicial</a></li>
+            <li><a href="{{ url_for('notices') }}" class="header-1part-1opc">Principais notícias</a></li>
+            <li><a href="{{ url_for('notices_eSports') }}" class="header-1part-1opc">eSports</a></li>
+            <li>
+                <input type="checkbox" id="mo2" class="input-second-options-mobile">
+                <label for="mo2">
+                    <div disabled="True" class="header-1part-2opc">
+                        <div class="prim-header">
+                            <a class="option-title">Jogos
+                                <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-down" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>
+                            </a>
+                            <ul class="games-options">
+                                {% for game in header_games %}
+                                    {% if game.id != 0 %}
+                                        <li>
+                                            <a href="{{ url_for('notices_by_game', name=game.name) }}" class="game-option">{{ game.name }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </label>
+            </li>
+        </ul>
         <div class="second-options-mobile" id="som-2">
             <div class="second-options-mobile-header">
                 <label class="back" for="mo2"><svg width="8" height="5" viewBox="0 0 8 5" class="arrow-left" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg"><path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path></svg>Voltar</label>

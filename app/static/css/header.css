@@ -127,6 +127,11 @@
     border-bottom: 1px solid #212121;
 }
 
+.header .header-1part .header-items {
+    display: flex;
+    list-style-type: none;
+}
+
 .header .header-1part .header-1part-1opc {
     text-decoration: none;
     color: #FFFFFF;
