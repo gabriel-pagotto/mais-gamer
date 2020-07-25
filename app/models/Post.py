@@ -11,6 +11,7 @@ class Posts(database.Model):
     user_id = database.Column(database.Integer, database.ForeignKey('users.id'))
     addedAt = database.Column(database.DateTime, default=datetime_sao_paulo())
     views = database.Column(database.Integer, default=0)
+    is_esport = database.Column(database.Boolean)
 
     def __repr__(self):
         return '<Posts {}>'.format(self.posts)

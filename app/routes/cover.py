@@ -20,7 +20,6 @@ def index():
         ) 
     last_notices = []
     for post in posts:
-        print(get_datetime_7_days(post.addedAt))
         last_notices.append(post)
     last_notices.reverse()
     last_notice = last_notices[0]

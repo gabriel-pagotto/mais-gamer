@@ -28,6 +28,26 @@
                                         <script src="{{ url_for('static', filename='javascript/editor.js') }}"></script>
                                         <label id="game">Escolha o jogo referente a esta notícia:</label>
                                         {{ form.game_id(for="game", class_="select-game") }}
+                                        <label for="is-esport">Esta notícia é sobre eSports?</label>
+                                        <select name="" id="select-esports">
+                                            <option value="no">Não</option>
+                                            <option value="yes">Sim</option>
+                                        </select>
+                                        {{ form.is_esport(class="is-esport", id="is-esport") }}
+                                        <script>
+                                            const selectEsports = document.querySelector('#select-esports');
+                                            const checkbox = document.querySelector('.is-esport');
+                                            
+                                            checkbox.value = false;
+
+                                            selectEsports.addEventListener('change', () => {
+                                                if  (selectEsports.value === 'no') {
+                                                    checkbox.checked = false;
+                                                } else {
+                                                    checkbox.checked = true;
+                                                };
+                                            });
+                                        </script>
                                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                                 </form>
                                 <script src="{{ url_for('static', filename='javascript/submitPost.js') }}"></script>

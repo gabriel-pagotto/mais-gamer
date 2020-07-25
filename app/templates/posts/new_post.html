@@ -18,6 +18,24 @@
                         {{ form.pc_last_text(class_="new-post-text", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10", placeholder="Digite o texto final..." ) }}
                         <label id="game">Escolha o jogo referente a esta notícia&nbsp;</label>
                         {{ form.game_id(for="game", class_="select-game") }}
+                        <label for="is-esport">Esta notícia é sobre eSports?</label>
+                        <select name="" id="select-esports">
+                            <option value="no">Não</option>
+                            <option value="yes">Sim</option>
+                        </select>
+                        {{ form.is_esport(class="is-esport", id="is-esport") }}
+                        <script>
+                            const selectEsports = document.querySelector('#select-esports');
+                            const checkbox = document.querySelector('.is-esport');
+
+                            selectEsports.addEventListener('change', () => {
+                                if  (selectEsports.value === 'no') {
+                                    checkbox.checked = false;
+                                } else {
+                                    checkbox.checked = true;
+                                };
+                            });
+                        </script>
                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                 </form>
                 <script>

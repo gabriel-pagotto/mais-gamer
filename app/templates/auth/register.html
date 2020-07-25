@@ -22,27 +22,51 @@
                             {% endwith %}
                             {{form.username(type="text", maxlength="16", placeholder="Nome de usuário", class_="form-inputs")}}
                             {% for error in form.username.errors %}
-                                <span class="error">[{{ error }}]</span>
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             {{form.name(type="text", maxlength="20", placeholder="Nome", class_="form-inputs")}}
-                            {% for error in form.name.errors %}
-                                <span class="error">[{{ error }}]</span>
+                            {% for error in form.username.errors %}
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             {{form.surname(type="text", maxlength="60", placeholder="Sobrenome", class_="form-inputs")}}
                             {% for error in form.surname.errors %}
-                                <span class="error">[{{ error }}]</span>
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             {{form.email(type="email", maxlength="120", placeholder="Email", class_="form-inputs")}}
                             {% for error in form.email.errors %}
-                                <span class="error">[{{ error }}]</span>
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             {{form.password(type="password", maxlength="16", placeholder="Senha", class_="form-inputs")}}
                             {% for error in form.password.errors %}
-                                <span class="error">[{{ error }}]</span>
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             {{form.confirm_password(type="password", maxlength="16", placeholder="Confirme a senha", class_="form-inputs")}}
                             {% for error in form.confirm_password.errors %}
-                                <span class="error">[{{ error }}]</span>
+                                {% if error == 'This field is required.' %}
+                                    <span class="error">Por favor preencha este campo!</span>
+                                {% else %}
+                                    <span class="error">{{ error }}</span>
+                                {% endif %}
                             {% endfor %}
                             <span class="no-account">Já tem uma conta?&nbsp;<a href="{{ url_for('login') }}" class="create-account">Entre!</a></span>
                             {{form.submit(type="submit", value="Registrar-se", class_="submit")}}

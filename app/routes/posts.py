@@ -58,6 +58,7 @@ def post_new():
     for game in games:
         games_choices.append((game.id, game.name))
     form.game_id.choices = games_choices
+    
     if form.submit():
         if request.method == 'POST':
             cover_image_url = save_image_and_get_url(request.files[form.cover_image.data.name])
@@ -67,6 +68,7 @@ def post_new():
                 cover_image = cover_image_url,
                 game_id = form.game_id.data,
                 user_id = current_user.id,
+                is_esport = form.is_esport.data,
             )
 
             database.session.add(post)
@@ -169,6 +171,7 @@ def post_new_test():
                 cover_image = cover_image_url,
                 game_id = form.game_id.data,
                 user_id = current_user.id,
+                is_esport = form.is_esport.data,
             )
 
             database.session.add(post)

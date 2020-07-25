@@ -93,14 +93,14 @@
     opacity: 0.6;
 }
 
-.posts-actions .new-post .new-post-inputs #game {
+.posts-actions .new-post .new-post-inputs label{
     display: block;
     width: fit-content;
-    margin: 10px auto;
+    margin: 30px auto 5px auto;
     font-size: 17px;
 } 
 
-.posts-actions .new-post .new-post-inputs .select-game {
+.posts-actions .new-post .new-post-inputs select {
     -webkit-appearance: none;
     display: flex;
     justify-content: center;
@@ -116,18 +116,18 @@
     margin-bottom: 10px;
 }
 
-.posts-actions .new-post .new-post-inputs .select-game:hover {
+.posts-actions .new-post .new-post-inputs select:hover {
     cursor: pointer;
     opacity: 0.6;
 }
 
-.posts-actions .new-post .new-post-inputs .select-game:focus {
+.posts-actions .new-post .new-post-inputs select:focus {
     box-shadow: 0 0 5px #BBC0C4;
     border: 0 solid none;
     outline: 0;
 }
 
-.posts-actions .new-post .new-post-inputs .select-game option {
+.posts-actions .new-post .new-post-inputs select option {
     display: block;
     width: max-content;
     margin: 0 auto;
@@ -147,6 +147,17 @@
 
 .posts-actions .new-post .new-post-inputs #CK1 {
     display: none;
+}
+
+.posts-actions .new-post .new-post-inputs .is-esport {
+    display: none;
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: checkbox;
+    padding: 0 0;
+    margin-bottom: 10px;
+    border: 1px solid block;
+    border-radius: 5px;
 }
 
 .posts-actions .new-post .new-post-inputs .submit {
