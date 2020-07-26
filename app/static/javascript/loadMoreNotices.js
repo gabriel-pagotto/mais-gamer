@@ -17,7 +17,7 @@ function AJAX(urlExt, method) {
                 render = '';
                 renderNotices = notices.map((notice) => {
                     renderData = `
-                        <a>
+                        <a href="${location.origin + '/notícia/' + notice.id}">
                             <div class="notice">
                                 <div class="cover_image">
                                     <img src="${notice.cover_image}" alt="${notice.title}" class="cover_image">

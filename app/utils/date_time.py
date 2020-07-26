@@ -57,9 +57,9 @@ def DatePost(date_before):
 def datetime_sao_paulo():
     utc_time = datetime.utcnow()
     tz = pytz.timezone('America/Sao_Paulo')
-    utc_time =utc_time.replace(tzinfo=pytz.UTC) 
-    st_sao_paulo_time=utc_time.astimezone(tz)
-    return datetime.utcnow() #st_sao_paulo_time
+    utc_time = utc_time.replace(tzinfo=pytz.UTC) 
+    st_sao_paulo_time = utc_time.astimezone(tz)
+    return st_sao_paulo_time
 
 def get_datetime_7_days(date_before):
     date_init = datetime(year=datetime_sao_paulo().year, month=datetime_sao_paulo().month, day=datetime_sao_paulo().day)
