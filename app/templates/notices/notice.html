@@ -17,8 +17,7 @@
                         <h1 class="header-title">{{ notice.title }}</h1>
                         {% if game.id != 0 %}
                             <div class="game">
-                                <img src="{{ game.icon }}" alt="{{ game.name }}">
-                                <!--<h2 class="game">{{ game.name }}</h2>-->
+                                <h3 class="game">{{ game.name }}</h3>
                             </div>
                         {% endif %}
                         <span class="posted-by">{{ user.name + ' ' + user.surname + ' - @' +user.username}}</span>
