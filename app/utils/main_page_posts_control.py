@@ -45,5 +45,5 @@ def posts_control():
         posts,
         last_notice,
         last_notices,
-        rest_notices,
+        rest_notices,   
     ]
