@@ -180,14 +180,12 @@ a .notice-1 .icon img {
     justify-content: center;
 }
 
-.all-notices .header-all-notices .notice-category img {
-    position: relative;
-    top: 2px;
-    height: 40px;
-    width: initial;
-}
-
-.all-notices .header-all-notices .notice-category h1 {
+.all-notices .header-all-notices .notice-category .notice-category-name {
+    font-size: 30px;
+    font-weight: 600;
+    padding-right: 20px;
+    width: max-content;
+    display: block;
     position: relative;
     top: 0px;
     left: 12px;
