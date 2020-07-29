@@ -71,6 +71,7 @@
     height: fit-content;
     width: 100%;
     background-color: #000000;
+    border-top: 1px solid #212121;
 }
 
 .footer .footer-2part a {
