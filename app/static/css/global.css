@@ -6,7 +6,7 @@
 }
 
 body {
-    background: green;
+    height: 100vh;
 }
 
 html, body, .web, .payload {
