@@ -17,12 +17,12 @@
                         <h1 class="header-title">{{ notice.title }}</h1>
                         {% if game.id != 0 %}
                             <div class="game">
-                                <h3 class="game">{{ game.name }}</h3>
+                                <span class="game-name">{{ game.name }}</span>
                             </div>
                         {% endif %}
                         <span class="posted-by">{{ user.name + ' ' + user.surname + ' - @' +user.username}}</span>
                         <div class="notice-options">
-                            <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
+                            <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
                             <div class="share">
                                 <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
                                     <i class="fab fa-facebook" id="facebook"></i>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="notice-subtitle">{{ notice.subtitle }}</h3>
+                    <p class="notice-subtitle">{{ notice.subtitle }}</p>
                     <div class="notice-body">
                         {% for content in notice_content %}
                             {% if content.type == 'IMG' %}

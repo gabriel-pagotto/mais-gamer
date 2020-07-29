@@ -61,11 +61,15 @@ a .notice-1 .icon img {
 }
 
 .notice-1 .notice-description .title {
+    font-size: 22px;
+    font-weight: 600;
+    display: block;
     color: #222222;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
 }
 
 .notice-1 .notice-description .description {
+    display: block;
     font-size: 17px;
     font-weight: 400;
     color: #3F3F42;
@@ -73,6 +77,10 @@ a .notice-1 .icon img {
 }
 
 .notice-1 .notice-description .addedAt {
+    position: sticky;
+    top: 100%;
+    display: block;
+    font-size: 14px;
     color: #827189;
     margin-bottom: 15px;
 }
@@ -127,20 +135,24 @@ a .notice-1 .icon img {
 }
 
 .notice-container-top .notice-top-description .notice-top-title {
-    font-size: 20px;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
     color:#222222;
     margin-bottom: 10px;
 }
 
 .notice-container-top .notice-top-description .top-description {
+    display: block;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
     color:#222222;
     margin-bottom: 10px;
 }
 
 .notice-container-top .notice-top-description .notice-top-addedAt {
-    font-size: 13px;
+    display: block;
+    font-size: 14px;
     color:#827189;
     margin-bottom: 10px;
 }
@@ -245,20 +257,24 @@ a .notice-1 .icon img {
 }
 
 .notice-container .notice-description .notice-title {
-    font-size: 20px;
+    display: block;
+    font-weight: 600;
+    font-size: 22px;
     color:#222222;
     margin-bottom: 10px;
 }
 
 .notice-container .notice-description .notice-description {
+    display: block;
+    font-size: 17px;
     font-weight: 400;
-    font-size: 15px;
     color:#222222;
     margin-bottom: 10px;
 }
 
 .notice-container .notice-description .notice-addedAt {
-    font-size: 13px;
+    display: block;
+    font-size: 14px;
     color:#827189;
     margin-bottom: 10px;
 }

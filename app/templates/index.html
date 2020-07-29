@@ -25,9 +25,9 @@
                                         />
                                     </div>
                                     <div class="notice-description">
-                                        <h1 class="title">{{ last_notice.title }}</h1>
-                                        <h2 class="description">{{ last_notice.subtitle }}</h2>
-                                        <p class="addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(last_notice.addedAt) }}</p>
+                                        <span class="title">{{ last_notice.title }}</span>
+                                        <span class="description">{{ last_notice.subtitle }}</span>
+                                        <time class="addedAt" datetime="{{ last_notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(last_notice.addedAt) }}</time>
                                     </div>
                                 </span>
                             </a>
@@ -42,9 +42,9 @@
                                                         alt="{{ notice.title }}">
                                                 </div>
                                                 <div class="notice-top-description">
-                                                    <h1 class="notice-top-title">{{ notice.title }}</h1>
-                                                    <h2 class="top-description">{{ notice.subtitle }}</h2>
-                                                    <p class="notice-top-addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
+                                                    <span class="notice-top-title">{{ notice.title }}</span>
+                                                    <span class="top-description">{{ notice.subtitle }}</h2>
+                                                    <time class="notice-top-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
                                                 </div>
                                             </span>
                                         </a>
@@ -75,9 +75,9 @@
                                                         />
                                                     </div>
                                                     <div class="notice-description">
-                                                        <h1 class="notice-title">{{ notice.title }}</h1>
-                                                        <h2 class="notice-description">{{ notice.subtitle }}</h2>
-                                                        <p class="notice-addedAt"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</p>
+                                                        <span class="notice-title">{{ notice.title }}</span>
+                                                        <span class="notice-description">{{ notice.subtitle }}</span>
+                                                        <time class="notice-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
                                                     </div>
                                                 </span>
                                             </a>

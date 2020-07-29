@@ -47,6 +47,10 @@
     height: max-content;
 }
 
+.payload .notice .notice-header .header-title {
+    font-size: 30px;
+}
+
 .payload .notice .notice-header .game {
     width: max-content;
     display: flex;
@@ -59,15 +63,16 @@
     width: initial;
 }
 
-.notice .notice-header .game h2 {
-    position: relative;
-    top: 15px;
-    left: 10px;
+.notice .notice-header .game .game-name {
+    font-size: 22px;
+    font-weight: 600;
     color: #404040;
     min-width: max-content;
 }
 
 .payload .notice .notice-subtitle {
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
