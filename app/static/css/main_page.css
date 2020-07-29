@@ -6,7 +6,7 @@
 .payload .notices-body {
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: 50%;
     min-width: 1100px;
     margin: 15px auto 35px auto;
     user-select: none;
@@ -14,11 +14,14 @@
 
 .payload .notices-body .notices-top {
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
 }
 
 .notices-top .notice-itens a {
     text-decoration: none;
     transition: all 0.2s linear;
+    display: block;
 }
 
 .notices-top .notice-itens a:hover > .notice-1 .icon img {
@@ -33,16 +36,18 @@
 }
 
 .notices-top .notice-itens a .notice-1 {    
-    display: flex;
-    overflow: hidden;
-    min-width: 100%;
-    margin-left: 4.5%;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #EBE8EC;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .notice-itens a .notice-1 .icon {
-    min-width: 450px;
-    max-width: 500px;
+    margin: 0 auto;
+    max-width: 100%;
     overflow: hidden;
+    display: block;
 }
 
 a .notice-1 .icon img {
@@ -57,23 +62,24 @@ a .notice-1 .icon img {
 }
 
 .notice-itens a .notice-1 .notice-description {
-    margin-left: 20px; 
+    align-items: center;
+    justify-content: center;
 }
 
 .notice-1 .notice-description .title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     display: block;
     color: #222222;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
 }
 
 .notice-1 .notice-description .description {
     display: block;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 400;
     color: #3F3F42;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .notice-1 .notice-description .addedAt {
@@ -82,7 +88,7 @@ a .notice-1 .icon img {
     display: block;
     font-size: 14px;
     color: #827189;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .notice-itens .rest {
