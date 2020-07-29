@@ -37,10 +37,11 @@
 
 .notices-top .notice-itens a .notice-1 {    
     display: block;
-    width: 100%;
+    width: 91%;
     border-bottom: 1px solid #EBE8EC;
     padding-bottom: 20px;
     margin: 0 auto 20px auto;
+    padding: 0 4%;
 }
 
 .notice-itens a .notice-1 .icon {
@@ -305,8 +306,8 @@ a .notice-1 .icon img {
 
     .notices-top .notice-itens a .notice-1 {
         display: block;
-        width: 99%;
-        padding-bottom: 10px;
+        width: 98%;
+        padding: 0 1% 10px 1%;
     }
 
     .notice-itens a .notice-1 .icon {

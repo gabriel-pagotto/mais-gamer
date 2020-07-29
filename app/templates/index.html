@@ -18,6 +18,9 @@
                         <div class="notice-itens">
                             <a class="notice1-url" href="{{ url_for('notice', id=last_notice.id) }}">
                                 <span class="notice-1">
+                                    <div class="notice-description">
+                                        <span class="title">{{ last_notice.title }}</span>
+                                    </div>
                                     <div class="icon">
                                         <img
                                             src="{{ last_notice.cover_image }}"
@@ -25,7 +28,6 @@
                                         />
                                     </div>
                                     <div class="notice-description">
-                                        <span class="title">{{ last_notice.title }}</span>
                                         <span class="description">{{ last_notice.subtitle }}</span>
                                         <time class="addedAt" datetime="{{ last_notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(last_notice.addedAt) }}</time>
                                     </div>
