@@ -13,7 +13,6 @@
                         <form action="" method="post" novalidate>
                             <h1>Meus Dados</h1>
                             {{ form.hidden_tag() }}
-                            <img src="user-icon" alt="{{ current_user.icon }}">
                             <div>
                                 <label for="">NOME DE USUÁRIO</label>
                                 {{ form.username(type="text", class="info-input") }}
