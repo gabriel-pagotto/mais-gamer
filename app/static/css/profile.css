@@ -28,6 +28,23 @@
             transition: all 0.2s linear;
 }
 
+.profile .profile-form .user-icon {
+    display: block;
+    margin: 10px auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #827189;
+}
+
+.profile .profile-form .fa-user-circle {
+    display: block;
+    margin: 10px auto;
+    color: #111111;
+    width: 250px;
+    height: 250px;
+}
+
 .profile .profile-form form h1 {
     display: block;
     width: fit-content;

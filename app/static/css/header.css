@@ -350,6 +350,12 @@
     user-select: none;
 }
 
+.header .header-2part .user .user-name .user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .header .header-2part .user:hover > .user-name .arrow-down {
     -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
@@ -566,6 +572,12 @@
     .header .header-1part #header-login {
         font-size: 22px;
         width: 100%;
+    }
+
+    .header .header-1part #header-login .user-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
     }
 
     .header .header-1part #header-login .arrow-right {
