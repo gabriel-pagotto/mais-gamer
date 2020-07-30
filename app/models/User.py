@@ -9,6 +9,7 @@ class Users(UserMixin, database.Model):
     surname = database.Column(database.String(60))
     email = database.Column(database.String(120), unique=True)
     password = database.Column(database.String(128))
+    icon = database.Column(database.Text)
     createdAt = database.Column(database.DateTime, default=datetime_sao_paulo)
     is_admin = database.Column(database.Boolean, default=False)
     is_poster = database.Column(database.Boolean, default=False)
