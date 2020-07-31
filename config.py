@@ -13,3 +13,4 @@ class Config(object):
     USE_S3_DEBUG = bool(os.getenv('USE_S3_DEBUG') == 'True')
     FLASK_DEBUG = os.getenv('FLASK_DEBUG')
     HTTPS_REDIRECT = os.getenv('HTTPS_REDIRECT')
+    PORT = int(os.environ.get('PORT', 7000))

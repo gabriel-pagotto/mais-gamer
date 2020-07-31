@@ -1,7 +1,7 @@
 __pycache__
 .env
 .vscode
-venv
+env
 migrations
 .flaskenv
 .idea

@@ -1,10 +1,9 @@
-import os
-from app import app
+from app import app, database
 from app.models import Users, Posts, Games
 from config import Config
 
-debug = bool(os.environ.get('FLASK_DEBUG') == 'True')
-port = int(os.environ.get('PORT', 7000))
+debug = app.config['FLASK_DEBUG']
+port = app.config['PORT']
 context = 'adhoc'
 
 app.run(host='0.0.0.0', port= port, debug=debug)
