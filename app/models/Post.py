@@ -13,6 +13,8 @@ class Posts(database.Model):
     addedAt = database.Column(database.DateTime, default=datetime_sao_paulo)
     views = database.Column(database.Integer, default=0)
     is_esport = database.Column(database.Boolean)
+    source_name = database.Column(database.String(50))
+    source_url = database.Column(database.Text)
 
     def __repr__(self):
         return '<Posts {}>'.format(self.posts)

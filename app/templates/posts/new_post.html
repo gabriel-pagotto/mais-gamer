@@ -19,7 +19,7 @@
                         <label id="game">Escolha o jogo referente a esta notícia&nbsp;</label>
                         {{ form.game_id(for="game", class_="select-game") }}
                         <label for="is-esport">Esta notícia é sobre eSports?</label>
-                        <select name="" id="select-esports">
+                        <select id="select-esports">
                             <option value="no">Não</option>
                             <option value="yes">Sim</option>
                         </select>
@@ -36,6 +36,37 @@
                                 };
                             });
                         </script>
+                        <div class="source">
+                            <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
+                            <select id="source-question">
+                                <option value="no">Não</option>
+                                <option value="yes">Sim</option>
+                            </select>
+                            {{ form.source_name(class="source-name", type="name", placeholder="Coloque o nome da fonte usada como referência") }}
+                            {{ form.source_url(class="source-url", type="url", placeholder="Coloque a url da fonte usada como referência") }}
+                            <script>
+                                const sourceQuestion = document.querySelector('#source-question');
+                                const sourceName = document.querySelector('.source-name');
+                                const sourceUrl = document.querySelector('.source-url');
+                                
+                                sourceName.style.display = 'none';
+                                sourceUrl.style.display = 'none';
+                                sourceName.value = null;
+                                sourceUrl.value = null;
+                                
+                                sourceQuestion.addEventListener('change', () => {
+                                    if (sourceQuestion.value === 'no') {
+                                        sourceName.style.display = 'none';
+                                        sourceUrl.style.display = 'none';
+                                        sourceName.value = null;
+                                        sourceUrl.value = null;
+                                    } else {
+                                        sourceName.style.display = 'block';
+                                        sourceUrl.style.display = 'block';
+                                    };
+                                });
+                            </script>
+                        </div>
                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                 </form>
                 <script>

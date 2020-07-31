@@ -69,6 +69,8 @@ def post_new():
                 game_id = form.game_id.data,
                 user_id = current_user.id,
                 is_esport = form.is_esport.data,
+                source_name = form.source_name.data,
+                source_url = form.source_url.data,
             )
 
             database.session.add(post)

@@ -39,6 +39,8 @@ class NewPostForm(FlaskForm):
     pc_last_image = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Somente imagens JPG e PNG!')])
     pc_last_text = TextAreaField(DataRequired())
     is_esport = BooleanField()
+    source_name = StringField(validators=[DataRequired()])
+    source_url = StringField(validators=[DataRequired()])
     submit = SubmitField()
 
 class NewPostFormTest(FlaskForm):

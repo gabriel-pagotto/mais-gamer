@@ -45,7 +45,10 @@
                             {% elif content.type == 'TXT' %}
                                 <pre>{{ content.content }}</pre>
                             {% endif %}
-                        {% endfor %}
+                            {% endfor %}
+                            {% if notice.source_name != Null %}
+                                <span class="source"><i class="far fa-newspaper"></i> Fonte: <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a></span>
+                            {% endif %}
                     </div>
                 </div>
             {% include 'components/footer.html' %}

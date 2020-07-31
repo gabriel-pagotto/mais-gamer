@@ -25,6 +25,13 @@
     margin: 10px auto;
 }
 
+.payload .notice .notice-body .source {
+    margin-top: 40px;
+    font-size: 18px;
+    width: max-content;
+    display: block;
+}
+
 .web .payload .notice pre {
     margin: 0 3px;
     max-width: 100%;
