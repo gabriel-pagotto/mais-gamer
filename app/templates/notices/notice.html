@@ -46,7 +46,7 @@
                                 <pre>{{ content.content }}</pre>
                             {% endif %}
                             {% endfor %}
-                            {% if notice.source_name != Null and notice.source_name != None %}
+                            {% if notice.source_name != '' and notice.source_name != None %}
                                 <span class="source"><i class="far fa-newspaper"></i> Fonte: <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a></span>
                             {% endif %}
                     </div>

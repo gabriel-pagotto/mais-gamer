@@ -61,6 +61,11 @@ def post_new():
     
     if form.submit():
         if request.method == 'POST':
+
+            if form.source_name.data == None or form.source_url.data == None:
+                form.source_name.data = None
+                form.source_url.data = None
+
             cover_image_url = save_image_and_get_url(request.files[form.cover_image.data.name])
             post = Posts(
                 title = form.title.data,
