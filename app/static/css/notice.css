@@ -16,7 +16,7 @@
 }
 
 .web .payload .notice .notice-body {
-    width: 65%;
+    width: 50%;
     margin: auto;
 }
 
@@ -138,6 +138,78 @@
     margin-left: 20px;
 }
 
+.web .payload .more-notices {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.web .payload .more-notices .more-notices-title {
+    display: block;
+    user-select: none;
+    font-size: 18px;
+    font-weight: 600;
+    width: max-content;
+    margin: 10px auto;
+}
+
+.web .payload .more-notices .notices-in-more {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+.web .payload .more-notices .notices-in-more .news-container-link {
+    text-decoration: none;
+}
+
+.web .payload .more-notices .notices-in-more .news-container-link:hover > .news-container .title {
+    text-decoration: underline;
+}
+
+.web .payload .more-notices .notices-in-more .news-container-link:hover > .news-container .cover_image img {
+    opacity: 0.8;
+}
+
+.notices-in-more .news-container-link .news-container {
+    width: 80%;
+    height: max-content;
+    margin: 20px auto;
+}
+
+.notices-in-more .news-container-link .news-container .title {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.notices-in-more .news-container-link .news-container .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.news-container-link .news-container .cover_image {
+    margin: 0 auto;
+    min-width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+
+.news-container-link .news-container .cover_image img {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(1.03);
+        -moz-transform: scale(1.03);
+            transform: scale(1.03);
+    -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+ 
 @media (max-width: 1025px) {
     .web .payload .notice {
         width: 100%;
@@ -176,5 +248,16 @@
         font-size: 15px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .web .payload .more-notices .notices-in-more {
+        display: block;
+        justify-content: center;
+    }
+
+    .web .payload .more-notices .notices-in-more .news-container-link .news-container {
+        width: 92%;
+        border-bottom: 1px solid #EBE8EC;
+        padding: 2%;
     }
 }

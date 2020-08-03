@@ -1,4 +1,4 @@
-import os
+import os, random
 from app import app, database
 from app.models import Users, Posts, Games, Post_Content
 from app.utils.date_time import DatePost
@@ -84,6 +84,35 @@ def notices_eSports():
 
 @app.route('/notícia/<id>', methods=['GET'])
 def notice(id):
+    all_posts = Posts.query.all()
+    all_posts_array = []
+    for post in all_posts:
+        if post.id != id:
+            all_posts_array.append(post)
+
+    num_randons = []
+
+    while len(num_randons) < 4:
+        if len(num_randons) == 0:
+            num_randons.append(random.randint(0, len(all_posts_array) - 1))
+        if len(num_randons) == 1:
+            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            if num_selected != num_randons[0]:
+                num_randons.append(num_selected)
+        if len(num_randons) == 2:
+            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            if num_selected != num_randons[0] and num_selected != num_randons[1]:
+                num_randons.append(num_selected)
+        if len(num_randons) == 3:
+            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            if num_selected != num_randons[0] and num_selected != num_randons[1] and num_selected != num_randons[2]:
+                num_randons.append(num_selected)
+        
+    more_news = []
+
+    for num in num_randons:
+        more_news.append(all_posts_array[num])
+
     post = Posts.query.filter_by(id = id).first()
     post_content = Post_Content.query.filter_by(post_id = id)
     game = Games.query.filter_by(id = post.game_id).first()
@@ -105,4 +134,5 @@ def notice(id):
         DatePost = DatePost,
         game = game,
         header_games = header_games,
+        more_news = more_news,
     )

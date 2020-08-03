@@ -26,9 +26,6 @@
 
 .notices-top .notice-itens a:hover > .notice-1 .icon img {
     opacity: 0.8;
-    /*-webkit-transform: scale(1);
-	    -moz-transform: scale(1);
-            transform: scale(1);*/
 }
 
 .notices-top .notice-itens a:hover > .notice-1 .notice-description .title {

@@ -1,4 +1,4 @@
-import os
+import os, json, requests
 from app import app, database
 from app.models import Users
 from app.forms import LoginForm, RegisterForm

@@ -20,7 +20,7 @@
                             {% endfor %}
                             {% endif %}
                             {% endwith %}
-                            {{form.username(type="text", maxlength="16", placeholder="Nome de usuário", class_="form-inputs")}}
+                            {{form.username(type="text", maxlength="16", placeholder="Nome de usuário", class_="form-inputs", id="username")}}
                             {% for error in form.username.errors %}
                                 {% if error == 'This field is required.' %}
                                     <span class="error">Por favor preencha este campo!</span>

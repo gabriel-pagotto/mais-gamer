@@ -51,6 +51,22 @@
                             {% endif %}
                     </div>
                 </div>
+                <div class="more-notices">
+                    <span class="more-notices-title">Mais notícias</span>
+                    <div class="notices-in-more">
+                        {% for news in more_news %}
+                            <a href="{{ url_for('notice', id=news.id) }}" class="news-container-link">
+                                <div class="news-container">
+                                    <div class="cover_image">
+                                        <img src="{{ news.cover_image }}" alt="{{ news.title }}">
+                                    </div>
+                                    <span class="title">{{ news.title }}</span>
+                                    <span class="subtitle">{{ news.subtitle }}</span>
+                                </div>
+                            </a>   
+                        {% endfor %}
+                    </div>
+                </div>
             {% include 'components/footer.html' %}
         </div>
     </body>
