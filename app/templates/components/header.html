@@ -73,8 +73,14 @@
             </div>
             {% else %}
             <div class="header-1part-1opc" id="header-login">
-                <a class="login" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>ENTRAR</a>
-                <a class="register" href="{{ url_for('register') }}"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
+                <ul>
+                    <li>
+                        <a class="login" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>ENTRAR</a>
+                    </li>
+                    <li>
+                        <a class="register" href="{{ url_for('register') }}"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
+                    </li>
+                </ul>
             </div>
         {% endif %}
         <nav>
@@ -178,8 +184,14 @@
                 </div>
             {% else %}
                 <div class="auth">
-                    <a href="{{ url_for('login') }}" class="signin"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>ENTRAR</a>
-                    <a href="{{ url_for('register') }}" class="signup"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('login') }}" class="signin"><i class="fas fa-sign-in-alt" style="margin-right: 10px;"></i>ENTRAR</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('register') }}" class="signup"><i class="fas fa-user-plus" style="margin-right: 10px;"></i>REGISTRAR-SE</a>
+                        </li>
+                    </ul>
                 </div>
             {% endif %}
         </div>
