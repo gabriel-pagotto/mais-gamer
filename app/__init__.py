@@ -16,4 +16,11 @@ migrate = Migrate(app, database)
 login = LoginManager(app)
 login.login_view = 'login'
 
+@app.before_request
+def before_request():
+    if not request.is_secure and app.config['DEBUG'] != True:
+        url = request.url.replace("http://", "https://", 1)
+        code = 301
+        return redirect(url, code=code)
+
 from app import routes, models

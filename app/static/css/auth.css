@@ -3,17 +3,18 @@
 }
 
 .web .payload {
+    display: flex;
     height: 100%;
-    min-height: 100%;
     user-select: none;
+    align-items: center;
     background-color: #FFFFFF;
 }
 
 .web .payload .login-container {
     background: #FFFFFF;
     width: 350px;
-    height: max-content;
-    margin: 4% auto 4% auto;
+    height: fit-content;
+    margin: 0 auto;
     padding: 45px;
     box-shadow: 0px 0px 10px #666666;
 }
@@ -113,6 +114,7 @@
         height: 100%;
         margin: 0px;
         padding: 7.5%;
+        box-shadow: 0 0 0 0;
     }
 
     .login-container .login-data form .form-inputs {

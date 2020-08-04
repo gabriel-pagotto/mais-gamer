@@ -4,7 +4,6 @@ from config import Config
 
 debug = app.config['FLASK_DEBUG']
 port = app.config['PORT']
-context = 'adhoc'
 
 app.run(host='0.0.0.0', port= port, debug=debug)
 

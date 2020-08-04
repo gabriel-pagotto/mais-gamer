@@ -15,22 +15,26 @@
                 {% endif %}
                 <div class="notices-body">
                     <div class="all-notices">
-                        {% for notice in notices %}
-                        <a href="{{ url_for('notice', id = notice.id) }}">
-                            <div class="notice">
-                                <div class="cover_image">
-                                    <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
-                                </div>
-                                <div class="notice-description">
-                                    <h3 class="title">{{ notice.title }}</h3>
-                                    <span class="subtitle">{{ notice.subtitle }}</span>
-                                    <div class="itens">
-                                        <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
+                        {% if notices != None %}
+                            {% for notice in notices %}
+                                <a href="{{ url_for('notice', id = notice.id) }}">
+                                    <div class="notice">
+                                        <div class="cover_image">
+                                            <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
+                                        </div>
+                                        <div class="notice-description">
+                                            <h3 class="title">{{ notice.title }}</h3>
+                                            <span class="subtitle">{{ notice.subtitle }}</span>
+                                            <div class="itens">
+                                                <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                        {% endfor %}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                                <span>Sem resultados</span>
+                        {% endif %}
                     </div>
                 </div>
                 {% if posts_pages.pages <= 1 %}

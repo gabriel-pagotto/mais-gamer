@@ -6,7 +6,11 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.web .payload {
+    min-height: 75vh;
 }
 
 html, body, .web, .payload {
