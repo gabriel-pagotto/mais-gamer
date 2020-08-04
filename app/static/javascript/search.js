@@ -1,9 +1,12 @@
 const searchInput = document.querySelector('.search-input');
 const containerResult = document.querySelector('.container-result');
 const resultTitle = document.querySelector('.result-title');
+const checkboxSearch = document.querySelector('.checkbox-search');
+const backgroungSearch = document.querySelector('.background-search');
+
+console.log(backgroungSearch)
 
 searchInput.addEventListener('input', () => {
-
     if (searchInput.value === '' || searchInput.value === '' || searchInput.value === null ) {
         containerResult.innerHTML = '';
         resultTitle.innerHTML = 'Escreva para buscar'
@@ -33,6 +36,7 @@ searchInput.addEventListener('input', () => {
 
                         renderNews = renderNews + newsData;
                     });
+                    containerResult.innerHTML = ' ';
                     resultTitle.innerHTML = 'Resultados'
                     containerResult.innerHTML = renderNews;
                 };
@@ -40,4 +44,12 @@ searchInput.addEventListener('input', () => {
         };
         XHR.send();
     };
+});
+
+searchInput.addEventListener('focus', () => {
+    checkboxSearch.checked = true;
+});
+
+backgroungSearch.addEventListener('click', () => {
+    checkboxSearch.checked = false;
 });
