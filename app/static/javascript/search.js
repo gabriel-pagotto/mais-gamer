@@ -41,7 +41,7 @@ searchInput.addEventListener('input', () => {
                     if (allNews.length === 1) {
                         resultTitle.innerHTML = 'Resultado'
                     };
-                    
+
                     if (allNews.length > 1) {
                         resultTitle.innerHTML = 'Resultados'
                     };

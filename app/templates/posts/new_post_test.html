@@ -2,14 +2,14 @@
 <html lang="pt-br">
     <head>
         {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/my_posts.css') }}">   
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/new_post.css') }}">    
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/my_posts.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/new_post.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}"></link>
     </head>
     <body>
         <div class='web'>
             {% include 'components/header.html' %}
-            <div class="payload">  
+            <div class="payload">
                 <div class="posts">
                     <div class="posts-actions">
                         <div class="new-post">
@@ -37,7 +37,7 @@
                                         <script>
                                             const selectEsports = document.querySelector('#select-esports');
                                             const checkbox = document.querySelector('.is-esport');
-                                            
+
                                             checkbox.value = false;
 
                                             selectEsports.addEventListener('change', () => {
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                                            
+
             </div>
             {% include 'components/footer.html' %}
         </div>

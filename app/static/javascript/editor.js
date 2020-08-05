@@ -10,9 +10,9 @@ function enableEditMode() {
 
 function actions(command, arg = null) {
     const textField = document.querySelector('.text-field');
-    document.querySelector('.text-field').focus() 
+    document.querySelector('.text-field').focus()
     textField.contentDocument.execCommand(command, false, arg);
-    document.querySelector('.text-field').focus() 
+    document.querySelector('.text-field').focus()
 };
 
 $(function () {
@@ -36,7 +36,7 @@ function addDataOnTextArea(value) {
 function render() {
     const editor = document.querySelector('.editor')
 
-    editor.innerHTML = ` 
+    editor.innerHTML = `
 
     <div class="editor-header">
         <input class="ps-absolute o0" type="file" name="file" accept="image/*" id="image-upload-file-input" style="display:none;">
@@ -52,7 +52,7 @@ function render() {
         <label id="paste"><i onclick="actions('paste')" class="fas fa-paste"></i></label>
         <label id="delete"><i onclick="actions('delete')" class="fa fa-trash-alt"></i></label>
     </div>
-    <iframe name="text-field" class="text-field" frameborder="0" onchange="addDataOnTextArea()"></iframe>  
+    <iframe name="text-field" class="text-field" frameborder="0" onchange="addDataOnTextArea()"></iframe>
     `
 };
 

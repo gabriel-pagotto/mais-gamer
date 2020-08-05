@@ -36,7 +36,7 @@ def posts_control():
             notices_to_be_deleted.append(top_five_counter)
 
         top_five_counter = top_five_counter + 1
-    
+
     for number in notices_to_be_deleted:
         del(last_notices[number])'''
 
@@ -45,5 +45,5 @@ def posts_control():
         posts,
         last_notice,
         last_notices,
-        rest_notices,   
+        rest_notices,
     ]

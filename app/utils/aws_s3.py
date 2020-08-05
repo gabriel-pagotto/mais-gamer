@@ -10,7 +10,7 @@ def take_last_object():
         all_objects.append(file_number)
 
     return sorted(all_objects)[-1]
-    
+
 def save_image_and_get_url(filename):
     number = int(take_last_object() + 1)
     image_number = str(number)

@@ -61,20 +61,20 @@
             {% if current_user.icon %}
                 <label for="mo1" class="header-1part-1opc" id="header-login">
                     <img class="user-icon" src="{{ current_user.icon }}" alt="{{ current_user.name + ' ' + current_user.surname }}" style="margin-right: 10px; font-size: 30px;" />
-                    {{ current_user.name }} 
+                    {{ current_user.name }}
                     <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-right" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path>
                     </svg>
                 </label>
-            {% else %}    
+            {% else %}
                 <label for="mo1" class="header-1part-1opc" id="header-login">
                     <i class="fas fa-user-circle" style="margin-right: 10px; font-size: 30px;"></i>
-                    {{ current_user.name }} 
+                    {{ current_user.name }}
                     <svg width="8" height="5" viewBox="0 0 8 5" class="arrow-right" fill="#ffa31a" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.707109 1.70711L3.29289 4.29289C3.68342 4.68342 4.31658 4.68342 4.70711 4.29289L7.29289 1.70711C7.92286 1.07714 7.47669 0 6.58579 0H1.41421C0.523309 0 0.0771438 1.07714 0.707109 1.70711Z"></path>
                     </svg>
                 </label>
-            {% endif %}    
+            {% endif %}
             <div class="second-options-mobile" id="som-1">
                 <div class="second-options-mobile-header">
                     <label class="back" for="mo1">

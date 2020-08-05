@@ -1,6 +1,6 @@
 function AJAX(url, method) {
     let XHR = new XMLHttpRequest();
-    
+
     XHR.open(method, url, true);
     XHR.onreadystatechange = () => {
         if (XHR.readyState === 4) {

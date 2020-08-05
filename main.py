@@ -1,6 +1,5 @@
 from app import app, database
 from app.models import Users, Posts, Games
-from config import Config
 
 debug = app.config['FLASK_DEBUG']
 port = app.config['PORT']

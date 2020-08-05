@@ -5,6 +5,6 @@ function dockCloser() {
     for (let counter = 0; counter < inputSecondOptionsMobile.length; counter ++) {
         if (options1.checked == false && inputSecondOptionsMobile[counter].checked == true) {
             inputSecondOptionsMobile[counter].checked = false
-        };   
+        };
     };
 };

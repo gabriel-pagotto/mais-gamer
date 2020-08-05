@@ -6,7 +6,7 @@ let page = 1;
 
 function AJAX(urlExt, method) {
     const url = (location.href + urlExt)
-    let XHR = new XMLHttpRequest();                    
+    let XHR = new XMLHttpRequest();
     XHR.open(method, url, true);
     XHR.onreadystatechange = () => {
         if (XHR.readyState === 4) {
@@ -41,7 +41,7 @@ function AJAX(urlExt, method) {
                     }, 500)
                 };
                 if (totalPages <= page) {
-                    finalNotices.style.display = 'block'; 
+                    finalNotices.style.display = 'block';
                     loadMoreButton.style.display = 'none';
                     return
                 };

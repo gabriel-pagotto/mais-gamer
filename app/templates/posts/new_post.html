@@ -48,12 +48,12 @@
                                 const sourceQuestion = document.querySelector('#source-question');
                                 const sourceName = document.querySelector('.source-name');
                                 const sourceUrl = document.querySelector('.source-url');
-                                
+
                                 sourceName.style.display = 'none';
                                 sourceUrl.style.display = 'none';
                                 sourceName.value = null;
                                 sourceUrl.value = null;
-                                
+
                                 sourceQuestion.addEventListener('change', () => {
                                     if (sourceQuestion.value === 'no') {
                                         sourceName.style.display = 'none';

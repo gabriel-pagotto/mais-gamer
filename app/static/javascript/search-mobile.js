@@ -58,7 +58,7 @@ searchMobileInput.addEventListener('input', () => {
                     if (allNews.length === 1) {
                         write.innerHTML = 'Resultado'
                     };
-                    
+
                     if (allNews.length > 1) {
                         write.innerHTML = 'Resultados'
                     };
