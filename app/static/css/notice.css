@@ -209,7 +209,7 @@
         -moz-transition: all 0.1s linear;
             transition: all 0.1s linear;
 }
- 
+
 @media (max-width: 1025px) {
     .web .payload .notice {
         width: 100%;
@@ -220,20 +220,20 @@
         width: 100%;
         margin: auto;
     }
-    
+
     .payload .notice .notice-header {
         margin-left: 10px;
         margin-right: 10px;
     }
 
-    .notice .notice-header .header-title {
-        font-size: 23px;
+    .payload .notice .notice-header .header-title {
+        font-size: 22px;
     }
 
     .notice .notice-header .game img {
         height: 30px;
     }
-    
+
     .notice .notice-header .game h2 {
         font-size: 18px;
     }

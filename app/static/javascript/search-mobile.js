@@ -24,7 +24,7 @@ searchBackgroungMobile.addEventListener('click', () => {
 searchMobileInput.addEventListener('input', () => {
     if (searchMobileInput.value === '' || searchMobileInput.value === '' || searchMobileInput.value === null ) {
         searchMobileBody.innerHTML = '';
-        write.innerHTML = 'Escreva para buscar'
+        write.innerHTML = 'Escreva para buscar';
     } else {
         let XHR = new XMLHttpRequest();
         XHR.open('GET', location.origin + `/buscar?q=${searchMobileInput.value}`, true);
@@ -56,12 +56,17 @@ searchMobileInput.addEventListener('input', () => {
                     };
 
                     if (allNews.length === 1) {
-                        write.innerHTML = 'Resultado'
+                        write.innerHTML = 'Resultado';
                     };
 
                     if (allNews.length > 1) {
-                        write.innerHTML = 'Resultados'
+                        write.innerHTML = 'Resultados';
                     };
+
+                    if (searchMobileInput.value === '') {
+                      write.innerHTML = 'Escreva para buscar';
+                    };
+
                     searchMobileBody.innerHTML = renderNews;
                 };
             };

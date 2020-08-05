@@ -7,7 +7,7 @@ const backgroungSearch = document.querySelector('.background-search');
 searchInput.addEventListener('input', () => {
     if (searchInput.value === '' || searchInput.value === '' || searchInput.value === null ) {
         containerResult.innerHTML = '';
-        resultTitle.innerHTML = 'Escreva para buscar'
+        resultTitle.innerHTML = 'Escreva para buscar';
     } else {
         let XHR = new XMLHttpRequest();
         XHR.open('GET', location.origin + `/buscar?q=${searchInput.value}`, true);
@@ -39,13 +39,17 @@ searchInput.addEventListener('input', () => {
                     };
 
                     if (allNews.length === 1) {
-                        resultTitle.innerHTML = 'Resultado'
+                        resultTitle.innerHTML = 'Resultado';
                     };
 
                     if (allNews.length > 1) {
-                        resultTitle.innerHTML = 'Resultados'
+                        resultTitle.innerHTML = 'Resultados';
                     };
-                    containerResult.innerHTML = renderNews;
+                    containerResult.innerHTML = renderNews;;
+
+                    if (searchInput.value === '') {
+                      resultTitle.innerHTML = 'Escreva para buscar';
+                    };
                 };
             };
         };
