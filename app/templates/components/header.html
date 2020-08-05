@@ -15,10 +15,25 @@
     <input type="checkbox" id="options1" onchange="dockCloser()">
     <label for="options1"><div class="background-options"></div></label>
     <div class="header-mobile">
-        <input type="checkbox" id="check-for-input-search" style="display: none;">
-        <label for="check-for-input-search" style="font-size: 24px; color: #C7C7C7; margin-left: 10px;">
-            <i id="search-button-mobile" class="fas fa-search" style="display: none;"></i>
-        </label>
+        <div class="open-search-mobile" style="font-size: 24px; color: #C7C7C7; margin-left: 10px;">
+            <i id="search-button-mobile" class="fas fa-search"></i>
+        </div>
+        <div class="search-mobile-results">
+            <div class="search-mobile-header">
+                <input type="search" class="search-mobile-input" placeholder="Buscar" autocomplete="off">
+                <svg width="35" height="35" class="closer-search" viewBox="0 0 32 32" style="margin-right: 10px;">
+                    <circle opacity=".07" cx="16" cy="16" r="16" fill="#FFFFFF"></circle>
+                    <g stroke="#C7C7C7" stroke-width="2">
+                        <path d="M12.007 11.973l8.132 8.132M11.993 20.093l8.131-8.132"></path>
+                    </g>
+                </svg>
+            </div>
+            <span class="write">Escreva para buscar</span>
+            <div class="search-mobile-body">
+            </div>
+        </div>
+        <div class="search-background-mobile"></div>
+        <script src="{{ url_for('static', filename='javascript/search-mobile.js') }}"></script>
         <a href="{{ url_for('index') }}" title="Página inicial">
             <img src="{{ url_for('static', filename='logo.png') }}" alt="Mais Gamer" class="logo">
         </a>

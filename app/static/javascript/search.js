@@ -4,8 +4,6 @@ const resultTitle = document.querySelector('.result-title');
 const checkboxSearch = document.querySelector('.checkbox-search');
 const backgroungSearch = document.querySelector('.background-search');
 
-console.log(backgroungSearch)
-
 searchInput.addEventListener('input', () => {
     if (searchInput.value === '' || searchInput.value === '' || searchInput.value === null ) {
         containerResult.innerHTML = '';
@@ -16,9 +14,8 @@ searchInput.addEventListener('input', () => {
         XHR.onreadystatechange = () => {
             if (XHR.readyState === 4) {
                 if (XHR.status === 200) {
-                    const allNews = JSON.parse(XHR.response)
+                    const allNews = JSON.parse(XHR.response);
                     let renderNews = '';
-
                     allNews.map((news) => {
                         let newsData = `
                             <a href="${location.origin + '/notícia/' + news.id}">
@@ -37,7 +34,17 @@ searchInput.addEventListener('input', () => {
                         renderNews = renderNews + newsData;
                     });
                     containerResult.innerHTML = ' ';
-                    resultTitle.innerHTML = 'Resultados'
+                    if (allNews.length === 0) {
+                        resultTitle.innerHTML = `Nada foi encontrado para "${searchInput.value}"`
+                    };
+
+                    if (allNews.length === 1) {
+                        resultTitle.innerHTML = 'Resultado'
+                    };
+                    
+                    if (allNews.length > 1) {
+                        resultTitle.innerHTML = 'Resultados'
+                    };
                     containerResult.innerHTML = renderNews;
                 };
             };
