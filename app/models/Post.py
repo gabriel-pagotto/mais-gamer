@@ -1,7 +1,5 @@
 from app import database
-from datetime import datetime
 from app.utils.date_time import datetime_sao_paulo
-from flask_login import UserMixin
 
 class Posts(database.Model):
     id = database.Column(database.Integer, primary_key=True)

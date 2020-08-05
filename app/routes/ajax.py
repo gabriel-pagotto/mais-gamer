@@ -1,8 +1,8 @@
-import json, pytz
+import pytz
 from app import app
-from app.models import Users, Posts, Games, Post_Content
+from app.models import Posts, Games
 from datetime import datetime
-from flask import render_template, redirect, flash, request, url_for, jsonify
+from flask import render_template, redirect, request, url_for, jsonify
 from sqlalchemy import desc
 from app.utils.date_time import DatePost
 
@@ -12,10 +12,10 @@ def hours():
     def datetime_sao_paulo():
         utc_time = datetime.utcnow()
         tz = pytz.timezone('America/Sao_Paulo')
-        utc_time =utc_time.replace(tzinfo=pytz.UTC) 
+        utc_time =utc_time.replace(tzinfo=pytz.UTC)
         st_john_time=utc_time.astimezone(tz)
         return st_john_time
-    
+
     hours = (datetime_sao_paulo())
     print(hours)
     return jsonify({
@@ -50,13 +50,12 @@ def load_more_notices():
 
         all_posts.append(post_data)
 
-        data = {
+        dataSend = {
             'total_pages': posts_pages.pages,
             'data': all_posts,
         }
 
-
-    return jsonify(data)
+    return jsonify(dataSend)
 
 @app.route('/notícias/<name>/páginação', methods=['GET'])
 def load_more_notices_by_game(name):
@@ -66,7 +65,7 @@ def load_more_notices_by_game(name):
         posts_pages = Posts.query.filter_by(game_id = game.id).order_by(desc('addedAt')).paginate(page, 8, True)
     except AttributeError:
         return redirect(url_for('notices'))
-    
+
     if game.id == 0:
         return redirect(url_for('index'))
 
@@ -89,12 +88,12 @@ def load_more_notices_by_game(name):
 
         all_posts.append(post_data)
 
-        data = {
+        dataSend = {
             'total_pages': posts_pages.pages,
             'data': all_posts,
         }
 
-    return jsonify(data)
+    return jsonify(dataSend)
 
 @app.route('/eSports/páginação', methods=['GET'])
 def load_more_eSports():
@@ -119,10 +118,10 @@ def load_more_eSports():
 
         all_posts.append(post_data)
 
-        data = {
+        dataSend = {
             'total_pages': posts_pages.pages,
             'data': all_posts,
         }
 
 
-    return jsonify(data)
+    return jsonify(dataSend)

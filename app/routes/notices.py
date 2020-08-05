@@ -1,10 +1,10 @@
-import os, random
+import random
 from app import app, database
 from app.models import Users, Posts, Games, Post_Content
 from app.utils.date_time import DatePost
 from app.utils.url_for_notices import url_for_notices
 from app.utils.header_games import header_games
-from flask import render_template, redirect, flash, request, url_for
+from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
 @app.route('/notícias', methods=['GET'])
@@ -41,10 +41,10 @@ def notices_by_game(name):
         posts = Posts.query.filter_by(game_id = game.id).order_by(desc('addedAt')).paginate(page, 8, True)
     except AttributeError:
         return redirect(url_for('notices'))
-    
+
     if game.id == 0:
         return redirect(url_for('index'))
-    
+
     next_url = url_for('notices_by_game', name=name, page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('notices_by_game', name=name, page=posts.prev_num) \
@@ -107,7 +107,7 @@ def notice(id):
             num_selected =  random.randint(0, len(all_posts_array) - 1)
             if num_selected != num_randons[0] and num_selected != num_randons[1] and num_selected != num_randons[2]:
                 num_randons.append(num_selected)
-        
+
     more_news = []
 
     for num in num_randons:

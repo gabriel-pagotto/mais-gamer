@@ -1,4 +1,3 @@
-import os, json
 from app import app, database
 from app.models import Posts, Games, Post_Content
 from app.forms import NewPostForm, NewPostFormTest
@@ -7,7 +6,7 @@ from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
 from app.utils.date_time import DatePost
-from flask import render_template, redirect, flash, request, url_for, jsonify
+from flask import render_template, redirect, request, url_for
 from flask_login import current_user, login_required
 from sqlalchemy import desc
 
@@ -25,7 +24,7 @@ def posts():
         if posts.has_next else None
     prev_url = url_for('posts', page=posts.prev_num) \
         if posts.has_prev else None
-    
+
     return render_template(
         'posts/posts.html',
         DatePost = DatePost,
@@ -58,7 +57,7 @@ def post_new():
     for game in games:
         games_choices.append((game.id, game.name))
     form.game_id.choices = games_choices
-    
+
     if form.submit():
         if request.method == 'POST':
 
@@ -97,7 +96,7 @@ def post_new():
             add_content_database(form.pc_text.data, 2, 'TXT', post.id)
             add_content_database(pc_last_image, 3, 'IMG', post.id)
             add_content_database(form.pc_last_text.data, 4, 'TXT', post.id)
-            
+
             database.session.commit()
 
             return redirect(url_for('notice', id=post.id))
@@ -127,16 +126,16 @@ def delete_post(id):
 
     post = Posts.query.filter_by(id = id).first()
     posts_content = Post_Content.query.filter_by(post_id = id).all()
-    
+
 
     for post_content in posts_content:
         if post_content.type == 'IMG':
             delete_image(post_content.content)
         database.session.delete(post_content)
-    
+
     database.session.commit()
     delete_image(post.cover_image)
-    
+
     database.session.delete(post)
     database.session.commit()
 
@@ -200,7 +199,7 @@ def post_new_test():
             add_content_database(form.pc_text.data, 2, 'TXT', post.id)
             add_content_database(pc_last_image, 3, 'IMG', post.id)
             add_content_database(form.pc_last_text.data, 4, 'TXT', post.id)
-            
+
             database.session.commit()
 
             return redirect(url_for('notice', id=post.id))'''
