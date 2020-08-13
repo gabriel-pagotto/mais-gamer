@@ -6,8 +6,10 @@
                 {{ form.hidden_tag() }}
                     <form action="" method="post" enctype="multipart/form-data" class="form-sub">
                         {{ form.cover_image(class_="cover_image", id="cover_image") }}
-                        <label for="cover_image" class="image-cover-select">Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i></label>
-                        <script src="{{ url_for('static', filename='javascript/showCoverImage.js') }}"></script>
+                        <label for="cover_image" class="image-cover-select">
+                          Selecionar capa da notícia &nbsp;
+                          <i class="fa fa-image"></i>
+                        </label>
                         <img src="" alt="" class="image-cover">
                         {{ form.title(placeholder="Título", class_="new-post-title") }}
                         {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
@@ -24,18 +26,6 @@
                             <option value="yes">Sim</option>
                         </select>
                         {{ form.is_esport(class="is-esport", id="is-esport") }}
-                        <script>
-                            const selectEsports = document.querySelector('#select-esports');
-                            const checkbox = document.querySelector('.is-esport');
-
-                            selectEsports.addEventListener('change', () => {
-                                if  (selectEsports.value === 'no') {
-                                    checkbox.checked = false;
-                                } else {
-                                    checkbox.checked = true;
-                                };
-                            });
-                        </script>
                         <div class="source">
                             <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
                             <select id="source-question">
@@ -44,41 +34,11 @@
                             </select>
                             {{ form.source_name(class="source-name", type="name", placeholder="Coloque o nome da fonte usada como referência") }}
                             {{ form.source_url(class="source-url", type="url", placeholder="Coloque a url da fonte usada como referência") }}
-                            <script>
-                                const sourceQuestion = document.querySelector('#source-question');
-                                const sourceName = document.querySelector('.source-name');
-                                const sourceUrl = document.querySelector('.source-url');
-
-                                sourceName.style.display = 'none';
-                                sourceUrl.style.display = 'none';
-                                sourceName.value = null;
-                                sourceUrl.value = null;
-
-                                sourceQuestion.addEventListener('change', () => {
-                                    if (sourceQuestion.value === 'no') {
-                                        sourceName.style.display = 'none';
-                                        sourceUrl.style.display = 'none';
-                                        sourceName.value = null;
-                                        sourceUrl.value = null;
-                                    } else {
-                                        sourceName.style.display = 'block';
-                                        sourceUrl.style.display = 'block';
-                                    };
-                                });
-                            </script>
                         </div>
                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                 </form>
-                <script>
-                    const form = document.querySelector('.form-sub');
-                    const submit = document.querySelector('.submit');
-                    form.addEventListener('submit', () => {
-                        submit.value = 'Enviando'
-                        submit.style.background = '#827189'
-                        submit.style.border = '1px solid #827189'
-                    });
-                </script>
             </div>
+            <script src="{{ url_for('static', filename='javascript/newPost.js') }}"></script>
         </div>
     </div>
 </div>

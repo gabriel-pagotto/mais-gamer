@@ -13,6 +13,7 @@ function actions(command, arg = null) {
     document.querySelector('.text-field').focus()
     textField.contentDocument.execCommand(command, false, arg);
     document.querySelector('.text-field').focus()
+    iFrameStyle(command);
 };
 
 $(function () {
@@ -24,14 +25,10 @@ $(function () {
         fileReader.onloadend = function () {
             textField.contentDocument.execCommand('insertImage', true, fileReader.result);
             $('.text-field').focus();
+            iFrameStyle('insertImage');
         }
     });
 });
-
-function addDataOnTextArea(value) {
-    console.log('OKay')
-};
-
 
 function render() {
     const editor = document.querySelector('.editor')
@@ -52,8 +49,28 @@ function render() {
         <label id="paste"><i onclick="actions('paste')" class="fas fa-paste"></i></label>
         <label id="delete"><i onclick="actions('delete')" class="fa fa-trash-alt"></i></label>
     </div>
-    <iframe name="text-field" class="text-field" frameborder="0" onchange="addDataOnTextArea()"></iframe>
+    <iframe name="text-field" class="text-field" frameborder="0"></iframe>
     `
 };
 
-init()
+
+function iFrameStyle(element) {
+  const iFrame = document.querySelector('.text-field').contentDocument;
+  const iFrameBold = iFrame.querySelector('b');
+  const iFrameImage = iFrame.querySelector('img');
+
+  if (element === 'bold') {
+    iFrameBold.style.fontSize = '30px';
+    iFrameBold.style.fontWeight = '600';
+    iFrameBold.style.fontFamily = 'K2D';
+  };
+
+  if (element === 'insertImage') {
+    console.log('fock')
+    iFrameImage.style.display = 'block';
+    iFrameImage.style.width = '80%';
+    iFrameImage.style.margin = '10px auto';
+  };
+};
+
+init();

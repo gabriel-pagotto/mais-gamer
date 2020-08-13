@@ -50,6 +50,8 @@ class NewPostFormTest(FlaskForm):
     game_id = SelectField(validators=[DataRequired()])
     post_content = TextAreaField(validators=[DataRequired()])
     is_esport = BooleanField()
+    source_name = StringField()
+    source_url = StringField()
     submit = SubmitField()
 
 class ProfileForm(FlaskForm):

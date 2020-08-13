@@ -17,40 +17,38 @@
                             <div class="new-post-inputs">
                                 {{ form.hidden_tag() }}
                                     <form action="" method="post" enctype="multipart/form-data" class="form-sub">
-                                        {{ form.cover_image(class_="cover_image", id="cover_image") }}
-                                        <label for="cover_image" class="image-cover-select">Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i></label>
-                                        <script src="{{ url_for('static', filename='javascript/showCoverImage.js') }}"></script>
-                                        <img src="" alt="" class="image-cover">
-                                        {{ form.title(placeholder="Título", class_="new-post-title") }}
-                                        {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
-                                        {{ form.post_content(class_="new-post-text", id="CK1", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10" ) }}
-                                        <div class="editor"></div>
-                                        <script src="{{ url_for('static', filename='javascript/editor.js') }}"></script>
-                                        <label id="game">Escolha o jogo referente a esta notícia:</label>
-                                        {{ form.game_id(for="game", class_="select-game") }}
-                                        <label for="is-esport">Esta notícia é sobre eSports?</label>
-                                        <select name="" id="select-esports">
-                                            <option value="no">Não</option>
-                                            <option value="yes">Sim</option>
+                                      {{ form.cover_image(class_="cover_image", id="cover_image") }}
+                                      <label for="cover_image" class="image-cover-select">
+                                        Selecionar capa da notícia &nbsp;
+                                        <i class="fa fa-image"></i>
+                                      </label>
+                                      <img src="" alt="" class="image-cover">
+                                      {{ form.title(placeholder="Título", class_="new-post-title") }}
+                                      {{ form.subtitle(placeholder="Subtítulo", class_="new-post-subtitle") }}
+                                      {{ form.post_content(class_="new-post-text", id="CK1", oninput="if(this.scrollHeight > this.offsetHeight) this.rows += 1", cols="30", rows="10" ) }}
+                                      <div class="editor"></div>
+                                      <script src="{{ url_for('static', filename='javascript/editor.js') }}"></script>
+                                      <textarea name="" id="areaText" cols="30" rows="10" style="width: 100%; min-width: 900px;"></textarea>
+                                      <label id="game">Escolha o jogo referente a esta notícia:</label>
+                                      {{ form.game_id(for="game", class_="select-game") }}
+                                      <label for="is-esport">Esta notícia é sobre eSports?</label>
+                                      <select name="" id="select-esports">
+                                        <option value="no">Não</option>
+                                        <option value="yes">Sim</option>
+                                      </select>
+                                      {{ form.is_esport(class="is-esport", id="is-esport") }}
+                                      <div class="source">
+                                        <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
+                                        <select id="source-question">
+                                          <option value="no">Não</option>
+                                          <option value="yes">Sim</option>
                                         </select>
-                                        {{ form.is_esport(class="is-esport", id="is-esport") }}
-                                        <script>
-                                            const selectEsports = document.querySelector('#select-esports');
-                                            const checkbox = document.querySelector('.is-esport');
-
-                                            checkbox.value = false;
-
-                                            selectEsports.addEventListener('change', () => {
-                                                if  (selectEsports.value === 'no') {
-                                                    checkbox.checked = false;
-                                                } else {
-                                                    checkbox.checked = true;
-                                                };
-                                            });
-                                        </script>
+                                        {{ form.source_name(class="source-name", type="name", placeholder="Coloque o nome da fonte usada como referência") }}
+                                        {{ form.source_url(class="source-url", type="url", placeholder="Coloque a url da fonte usada como referência") }}
+                                      </div>
                                     {{ form.submit(class_="submit", value="Enviar notícia" ) }}
                                 </form>
-                                <script src="{{ url_for('static', filename='javascript/submitPost.js') }}"></script>
+                                <script src="{{ url_for('static', filename='javascript/newPost.js') }}"></script>
                             </div>
                         </div>
                     </div>
