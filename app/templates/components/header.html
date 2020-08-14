@@ -1,17 +1,5 @@
 <header class="header">
-    <!--<div class="loader">
-        <div class="loader-figure">
-            <div class="center-logo">
-                <img src="{{ url_for('static', filename='favicon_2.png') }}" alt="Mais Gamer">
-            </div>
-        </div>
-        <script>
-            window.addEventListener('load', () => {
-                const loader = document.querySelector('.loader');
-                loader.className += ' hidden';
-            });
-        </script>
-    </div>-->
+  <nav>
     <input type="checkbox" id="options1" onchange="dockCloser()">
     <label for="options1"><div class="background-options"></div></label>
     <div class="header-mobile">
@@ -28,14 +16,14 @@
                     </g>
                 </svg>
             </div>
-            <span class="write">Escreva para buscar</span>
+            <div class="write">Escreva para buscar</div>
             <div class="search-mobile-body">
             </div>
         </div>
         <div class="search-background-mobile"></div>
         <script src="{{ url_for('static', filename='javascript/search-mobile.js') }}"></script>
         <a href="{{ url_for('index') }}" title="Página inicial">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Mais Gamer" class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="" class="logo">
         </a>
         <label for="options1" class="options">
             <svg width="35" height="35" class="options-button" viewBox="0 0 32 32">
@@ -347,5 +335,6 @@
             {% endif %}
         </div>
     </div>
+  </nav>
 </header>
 <script src="{{ url_for('static', filename='javascript/secondOptionsMobile.js') }}"></script>
