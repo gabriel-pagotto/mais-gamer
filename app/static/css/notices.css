@@ -56,15 +56,15 @@
     min-width: 100%;
     min-height: 100%;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
-.payload .notice:hover > .cover_image img {
+.payload .notice:hover>.cover_image img {
     opacity: 0.8;
 }
 
-.payload .notice:hover > .notice-description .title {
+.payload .notice:hover>.notice-description .title {
     text-decoration: underline;
 }
 
@@ -75,17 +75,17 @@
 
 .payload .notice .notice-description .title {
     font-size: 22px;
-    color:#222222;
+    color: #222222;
     margin-bottom: 10px;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .payload .notice .notice-description .subtitle {
     font-size: 18px;
     font-weight: 400;
-    color:#222222;
+    color: #222222;
     margin-bottom: 10px;
 }
 
@@ -111,8 +111,8 @@
     color: #FFFFFF;
     border-radius: 3px;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .notice .notice-description .itens .read-more:hover {
@@ -133,8 +133,8 @@
     border-radius: 3px;
     align-items: center;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .payload .load-more:hover {
@@ -165,7 +165,6 @@
     .web .payload .game {
         align-items: center;
     }
-
     .web .payload .game .list-icon {
         height: 30px;
         width: initial;
@@ -174,51 +173,43 @@
         margin-left: 12px;
         font-size: 22px;
     }
-
     .web .payload .notice {
         align-items: center;
         width: 95%;
         padding: 0 0 20px 0;
         height: max-content;
     }
-
     .web .payload .notice .cover_image {
         width: 40%;
         height: 100%;
         min-width: 150px;
     }
-
     .payload .notice .cover_image img {
         position: relative;
         width: 100%;
         height: 100%;
     }
-
     .payload .notice .notice-description {
         margin-left: 10px;
         width: 100%;
     }
-    
     .payload .notice .notice-description .title {
         font-size: 15px;
-        color:#222222;
+        color: #222222;
         margin-bottom: 5px;
     }
-    
     .payload .notice .notice-description .subtitle {
         font-size: 14px;
-        color:#222222;
+        color: #222222;
         margin-bottom: 5px;
         display: none;
     }
-    
     .payload .notice .notice-description .addedAt {
         position: sticky;
         font-size: 13px;
         color: #827189;
         top: 100%;
     }
-    
     .payload .notice .notice-description .itens {
         margin-top: 10px;
         width: max-content;
@@ -227,15 +218,13 @@
         float: right;
         display: flex;
     }
-
     .web .payload .load-more {
         background: #ffa31a;
         padding: 5px 15px;
         text-decoration: none;
         color: #FFFFFF;
         -webkit-transition: all 0.2s linear;
-            -moz-transition: all 0.2s linear;
-                transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
     }
-
 }

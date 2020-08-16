@@ -62,22 +62,3 @@ $(function() {
         }
     });
 });
-
-const textBody = document.querySelector('.text-field').contentDocument.querySelector('body');
-let areaText = document.querySelector('#areaText');
-
-textBody.style.display = 'block';
-textBody.style.fontSize = '20px';
-textBody.style.padding = '20px';
-
-textBody.addEventListener('input', () => {
-
-  areaText.value = JSON.stringify([
-    data = {
-      content: 'O que vai ser mostrado!',
-      url: 'https://google.com',
-      type: 'PRE',
-      position: 1,
-    },
-  ]);
-});

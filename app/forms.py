@@ -5,10 +5,12 @@ from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, FileField, SelectField, TextAreaField, BooleanField
 from wtforms.validators import DataRequired, InputRequired, ValidationError
 
+
 class LoginForm(FlaskForm):
     username = StringField(validators=[DataRequired()])
     password = PasswordField(validators=[DataRequired()])
     submit = SubmitField()
+
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[DataRequired()])
@@ -29,19 +31,23 @@ class RegisterForm(FlaskForm):
         if user is not None:
             raise ValidationError('Este email já existe.')
 
+
 class NewPostForm(FlaskForm):
     title = StringField(validators=[DataRequired()])
     subtitle = StringField(validators=[DataRequired()])
     cover_image = FileField(validators=[FileRequired()])
     game_id = SelectField(validators=[DataRequired()])
-    pc_image = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Somente imagens JPG e PNG!')])
+    pc_image = FileField(validators=[FileRequired(), FileAllowed(
+        ['jpg', 'png'], 'Somente imagens JPG e PNG!')])
     pc_text = TextAreaField()
-    pc_last_image = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Somente imagens JPG e PNG!')])
+    pc_last_image = FileField(validators=[FileRequired(), FileAllowed(
+        ['jpg', 'png'], 'Somente imagens JPG e PNG!')])
     pc_last_text = TextAreaField(DataRequired())
     is_esport = BooleanField()
     source_name = StringField()
     source_url = StringField()
     submit = SubmitField()
+
 
 class NewPostFormTest(FlaskForm):
     title = StringField(validators=[DataRequired()])
@@ -53,6 +59,7 @@ class NewPostFormTest(FlaskForm):
     source_name = StringField()
     source_url = StringField()
     submit = SubmitField()
+
 
 class ProfileForm(FlaskForm):
     username = StringField(validators=[DataRequired()])

@@ -20,7 +20,7 @@
     padding-right: 12px;
     padding-top: 2px;
     letter-spacing: 0.1em;
-    text-transform: capitalize  ;
+    text-transform: capitalize;
     transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98), border-color 0.5s cubic-bezier(0.06, 0.81, 0, 0.98);
     font-weight: 400;
     color: #FFFFFF;
@@ -31,10 +31,10 @@
     cursor: pointer;
 }
 
-.header .header-2part .user:hover > .user-name .arrow-down {
+.header .header-2part .user:hover>.user-name .arrow-down {
     -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .user .user-name .arrow-down {
@@ -42,11 +42,11 @@
     left: 5px;
     top: -3px;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
-.header .header-2part .user:hover > .options {
+.header .header-2part .user:hover>.options {
     visibility: visible;
     opacity: 1;
 }
@@ -83,8 +83,8 @@
     user-select: none;
     border-bottom: 1px solid #111111;
     -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .user .options .user-options a:hover {

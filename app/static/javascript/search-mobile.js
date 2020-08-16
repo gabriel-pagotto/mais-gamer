@@ -22,7 +22,7 @@ searchBackgroungMobile.addEventListener('click', () => {
 });
 
 searchMobileInput.addEventListener('input', () => {
-    if (searchMobileInput.value === '' || searchMobileInput.value === '' || searchMobileInput.value === null ) {
+    if (searchMobileInput.value === '' || searchMobileInput.value === '' || searchMobileInput.value === null) {
         searchMobileBody.innerHTML = '';
         write.innerHTML = 'Escreva para buscar';
     } else {
@@ -64,7 +64,7 @@ searchMobileInput.addEventListener('input', () => {
                     };
 
                     if (searchMobileInput.value === '') {
-                      write.innerHTML = 'Escreva para buscar';
+                        write.innerHTML = 'Escreva para buscar';
                     };
 
                     searchMobileBody.innerHTML = renderNews;

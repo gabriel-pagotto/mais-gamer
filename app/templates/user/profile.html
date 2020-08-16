@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                <div class="profile">
-                    <div class="profile-form">
-                        <form action="" method="post" novalidate>
-                            <h1>Meus Dados</h1>
-                            {{ form.hidden_tag() }}
-                            {% if current_user.icon %}
-                                <img class="user-icon" src="{{ current_user.icon }}" alt="{{ current_user.name }}">
-                            {% else %}
-                                <i class="fas fa-user-circle" style="font-size: 200px;"></i>
-                            {% endif %}
-                            <div>
-                                <label for="">NOME DE USUÁRIO</label>
-                                {{ form.username(type="text", class="info-input") }}
-                            </div>
-                            <div>
-                                <label for="">NOME</label>
-                                {{ form.name(type="text", class="info-input") }}
-                            </div>
-                            <div>
-                                <label for="">SOBRENOME</label>
-                                {{ form.surname(type="text", class="info-input") }}
-                            </div>
-                            <div>
-                                <label for="">EMAIL</label>
-                                {{ form.email(type="text", class="info-input") }}
-                            </div>
-                        </form>
-                    </div>
+
+<head>
+    {% include 'components/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            <div class="profile">
+                <div class="profile-form">
+                    <form action="" method="post" novalidate>
+                        <h1>Meus Dados</h1>
+                        {{ form.hidden_tag() }} {% if current_user.icon %}
+                        <img class="user-icon" src="{{ current_user.icon }}" alt="{{ current_user.name }}"> {% else %}
+                        <i class="fas fa-user-circle" style="font-size: 200px;"></i> {% endif %}
+                        <div>
+                            <label for="">NOME DE USUÁRIO</label> {{ form.username(type="text", class="info-input") }}
+                        </div>
+                        <div>
+                            <label for="">NOME</label> {{ form.name(type="text", class="info-input") }}
+                        </div>
+                        <div>
+                            <label for="">SOBRENOME</label> {{ form.surname(type="text", class="info-input") }}
+                        </div>
+                        <div>
+                            <label for="">EMAIL</label> {{ form.email(type="text", class="info-input") }}
+                        </div>
+                    </form>
                 </div>
-                <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
             </div>
-            {% include 'components/footer.html' %}
+            <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
         </div>
-    </body>
+        {% include 'components/footer.html' %}
+    </div>
+</body>
+
 </html>

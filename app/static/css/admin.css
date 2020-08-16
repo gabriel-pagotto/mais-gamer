@@ -39,8 +39,8 @@
     width: max-content;
     margin: 13px auto;
     -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .payload .admin .admin-options a:hover {
@@ -56,16 +56,13 @@
         border: none;
         border-radius: 0;
     }
-
-    .web .payload .admin h1  {
+    .web .payload .admin h1 {
         width: fit-content;
         text-align: center;
     }
-
     .web .payload .admin .admin-options {
         display: block;
     }
-
     .web .payload .admin .admin-options a {
         display: block;
         width: 100%;

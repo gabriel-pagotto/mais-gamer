@@ -8,6 +8,7 @@ from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
+
 @app.route('/autenticação/entrar', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -21,9 +22,9 @@ def login():
             username = form.username.data
             return render_template(
                 'auth/login.html',
-                title = 'Entrar',
-                form = form,
-                header_games = header_games,
+                title='Entrar',
+                form=form,
+                header_games=header_games,
             )
         login_user(username)
         next_page = request.args.get('next')
@@ -32,10 +33,11 @@ def login():
         return redirect(next_page)
     return render_template(
         'auth/login.html',
-        title = 'Entrar',
-        form = form,
-        header_games = header_games,
+        title='Entrar',
+        form=form,
+        header_games=header_games,
     )
+
 
 @app.route('/autenticação/registro', methods=['GET', 'POST'])
 def register():
@@ -52,16 +54,16 @@ def register():
             email = form.email.data
             return render_template(
                 'auth/register.html',
-                title = 'Criar conta',
-                form = form,
-                header_games = header_games,
+                title='Criar conta',
+                form=form,
+                header_games=header_games,
             )
         user = Users(
-            username = form.username.data,
-            name = first_letter_upper(form.name.data),
-            surname = first_letter_upper(form.surname.data),
-            email = lower(form.email.data),
-            password = set_password_hash(form.password.data),
+            username=form.username.data,
+            name=first_letter_upper(form.name.data),
+            surname=first_letter_upper(form.surname.data),
+            email=lower(form.email.data),
+            password=set_password_hash(form.password.data),
         )
         database.session.add(user)
         database.session.commit()
@@ -71,19 +73,21 @@ def register():
 
     return render_template(
         'auth/register.html',
-        title = 'Criar conta',
-        form = form,
-        header_games = header_games,
+        title='Criar conta',
+        form=form,
+        header_games=header_games,
     )
+
 
 @app.route('/autenticação/registro/successo', methods=['GET'])
 @login_required
 def register_success():
     return render_template(
         'auth/register_success.html',
-        title = 'Conta criada com sucesso',
-        header_games = header_games,
+        title='Conta criada com sucesso',
+        header_games=header_games,
     )
+
 
 @app.route('/autenticação/sair')
 def logout():

@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
-        <meta property="description" content="{{ notice.subtitle }}" />
-        <meta property="og:description" content="{{ notice.subtitle }}">
-        <meta property="og:image" content="{{ notice.cover_image }}" />
-        <meta property="twitter:description" content="{{ notice.subtitle }}" class="twitter-description"/>
-        <meta property="twitter:image" content="{{ notice.cover_image }}" />
-        <meta property="article:published_time" content="{{ notice.addedAt }}">
-        <meta property="article:modified_time" content="{{ notice.addedAt }}">
-        {% include 'components/head.html' %}
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                <div class="notice">
-                    <div class="notice-header">
-                        <h1 class="header-title">{{ notice.title }}</h1>
-                        <p class="notice-subtitle">{{ notice.subtitle }}</p>
-                        {% if game.id != 0 %}
-                            <div class="game">
-                                <span class="game-name">{{ game.name }}</span>
-                            </div>
-                        {% endif %}
-                        <span class="posted-by">Por {{ user.name + ' ' + user.surname }}</span>
-                        <div class="notice-options">
-                            <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
-                            <div class="share">
-                                <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
-                                    <i class="fab fa-facebook" id="facebook"></i>
-                                </a>
-                                <a id="twitter" href="" target="_blank" title="Compartilhar esta notícia no Twitter">
-                                    <i class="fab fa-twitter" id="twitter"></i>
-                                </a>
-                                <a id="whatsapp" href="" target="_blank" title="Compartilhar esta notícia no WhatsApp">
-                                    <i class="fab fa-whatsapp" id="whatsapp"></i>
-                                </a>
-                                <script src="{{ url_for('static', filename='javascript/noticeShare.js') }}"></script>
-                            </div>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
+    <meta property="description" content="{{ notice.subtitle }}" />
+    <meta property="og:description" content="{{ notice.subtitle }}">
+    <meta property="og:image" content="{{ notice.cover_image }}" />
+    <meta property="twitter:description" content="{{ notice.subtitle }}" class="twitter-description" />
+    <meta property="twitter:image" content="{{ notice.cover_image }}" />
+    <meta property="article:published_time" content="{{ notice.addedAt }}">
+    <meta property="article:modified_time" content="{{ notice.addedAt }}"> {% include 'components/head.html' %}
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            <div class="notice">
+                <div class="notice-header">
+                    <h1 class="header-title">{{ notice.title }}</h1>
+                    <p class="notice-subtitle">{{ notice.subtitle }}</p>
+                    {% if game.id != 0 %}
+                    <div class="game">
+                        <span class="game-name">{{ game.name }}</span>
+                    </div>
+                    {% endif %}
+                    <span class="posted-by">Por {{ user.name + ' ' + user.surname }}</span>
+                    <div class="notice-options">
+                        <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
+                        <div class="share">
+                            <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
+                                <i class="fab fa-facebook" id="facebook"></i>
+                            </a>
+                            <a id="twitter" href="" target="_blank" title="Compartilhar esta notícia no Twitter">
+                                <i class="fab fa-twitter" id="twitter"></i>
+                            </a>
+                            <a id="whatsapp" href="" target="_blank" title="Compartilhar esta notícia no WhatsApp">
+                                <i class="fab fa-whatsapp" id="whatsapp"></i>
+                            </a>
+                            <script src="{{ url_for('static', filename='javascript/noticeShare.js') }}"></script>
                         </div>
                     </div>
-                    <div class="notice-body">
-                        {% for content in notice_content %}
-                            {% if content.type == 'IMG' %}
-                                <img src="{{ content.content }}" alt="{{ notice.title }}">
-                            {% elif content.type == 'TXT' %}
-                                <pre>{{ content.content }}</pre>
-                            {% endif %}
-                            {% endfor %}
-                            {% if notice.source_name != '' and notice.source_name != None %}
-                                <span class="source"><i class="far fa-newspaper"></i> Fonte: <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a></span>
-                            {% endif %}
-                    </div>
                 </div>
-                <div class="more-notices">
-                    <span class="more-notices-title">Mais notícias</span>
-                    <div class="notices-in-more">
-                        {% for news in more_news %}
-                            <a href="{{ url_for('notice', id=news.id) }}" class="news-container-link">
-                                <div class="news-container">
-                                    <div class="cover_image">
-                                        <img src="{{ news.cover_image }}" alt="{{ news.title }}">
-                                    </div>
-                                    <span class="title">{{ news.title }}</span>
-                                    <span class="subtitle">{{ news.subtitle }}</span>
-                                </div>
-                            </a>
-                        {% endfor %}
-                    </div>
+                <div class="notice-body">
+                    {% for content in notice_content %} {% if content.type == 'IMG' %}
+                    <img src="{{ content.content }}" alt="{{ notice.title }}"> {% elif content.type == 'TXT' %}
+                    <pre>{{ content.content }}</pre> {% endif %} {% endfor %} {% if notice.source_name != '' and notice.source_name != None %}
+                    <span class="source"><i class="far fa-newspaper"></i> Fonte: <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a></span> {% endif %}
                 </div>
-              </div>
-          {% include 'components/footer.html' %}
-    </body>
+            </div>
+            <div class="more-notices">
+                <span class="more-notices-title">Mais notícias</span>
+                <div class="notices-in-more">
+                    {% for news in more_news %}
+                    <a href="{{ url_for('notice', id=news.id) }}" class="news-container-link">
+                        <div class="news-container">
+                            <div class="cover_image">
+                                <img src="{{ news.cover_image }}" alt="{{ news.title }}">
+                            </div>
+                            <span class="title">{{ news.title }}</span>
+                            <span class="subtitle">{{ news.subtitle }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% include 'components/footer.html' %}
+</body>
+
 </html>

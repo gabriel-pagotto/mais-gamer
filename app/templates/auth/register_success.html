@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/register_success.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            <div class="payload">
-                <h2>{{ 'Bem vindo ' + current_user.name + ', você foi cadastrado com sucesso!' }}</h2>
-                <a href="{{ url_for('index') }}" class="continue">Continuar</a>
-            </div>
+
+<head>
+    {% include 'components/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register_success.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        <div class="payload">
+            <h2>{{ 'Bem vindo ' + current_user.name + ', você foi cadastrado com sucesso!' }}</h2>
+            <a href="{{ url_for('index') }}" class="continue">Continuar</a>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

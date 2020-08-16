@@ -16,7 +16,7 @@ def profile():
 
     return render_template(
         'user/profile.html',
-        title = current_user.name,
-        form = form,
-        header_games = header_games,
+        title=current_user.name,
+        form=form,
+        header_games=header_games,
     )

@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 
+
 @app.route('/administrador', methods=['GET'])
 @login_required
 def admin():
@@ -12,12 +13,12 @@ def admin():
     if current_user.is_admin != 1:
         return redirect(url_for('index'))
 
-
     return render_template(
         'admin/admin.html',
         title='Painel de administrador',
-        header_games = header_games,
+        header_games=header_games,
     )
+
 
 @app.route('/administrador/finanças')
 @login_required
@@ -28,6 +29,7 @@ def admin_finances():
         return redirect(url_for('index'))
     return 'Em breve...'
 
+
 @app.route('/administrador/notícias')
 @login_required
 def admin_notices():
@@ -37,8 +39,9 @@ def admin_notices():
         return redirect(url_for('index'))
     return render_template(
         'admin/notices/notices.html',
-        title = 'Notícias - Administrador',
+        title='Notícias - Administrador',
     )
+
 
 @app.route('/administrador/redes-sociais')
 @login_required
@@ -48,6 +51,7 @@ def admin_social():
     if current_user.is_admin != 1:
         return redirect(url_for('index'))
     return 'Em breve...'
+
 
 @app.route('/administrador/usuários')
 @login_required

@@ -24,8 +24,8 @@
     box-shadow: 0 0 10px #DADCE0;
     padding: 10px 10px 40px 10px;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .profile .profile-form .user-icon {
@@ -49,8 +49,8 @@
     display: block;
     width: fit-content;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .profile .profile-form form div label {
@@ -65,8 +65,8 @@
     padding: 0 5px;
     color: #FFA31A;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .profile .profile-form form div input {
@@ -81,8 +81,8 @@
     margin: 0 auto;
     user-select: none;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .profile .profile-form form div input:focus {
@@ -93,15 +93,12 @@
     .profile .profile-form form {
         width: 90%;
     }
-
     .profile .profile-form form h1 {
         margin: 0 auto;
     }
-
     .profile .profile-form form div label {
         left: 7.5%;
     }
-
     .profile .profile-form form div input {
         width: 80%;
     }

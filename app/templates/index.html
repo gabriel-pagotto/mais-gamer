@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <meta property="description" content="Site de notícias para gamers e e-esports" />
-        <meta property="og:description" content="Site de notícias para gamers e e-esports">
-        <meta property="og:image" content="{{ url_for('static', filename='favicon_2.png') }}">
-        <meta property="twitter:description" content="Maior site de notícias para gamers e e-esports" />
-        <meta property="twitter:image" content="{{ url_for('static', filename='favicon_2.png') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                {% if last_notices != None %}
-                <div class="notices-body">
-                    <div class="notices-top">
-                        <div class="notice-itens">
-                            <a class="notice1-url" href="{{ url_for('notice', id=last_notice.id) }}">
-                                <span class="notice-1">
+
+<head>
+    {% include 'components/head.html' %}
+    <meta property="description" content="Site de notícias para gamers e e-esports" />
+    <meta property="og:description" content="Site de notícias para gamers e e-esports">
+    <meta property="og:image" content="{{ url_for('static', filename='favicon_2.png') }}">
+    <meta property="twitter:description" content="Maior site de notícias para gamers e e-esports" />
+    <meta property="twitter:image" content="{{ url_for('static', filename='favicon_2.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            {% if last_notices != None %}
+            <div class="notices-body">
+                <div class="notices-top">
+                    <div class="notice-itens">
+                        <a class="notice1-url" href="{{ url_for('notice', id=last_notice.id) }}">
+                            <span class="notice-1">
                                     <div class="notice-description">
                                         <span class="title">{{ last_notice.title }}</span>
-                                    </div>
-                                    <div class="icon">
-                                        <img
-                                            src="{{ last_notice.cover_image }}"
-                                            alt="{{ last_notice.title }}"
-                                        />
-                                    </div>
-                                    <div class="notice-description">
-                                        <span class="description">{{ last_notice.subtitle }}</span>
-                                        <time class="addedAt" datetime="{{ last_notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(last_notice.addedAt) }}</time>
-                                    </div>
-                                </span>
-                            </a>
-                            <div class="rest">
-                                {% for notice in rest_notices %}
-                                    <div class="notice-top-element">
-                                        <a href="{{ url_for('notice', id=notice.id) }}" class="notice-top-url">
-                                            <span class="notice-container-top">
+                    </div>
+                    <div class="icon">
+                        <img src="{{ last_notice.cover_image }}" alt="{{ last_notice.title }}" />
+                    </div>
+                    <div class="notice-description">
+                        <span class="description">{{ last_notice.subtitle }}</span>
+                        <time class="addedAt" datetime="{{ last_notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(last_notice.addedAt) }}</time>
+                    </div>
+                    </span>
+                    </a>
+                    <div class="rest">
+                        {% for notice in rest_notices %}
+                        <div class="notice-top-element">
+                            <a href="{{ url_for('notice', id=notice.id) }}" class="notice-top-url">
+                                <span class="notice-container-top">
                                                 <div class="notice-top-icon">
                                                     <img
                                                         src="{{ notice.cover_image }}"
@@ -46,30 +45,29 @@
                                                 </div>
                                                 <div class="notice-top-description">
                                                     <span class="notice-top-title">{{ notice.title }}</span>
-                                                    <span class="top-description">{{ notice.subtitle }}</span>
-                                                    <time class="notice-top-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
-                                                </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                {% endfor %}
-                            </div>
+                                <span class="top-description">{{ notice.subtitle }}</span>
+                                <time class="notice-top-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
                         </div>
+                        </span>
+                        </a>
                     </div>
-                    {% for game in games %}
-                        {% if game.id != 0 and limit_notices(game.id, last_notices) != None %}
-                            <div class="all-notices">
-                                <div class="header-all-notices">
-                                    <div class="notice-category">
-                                        <span class="notice-category-name">{{ game.name }}</span>
-                                    </div>
-                                    <a href="{{ url_for('notices_by_game', name=game.name) }}" class="more-notices">Ver mais</a>
-                                </div>
-                                <div class="elements">
-                                    {% for notice in limit_notices(game.id, last_notices) %}
-                                        <div class="notice-element">
-                                            <a href="{{ url_for('notice', id=notice.id) }}" class="notice-url">
-                                                <span class="notice-container">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% for game in games %} {% if game.id != 0 and limit_notices(game.id, last_notices) != None %}
+        <div class="all-notices">
+            <div class="header-all-notices">
+                <div class="notice-category">
+                    <span class="notice-category-name">{{ game.name }}</span>
+                </div>
+                <a href="{{ url_for('notices_by_game', name=game.name) }}" class="more-notices">Ver mais</a>
+            </div>
+            <div class="elements">
+                {% for notice in limit_notices(game.id, last_notices) %}
+                <div class="notice-element">
+                    <a href="{{ url_for('notice', id=notice.id) }}" class="notice-url">
+                        <span class="notice-container">
                                                     <div class="notice-icon">
                                                         <img
                                                             src="{{ notice.cover_image }}"
@@ -78,22 +76,22 @@
                                                     </div>
                                                     <div class="notice-description">
                                                         <span class="notice-title">{{ notice.title }}</span>
-                                                        <span class="notice-description">{{ notice.subtitle }}</span>
-                                                        <time class="notice-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
-                                                    </div>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    {% endfor %}
-                                    <a href="{{ url_for('notices_by_game', name=game.name) }}" class="more-notices2">{{ 'Ver mais de ' + game.name }}</a>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                        <span class="notice-description">{{ notice.subtitle }}</span>
+                        <time class="notice-addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
                 </div>
-                {% endif %}
+                </span>
+                </a>
             </div>
-            {% include 'components/footer.html' %}
+            {% endfor %}
+            <a href="{{ url_for('notices_by_game', name=game.name) }}" class="more-notices2">{{ 'Ver mais de ' + game.name }}</a>
         </div>
-    </body>
+    </div>
+    {% endif %} {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+    {% include 'components/footer.html' %}
+    </div>
+</body>
+
 </html>

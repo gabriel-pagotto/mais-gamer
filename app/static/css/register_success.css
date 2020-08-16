@@ -6,6 +6,7 @@
     background-size: cover;
     user-select: none;
 }
+
 .payload {
     height: fit-content;
     width: fit-content;

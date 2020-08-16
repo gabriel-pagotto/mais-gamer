@@ -6,8 +6,8 @@
     width: 40%;
     margin: 20px auto;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .notice-admin-options a {
@@ -20,8 +20,8 @@
     font-size: 14px;
     display: block;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .notice-admin-options a:hover {
@@ -34,7 +34,6 @@
         display: block;
         grid-template-columns: 1fr;
     }
-
     .notice-admin-options a {
         border-radius: 5px;
     }

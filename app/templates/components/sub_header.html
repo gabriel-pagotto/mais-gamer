@@ -1,11 +1,7 @@
 <div class="posts">
     <div class="posts-options">
-        {% for option in sub_header %}
-            {% if option.selected == True  %}
-                <a class="selected" disabled="">{{ option.title }}</a>
-            {% else %}
-                <a href="{{ url_for(option.url) }}">{{ option.title }}</a>
-            {% endif %}
-        {% endfor %}
+        {% for option in sub_header %} {% if option.selected == True %}
+        <a class="selected" disabled="">{{ option.title }}</a> {% else %}
+        <a href="{{ url_for(option.url) }}">{{ option.title }}</a> {% endif %} {% endfor %}
     </div>
 </div>

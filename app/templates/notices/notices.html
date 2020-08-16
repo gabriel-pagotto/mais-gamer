@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/notices.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                {% if game %}
-                    <div class="game">
-                        <h1 class="list-game">{{ game.name }}</h1>
-                    </div>
-                {% endif %}
-                <div class="notices-body">
-                    <div class="all-notices">
-                        {% if notices != None %}
-                            {% for notice in notices %}
-                                <a href="{{ url_for('notice', id = notice.id) }}">
-                                    <div class="notice">
-                                        <div class="cover_image">
-                                            <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
-                                        </div>
-                                        <div class="notice-description">
-                                            <h3 class="title">{{ notice.title }}</h3>
-                                            <span class="subtitle">{{ notice.subtitle }}</span>
-                                            <div class="itens">
-                                                <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            {% endfor %}
-                        {% else %}
-                                <span>Sem resultados</span>
-                        {% endif %}
-                    </div>
+
+<head>
+    {% include 'components/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notices.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            {% if game %}
+            <div class="game">
+                <h1 class="list-game">{{ game.name }}</h1>
+            </div>
+            {% endif %}
+            <div class="notices-body">
+                <div class="all-notices">
+                    {% if notices != None %} {% for notice in notices %}
+                    <a href="{{ url_for('notice', id = notice.id) }}">
+                        <div class="notice">
+                            <div class="cover_image">
+                                <img src="{{ notice.cover_image }}" alt="notice.title" class="cover_image">
+                            </div>
+                            <div class="notice-description">
+                                <h3 class="title">{{ notice.title }}</h3>
+                                <span class="subtitle">{{ notice.subtitle }}</span>
+                                <div class="itens">
+                                    <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %} {% else %}
+                    <span>Sem resultados</span> {% endif %}
                 </div>
-                {% if posts_pages.pages <= 1 %}
-                {% else %}
-                    <button onclick="loadMore()" class="load-more"><i class="fas fa-caret-down" style="margin-right: 10px;"></i>Mais notícias</button>
+            </div>
+            {% if posts_pages.pages
+            <=1 %} {% else %} <button onclick="loadMore()" class="load-more"><i class="fas fa-caret-down" style="margin-right: 10px;"></i>Mais notícias</button>
                 {% endif %}
                 <span class="final-notices">Fim das notícias</span>
                 <script src="{{ url_for('static', filename='javascript/loadMoreNotices.js') }}"></script>
-            </div>
-            {% include 'components/footer.html' %}
         </div>
-    </body>
+        {% include 'components/footer.html' %}
+    </div>
+</body>
+
 </html>

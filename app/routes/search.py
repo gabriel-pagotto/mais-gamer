@@ -2,6 +2,7 @@ from app import app
 from flask import request, jsonify
 from app.models import Posts
 
+
 @app.route('/buscar', methods=['GET'])
 def search():
     def search(param):

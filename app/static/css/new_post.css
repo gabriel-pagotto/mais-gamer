@@ -8,7 +8,7 @@
     width: 70%;
     margin: 0 auto 60px auto;
     height: fit-content;
-    padding: 15px;		
+    padding: 15px;
 }
 
 .posts .posts-actions .new-post .new-post-inputs {
@@ -93,12 +93,12 @@
     opacity: 0.6;
 }
 
-.posts-actions .new-post .new-post-inputs label{
+.posts-actions .new-post .new-post-inputs label {
     display: block;
     width: fit-content;
     margin: 30px auto 5px auto;
     font-size: 17px;
-} 
+}
 
 .posts-actions .new-post .new-post-inputs select {
     -webkit-appearance: none;
@@ -174,8 +174,8 @@
     color: #FFFFFF;
     margin: 30px auto 0 auto;
     -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .posts-actions .new-post .new-post-inputs .submit:hover {
@@ -188,52 +188,42 @@
         width: 100%;
         padding: 0;
     }
-
     .posts .posts-actions .new-post .new-info {
         text-align: center;
         margin-bottom: 20px;
     }
-
     .posts .posts-actions .new-post .new-post-inputs {
         margin: 0;
     }
-
     .posts-actions .new-post .new-post-inputs label {
         width: 90%;
         margin-left: 20px;
     }
-
     .posts-actions .new-post .new-post-inputs input {
         margin-left: auto;
         margin-right: auto;
         width: 90%;
     }
-
     .posts-actions .new-post .new-post-inputs .image-cover {
         width: 90%;
     }
-
     .posts-actions .new-post .new-post-inputs .new-post-title {
         font-size: 22px;
     }
-
     .posts-actions .new-post .new-post-inputs .new-post-subtitle {
         font-size: 18px;
     }
-
     .posts-actions .new-post .new-post-inputs .new-post-text {
         font-size: 18px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
-
     .posts-actions .new-post .new-post-inputs .select-game {
         font-size: 20px;
         margin-left: auto;
         margin-right: auto;
     }
-
     .posts-actions .new-post .new-post-inputs .submit {
         padding: 7px 16px;
         border: 0 none;

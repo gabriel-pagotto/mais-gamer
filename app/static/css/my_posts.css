@@ -16,7 +16,7 @@
     align-self: center;
     justify-self: center;
     color: #919191;
-    margin:100px auto;
+    margin: 100px auto;
     padding: 0 10px;
     text-align: center;
 }
@@ -32,8 +32,8 @@
     width: min-content;
     height: max-content;
     -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .my-posts .body-post:hover {
@@ -61,7 +61,8 @@
     width: 100%;
 }
 
-.my-posts .body-post .options a, .my-posts .body-post .options button {
+.my-posts .body-post .options a,
+.my-posts .body-post .options button {
     border: 0 none;
     margin: 0 5px;
     font-size: 12px;
@@ -72,16 +73,18 @@
     border-radius: 5px;
     color: #FFFFFF;
     -webkit-transition: all 0.1s linear;
-        -moz-transition: all 0.1s linear;
-            transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
-.my-posts .body-post .options a:hover, .my-posts .body-post .options button:hover {
+.my-posts .body-post .options a:hover,
+.my-posts .body-post .options button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.my-posts .body-post .options a:active, .my-posts .body-post .options button:active {
+.my-posts .body-post .options a:active,
+.my-posts .body-post .options button:active {
     opacity: 0.6;
 }
 
@@ -100,7 +103,7 @@
 
 .my-posts .body-post .options .delete {
     background-color: #dc143c;
-}   
+}
 
 .my-posts .body-post .options .delete-confirm {
     display: none;
@@ -125,32 +128,29 @@
         margin: 0;
         text-align: center;
     }
-
     .my-posts {
         display: block;
         width: 100%;
     }
-
     .my-posts .body-post {
         width: 94%;
         align-items: center;
         text-align: center;
         margin-bottom: 15px;
     }
-
     .my-posts .body-post .cover {
         max-width: none;
         width: 100%;
     }
-
     .my-posts .body-post .title {
         margin: 10px auto 0 auto;
         text-align: center;
         font-size: 19px;
         height: 100%;
     }
-
-    .my-posts .body-post .options .delete, .my-posts .body-post .options .edit, .my-posts .body-post .options .see {
+    .my-posts .body-post .options .delete,
+    .my-posts .body-post .options .edit,
+    .my-posts .body-post .options .see {
         font-size: 15px;
     }
 }

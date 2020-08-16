@@ -7,6 +7,7 @@ from app.utils.header_games import header_games
 from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
+
 @app.route('/notícias', methods=['GET'])
 def notices():
     page = request.args.get('page', 1, type=int)
@@ -15,30 +16,32 @@ def notices():
 
     next_url = url_for('notices', page=posts_pages.next_num) \
         if posts_pages.has_next else None
-    prev_url  = url_for('notices', page=posts_pages.prev_num) \
+    prev_url = url_for('notices', page=posts_pages.prev_num) \
         if posts_pages.has_prev else None
 
     return render_template(
         'notices/notices.html',
-        title = 'Todas as notícias',
-        def_name = 'notices',
-        notices = posts,
-        DatePost = DatePost,
-        posts_pages = posts_pages,
-        page_number = page,
-        next_url = next_url,
-        prev_url = prev_url,
-        url_for_notices = url_for_notices,
-        last_param = None,
-        header_games = header_games,
+        title='Todas as notícias',
+        def_name='notices',
+        notices=posts,
+        DatePost=DatePost,
+        posts_pages=posts_pages,
+        page_number=page,
+        next_url=next_url,
+        prev_url=prev_url,
+        url_for_notices=url_for_notices,
+        last_param=None,
+        header_games=header_games,
     )
+
 
 @app.route('/notícias/<name>', methods=['GET'])
 def notices_by_game(name):
     page = request.args.get('page', 1, type=int)
     try:
-        game = Games.query.filter_by(name = name).first()
-        posts = Posts.query.filter_by(game_id = game.id).order_by(desc('addedAt')).paginate(page, 8, True)
+        game = Games.query.filter_by(name=name).first()
+        posts = Posts.query.filter_by(game_id=game.id).order_by(
+            desc('addedAt')).paginate(page, 8, True)
     except AttributeError:
         return redirect(url_for('notices'))
 
@@ -52,35 +55,38 @@ def notices_by_game(name):
 
     return render_template(
         'notices/notices.html',
-        title = game.name,
-        def_name = 'notices_by_game',
-        notices = posts.items,
-        game = game,
-        DatePost = DatePost,
-        posts_pages = posts,
-        page_number = page,
-        next_url = next_url,
-        prev_url = prev_url,
-        url_for_notices = url_for_notices,
-        last_param = game.name,
-        header_games = header_games,
+        title=game.name,
+        def_name='notices_by_game',
+        notices=posts.items,
+        game=game,
+        DatePost=DatePost,
+        posts_pages=posts,
+        page_number=page,
+        next_url=next_url,
+        prev_url=prev_url,
+        url_for_notices=url_for_notices,
+        last_param=game.name,
+        header_games=header_games,
     )
+
 
 @app.route('/eSports', methods=['GET'])
 def notices_eSports():
     page = request.args.get('page', 1, type=int)
-    posts_pages = Posts.query.filter_by(is_esport = 1).order_by(desc('addedAt')).paginate(page, 8, True)
+    posts_pages = Posts.query.filter_by(is_esport=1).order_by(
+        desc('addedAt')).paginate(page, 8, True)
     posts = posts_pages.items
 
     return render_template(
         'notices/notices.html',
-        title = 'Todas as notícias',
-        def_name = 'notices',
-        notices = posts,
-        DatePost = DatePost,
-        posts_pages = posts_pages,
-        header_games = header_games,
+        title='Todas as notícias',
+        def_name='notices',
+        notices=posts,
+        DatePost=DatePost,
+        posts_pages=posts_pages,
+        header_games=header_games,
     )
+
 
 @app.route('/notícia/<id>', methods=['GET'])
 def notice(id):
@@ -96,15 +102,15 @@ def notice(id):
         if len(num_randons) == 0:
             num_randons.append(random.randint(0, len(all_posts_array) - 1))
         if len(num_randons) == 1:
-            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            num_selected = random.randint(0, len(all_posts_array) - 1)
             if num_selected != num_randons[0]:
                 num_randons.append(num_selected)
         if len(num_randons) == 2:
-            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            num_selected = random.randint(0, len(all_posts_array) - 1)
             if num_selected != num_randons[0] and num_selected != num_randons[1]:
                 num_randons.append(num_selected)
         if len(num_randons) == 3:
-            num_selected =  random.randint(0, len(all_posts_array) - 1)
+            num_selected = random.randint(0, len(all_posts_array) - 1)
             if num_selected != num_randons[0] and num_selected != num_randons[1] and num_selected != num_randons[2]:
                 num_randons.append(num_selected)
 
@@ -113,10 +119,10 @@ def notice(id):
     for num in num_randons:
         more_news.append(all_posts_array[num])
 
-    post = Posts.query.filter_by(id = id).first()
-    post_content = Post_Content.query.filter_by(post_id = id)
-    game = Games.query.filter_by(id = post.game_id).first()
-    user = Users.query.filter_by(id = post.user_id).first()
+    post = Posts.query.filter_by(id=id).first()
+    post_content = Post_Content.query.filter_by(post_id=id)
+    game = Games.query.filter_by(id=post.game_id).first()
+    user = Users.query.filter_by(id=post.user_id).first()
 
     if post.views == None or not post.views:
         post.views = 1
@@ -125,14 +131,14 @@ def notice(id):
 
     database.session.commit()
 
-    return render_template (
+    return render_template(
         'notices/notice.html',
-        title = post.title,
-        notice = post,
-        notice_content = post_content,
-        user = user,
-        DatePost = DatePost,
-        game = game,
-        header_games = header_games,
-        more_news = more_news,
+        title=post.title,
+        notice=post,
+        notice_content=post_content,
+        user=user,
+        DatePost=DatePost,
+        game=game,
+        header_games=header_games,
+        more_news=more_news,
     )

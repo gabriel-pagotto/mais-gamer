@@ -1,6 +1,7 @@
 from app.models import Posts
 from app.utils.date_time import get_datetime_7_days
 
+
 def posts_control():
     posts = Posts.query.all()
     last_notices = []
@@ -39,7 +40,6 @@ def posts_control():
 
     for number in notices_to_be_deleted:
         del(last_notices[number])'''
-
 
     return [
         posts,

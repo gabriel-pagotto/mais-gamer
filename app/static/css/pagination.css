@@ -10,8 +10,8 @@
     color: #ffa31a;
     font-size: 23px;
     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-            transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .payload .pagination .opc:hover {

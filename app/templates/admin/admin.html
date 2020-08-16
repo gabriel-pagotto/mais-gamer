@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                <div class="admin">
-                    <h1>Painel de administrador</h1>
-                    <h1>{{ 'Bem vindo ' + current_user.name }}</h1>
-                    <div class="admin-options">
-                        <a href="{{ url_for('admin_finances') }}">Financeiro</a>
-                        <a href="{{ url_for('admin_notices') }}">Notícias</a>
-                        <a href="{{ url_for('admin_social') }}">Redes Sociais</a>
-                        <a href="{{ url_for('admin_users') }}">Usuários</a>
-                        <a href="{{ url_for('admin_finances') }}">Configurações</a>
-                        <a href="{{ url_for('admin_finances') }}">Sobre a empresa</a>
-                        <a href="{{ url_for('admin_finances') }}">Comunicação com ADMS</a>
-                        <a href="{{ url_for('admin_finances') }}">Testes</a>
-                        <a href="{{ url_for('admin_finances') }}">Graficos</a>
-                    </div>
+
+<head>
+    {% include 'components/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            <div class="admin">
+                <h1>Painel de administrador</h1>
+                <h1>{{ 'Bem vindo ' + current_user.name }}</h1>
+                <div class="admin-options">
+                    <a href="{{ url_for('admin_finances') }}">Financeiro</a>
+                    <a href="{{ url_for('admin_notices') }}">Notícias</a>
+                    <a href="{{ url_for('admin_social') }}">Redes Sociais</a>
+                    <a href="{{ url_for('admin_users') }}">Usuários</a>
+                    <a href="{{ url_for('admin_finances') }}">Configurações</a>
+                    <a href="{{ url_for('admin_finances') }}">Sobre a empresa</a>
+                    <a href="{{ url_for('admin_finances') }}">Comunicação com ADMS</a>
+                    <a href="{{ url_for('admin_finances') }}">Testes</a>
+                    <a href="{{ url_for('admin_finances') }}">Graficos</a>
                 </div>
             </div>
-            {% include 'components/footer.html' %}
         </div>
-    </body>
+        {% include 'components/footer.html' %}
+    </div>
+</body>
+
 </html>
