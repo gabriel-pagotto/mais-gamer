@@ -1,22 +1,22 @@
 .web {
-    width: 100%;
     background-color: #FFFFFF;
 }
 .web .payload {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .web .payload .notice {
-    width: 80%;
+    width: 50%;
     margin: 20px auto;
     min-width: 700px;
     border-bottom: 2px solid #EBE8EC;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    max-width: 800px;
 }
 
 .web .payload .notice .notice-body {
-    width: 50%;
+    width: 85%;
     margin: auto;
 }
 
@@ -55,7 +55,14 @@
 }
 
 .payload .notice .notice-header .header-title {
-    font-size: 30px;
+    font-size: 38px;
+}
+
+.payload .notice .notice-header .notice-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px auto;
+  font-weight: 400;
 }
 
 .payload .notice .notice-header .game {
@@ -63,36 +70,22 @@
     display: flex;
 }
 
-.notice .notice-header .game img {
-    position: relative;
-    top: 0px;
-    height: 40px;
-    width: initial;
-}
-
 .notice .notice-header .game .game-name {
-    font-size: 22px;
-    font-weight: 600;
-    color: #404040;
-    min-width: max-content;
-}
-
-.payload .notice .notice-subtitle {
     font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-weight: 400;
+    color: #ffa31a;
+    min-width: max-content;
 }
 
 .payload .notice .notice-header .posted-by {
     display: block;
-    margin-top: 10px;
     color: #404040;
+    font-weight: 600;
 }
 
 .notice .notice-header .notice-options {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
     width: 100%;
     align-items: center;
 }
@@ -212,7 +205,7 @@
 
 @media (max-width: 1025px) {
     .web .payload .notice {
-        width: 100%;
+        width: 90%;
         min-width: 0;
     }
 
@@ -222,13 +215,17 @@
     }
 
     .payload .notice .notice-header {
-        margin-left: 10px;
-        margin-right: 10px;
     }
 
     .payload .notice .notice-header .header-title {
-        font-size: 22px;
+        font-size: 28px;
     }
+
+    .payload .notice .notice-header .notice-subtitle {
+      font-size: 19px;
+      font-weight: 400;
+      margin-top: 20px;
+  }
 
     .notice .notice-header .game img {
         height: 30px;
@@ -238,16 +235,9 @@
         font-size: 18px;
     }
 
-    .payload .notice .notice-subtitle {
-        font-size: 16px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
     .web .payload .notice pre {
-        font-size: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
+        font-size: 19px;
+        font-weight: 200;
     }
 
     .web .payload .more-notices .notices-in-more {
