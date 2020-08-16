@@ -26,20 +26,20 @@ def search():
                             if part.lower() == subtitle_word.lower():
                                 news_selected.append(news)
                                 break
-                        break
+                            break
         return news_selected
-    
+
     q = request.args.get('q')
-    
+
     results = []
-    
+
     if q != None:
         data = search(q)
         if data == None:
             data = None
         elif len(data) < 1:
             data = None
-        else: 
+        else:
             for result in data:
                 results.append({
                     'id': result.id,
@@ -56,5 +56,5 @@ def search():
                 })
     else:
         data = None
-        
+
     return jsonify(results)
