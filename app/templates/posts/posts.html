@@ -2,22 +2,22 @@
 <html lang="pt-br">
 
 <head>
-    {% include 'components/head.html' %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/my_posts.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/new_post.css') }}">
+  {% include 'components/head.html' %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/my_posts.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/new_post.css') }}">
 </head>
 
 <body>
-    <div class='web'>
-        {% include 'components/header.html' %}
-        <div class="payload">
-            <div class="sub_header">
-                {% include 'components/sub_header.html' %}
-            </div>
-            {% if selected == 'posts' %} {% include 'posts/my_posts.html' %} {% elif selected == 'new' %} {% include 'posts/new_post.html' %} {% endif %}
-        </div>
-        {% include 'components/footer.html' %}
+  <div class='web'>
+    {% include 'components/header.html' %}
+    <div class="payload">
+      <div class="sub_header">
+        {% include 'components/sub_header.html' %}
+      </div>
+      {% if selected == 'posts' %} {% include 'posts/my_posts.html' %} {% elif selected == 'new' %} {% include 'posts/new_post.html' %} {% endif %}
     </div>
+    {% include 'components/footer.html' %}
+  </div>
 </body>
 
 </html>

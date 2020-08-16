@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        {% include 'components/head.html' %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_notices.css') }}">
-    </head>
-    <body>
-        <div class='web'>
-            {% include 'components/header.html' %}
-            <div class="payload">
-                <div class="notice-admin-options">
-                    <a href="">CONTROLE DE JOGOS</a>
-                    <a href="">CONTROLE DE NOTÍCIAS</a>
-                    <a href="">ADICIONAR UM JOGO</a>
-                    <a href="">ADICIONAR UM JOGO</a>
-                    <a href="">ADICIONAR UM JOGO</a>
-                    <a href="">ADICIONAR UM JOGO</a>
-                    <a href="">ADICIONAR UM JOGO</a>
-                </div>
+
+<head>
+    {% include 'components/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_notices.css') }}">
+</head>
+
+<body>
+    <div class='web'>
+        {% include 'components/header.html' %}
+        <div class="payload">
+            <div class="notice-admin-options">
+                <a href="">CONTROLE DE JOGOS</a>
+                <a href="">CONTROLE DE NOTÍCIAS</a>
+                <a href="">ADICIONAR UM JOGO</a>
+                <a href="">ADICIONAR UM JOGO</a>
+                <a href="">ADICIONAR UM JOGO</a>
+                <a href="">ADICIONAR UM JOGO</a>
+                <a href="">ADICIONAR UM JOGO</a>
             </div>
-            {% include 'components/footer.html' %}
         </div>
-    </body>
+        {% include 'components/footer.html' %}
+    </div>
+</body>
+
 </html>

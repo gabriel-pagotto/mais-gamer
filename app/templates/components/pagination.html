@@ -7,7 +7,7 @@
         <a href="{{ url_for_notices(def_name, posts_pages.prev_num, last_param) }}" class="prev-page">{{ posts_pages.prev_num }}</a> {% endif %}
         <a class="page-number">{{ page_number }}</a> {% if posts_pages.next_num %}
         <a href="{{ url_for_notices(def_name, posts_pages.next_num, last_param) }}" class="next-page">{{ posts_pages.next_num }}</a> {% endif %} {% if posts_pages.next_num != None and posts_pages.next_num + 1
-        <=p osts_pages.pages %} <a href="{{ url_for_notices(def_name, posts_pages.next_num + 1, last_param) }}">{{ posts_pages.next_num + 1 }}</a>
+        <=posts_pages.pages %} <a href="{{ url_for_notices(def_name, posts_pages.next_num + 1, last_param) }}">{{ posts_pages.next_num + 1 }}</a>
             {% endif %}
     </div>
     {% if next_url %}
