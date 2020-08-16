@@ -32,7 +32,7 @@
     text-decoration: underline;
 }
 
-.notices-top .notice-itens a .notice-1 {    
+.notices-top .notice-itens a .notice-1 {
     display: block;
     width: 91%;
     border-bottom: 1px solid #EBE8EC;
@@ -276,127 +276,140 @@ a .notice-1 .icon img {
 }
 
 @media (max-width: 1025px) {
-    .payload .notices-body {
-        width: 99%;
-        min-width: 0;
-        max-width: 700px;
-        margin-top: 2px;
-    }
+  body {
+    background: #EAEAEA;
+  }
 
-    .payload .notices-body .notices-top {
-        display: block;
-    }
+  .web {
+    background: #EAEAEA;
+  }
 
-    .notices-top .notice-itens a {
-        display: block;
-    }
+  .payload .notices-body {
+    width: 100%;
+    min-width: 0;
+    max-width: 700px;
+    margin-top: 2px;
+    background: #EAEAEA;
+  }
 
-    .notices-top .notice-itens a .notice-1 {
-        display: block;
-        width: 98%;
-        padding: 0 1% 10px 1%;
-    }
+  .payload .notices-body .notices-top {
+    display: block;
+  }
 
-    .notice-itens a .notice-1 .icon {
-        max-width: 100%;
-        max-height: 100%;
-    }
+  .notices-top .notice-itens a {
+    display: block;
+  }
 
-    .notice-itens a .notice-1 .notice-description {
-        margin-left: 10px;
-        margin-right: 10px; 
-    }
-    
-    .notice-1 .notice-description .title {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-    
-    .notice-1 .notice-description .description {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-    
-    .notice-1 .notice-description .addedAt {
-        font-size: 13px;
-        margin-bottom: 5px;
-    }
+  .notices-top .notice-itens a .notice-1 {
+    display: block;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    margin: 20px 0 0px 0;
+    background: #FFFFFF;
+  }
 
-    .notice-itens .rest {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-    }
+  .notice-itens a .notice-1 .icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
-    .rest .notice-top-element {
-        max-width: 100%;
-        margin: 0 2.5px;
-        margin-bottom: 5px;
-        box-shadow: 0 0 5px #827189;
-        padding-bottom: 10px;
-    }
+  .notice-itens a .notice-1 .notice-description {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
-    .notice-itens .rest .notice-top-url {
-        max-width: 100%;
-    }
+  .notice-1 .notice-description .title {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
 
-    .notice-top-url .notice-container-top {
-        width: 100%;
-    }
+  .notice-1 .notice-description .description {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 
-    .notice-container-top .notice-top-icon {
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 100%;
-    }
+  .notice-1 .notice-description .addedAt {
+      font-size: 13px;
+      margin-bottom: 5px;
+  }
 
-    .notice-container-top .notice-top-description .notice-top-title {
-        font-size: 15px;
-        margin: 0 10px 5px 10px;
-    }
-    
-    .notice-container-top .notice-top-description .top-description {
-        font-size: 12px;
-        margin: 0 10px 5px 10px;
-    }
-    
-    .notice-container-top .notice-top-description .notice-top-addedAt {
-        font-size: 10px;
-        margin: 0 10px 5px 10px;
-    }
+  .notice-itens .rest {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+  }
 
-    .payload .notices-body .all-notices {
-        margin-bottom: 25px;
-    }
+  .rest .notice-top-element {
+      max-width: 100%;
+      margin: 0 2.5px;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      padding-top: 6px;
+      background: #FFFFFF;
+  }
 
-    .all-notices .header-all-notices .notice-category {
-        position: relative;
-        display: flex;
-        top: -35px;
-        padding: 10px 15px;
-        border-radius: 10px;
-        width: max-content;
-        align-items: center;
-    }
+  .notice-itens .rest .notice-top-url {
+      max-width: 100%;
+  }
 
+  .notice-top-url .notice-container-top {
+      width: 100%;
+  }
 
-    .all-notices .header-all-notices .notice-category {
-        display: block;
-        width: min-content;
-        margin: 0 auto;
-    }
-    
-    .all-notices .header-all-notices .notice-category h1 {
-        justify-self: center;
-        display: block;
-        font-size: 20px;
-        width: max-content;
-        border: 0 none;
-        margin: 0;
-        left: 0;
-    }
+  .notice-container-top .notice-top-icon {
+      width: 95%;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+  .notice-container-top .notice-top-description .notice-top-title {
+      font-size: 15px;
+      margin: 0 10px 5px 10px;
+  }
+
+  .notice-container-top .notice-top-description .top-description {
+      font-size: 12px;
+      margin: 0 10px 5px 10px;
+  }
+
+  .notice-container-top .notice-top-description .notice-top-addedAt {
+      font-size: 10px;
+      margin: 0 10px 5px 10px;
+  }
+
+  .payload .notices-body .all-notices {
+      margin-bottom: 25px;
+  }
+
+  .all-notices .header-all-notices .notice-category {
+    position: relative;
+    display: flex;
+    top: -35px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: max-content;
+    align-items: center;
+    background: #EAEAEA;
+  }
+
+  .all-notices .header-all-notices .notice-category {
+    display: block;
+    width: min-content;
+    margin: 0 auto;
+  }
+
+  .all-notices .header-all-notices .notice-category h1 {
+    justify-self: center;
+    display: block;
+    font-size: 20px;
+    width: max-content;
+    border: 0 none;
+    margin: 0;
+    left: 0;
+  }
 
     .all-notices .header-all-notices .more-notices {
         display: none;
@@ -412,31 +425,38 @@ a .notice-1 .icon img {
         margin: 2.5px 2.5px 15px 2.5px;
         height: max-content;
         height: max-content;
-        border-bottom: 1px solid #EBE8EC;
         padding-bottom: 10px;
+        padding-top: 10px;
+
+        background: #FFFFFF;
     }
 
     .all-notices .elements .notice-element .notice-url {
         max-width: 100%;
         text-decoration: none;
     }
-    
+
     .notice-element .notice-url .notice-container .notice-icon {
         height: 100%;
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
         overflow: hidden;
+    }
+
+    .notice-container .notice-description {
+      width: 95%;
     }
 
     .notice-container .notice-description .notice-title {
         font-size: 22px;
         margin: 0 10px 5px 10px;
     }
-    
+
     .notice-container .notice-description .notice-description {
         font-size: 16px;
         margin: 0 10px 5px 10px;
     }
-    
+
     .notice-container .notice-description .notice-addedAt {
         font-size: 13px;
         margin: 0 10px 5px 10px;

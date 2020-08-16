@@ -64,7 +64,7 @@
     -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
             transform: rotate(-90deg);
-} 
+}
 
 .arrow-left {
     position: relative;
@@ -154,7 +154,7 @@
 
 .header .header-1part .prim-header {
     display: inline-block;
-    position: relative; 
+    position: relative;
 }
 
 .header .header-1part .prim-header:hover {
@@ -630,7 +630,7 @@
         opacity: 1;
         color: #D2D2D2;
     }
-    
+
     .header-1part-2opc .prim-header:hover > .option-title .arrow-down {
         fill: #D2D2D2;
         opacity: 1;
@@ -740,7 +740,7 @@
         border: 0 none;
         margin-top: 1px;
     }
-    
+
     .header .header-1part .header-1part-1opc:hover {
         background: #212121;
         border: 0 none;
@@ -824,13 +824,13 @@
         border: 0 none;
         margin-top: 1px;
     }
-    
+
     .header .header-1part .header-1part-2opc:hover {
         overflow: none;
         cursor: pointer;
         color: #FFFFFF;
     }
-    
+
     .header .header-1part .header-1part-2opc .arrow-down {
         fill: #C7C7C7;
         -webkit-transform: rotate(-90deg);
@@ -928,9 +928,9 @@
         position: fixed;
         display: block;
         height: 100%;
-        width: 100%;
+        width: 100vw;
         top: 0;
-        left: -900px;
+        left: -200vw;
         z-index: 5;
         border-top: 2px solid #212121;
         border-left: 1px solid #000000;
@@ -964,7 +964,7 @@
             -moz-transition: all 0.2s linear;
                 transition: all 0.2s linear;
     }
-    
+
     .search-mobile-header .search-mobile-input:focus {
         box-shadow: 0 0 0 0;
         border: 1px solid #212121;
@@ -979,7 +979,7 @@
         background-color: #111111;
         top: 0;
         right: 0;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         z-index: 4;
         opacity: 0.5;
