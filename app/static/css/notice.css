@@ -82,7 +82,7 @@
 
 .web .payload .notice .tweet {
   display: block;
-  width: max-content  ;
+  width: fit-content;
   margin: 0 auto 20px auto;
 }
 
@@ -270,6 +270,9 @@
     }
     .web .payload .notice .vYtb {
       height: 50vw;
+    }
+    .web .payload .notice .tweet {
+      width: 90%;
     }
     .web .payload .more-notices .notices-in-more {
         display: block;
