@@ -11,6 +11,7 @@ coverImageLabel.addEventListener('click', () => {
   event.preventDefault();
   const imageInput = document.createElement('input');
   imageInput.type = 'file';
+  imageInput.accept = '.png, .jpg, .jpeg';
   imageInput.style.display = 'none';
   form.appendChild(imageInput);
   imageInput.click();

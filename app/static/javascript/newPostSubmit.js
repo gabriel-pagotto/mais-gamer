@@ -50,6 +50,7 @@ addImage.addEventListener('click', () => {
   hiddeOptions();
   const uploadFile = document.createElement('input');
   uploadFile.type = 'file';
+  uploadFile.accept = '.png, .jpg, .jpeg';
   uploadFile.style.display = 'none';
   contents.appendChild(uploadFile);
   uploadFile.click();
