@@ -5,6 +5,38 @@ const checkbox = document.querySelector('.is-esport');
 const sourceQuestion = document.querySelector('#source-question');
 const sourceName = document.querySelector('.source-name');
 const sourceUrl = document.querySelector('.source-url');
+const coverImageLabel = document.querySelector('.image-cover-select');
+
+coverImageLabel.addEventListener('click', () => {
+  event.preventDefault();
+  const imageInput = document.createElement('input');
+  imageInput.type = 'file';
+  imageInput.style.display = 'none';
+  form.appendChild(imageInput);
+  imageInput.click();
+
+  const XHR = new XMLHttpRequest();
+  const formData = new FormData()
+
+  imageInput.addEventListener('change', () => {
+    XHR.open('post', '/upload', true);
+    XHR.onload
+    XHR.onreadystatechange = () => {
+      if (XHR.readyState === 4) {
+        if (XHR.status === 200) {
+          form.removeChild(imageInput);
+          const data = JSON.parse(XHR.responseText);
+          const image = document.querySelector('.image-cover');
+          image.style.display = 'block';
+          coverImageLabel.innerHTML = 'Trocar imagem &nbsp;<i class="fas fa-exchange-alt"></i>';
+          image.src = data.url;
+        };
+      };
+    };
+    formData.append('file', imageInput.files[0]);
+    XHR.send(formData)
+  });
+});
 
 checkbox.value = false;
 

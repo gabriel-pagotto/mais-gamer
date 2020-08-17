@@ -43,10 +43,23 @@
                     </div>
                 </div>
                 <div class="notice-body">
-                    {% for content in notice_content %} {% if content.type == 'IMG' %}
-                    <img src="{{ content.content }}" alt="{{ notice.title }}"> {% elif content.type == 'TXT' %}
-                    <pre>{{ content.content }}</pre> {% endif %} {% endfor %} {% if notice.source_name != '' and notice.source_name != None %}
-                    <span class="source"><i class="far fa-newspaper"></i> Fonte: <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a></span> {% endif %}
+                    {% for content in notice_content %}
+                      {% if content.type == 'IMG' %}
+                        <img src="{{ content.content }}" alt="{{ notice.title }}">
+                      {% elif content.type == 'T' %}
+                        <h3>{{ content.content }}</h3>
+                      {% elif content.type == 'TXT' %}
+                        <pre>{{ content.content }}</pre>
+                      {% elif content.type == 'P' %}
+                        <p>{{ content.content }}</p>
+                      {% endif %}
+                    {% endfor %}
+                    {% if notice.source_name != '' and notice.source_name != None %}
+                      <span class="source">
+                        <i class="far fa-newspaper"></i> Fonte:
+                        <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a>
+                      </span>
+                    {% endif %}
                 </div>
             </div>
             <div class="more-notices">

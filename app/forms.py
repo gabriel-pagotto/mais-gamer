@@ -32,35 +32,6 @@ class RegisterForm(FlaskForm):
             raise ValidationError('Este email já existe.')
 
 
-class NewPostForm(FlaskForm):
-    title = StringField(validators=[DataRequired()])
-    subtitle = StringField(validators=[DataRequired()])
-    cover_image = FileField(validators=[FileRequired()])
-    game_id = SelectField(validators=[DataRequired()])
-    pc_image = FileField(validators=[FileRequired(), FileAllowed(
-        ['jpg', 'png'], 'Somente imagens JPG e PNG!')])
-    pc_text = TextAreaField()
-    pc_last_image = FileField(validators=[FileRequired(), FileAllowed(
-        ['jpg', 'png'], 'Somente imagens JPG e PNG!')])
-    pc_last_text = TextAreaField(DataRequired())
-    is_esport = BooleanField()
-    source_name = StringField()
-    source_url = StringField()
-    submit = SubmitField()
-
-
-class NewPostFormTest(FlaskForm):
-    title = StringField(validators=[DataRequired()])
-    subtitle = StringField(validators=[DataRequired()])
-    cover_image = FileField(validators=[DataRequired(), FileRequired()])
-    game_id = SelectField(validators=[DataRequired()])
-    post_content = TextAreaField(validators=[DataRequired()])
-    is_esport = BooleanField()
-    source_name = StringField()
-    source_url = StringField()
-    submit = SubmitField()
-
-
 class ProfileForm(FlaskForm):
     username = StringField(validators=[DataRequired()])
     name = StringField(validators=[DataRequired()])

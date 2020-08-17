@@ -6,6 +6,7 @@
 .posts .posts-actions .new-post {
     display: block;
     width: 70%;
+    max-width: 900px;
     margin: 0 auto 60px auto;
     height: fit-content;
     padding: 15px;
@@ -16,19 +17,19 @@
     margin: 50px 50px;
 }
 
-.posts-actions .new-post .new-post-inputs input {
+.posts-actions .new-post .new-post-inputs #header {
     -webkit-appearance: none;
     display: block;
     width: 95%;
     padding: 1% 2.5%;
     margin-bottom: 10px;
-    border: 1px solid #BBC0C4;
-    border-radius: 5px;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
 }
 
-.posts-actions .new-post .new-post-inputs input:focus {
-    box-shadow: 0 0 5px #BBC0C4;
-    border: 1px solid #BBC0C4;
+.posts-actions .new-post .new-post-inputs #header:focus {
+    box-shadow: 0 0 5px #EAEAEA;
+    border: 1px solid #EAEAEA;
     outline: 0;
 }
 
@@ -42,7 +43,7 @@
     margin: 0 auto;
     font-size: 16px;
     padding: 1% 5%;
-    border: 1px solid #BBC0C4;
+    border: 1px solid #EAEAEA;
     border-radius: 20px;
     align-items: center;
     transition: all 0.1s linear;
@@ -55,42 +56,26 @@
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover-select:active {
-    background-color: #BBC0C4;
+    background-color: #EAEAEA;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover {
     display: none;
-    width: 50%;
+    width: 90%;
     margin: 0 auto 10px auto;
-    box-shadow: 0 0 5px #BBC0C4;
+    box-shadow: 0 0 5px #EAEAEA;
 }
 
-.posts-actions .new-post .new-post-inputs .new-post-text {
-    display: block;
-    width: 100%;
-    height: fit-content;
-    padding: 10px;
-    resize: none;
-    overflow-y: hidden;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    color: #1b1b1b;
-}
 
 .posts-actions .new-post .new-post-inputs .new-post-title {
-    font-size: 20px;
-}
-
-.posts-actions .new-post .new-post-inputs .new-post-title:hover {
-    opacity: 0.6;
+    font-weight: 600;
+    font-size: 29px;
+    resize: none;
 }
 
 .posts-actions .new-post .new-post-inputs .new-post-subtitle {
-    font-size: 14px;
-}
-
-.posts-actions .new-post .new-post-inputs .new-post-subtitle:hover {
-    opacity: 0.6;
+    font-size: 22px;
+    resize: none;
 }
 
 .posts-actions .new-post .new-post-inputs label {
@@ -109,7 +94,7 @@
     margin: 0 auto;
     font-size: 16px;
     padding: 1% 6%;
-    border: 1px solid #BBC0C4;
+    border: 1px solid #EAEAEA;
     border-radius: 20px;
     align-items: center;
     transition: all 0.1s linear;
@@ -122,7 +107,7 @@
 }
 
 .posts-actions .new-post .new-post-inputs select:focus {
-    box-shadow: 0 0 5px #BBC0C4;
+    box-shadow: 0 0 5px #EAEAEA;
     border: 0 solid none;
     outline: 0;
 }
@@ -133,7 +118,7 @@
     margin: 0 auto;
     font-size: 16px;
     padding: 1% 5%;
-    border: 1px solid #BBC0C4;
+    border: 1px solid #EAEAEA;
     border-radius: 20px;
     align-items: center;
     transition: all 0.1s linear;
@@ -212,12 +197,6 @@
     }
     .posts-actions .new-post .new-post-inputs .new-post-subtitle {
         font-size: 18px;
-    }
-    .posts-actions .new-post .new-post-inputs .new-post-text {
-        font-size: 18px;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
     }
     .posts-actions .new-post .new-post-inputs .select-game {
         font-size: 20px;

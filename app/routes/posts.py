@@ -1,7 +1,7 @@
+import json
 from app import app, database
 from app.models import Posts, Games, Post_Content
-from app.forms import NewPostForm, NewPostFormTest
-from app.utils.aws_s3 import save_image_and_get_url, delete_image
+from app.utils.aws_s3 import delete_image
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
@@ -52,66 +52,57 @@ def post_new():
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
         return redirect(url_for('index'))
-    form = NewPostForm()
-    games = Games.query.all()
-    games_choices = [
-        ('', 'Selecione uma opção'),
-    ]
-    for game in games:
-        games_choices.append((game.id, game.name))
-    form.game_id.choices = games_choices
 
-    if form.submit():
-        if request.method == 'POST':
+    if request.method == 'POST':
+        data = json.loads(request.data)
+        contents = []
 
-            if form.source_name.data == None or form.source_url.data == None:
-                form.source_name.data = None
-                form.source_url.data = None
+        for item in data['contents']:
+            contents.append({
+                'type': item['type'],
+                'position': item['position'],
+                'data': {
+                    'content': item['data']['content'],
+                    'url': item['data']['url'],
+                }
+            })
 
-            cover_image_url = save_image_and_get_url(
-                request.files[form.cover_image.data.name])
-            post = Posts(
-                title=form.title.data,
-                subtitle=form.subtitle.data,
-                cover_image=cover_image_url,
-                game_id=form.game_id.data,
-                user_id=current_user.id,
-                is_esport=form.is_esport.data,
-                source_name=form.source_name.data,
-                source_url=form.source_url.data,
+        post = Posts(
+            title=data['title'],
+            subtitle=data['subtitle'],
+            cover_image=data['imageCover'],
+            game_id=data['gameId'],
+            user_id=current_user.id,
+            is_esport=bool(data['isEsport'] == 'true'),
+            source_name=data['source']['name'],
+            source_url=data['source']['url']
+        )
+
+        database.session.add(post)
+        database.session.commit()
+        database.session.refresh(post)
+
+        for content in contents:
+            post_content = Post_Content(
+                content=content['data']['content'],
+                position=content['position'],
+                type=content['type'],
+                post_id=post.id,
             )
-
-            database.session.add(post)
-            database.session.commit()
-            database.session.refresh(post)
-
-            def add_content_database(content, position, type, post_id):
-                post_content = Post_Content(
-                    content=content,
-                    position=position,
-                    type=type,
-                    post_id=post_id,
-                )
-                return database.session.add(post_content)
-
-            pc_image = save_image_and_get_url(
-                request.files[form.pc_image.data.name])
-            pc_last_image = save_image_and_get_url(
-                request.files[form.pc_last_image.data.name])
-            add_content_database(pc_image, 1, 'IMG', post.id)
-            add_content_database(form.pc_text.data, 2, 'TXT', post.id)
-            add_content_database(pc_last_image, 3, 'IMG', post.id)
-            add_content_database(form.pc_last_text.data, 4, 'TXT', post.id)
-
-            database.session.commit()
-
-            return redirect(url_for('notice', id=post.id))
+            database.session.add(post_content)
+        database.session.commit()
+    games = Games.query.all()
+    games_choices = [{
+        'value': '',
+        'name': 'Selecione uma opção',
+    }]
+    for game in games:
+        games_choices.append({'value': game.id, 'name': game.name})
 
     return render_template(
-        'posts/posts.html',
+        'posts/new_post.html',
         title='Nova postagem',
         selected='new',
-        form=form,
         choices=games_choices,
         header_games=header_games,
         sub_header=sub_header(2, 'posts'),
@@ -147,77 +138,3 @@ def delete_post(id):
     database.session.commit()
 
     return redirect(url_for('posts'))
-
-
-@app.route('/postagens/novo/teste', methods=['GET', 'POST'])
-@login_required
-def post_new_test():
-    def teste():
-        return print('okaysadvsadv')
-    if not current_user.is_authenticated:
-        return redirect(url_for('login'))
-    if current_user.is_admin != 1 and current_user.is_poster != 1:
-        return redirect(url_for('index'))
-    form = NewPostFormTest()
-    games = Games.query.all()
-    games_choices = [
-        ('', 'Selecione uma opção'),
-    ]
-    for game in games:
-        games_choices.append((game.id, game.name))
-    form.game_id.choices = games_choices
-
-    if form.submit():
-        if request.method == 'POST':
-            data = form.post_content.data
-
-            data = data.split('<')
-
-            print(data)
-
-    '''if form.submit():
-        if request.method == 'POST':
-            cover_image_url = save_image_and_get_url(request.files[form.cover_image.data.name])
-            post = Posts(
-                title = form.title.data,
-                subtitle = form.subtitle.data,
-                cover_image = cover_image_url,
-                game_id = form.game_id.data,
-                user_id = current_user.id,
-                is_esport = form.is_esport.data,
-            )
-
-            database.session.add(post)
-            database.session.commit()
-            database.session.refresh(post)
-
-            def add_content_database(content, position, type, post_id):
-                post_content = Post_Content(
-                    content = content,
-                    position = position,
-                    type = type,
-                    post_id = post_id,
-                )
-                return database.session.add(post_content)
-
-            pc_image = save_image_and_get_url(request.files[form.pc_image.data.name])
-            pc_last_image = save_image_and_get_url(request.files[form.pc_last_image.data.name])
-            add_content_database(pc_image, 1, 'IMG', post.id)
-            add_content_database(form.pc_text.data, 2, 'TXT', post.id)
-            add_content_database(pc_last_image, 3, 'IMG', post.id)
-            add_content_database(form.pc_last_text.data, 4, 'TXT', post.id)
-
-            database.session.commit()
-
-            return redirect(url_for('notice', id=post.id))'''
-
-    return render_template(
-        'posts/new_post_test.html',
-        title='Nova postagem',
-        selected='new',
-        form=form,
-        choices=games_choices,
-        header_games=header_games,
-        sub_header=sub_header(2, 'posts'),
-        teste=teste,
-    )
