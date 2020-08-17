@@ -62,19 +62,28 @@
   text-align: left;
 }
 
-.web .payload .notice h3 {
-  margin: 0 3px;
+.web .payload .notice h2 {
   max-width: 100%;
   display: block;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   font-size: 24px;
   font-weight: 600;
   text-align: left;
 }
 
-.web .payload .notice span {
-    width: 100%;
-    margin: 10px auto;
+.web .payload .notice .vYtb {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: 400px;
+  max-height: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.web .payload .notice .tweet {
+  display: block;
+  width: max-content  ;
+  margin: 0 auto 20px auto;
 }
 
 .payload .notice .notice-header {
@@ -110,6 +119,7 @@
     display: block;
     color: #404040;
     font-weight: 600;
+    margin: 10px 0;
 }
 
 .notice .notice-header .notice-options {
@@ -257,6 +267,9 @@
     .web .payload .notice pre {
         font-size: 19px;
         font-weight: 200;
+    }
+    .web .payload .notice .vYtb {
+      height: 50vw;
     }
     .web .payload .more-notices .notices-in-more {
         display: block;

@@ -17,6 +17,8 @@ let counterPosition = 0;
 const addTitle = document.querySelector('#add-title');
 const addParagraph = document.querySelector('#add-paragraph');
 const addImage = document.querySelector('#add-image');
+const addYoutubeVideo = document.querySelector('#add-youtube-video');
+const addTwitterPost = document.querySelector('#add-twitter-post');
 
 addTitle.addEventListener('click', () => {
   hiddeOptions();
@@ -79,6 +81,86 @@ addImage.addEventListener('click', () => {
   });
 });
 
+addYoutubeVideo.addEventListener('click', () => {
+  hiddeOptions();
+  const socialFinderContainer = document.createElement('div');
+  socialFinderContainer.className = 'social-finder-container';
+
+  const socialFinderInput = document.createElement('input');
+  socialFinderInput.type = 'url';
+  socialFinderInput.placeholder = 'Coloque o link de compartilhamento do video do YouTube'
+  socialFinderInput.className = 'socialFinderInput';
+
+  const socialFinderButton = document.createElement('button');
+  socialFinderButton.className = 'social-finder-button';
+  socialFinderButton.innerHTML = '<i class="fas fa-search-plus"></i>'
+
+  socialFinderContainer.appendChild(socialFinderInput);
+  socialFinderContainer.appendChild(socialFinderButton);
+  contents.appendChild(socialFinderContainer);
+
+  socialFinderButton.addEventListener('click', () => {
+    event.preventDefault();
+    let value = socialFinderInput.value;
+    value = value.split('.be/')
+    if (value[0] === 'https://youtu') {
+      contents.removeChild(socialFinderContainer);
+      counterPosition = counterPosition + 1;
+      const ytbVideo = document.createElement('iframe');
+      ytbVideo.value = value[1];
+      ytbVideo.className = 'added-content';
+      ytbVideo.id = 'YTB';
+      ytbVideo.name = counterPosition;
+      ytbVideo.width = '100%';
+      ytbVideo.height = '50vw';
+      ytbVideo.src = `https://www.youtube.com/embed/${value[1]}`
+      ytbVideo.frameborder= '0';
+      ytbVideo.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      ytbVideo.allowFullscreen = true;
+      contents.appendChild(ytbVideo);
+    } else {
+      console.log('isWrong');
+    };
+  });
+});
+
+addTwitterPost.addEventListener('click', () => {
+  hiddeOptions();
+  const socialFinderContainer = document.createElement('div');
+  socialFinderContainer.className = 'social-finder-container';
+
+  const socialFinderInput = document.createElement('input');
+  socialFinderInput.type = 'text';
+  socialFinderInput.placeholder = 'Coloque o código HTML da postagem'
+  socialFinderInput.className = 'socialFinderInput';
+
+  const socialFinderButton = document.createElement('button');
+  socialFinderButton.className = 'social-finder-button';
+  socialFinderButton.innerHTML = '<i class="fas fa-search-plus"></i>'
+
+  socialFinderContainer.appendChild(socialFinderInput);
+  socialFinderContainer.appendChild(socialFinderButton);
+  contents.appendChild(socialFinderContainer);
+
+  socialFinderButton.addEventListener('click', () => {
+    event.preventDefault();
+    const code = socialFinderInput.value;
+    const scriptTwt = document.createElement('script');
+    scriptTwt.async = '';
+    scriptTwt.src = 'https://platform.twitter.com/widgets.js';
+    scriptTwt.charset = 'utf-8';
+    contents.removeChild(socialFinderContainer);
+    counterPosition = counterPosition + 1;
+    const twtPost = document.createElement('div');
+    twtPost.className = 'added-content';
+    twtPost.id = 'TWT';
+    twtPost.name = counterPosition;
+    contents.appendChild(twtPost);
+    twtPost.innerHTML = code;
+    twtPost.appendChild(scriptTwt);
+  });
+});
+
 formSub.addEventListener('submit', () => {
   event.preventDefault();
   const addedContents = document.getElementsByClassName('added-content');
@@ -116,6 +198,28 @@ formSub.addEventListener('submit', () => {
         data: {
           content: element.src,
           url: element.src,
+        },
+      });
+    };
+
+    if(element.id === 'YTB') {
+      contents.push({
+        type: 'YTB',
+        position: element.name,
+        data: {
+          content: element.value,
+          url: element.src,
+        },
+      });
+    };
+
+    if(element.id === 'TWT') {
+      contents.push({
+        type: 'TWT',
+        position: element.name,
+        data: {
+          content: element.innerHTML,
+          url: '',
         },
       });
     };

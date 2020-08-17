@@ -47,11 +47,22 @@
                       {% if content.type == 'IMG' %}
                         <img src="{{ content.content }}" alt="{{ notice.title }}">
                       {% elif content.type == 'T' %}
-                        <h3>{{ content.content }}</h3>
+                        <h2>{{ content.content }}</h2>
                       {% elif content.type == 'TXT' %}
                         <pre>{{ content.content }}</pre>
                       {% elif content.type == 'P' %}
                         <p>{{ content.content }}</p>
+                      {% elif content.type == 'YTB' %}
+                        <iframe
+                          class="vYtb"
+                          src="{{ 'https://www.youtube.com/embed/' + content.content }}"
+                          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+                      {% elif content.type == 'TWT' %}
+                      <div class="tweet">
+                        {{ content.content|safe }}
+                      </div>
                       {% endif %}
                     {% endfor %}
                     {% if notice.source_name != '' and notice.source_name != None %}
