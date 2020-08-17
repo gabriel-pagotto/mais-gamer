@@ -60,9 +60,9 @@
                           allowfullscreen>
                         </iframe>
                       {% elif content.type == 'TWT' %}
-                      <div class="tweet">
+                      <figure class="tweet">
                         {{ content.content|safe }}
-                      </div>
+                      </figure>
                       {% endif %}
                     {% endfor %}
                     {% if notice.source_name != '' and notice.source_name != None %}
