@@ -6,7 +6,7 @@ from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
 from app.utils.date_time import DatePost
-from flask import render_template, redirect, request, url_for
+from flask import render_template, redirect, request, url_for, jsonify
 from flask_login import current_user, login_required
 from sqlalchemy import desc
 
@@ -97,6 +97,10 @@ def post_new():
         cover_image.used = 1
         database.session.commit()
         clearUploadImageCache()
+        return jsonify({
+          'status': 'success',
+          'redirect': url_for('notice', id=post.id)
+        })
     games = Games.query.all()
     games_choices = [{
         'value': '',

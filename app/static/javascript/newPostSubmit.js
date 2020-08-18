@@ -246,7 +246,12 @@ formSub.addEventListener('submit', () => {
   XHR.onreadystatechange = () => {
     if (XHR.readyState === 4) {
       if (XHR.status === 200) {
-        console.log('okay')
+        const data = JSON.parse(XHR.responseText);
+        if (data.status === 'success') {
+          return window.location = data.redirect;
+        } else {
+          console.log('error');
+        };
       };
     };
   };
