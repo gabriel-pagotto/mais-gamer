@@ -28,13 +28,17 @@
                 <div class="editor-container" oncontextmenu="return false;">
                   <div class="contents"></div>
                   <div class="editor-options">
-                    <ul>
+                    <ul class="options">
                       <li id="add-title"><i class="fas fa-heading"></i></i>&nbsp;&nbsp;&nbsp;Adicionar um título</li>
                       <li id="add-paragraph"><i class="fas fa-paragraph"></i>&nbsp;&nbsp;&nbsp;Adicionar um paragrafo</li>
-                      <li id="add-list"><i class="fas fa-list"></i>&nbsp;&nbsp;&nbsp;Adicionar uma lista</li>
+                      <!--<li id="add-list"><i class="fas fa-list"></i>&nbsp;&nbsp;&nbsp;Adicionar uma lista</li>
+                      <li id="add-comment"><i class="fas fa-comment"></i>&nbsp;&nbsp;&nbsp;Adicionar um comentário</li>-->
                       <li id="add-image"><i class="far fa-image"></i>&nbsp;&nbsp;&nbsp;Adicionar uma imagem</li>
                       <li id="add-youtube-video"><i class="fab fa-youtube"></i>&nbsp;&nbsp;&nbsp;Adicionar um video do YouTube</li>
                       <li id="add-twitter-post"><i class="fab fa-twitter"></i>&nbsp;&nbsp;&nbsp;Adicionar uma postagem do Twitter</li>
+                    </ul>
+                    <ul>
+                      <li id="remove"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Apagar</li>
                     </ul>
                   </div>
                   <div class="editor-options-background"></div>
@@ -61,8 +65,8 @@
                   </div>
                 <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
               </form>
-              <script src="{{ url_for('static', filename='javascript/newPostSubmit.js') }}"></script>
               <script src="{{ url_for('static', filename='javascript/newPost.js') }}"></script>
+              <script src="{{ url_for('static', filename='javascript/editorFunctions.js') }}"></script>
             </div>
           </div>
         </div>

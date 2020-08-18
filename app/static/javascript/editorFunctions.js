@@ -1,6 +1,6 @@
-const formSub = document.querySelector('.form-sub')
+const formSub = document.querySelector('.form-sub');
 const editor = document.querySelector('.editor-container');
-const contents = document.querySelector('.contents')
+const contents = document.querySelector('.contents');
 const editorOptions = document.querySelector('.editor-options');
 const editorOptionsBackground = document.querySelector('.editor-options-background');
 const postTitle = document.querySelector('.new-post-title');
@@ -19,6 +19,7 @@ const addParagraph = document.querySelector('#add-paragraph');
 const addImage = document.querySelector('#add-image');
 const addYoutubeVideo = document.querySelector('#add-youtube-video');
 const addTwitterPost = document.querySelector('#add-twitter-post');
+const remove = document.querySelector('#remove');
 
 addTitle.addEventListener('click', () => {
   hiddeOptions();
@@ -85,7 +86,8 @@ addImage.addEventListener('click', () => {
 addYoutubeVideo.addEventListener('click', () => {
   hiddeOptions();
   const socialFinderContainer = document.createElement('div');
-  socialFinderContainer.className = 'social-finder-container';
+  socialFinderContainer.className = 'added-content'
+  socialFinderContainer.id = 'social-finder-container';
 
   const socialFinderInput = document.createElement('input');
   socialFinderInput.type = 'url';
@@ -129,7 +131,8 @@ addYoutubeVideo.addEventListener('click', () => {
 addTwitterPost.addEventListener('click', () => {
   hiddeOptions();
   const socialFinderContainer = document.createElement('div');
-  socialFinderContainer.className = 'social-finder-container';
+  socialFinderContainer.className = 'added-content'
+  socialFinderContainer.id = 'social-finder-container';
 
   const socialFinderInput = document.createElement('input');
   socialFinderInput.type = 'text';
@@ -161,6 +164,13 @@ addTwitterPost.addEventListener('click', () => {
     twtPost.innerHTML = code;
     twtPost.appendChild(scriptTwt);
   });
+});
+
+remove.addEventListener('click', () => {
+  const addedContents = document.getElementsByClassName('added-content');
+  if (addedContents.length >= 1) {
+    contents.removeChild((addedContents[parseInt(addedContents.length) - 1]));
+  }
 });
 
 formSub.addEventListener('submit', () => {

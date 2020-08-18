@@ -18,6 +18,10 @@
   border-radius: 10px;
 }
 
+.editor-container .editor-options .options {
+  border-bottom: 1px solid #333333;
+}
+
 .editor-container .editor-options ul {
   padding: 10px 0;
 }
@@ -83,7 +87,7 @@
   font-size: 18px;
 }
 
-.editor-container .contents .social-finder-container {
+.editor-container .contents #social-finder-container {
   width: 95%;
   display: flex;
   align-items: center;
@@ -91,7 +95,7 @@
   margin-bottom: 10px;
 }
 
-.social-finder-container .socialFinderInput {
+#social-finder-container .socialFinderInput {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 10px;
@@ -105,12 +109,12 @@
   width: 80%;
 }
 
-.social-finder-container .socialFinderInput:focus{
+#social-finder-container .socialFinderInput:focus{
   outline: none;
 }
 
 
-.social-finder-container .social-finder-button {
+#social-finder-container .social-finder-button {
   position: relative;
   left: -2px;
   padding: 5px 8px;
@@ -124,27 +128,27 @@
   color: #363636;
 }
 
-.social-finder-container .social-finder-button:hover {
+#social-finder-container .social-finder-button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.social-finder-container .social-finder-button:active {
+#social-finder-container .social-finder-button:active {
   cursor: pointer;
   opacity: 0.5;
 }
 
-.social-finder-container .social-finder-button:focus {
+#social-finder-container .social-finder-button:focus {
   outline: none;
 }
 
-.social-finder-container #inYTB {
+#social-finder-container #inYTB {
   background: #FF0000;
   color: #FFFFFF;
   border: 2px solid #FF0000;
 }
 
-.social-finder-container #inTWT {
+#social-finder-container #inTWT {
   background: #1C9DEB;
   color: #FFFFFF;
   border: 2px solid #1C9DEB;
