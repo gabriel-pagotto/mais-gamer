@@ -83,7 +83,89 @@
   font-size: 18px;
 }
 
+.editor-container .contents .social-finder-container {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-finder-container .socialFinderInput {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top: 2px solid #EAEAEA;
+  border-left: 2px solid #EAEAEA;
+  border-bottom: 2px solid #EAEAEA;
+  border-right: 2px solid #FFFFFF;
+  font-size: 15px;
+  padding: 5px 20px;
+  width: 80%;
+}
+
+.social-finder-container .socialFinderInput:focus{
+  outline: none;
+}
+
+
+.social-finder-container .social-finder-button {
+  position: relative;
+  left: -2px;
+  padding: 5px 8px;
+  font-size: 15px;
+  -webkit-appearance: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background: #ffa31a;
+  color: #363636;
+}
+
+.social-finder-container .social-finder-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.social-finder-container .social-finder-button:active {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.social-finder-container .social-finder-button:focus {
+  outline: none;
+}
+
+.social-finder-container #inYTB {
+  background: #FF0000;
+  color: #FFFFFF;
+  border: 2px solid #FF0000;
+}
+
+.social-finder-container #inTWT {
+  background: #1C9DEB;
+  color: #FFFFFF;
+  border: 2px solid #1C9DEB;
+}
+
+.editor-container .contents #YTB {
+  max-height: 430px;
+  height: 33vw;
+}
+
 .editor-container .contents #TWT {
   width: max-content;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1025px) {
+  .editor-container .contents #YTB {
+    max-height: 430px;
+    height: 52vw;
+  }
 }

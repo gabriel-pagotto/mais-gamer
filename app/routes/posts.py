@@ -1,7 +1,7 @@
 import json
 from app import app, database
-from app.models import Posts, Games, Post_Content
-from app.utils.aws_s3 import delete_image
+from app.models import Posts, Games, Post_Content, Image
+from app.utils.aws_s3 import delete_image, clearUploadImageCache
 from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
@@ -83,6 +83,9 @@ def post_new():
         database.session.refresh(post)
 
         for content in contents:
+            if content['type'] == 'IMG':
+                image = Image.query.filter_by(url=content['data']['content']).first()
+                image.used = 1
             post_content = Post_Content(
                 content=content['data']['content'],
                 position=content['position'],
@@ -90,7 +93,10 @@ def post_new():
                 post_id=post.id,
             )
             database.session.add(post_content)
+        cover_image = Image.query.filter_by(url=data['imageCover']).first()
+        cover_image.used = 1
         database.session.commit()
+        clearUploadImageCache()
     games = Games.query.all()
     games_choices = [{
         'value': '',

@@ -1,6 +1,7 @@
 import boto3
-from app import app
+from app import app, database
 from app.aws.s3 import s3
+from app.models import Image
 
 
 def take_last_object():
@@ -25,3 +26,20 @@ def delete_image(image_url):
     key = image_url.split('/')[-1]
     client = boto3.client('s3')
     client.delete_object(Bucket=app.config['S3_BUCKET_NAME'], Key=key)
+
+def imagesDatabaseControl(image_url):
+    image = Image.query.filter_by(url=image_url).first()
+    if image is None:
+        return
+    if image.used == 1:
+        database.session.delete(image)
+    if image.used == 0:
+      delete_image(image.url)
+      database.session.delete(image)
+
+def clearUploadImageCache():
+  images = Image.query.all()
+
+  for image in images:
+      imagesDatabaseControl(image.url)
+  database.session.commit()

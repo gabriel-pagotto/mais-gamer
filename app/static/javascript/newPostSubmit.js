@@ -94,7 +94,8 @@ addYoutubeVideo.addEventListener('click', () => {
 
   const socialFinderButton = document.createElement('button');
   socialFinderButton.className = 'social-finder-button';
-  socialFinderButton.innerHTML = '<i class="fas fa-search-plus"></i>'
+  socialFinderButton.id = 'inYTB';
+  socialFinderButton.innerHTML = '<i class="fab fa-youtube"></i> Buscar'
 
   socialFinderContainer.appendChild(socialFinderInput);
   socialFinderContainer.appendChild(socialFinderButton);
@@ -132,12 +133,13 @@ addTwitterPost.addEventListener('click', () => {
 
   const socialFinderInput = document.createElement('input');
   socialFinderInput.type = 'text';
-  socialFinderInput.placeholder = 'Coloque o código HTML da postagem'
+  socialFinderInput.placeholder = 'Coloque o código HTML da postagem do Twitter';
   socialFinderInput.className = 'socialFinderInput';
 
   const socialFinderButton = document.createElement('button');
   socialFinderButton.className = 'social-finder-button';
-  socialFinderButton.innerHTML = '<i class="fas fa-search-plus"></i>'
+  socialFinderButton.id = 'inTWT';
+  socialFinderButton.innerHTML = '<i class="fab fa-twitter"></i> Buscar'
 
   socialFinderContainer.appendChild(socialFinderInput);
   socialFinderContainer.appendChild(socialFinderButton);
@@ -154,7 +156,6 @@ addTwitterPost.addEventListener('click', () => {
     counterPosition = counterPosition + 1;
     const twtPost = document.createElement('div');
     twtPost.className = 'added-content';
-    twtPost.id = 'TWT';
     twtPost.name = counterPosition;
     contents.appendChild(twtPost);
     twtPost.innerHTML = code;
