@@ -49,17 +49,17 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 10px auto;
-    font-size: 19px;
     text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px auto;
 }
 
 .web .payload .notice p {
-  margin: 0 3px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto 20px auto;
-  font-size: 19px;
-  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px auto;
+  font-weight: 400;
 }
 
 .web .payload .notice h2 {
@@ -269,10 +269,7 @@
     .notice .notice-header .game h2 {
         font-size: 18px;
     }
-    .web .payload .notice pre {
-        font-size: 19px;
-        font-weight: 200;
-    }
+
     .web .payload .notice .vYtb {
       height: 50vw;
     }

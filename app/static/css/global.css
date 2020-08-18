@@ -1,17 +1,17 @@
-    @import url('https://fonts.googleapis.com/css2?family=K2D:wght@500&display=swap');
-    * {
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap');
+  * {
         margin: 0px;
         padding: 0px;
     }
-    
+
     body {
         min-height: 100vh;
     }
-    
+
     .web .payload {
         min-height: 75vh;
     }
-    
+
     html,
     body,
     .web,
@@ -21,7 +21,7 @@
         -moz-transition: all 0.1s linear;
         transition: all 0.1s linear;
     }
-    
+
     body,
     input,
     button,
@@ -29,17 +29,17 @@
     select,
     option,
     pre {
-        font-family: 'K2D', sans-serif;
+      font-family: 'Red Rose', cursive;
         -webkit-transition: all 0.1s linear;
         -moz-transition: all 0.1s linear;
         transition: all 0.1s linear;
     }
-    
+
     input {
         -webkit-appearance: none;
         appearance: none;
     }
-    
+
     input:focus {
         border: 0 none;
     }
