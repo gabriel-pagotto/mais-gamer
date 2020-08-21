@@ -120,7 +120,7 @@ def notice(id):
         more_news.append(all_posts_array[num])
 
     post = Posts.query.filter_by(id=id).first()
-    post_content = Post_Content.query.filter_by(post_id=id)
+    post_content = Post_Content.query.filter_by(post_id=id).order_by('position')
     game = Games.query.filter_by(id=post.game_id).first()
     user = Users.query.filter_by(id=post.user_id).first()
 
