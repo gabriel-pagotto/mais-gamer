@@ -159,6 +159,7 @@ addTwitterPost.addEventListener('click', () => {
     counterPosition = counterPosition + 1;
     const twtPost = document.createElement('div');
     twtPost.className = 'added-content';
+    twtPost.id = 'TWT';
     twtPost.name = counterPosition;
     contents.appendChild(twtPost);
     twtPost.innerHTML = code;
@@ -181,7 +182,7 @@ formSub.addEventListener('submit', () => {
 
   for (x = 0; x < addedContents.length; x ++) {
     const element = addedContents[x];
-    if(element.id === 'T') {
+    if (element.id === 'T') {
       contents.push({
         type: 'T',
         position: element.name,
@@ -192,7 +193,7 @@ formSub.addEventListener('submit', () => {
       });
     };
 
-    if(element.id === 'P') {
+    if (element.id === 'P') {
       contents.push({
         type: 'P',
         position: element.name,
@@ -203,7 +204,7 @@ formSub.addEventListener('submit', () => {
       });
     };
 
-    if(element.id === 'IMG') {
+    if (element.id === 'IMG') {
       contents.push({
         type: 'IMG',
         position: element.name,
@@ -214,7 +215,7 @@ formSub.addEventListener('submit', () => {
       });
     };
 
-    if(element.id === 'YTB') {
+    if (element.id === 'YTB') {
       contents.push({
         type: 'YTB',
         position: element.name,
@@ -225,7 +226,7 @@ formSub.addEventListener('submit', () => {
       });
     };
 
-    if(element.id === 'TWT') {
+    if (element.id === 'TWT') {
       contents.push({
         type: 'TWT',
         position: element.name,
