@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    {% include 'components/head.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/notice.css') }}">
     <meta property="description" content="{{ notice.subtitle }}" />
     <meta property="og:description" content="{{ notice.subtitle }}">
@@ -9,7 +10,7 @@
     <meta property="twitter:description" content="{{ notice.subtitle }}" class="twitter-description" />
     <meta property="twitter:image" content="{{ notice.cover_image }}" />
     <meta property="article:published_time" content="{{ notice.addedAt }}">
-    <meta property="article:modified_time" content="{{ notice.addedAt }}"> {% include 'components/head.html' %}
+    <meta property="article:modified_time" content="{{ notice.addedAt }}">
 </head>
 
 <body>
