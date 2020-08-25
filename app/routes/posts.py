@@ -2,10 +2,8 @@ import json
 from app import app, database
 from app.models import Posts, Games, Post_Content, Image
 from app.utils.aws_s3 import delete_image, clearUploadImageCache
-from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
-from app.utils.date_time import DatePost
 from flask import render_template, redirect, request, url_for, jsonify
 from flask_login import current_user, login_required
 from sqlalchemy import desc
@@ -29,10 +27,8 @@ def posts():
 
     return render_template(
         'posts/posts.html',
-        DatePost=DatePost,
         title='Postagens',
         selected='posts',
-        header_games=header_games,
         sub_header=sub_header(1, 'posts'),
         posts=posts.items,
         num_posts=len(posts.items),
@@ -114,7 +110,6 @@ def post_new():
         title='Nova postagem',
         selected='new',
         choices=games_choices,
-        header_games=header_games,
         sub_header=sub_header(2, 'posts'),
     )
 

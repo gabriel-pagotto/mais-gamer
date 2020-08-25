@@ -164,6 +164,7 @@ addTwitterPost.addEventListener('click', () => {
     contents.appendChild(twtPost);
     twtPost.innerHTML = code;
     twtPost.appendChild(scriptTwt);
+
   });
 });
 

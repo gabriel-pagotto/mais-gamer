@@ -1,7 +1,5 @@
 from app import app
 from app.models import Games
-from app.utils.date_time import DatePost
-from app.utils.header_games import header_games
 from app.utils.limit_notices import limit_notices
 from app.utils.main_page_posts_control import posts_control
 from flask import render_template
@@ -14,8 +12,6 @@ def index():
             'index.html',
             title='Mais Gamer - Notícias para Gamers',
             last_notices=None,
-            DatePost=DatePost,
-            header_games=header_games,
             limit_notices=limit_notices,
         )
 
@@ -28,7 +24,5 @@ def index():
         last_notices=posts_control()[2],
         rest_notices=posts_control()[3],
         games=games,
-        DatePost=DatePost,
-        header_games=header_games,
         limit_notices=limit_notices,
     )

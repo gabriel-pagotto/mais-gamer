@@ -1,6 +1,5 @@
 from app import app
 from app.forms import ProfileForm
-from app.utils.header_games import header_games
 from flask import render_template
 from flask_login import current_user, login_required
 
@@ -18,5 +17,4 @@ def profile():
         'user/profile.html',
         title=current_user.name,
         form=form,
-        header_games=header_games,
     )

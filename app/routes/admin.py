@@ -1,7 +1,6 @@
 from app import app
 from flask import render_template, redirect, url_for
 from flask_login import current_user, login_required
-from app.utils.header_games import header_games
 from app.utils.sub_header_options import sub_header
 
 
@@ -16,7 +15,6 @@ def admin():
     return render_template(
         'admin/admin.html',
         title='Painel de administrador',
-        header_games=header_games,
     )
 
 

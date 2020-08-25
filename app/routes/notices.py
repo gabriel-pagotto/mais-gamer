@@ -1,9 +1,7 @@
 import random
 from app import app, database
 from app.models import Users, Posts, Games, Post_Content
-from app.utils.date_time import DatePost
 from app.utils.url_for_notices import url_for_notices
-from app.utils.header_games import header_games
 from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
@@ -24,14 +22,12 @@ def notices():
         title='Todas as notícias',
         def_name='notices',
         notices=posts,
-        DatePost=DatePost,
         posts_pages=posts_pages,
         page_number=page,
         next_url=next_url,
         prev_url=prev_url,
         url_for_notices=url_for_notices,
         last_param=None,
-        header_games=header_games,
     )
 
 
@@ -59,14 +55,12 @@ def notices_by_game(name):
         def_name='notices_by_game',
         notices=posts.items,
         game=game,
-        DatePost=DatePost,
         posts_pages=posts,
         page_number=page,
         next_url=next_url,
         prev_url=prev_url,
         url_for_notices=url_for_notices,
         last_param=game.name,
-        header_games=header_games,
     )
 
 
@@ -82,9 +76,7 @@ def notices_eSports():
         title='Todas as notícias',
         def_name='notices',
         notices=posts,
-        DatePost=DatePost,
         posts_pages=posts_pages,
-        header_games=header_games,
     )
 
 
@@ -137,8 +129,6 @@ def notice(id):
         notice=post,
         notice_content=post_content,
         user=user,
-        DatePost=DatePost,
         game=game,
-        header_games=header_games,
         more_news=more_news,
     )

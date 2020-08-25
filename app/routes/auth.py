@@ -3,7 +3,6 @@ from app.models import Users
 from app.forms import LoginForm, RegisterForm
 from app.utils.password_hash import set_password_hash, check_password_hash
 from app.utils.font_control import lower, first_letter_upper
-from app.utils.header_games import header_games
 from flask import render_template, redirect, flash, request, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
@@ -24,7 +23,6 @@ def login():
                 'auth/login.html',
                 title='Entrar',
                 form=form,
-                header_games=header_games,
             )
         login_user(username)
         next_page = request.args.get('next')
@@ -35,7 +33,6 @@ def login():
         'auth/login.html',
         title='Entrar',
         form=form,
-        header_games=header_games,
     )
 
 
@@ -56,7 +53,6 @@ def register():
                 'auth/register.html',
                 title='Criar conta',
                 form=form,
-                header_games=header_games,
             )
         user = Users(
             username=form.username.data,
@@ -75,7 +71,6 @@ def register():
         'auth/register.html',
         title='Criar conta',
         form=form,
-        header_games=header_games,
     )
 
 
@@ -85,7 +80,6 @@ def register_success():
     return render_template(
         'auth/register_success.html',
         title='Conta criada com sucesso',
-        header_games=header_games,
     )
 
 

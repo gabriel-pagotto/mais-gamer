@@ -7,29 +7,6 @@ from sqlalchemy import desc
 from app.utils.date_time import DatePost
 
 
-@app.route('/hours', methods=["GET"])
-def hours():
-
-    def datetime_sao_paulo():
-        utc_time = datetime.utcnow()
-        tz = pytz.timezone('America/Sao_Paulo')
-        utc_time = utc_time.replace(tzinfo=pytz.UTC)
-        st_john_time = utc_time.astimezone(tz)
-        return st_john_time
-
-    hours = (datetime_sao_paulo())
-    print(hours)
-    return jsonify({
-        "hours": hours,
-        "hours_now": datetime.utcnow(),
-    })
-
-
-@app.route('/ajax', methods=["GET"])
-def ajax():
-    return render_template('ajax.html', title='ajax')
-
-
 @app.route('/notícias/páginação', methods=['GET'])
 def load_more_notices():
     page = request.args.get('page', 1, type=int)
