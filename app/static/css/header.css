@@ -608,6 +608,9 @@
     #mo2:checked~#som-2 {
         right: 0;
     }
+    #mo3:checked~#som-3 {
+      right: 0;
+  }
     .header .header-1part #header-login {
         font-size: 22px;
         width: 100%;
