@@ -3,7 +3,7 @@
 
 <head>
     {% include 'components/head.html' %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_tests.css') }}">
 </head>
 
 <body>
@@ -19,6 +19,7 @@
                     <a href="{{ url_for('admin_social') }}">Redes Sociais</a>
                     <a href="{{ url_for('admin_users') }}">Usuários</a>
                     <a href="{{ url_for('admin_finances') }}">Configurações</a>
+                    <a href="{{ url_for('admin_tests') }}">Testes</a>
                     <a href="{{ url_for('admin_finances') }}">Sobre a empresa</a>
                     <a href="{{ url_for('admin_finances') }}">Comunicação com ADMS</a>
                     <a href="{{ url_for('admin_finances') }}">Testes</a>

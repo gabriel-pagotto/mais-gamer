@@ -1,7 +1,7 @@
 import json
 from app import app, database
-from app.models import Posts, Games, Post_Content, Image
-from app.utils.aws_s3 import delete_image, clearUploadImageCache
+from app.models import Posts, Games, Post_Content, Files
+from app.utils.aws_s3 import delete_file, clearUploadCache
 from app.utils.sub_header_options import sub_header
 from app.utils.url_for_notices import url_for_notices
 from flask import render_template, redirect, request, url_for, jsonify
@@ -80,7 +80,7 @@ def post_new():
 
         for content in contents:
             if content['type'] == 'IMG':
-                image = Image.query.filter_by(url=content['data']['content']).first()
+                image = Files.query.filter_by(url=content['data']['content']).first()
                 image.used = 1
             post_content = Post_Content(
                 content=content['data']['content'],
@@ -89,10 +89,10 @@ def post_new():
                 post_id=post.id,
             )
             database.session.add(post_content)
-        cover_image = Image.query.filter_by(url=data['imageCover']).first()
+        cover_image = Files.query.filter_by(url=data['imageCover']).first()
         cover_image.used = 1
         database.session.commit()
-        clearUploadImageCache()
+        clearUploadCache()
         return jsonify({
           'status': 'success',
           'redirect': url_for('notice', id=post.id)
@@ -133,11 +133,11 @@ def delete_post(id):
 
     for post_content in posts_content:
         if post_content.type == 'IMG':
-            delete_image(post_content.content)
+            delete_file(post_content.content)
         database.session.delete(post_content)
 
     database.session.commit()
-    delete_image(post.cover_image)
+    delete_file(post.cover_image)
 
     database.session.delete(post)
     database.session.commit()

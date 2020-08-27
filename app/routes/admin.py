@@ -17,6 +17,13 @@ def admin():
         title='Painel de administrador',
     )
 
+@app.route('/administrador/testes')
+@login_required
+def admin_tests():
+  return render_template(
+    'admin/tests.html',
+    title='Testes',
+  )
 
 @app.route('/administrador/finanças')
 @login_required
