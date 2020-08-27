@@ -20,6 +20,9 @@ coverImageLabel.addEventListener('click', () => {
   const formData = new FormData()
 
   imageInput.addEventListener('change', () => {
+    const image = document.querySelector('.image-cover');
+    image.style.display = 'block';
+    image.src = '/static/imageLoader.gif';
     XHR.open('post', '/upload', true);
     XHR.onload
     XHR.onreadystatechange = () => {
@@ -27,10 +30,9 @@ coverImageLabel.addEventListener('click', () => {
         if (XHR.status === 200) {
           form.removeChild(imageInput);
           const data = JSON.parse(XHR.responseText);
-          const image = document.querySelector('.image-cover');
           image.style.display = 'block';
-          coverImageLabel.innerHTML = 'Trocar imagem &nbsp;<i class="fas fa-exchange-alt"></i>';
           image.src = data.url;
+          coverImageLabel.innerHTML = 'Trocar imagem &nbsp;<i class="fas fa-exchange-alt"></i>';
         };
       };
     };
@@ -64,34 +66,5 @@ selectEsports.addEventListener('change', () => {
   } else {
     checkbox.checked = true;
   };
-});
-
-form.addEventListener('submit', () => {
-    submit.value = 'Enviando'
-    submit.style.background = '#827189'
-    submit.style.border = '1px solid #827189'
-});
-
-
-$(function() {
-    $('.cover_image').change(function(){
-        const file = $(this)[0].files[0]
-        const fileReader = new FileReader()
-        const imageCoverSelect = document.querySelector('.image-cover-select');
-        const imgCover = document.querySelector('.image-cover');
-
-        if (file) {
-            $('.image-cover').show();
-            fileReader.readAsDataURL(file);
-            imgCover.style.display = 'block';
-            imageCoverSelect.innerHTML = 'Trocar imagem &nbsp;<i class="fas fa-exchange-alt"></i>'
-        } else {
-            $('.image-cover').hide();
-            imageCoverSelect.innerHTML = 'Selecionar capa da notícia &nbsp;<i class="fa fa-image"></i>'
-        };
-
-        fileReader.onloadend = function(){
-            $('.image-cover').attr('src',fileReader.result);
-        }
-    });
+  console.log(checkbox.checked)
 });

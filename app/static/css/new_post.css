@@ -168,9 +168,17 @@
     cursor: pointer;
 }
 
+.posts-actions .new-post .new-post-inputs .error {
+  display: block;
+  color: #FF0000;
+  font-size: 20px;
+  width: max-content;
+  margin: 20px auto;
+}
+
 @media (max-width: 1025px) {
     .posts .posts-actions .new-post {
-        width: 100%;
+        width: 98%;
         padding: 0;
     }
     .posts .posts-actions .new-post .new-info {
@@ -181,8 +189,8 @@
         margin: 0;
     }
     .posts-actions .new-post .new-post-inputs label {
-        width: 90%;
-        margin-left: 20px;
+      display: block;
+        width: max-content;
     }
     .posts-actions .new-post .new-post-inputs input {
         margin-left: auto;

@@ -63,13 +63,14 @@ def post_new():
                 }
             })
 
+
         post = Posts(
             title=data['title'],
             subtitle=data['subtitle'],
             cover_image=data['imageCover'],
             game_id=data['gameId'],
             user_id=current_user.id,
-            is_esport=bool(data['isEsport'] == 'true'),
+            is_esport=data['isEsport'],
             source_name=data['source']['name'],
             source_url=data['source']['url']
         )

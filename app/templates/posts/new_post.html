@@ -22,7 +22,7 @@
                   Selecionar capa da notícia &nbsp;
                   <i class="fa fa-image"></i>
                 </label>
-                <img src="" alt="" class="image-cover" required>
+                <img alt="" class="image-cover" required>
                 <textarea type="text" id="header" class="new-post-title" placeholder="Título da notícia..." rows="1" required></textarea>
                 <textarea type="text" id="header" class="new-post-subtitle" placeholder="Subtítulo da notícia..." rows="1" required></textarea>
                 <div class="editor-container" oncontextmenu="return false;">
@@ -60,10 +60,11 @@
                       <option value="no">Não</option>
                       <option value="yes">Sim</option>
                     </select>
-                    <input type="text" class="source-name" placeholder="Nome da fonte usada como referência">
-                    <input type="url" class="source-url" placeholder="Url do site fonte">
+                    <input type="text" id="header" class="source-name" placeholder="Nome da fonte usada como referência">
+                    <input type="url" id="header" class="source-url" placeholder="Url do site fonte">
                   </div>
-                <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
+                  <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
+                  <span class="error"></span>
               </form>
               <script src="{{ url_for('static', filename='javascript/newPost.js') }}"></script>
               <script src="{{ url_for('static', filename='javascript/editorFunctions.js') }}"></script>

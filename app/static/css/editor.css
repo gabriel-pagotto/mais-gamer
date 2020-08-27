@@ -168,6 +168,10 @@
 }
 
 @media (max-width: 1025px) {
+  .editor-container {
+    margin: 10px auto;
+    width: 100%;
+  }
   .editor-container .contents #YTB {
     max-height: 430px;
     height: 52vw;

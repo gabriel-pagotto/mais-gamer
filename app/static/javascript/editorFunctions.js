@@ -11,8 +11,10 @@ const sourceNameIn = document.querySelector('.source-name');
 const sourceUrlIn = document.querySelector('.source-url');
 const body = document.querySelector('body');
 const imageCover = document.querySelector('.image-cover');
+const error = document.querySelector('.error');
 
 let counterPosition = 0;
+let loadingCounter = 0;
 
 const addTitle = document.querySelector('#add-title');
 const addParagraph = document.querySelector('#add-paragraph');
@@ -59,6 +61,12 @@ addImage.addEventListener('click', () => {
   const formData = new FormData();
 
   uploadFile.addEventListener('change', () => {
+    const createdImage = document.createElement('img');
+    createdImage.onchange = loadingImages();
+    createdImage.src = '/static/imageLoader.gif';
+    createdImage.className = 'added-content';
+    createdImage.id = 'IMG';
+    contents.appendChild(createdImage);
     const XHR = new XMLHttpRequest;
     XHR.open('post', '/upload', true);
     XHR.onload
@@ -68,12 +76,8 @@ addImage.addEventListener('click', () => {
           const data = JSON.parse(XHR.responseText);
           contents.removeChild(uploadFile);
           counterPosition = counterPosition + 1;
-          const createdImage = document.createElement('img');
-          createdImage.className = 'added-content';
-          createdImage.id = 'IMG';
           createdImage.name = counterPosition;
           createdImage.src = data.url;
-          contents.appendChild(createdImage);
         };
       };
       uploadFile.removeEventListener('change', null);
@@ -177,6 +181,27 @@ remove.addEventListener('click', () => {
 
 formSub.addEventListener('submit', () => {
   event.preventDefault();
+  const imageCover = document.querySelector('.image-cover');
+  if (!imageCover.src) {
+    return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Adicione uma capa para a notícia!'
+  };
+
+  console.log(imageCover.src)
+
+  if (imageCover.src === location.origin + '/static/imageLoader.gif') {
+    return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Algumas imagens ainda estão carregando!'
+  };
+
+  loadingImages();
+
+  if (loadingCounter > 0) {
+    return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Algumas imagens ainda estão carregando!'
+  };
+
+  submit.innerHTML = 'Enviando...'
+  submit.style.background = '#827189'
+  submit.style.border = '1px solid #827189'
+
   const addedContents = document.getElementsByClassName('added-content');
 
   let contents = [];
@@ -245,7 +270,7 @@ formSub.addEventListener('submit', () => {
     subtitle: postSubtitle.value,
     contents: contents,
     gameId: formGameID.value,
-    isEsport: isEsport.value,
+    isEsport: isEsport.checked,
     source: {
       'name': sourceNameIn.value,
       'url': sourceUrlIn.value,
@@ -311,3 +336,21 @@ function sizeTextAreas() {
 };
 
 sizeTextAreas();
+
+function loadingImages() {
+  const addedContents = document.getElementsByClassName('added-content');
+  loadingCounter = 0;
+  for (x = 0; x < addedContents.length; x ++) {
+    const element = addedContents[x];
+    if (element.src === location.origin + '/static/imageLoader.gif') {
+      loadingCounter = loadingCounter + 1;
+    };
+  };
+
+  if ( loadingCounter > 0) {
+    return;
+  } else {
+    loadingCounter = 0;
+    error.innerHTML = '';
+  };
+};
