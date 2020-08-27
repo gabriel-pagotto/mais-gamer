@@ -62,7 +62,6 @@ addImage.addEventListener('click', () => {
 
   uploadFile.addEventListener('change', () => {
     const createdImage = document.createElement('img');
-    createdImage.onchange = loadingImages();
     createdImage.src = '/static/imageLoader.gif';
     createdImage.className = 'added-content';
     createdImage.id = 'IMG';
