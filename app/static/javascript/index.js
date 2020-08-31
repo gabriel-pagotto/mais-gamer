@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
               <a class="postedBy" href=""><i class="fas fa-user-tag">
               ${data.header.posted_by.name + ' ' + data.header.posted_by.surname}</i></a>
               <time datetime="${data.header.addedAt}"><i class="far fa-clock">
-              ${data.header.addedAt}</i></time>
+              ${data.header.datePost}</i></time>
             </div>
           `;
             pageElement.appendChild(headerArt);
@@ -64,7 +64,7 @@ window.addEventListener('scroll', () => {
                 <a class="postedBy" href=""><i class="fas fa-user-tag">
                   ${element.posted_by.name + ' ' + element.posted_by.surname}</i></a>
                 <time datetime="${element.addedAt}"><i class="far fa-clock">
-                  ${element.addedAt}</i></time>
+                  ${element.datePost}</i></time>
               </div>
             `;
               animationTime = animationTime + 0.2;

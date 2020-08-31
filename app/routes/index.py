@@ -1,5 +1,6 @@
 from app import app, database
 from app.models import Posts, Users
+from app.utils.date_time import DatePost
 from flask import render_template, request, jsonify
 from sqlalchemy import desc
 
@@ -23,6 +24,7 @@ def index():
             'subtitle': post.subtitle,
             'cover_image': post.cover_image,
             'addedAt': post.addedAt,
+            'datePost': DatePost(post.addedAt),
             'posted_by': {
                 'username': post_user.username,
                 'name': post_user.name,
