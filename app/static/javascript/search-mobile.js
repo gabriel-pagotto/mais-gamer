@@ -68,6 +68,7 @@ searchMobileInput.addEventListener('input', () => {
                     };
 
                     searchMobileBody.innerHTML = renderNews;
+                    searchMobileBody.style.animation = 'loadsItems 0.4s linear'
                 };
             };
         };

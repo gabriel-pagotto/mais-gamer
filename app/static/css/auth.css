@@ -1,131 +1,133 @@
 .web {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .web .payload {
-    display: flex;
-    height: 100%;
-    user-select: none;
-    align-items: center;
-    background-color: #FFFFFF;
+  display: flex;
+  height: 100%;
+  user-select: none;
+  align-items: center;
+  background-color: #FFFFFF;
 }
 
 .web .payload .login-container {
-    background: #FFFFFF;
-    width: 350px;
-    height: fit-content;
-    margin: 0 auto;
-    padding: 45px;
-    box-shadow: 0px 0px 10px #666666;
+  position: relative;
+  background: #FFFFFF;
+  width: 350px;
+  height: fit-content;
+  margin: 40px auto;
+  padding: 45px;
+  box-shadow: 0px 0px 10px #666666;
+  animation: loadsItems 0.7s linear;
 }
 
 .payload .login-container .login-data {
-    display: block;
+  display: block;
 }
 
 .payload .login-container .login-data .login-title {
-    font-size: 26px;
-    margin-bottom: 5px;
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
 .login-container .login-data form .error {
-    display: block;
-    color: #eb1123;
+  display: block;
+  color: #eb1123;
 }
 
 .login-container .login-data form {
-    display: block;
+  display: block;
 }
 
 .login-container .login-data form .form-inputs {
-    display: block;
-    border: transparent;
-    border-bottom: 1px solid #666666;
-    width: 100%;
-    margin-top: 15px;
-    padding: 7px 0;
-    color: #1b1b1b;
-    font-size: 14px;
-    font-weight: 400;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+  display: block;
+  border: transparent;
+  border-bottom: 1px solid #666666;
+  width: 100%;
+  margin-top: 15px;
+  padding: 7px 0;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .login-container .login-data form .form-inputs:hover {
-    border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .login-container .login-data form .form-inputs:focus {
-    border: 0 none;
-    border-bottom: 1px solid #ffa31a;
-    outline: none;
-    box-shadow: 0 0 0;
+  border: 0 none;
+  border-bottom: 1px solid #ffa31a;
+  outline: none;
+  box-shadow: 0 0 0;
 }
 
 .login-container .login-data form .no-account {
-    margin-top: 20px;
-    display: block;
+  margin-top: 20px;
+  display: block;
 }
 
 .login-container .login-data form .no-account a {
-    text-decoration: none;
-    color: #ffa31a;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+  text-decoration: none;
+  color: #ffa31a;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .login-container .login-data form .no-account a:hover {
-    text-decoration: underline;
-    color: #666666;
+  text-decoration: underline;
+  color: #666666;
 }
 
 .login-container .login-data form .submit {
-    display: block;
-    width: fit-content;
-    height: fit-content;
-    padding: 7px 16px;
-    background: #ffa31a;
-    border: none;
-    border-radius: 3px;
-    font-size: 15px;
-    color: #FFFFFF;
-    margin: 30px 0 0 auto;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 7px 16px;
+  background: #ffa31a;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #FFFFFF;
+  margin: 30px 0 0 auto;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .login-container .login-data form .submit:hover {
-    opacity: 0.8;
-    cursor: pointer;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media (max-width: 1025px) {
-    .payload .login-container .login-data .login-title {
-        text-align: center;
-        font-size: 30px;
-    }
-    .web .payload .login-container {
-        position: relative;
-        width: 85%;
-        height: 100%;
-        margin: 0px;
-        padding: 7.5%;
-        box-shadow: 0 0 0 0;
-    }
-    .login-container .login-data form .form-inputs {
-        width: 100%;
-        font-size: 22px;
-        border-radius: 0;
-    }
-    .login-container .login-data form .submit {
-        padding: 7px 16px;
-        border: 0 none;
-        border-radius: 3px;
-        -webkit-appearance: none;
-        appearance: none;
-        font-size: 20px;
-    }
+  .payload .login-container .login-data .login-title {
+    text-align: center;
+    font-size: 30px;
+  }
+  .web .payload .login-container {
+    position: relative;
+    width: 85%;
+    height: 100%;
+    margin: 0px;
+    padding: 7.5%;
+    box-shadow: 0 0 0 0;
+  }
+  .login-container .login-data form .form-inputs {
+    width: 100%;
+    font-size: 22px;
+    border-radius: 0;
+  }
+  .login-container .login-data form .submit {
+    padding: 7px 16px;
+    border: 0 none;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 20px;
+  }
 }

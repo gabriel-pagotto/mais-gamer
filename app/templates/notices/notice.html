@@ -21,14 +21,9 @@
                 <div class="notice-header">
                     <h1 class="header-title">{{ notice.title }}</h1>
                     <p class="notice-subtitle">{{ notice.subtitle }}</p>
-                    {% if game.id != 0 %}
-                    <div class="game">
-                        <span class="game-name">{{ game.name }}</span>
-                    </div>
-                    {% endif %}
-                    <span class="posted-by">Por {{ user.name + ' ' + user.surname }}</span>
+                    <span class="posted-by"><i class="fas fa-user-tag"> {{ user.name + ' ' + user.surname }}</i></span>
                     <div class="notice-options">
-                        <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock" style="margin-right: 5px;"></i>{{ DatePost(notice.addedAt) }}</time>
+                        <time class="addedAt" datetime="{{ notice.addedAt }}"><i class="far fa-clock"> {{ DatePost(notice.addedAt) }}</i></time>
                         <div class="share">
                             <a id="facebook" href="" target="_blank" title="Compartilhar esta notícia no Facebook">
                                 <i class="fab fa-facebook" id="facebook"></i>

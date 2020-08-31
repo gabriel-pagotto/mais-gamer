@@ -45,7 +45,9 @@ searchInput.addEventListener('input', () => {
                     if (allNews.length > 1) {
                         resultTitle.innerHTML = 'Resultados';
                     };
-                    containerResult.innerHTML = renderNews;;
+                    containerResult.innerHTML = renderNews;
+                    containerResult.style.animation = ''
+                    containerResult.style.animation = 'loadsItems 0,4s linear'
 
                     if (searchInput.value === '') {
                         resultTitle.innerHTML = 'Escreva para buscar';
