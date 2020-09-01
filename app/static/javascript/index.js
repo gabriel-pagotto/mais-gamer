@@ -3,12 +3,14 @@ const loadMoreButton = document.querySelector('.load-more');
 
 let page = 0;
 let totalPages = 0;
+let working = false;
 let animationTime = 0.7;
 
 window.addEventListener('scroll', () => {
   const scrollCounter = (document.documentElement.scrollTop + window.innerHeight) >= document.documentElement.scrollHeight;
-  if (scrollCounter === true) {
+  if (scrollCounter === true && working === false) {
     if (totalPages === 0 || page < totalPages - 1) {
+      working = true;
       page = page + 1;
       const xhr = new XMLHttpRequest;
       xhr.open('get', `/?pagina=${page}`)
@@ -73,6 +75,7 @@ window.addEventListener('scroll', () => {
               pageElement.appendChild(restArt);
             };
             animationTime = 0.7;
+            working = false;
           };
         };
       };
