@@ -53,7 +53,7 @@
               <a class="postedBy" href=""><i class="fas fa-user-tag">
                   {{ post.posted_by.name + ' ' + post.posted_by.surname }}</i></a>
               <time datetime="{{ post.addedAt }}"><i class="far fa-clock">
-                  {{ DatePost(posts.pages[0].header.addedAt) }}</i></time>
+                  {{ DatePost(post.addedAt) }}</i></time>
             </div>
           </article>
           {% endfor %}
