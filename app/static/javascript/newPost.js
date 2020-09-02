@@ -1,7 +1,5 @@
 const form = document.querySelector('.form-sub');
 const submit = document.querySelector('.submit');
-const selectEsports = document.querySelector('#select-esports');
-const checkbox = document.querySelector('.is-esport');
 const sourceQuestion = document.querySelector('#source-question');
 const sourceName = document.querySelector('.source-name');
 const sourceUrl = document.querySelector('.source-url');
@@ -41,8 +39,6 @@ coverImageLabel.addEventListener('click', () => {
   });
 });
 
-checkbox.value = false;
-
 sourceName.style.display = 'none';
 sourceUrl.style.display = 'none';
 sourceName.value = null;
@@ -60,11 +56,3 @@ sourceQuestion.addEventListener('change', () => {
   };
 });
 
-selectEsports.addEventListener('change', () => {
-  if  (selectEsports.value === 'no') {
-    checkbox.checked = false;
-  } else {
-    checkbox.checked = true;
-  };
-  console.log(checkbox.checked)
-});

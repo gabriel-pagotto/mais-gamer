@@ -47,11 +47,9 @@ def search():
                     'title': result.title,
                     'subtitle': result.subtitle,
                     'cover_image': result.cover_image,
-                    'game_id': result.game_id,
                     'user_id': result.user_id,
                     'addedAt': result.addedAt,
                     'views': result.views,
-                    'is_esport': result.is_esport,
                     'source_name': result.source_name,
                     'source_url': result.source_url,
                 })

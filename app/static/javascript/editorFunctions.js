@@ -268,8 +268,6 @@ formSub.addEventListener('submit', () => {
     title: postTitle.value,
     subtitle: postSubtitle.value,
     contents: contents,
-    gameId: formGameID.value,
-    isEsport: isEsport.checked,
     source: {
       'name': sourceNameIn.value,
       'url': sourceUrlIn.value,

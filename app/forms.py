@@ -1,5 +1,5 @@
 from app import database
-from app.models import Users, Posts, Games
+from app.models import Users, Posts
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, FileField, SelectField, TextAreaField, BooleanField

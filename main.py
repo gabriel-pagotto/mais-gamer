@@ -1,5 +1,5 @@
 from app import app, database
-from app.models import Users, Posts, Games
+from app.models import Users, Posts
 
 debug = app.config['FLASK_DEBUG']
 port = app.config['PORT']
@@ -13,5 +13,4 @@ def make_shell_context():
         'database': database,
         'User': Users,
         'Post': Posts,
-        'Game': Games,
     }

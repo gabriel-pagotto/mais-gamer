@@ -23,19 +23,24 @@
                   <i class="fa fa-image"></i>
                 </label>
                 <img alt="" class="image-cover" required>
-                <textarea type="text" id="header" class="new-post-title" placeholder="Título da notícia..." rows="1" required></textarea>
-                <textarea type="text" id="header" class="new-post-subtitle" placeholder="Subtítulo da notícia..." rows="1" required></textarea>
+                <textarea type="text" id="header" class="new-post-title" placeholder="Título da notícia..." rows="1"
+                  required></textarea>
+                <textarea type="text" id="header" class="new-post-subtitle" placeholder="Subtítulo da notícia..."
+                  rows="1" required></textarea>
                 <div class="editor-container" oncontextmenu="return false;">
                   <div class="contents"></div>
                   <div class="editor-options">
                     <ul class="options">
                       <li id="add-title"><i class="fas fa-heading"></i></i>&nbsp;&nbsp;&nbsp;Adicionar um título</li>
-                      <li id="add-paragraph"><i class="fas fa-paragraph"></i>&nbsp;&nbsp;&nbsp;Adicionar um paragrafo</li>
+                      <li id="add-paragraph"><i class="fas fa-paragraph"></i>&nbsp;&nbsp;&nbsp;Adicionar um paragrafo
+                      </li>
                       <!--<li id="add-list"><i class="fas fa-list"></i>&nbsp;&nbsp;&nbsp;Adicionar uma lista</li>
                       <li id="add-comment"><i class="fas fa-comment"></i>&nbsp;&nbsp;&nbsp;Adicionar um comentário</li>-->
                       <li id="add-image"><i class="far fa-image"></i>&nbsp;&nbsp;&nbsp;Adicionar uma imagem</li>
-                      <li id="add-youtube-video"><i class="fab fa-youtube"></i>&nbsp;&nbsp;&nbsp;Adicionar um video do YouTube</li>
-                      <li id="add-twitter-post"><i class="fab fa-twitter"></i>&nbsp;&nbsp;&nbsp;Adicionar uma postagem do Twitter</li>
+                      <li id="add-youtube-video"><i class="fab fa-youtube"></i>&nbsp;&nbsp;&nbsp;Adicionar um video do
+                        YouTube</li>
+                      <li id="add-twitter-post"><i class="fab fa-twitter"></i>&nbsp;&nbsp;&nbsp;Adicionar uma postagem
+                        do Twitter</li>
                     </ul>
                     <ul>
                       <li id="remove"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Apagar</li>
@@ -43,28 +48,17 @@
                   </div>
                   <div class="editor-options-background"></div>
                 </div>
-                  <label for="game">Escolha o jogo referente a esta notícia:</label>
-                  <select id="game" class="select-game">
-                    {% for game in choices %}
-                      <option value="{{ game.value }}">{{ game.name }}</option>
-                    {% endfor %}
-                  </select>
-                  <label for="select-esports">Esta notícia é sobre eSports?</label>
-                  <select id="select-esports">
+                <div class="source">
+                  <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
+                  <select id="source-question">
                     <option value="no">Não</option>
                     <option value="yes">Sim</option>
-                  <input accept="" type="checkbox" class="is-esport" id="is-esport">
-                  <div class="source">
-                    <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
-                    <select id="source-question">
-                      <option value="no">Não</option>
-                      <option value="yes">Sim</option>
-                    </select>
-                    <input type="text" id="header" class="source-name" placeholder="Nome da fonte usada como referência">
-                    <input type="url" id="header" class="source-url" placeholder="Url do site fonte">
-                  </div>
-                  <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
-                  <span class="error"></span>
+                  </select>
+                  <input type="text" id="header" class="source-name" placeholder="Nome da fonte usada como referência">
+                  <input type="url" id="header" class="source-url" placeholder="Url do site fonte">
+                </div>
+                <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
+                <span class="error"></span>
               </form>
               <script src="{{ url_for('static', filename='javascript/newPost.js') }}"></script>
               <script src="{{ url_for('static', filename='javascript/editorFunctions.js') }}"></script>

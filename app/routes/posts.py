@@ -1,9 +1,8 @@
 import json
 from app import app, database
-from app.models import Posts, Games, Post_Content, Files
+from app.models import Posts, Post_Content, Files
 from app.utils.aws_s3 import delete_file, clearUploadCache
 from app.utils.sub_header_options import sub_header
-from app.utils.url_for_notices import url_for_notices
 from flask import render_template, redirect, request, url_for, jsonify
 from flask_login import current_user, login_required
 from sqlalchemy import desc
@@ -36,8 +35,6 @@ def posts():
         page_number=page,
         next_url=next_url,
         prev_url=prev_url,
-        url_for_notices=url_for_notices,
-        last_param=None,
     )
 
 
@@ -68,9 +65,7 @@ def post_new():
             title=data['title'],
             subtitle=data['subtitle'],
             cover_image=data['imageCover'],
-            game_id=data['gameId'],
             user_id=current_user.id,
-            is_esport=data['isEsport'],
             source_name=data['source']['name'],
             source_url=data['source']['url']
         )
@@ -98,19 +93,11 @@ def post_new():
           'status': 'success',
           'redirect': url_for('notice', id=post.id)
         })
-    games = Games.query.all()
-    games_choices = [{
-        'value': '',
-        'name': 'Selecione uma opção',
-    }]
-    for game in games:
-        games_choices.append({'value': game.id, 'name': game.name})
 
     return render_template(
         'posts/new_post.html',
         title='Nova postagem',
         selected='new',
-        choices=games_choices,
         sub_header=sub_header(2, 'posts'),
     )
 
