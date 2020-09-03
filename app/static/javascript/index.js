@@ -30,15 +30,15 @@ window.addEventListener('scroll', () => {
             headerArt.innerHTML = `
             <div class="category"><a href="${ data.header.category.url }">${ data.header.category.name }</a></div>
             <h3 class="header-title">
-              <a href="${'/notícia/' + data.header.id}">${data.header.title}</a>
+              <a href="${'/news/' + data.header.id}">${data.header.title}</a>
             </h3>
-            <a href="${'/notícia/' + data.header.id}">
+            <a href="${'/news/' + data.header.id}">
               <div class="header-pic">
                 <img src="${data.header.cover_image}" alt="${data.header.title}">
               </div>
             </a>
             <p class="header-subtitle">
-              <a href="${'/notícia/' + data.header.id}">${data.header.subtitle}</a>
+              <a href="${'/news/' + data.header.id}">${data.header.subtitle}</a>
             </p>
             <div class="infos">
               <a class="postedBy" href=""><i class="fas fa-user-tag">
@@ -54,7 +54,7 @@ window.addEventListener('scroll', () => {
               const restArt = document.createElement('article');
               restArt.className = 'rest-art';
               restArt.innerHTML = `
-              <a href="${'/notícia/' + element.id}">
+              <a href="${'/news/' + element.id}">
                 <div class="rest-pic">
                   <img src="${element.cover_image}" alt="${element.title}" title="${element.title}">
                 </div>
@@ -62,10 +62,10 @@ window.addEventListener('scroll', () => {
               <div class="infos">
                 <div class="category"><a href="${ element.category.url }">${ element.category.name }</a></div>
                 <h3 class="rest-title">
-                  <a title="${element.title}" href="${'/notícia/' + element.id}">${element.title}</a>
+                  <a title="${element.title}" href="${'/news/' + element.id}">${element.title}</a>
                 </h3>
                 <p class="rest-subtitle">
-                  <a href="${'/notícia/' + element.id}"> ${element.subtitle}</a>
+                  <a href="${'/news/' + element.id}"> ${element.subtitle}</a>
                 </p>
                 <a class="postedBy" href=""><i class="fas fa-user-tag">
                   ${element.posted_by.name + ' ' + element.posted_by.surname}</i></a>
