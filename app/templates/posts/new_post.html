@@ -48,6 +48,14 @@
                   </div>
                   <div class="editor-options-background"></div>
                 </div>
+                <div class="category">
+                  <label for="category">Qual a categoria desta notícia?</label>
+                  <select id="category">
+                    {% for category in post_categories %}
+                      <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
                 <div class="source">
                   <label for="source-question">Esta notícia possui alguma fonte de referência?</label>
                   <select id="source-question">

@@ -8,7 +8,7 @@ from flask_login import current_user, login_required
 from sqlalchemy import desc
 
 
-@app.route('/postagens', methods=['GET'])
+@app.route('/posts', methods=['GET'])
 @login_required
 def posts():
     if not current_user.is_authenticated:
@@ -38,7 +38,7 @@ def posts():
     )
 
 
-@app.route('/postagens/novo', methods=['GET', 'POST'])
+@app.route('/posts/new', methods=['GET', 'POST'])
 @login_required
 def post_new():
     if not current_user.is_authenticated:
@@ -66,6 +66,7 @@ def post_new():
             subtitle=data['subtitle'],
             cover_image=data['imageCover'],
             user_id=current_user.id,
+            category=data['category'],
             source_name=data['source']['name'],
             source_url=data['source']['url']
         )
@@ -102,13 +103,13 @@ def post_new():
     )
 
 
-@app.route('/postagens/editar/<int:id>')
+@app.route('/posts/edit/<int:id>')
 @login_required
 def edit_post(id):
     return 'Disponível em breve...'
 
 
-@app.route('/postagens/deletar/<int:id>')
+@app.route('/posts/delete/<int:id>')
 @login_required
 def delete_post(id):
     if not current_user.is_authenticated:

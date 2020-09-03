@@ -26,7 +26,6 @@ window.addEventListener('scroll', () => {
             const headerArt = document.createElement('article');
             headerArt.className = 'header-art';
             headerArt.innerHTML = `
-            <div class="category"><a href="${ data.header.category.url }">${ data.header.category.name }</a></div>
             <h3 class="header-title">
               <a href="${'/notícia/' + data.header.id}">${data.header.title}</a>
             </h3>
@@ -58,7 +57,6 @@ window.addEventListener('scroll', () => {
                 </div>
               </a>
               <div class="infos">
-                <div class="category"><a href="${ element.category.url }">${ element.category.name }</a></div>
                 <h3 class="rest-title">
                   <a title="${element.title}" href="${'/notícia/' + element.id}">${element.title}</a>
                 </h3>

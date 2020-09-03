@@ -10,7 +10,7 @@ searchInput.addEventListener('input', () => {
         resultTitle.innerHTML = 'Escreva para buscar';
     } else {
         let XHR = new XMLHttpRequest();
-        XHR.open('GET', location.origin + `/buscar?q=${searchInput.value}`, true);
+        XHR.open('GET', location.origin + `/search?q=${searchInput.value}`, true);
         XHR.onreadystatechange = () => {
             if (XHR.readyState === 4) {
                 if (XHR.status === 200) {

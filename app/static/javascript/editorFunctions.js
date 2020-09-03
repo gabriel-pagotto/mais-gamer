@@ -12,6 +12,7 @@ const sourceUrlIn = document.querySelector('.source-url');
 const body = document.querySelector('body');
 const imageCover = document.querySelector('.image-cover');
 const error = document.querySelector('.error');
+const category = document.querySelector('#category')
 
 let counterPosition = 0;
 let loadingCounter = 0;
@@ -268,6 +269,7 @@ formSub.addEventListener('submit', () => {
     title: postTitle.value,
     subtitle: postSubtitle.value,
     contents: contents,
+    category: category.value,
     source: {
       'name': sourceNameIn.value,
       'url': sourceUrlIn.value,

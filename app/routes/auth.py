@@ -8,7 +8,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
 
-@app.route('/autenticação/entrar', methods=['GET', 'POST'])
+@app.route('/auth/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -36,7 +36,7 @@ def login():
     )
 
 
-@app.route('/autenticação/registro', methods=['GET', 'POST'])
+@app.route('/auth/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -74,7 +74,7 @@ def register():
     )
 
 
-@app.route('/autenticação/registro/successo', methods=['GET'])
+@app.route('/auth/register/success', methods=['GET'])
 @login_required
 def register_success():
     return render_template(
@@ -83,7 +83,7 @@ def register_success():
     )
 
 
-@app.route('/autenticação/sair')
+@app.route('/auth/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))

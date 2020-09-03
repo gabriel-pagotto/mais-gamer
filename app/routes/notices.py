@@ -4,7 +4,7 @@ from app.models import Users, Posts, Post_Content
 from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
-@app.route('/notícia/<id>', methods=['GET'])
+@app.route('/news/<id>', methods=['GET'])
 def notice(id):
     all_posts = Posts.query.all()
     all_posts_array = []

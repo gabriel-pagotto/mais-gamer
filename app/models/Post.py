@@ -9,6 +9,7 @@ class Posts(database.Model):
     cover_image = database.Column(database.Text)
     user_id = database.Column(
         database.Integer, database.ForeignKey('users.id'))
+    category = database.Column(database.Integer, database.ForeignKey('post_category.id'))
     addedAt = database.Column(database.DateTime, default=datetime_sao_paulo)
     views = database.Column(database.Integer, default=0)
     source_name = database.Column(database.String(50))

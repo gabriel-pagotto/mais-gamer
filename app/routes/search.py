@@ -3,7 +3,7 @@ from flask import request, jsonify
 from app.models import Posts
 
 
-@app.route('/buscar', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search():
     def search(param):
         all_news = Posts.query.all()
