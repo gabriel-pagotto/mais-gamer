@@ -168,12 +168,26 @@
     cursor: pointer;
 }
 
+.posts-actions .new-post .new-post-inputs .submit:focus {
+  outline: none;
+  border: none;
+}
+
+.posts-actions .new-post .new-post-inputs .submit:active {
+  opacity: 0.7;
+}
+
 .posts-actions .new-post .new-post-inputs .error {
   display: block;
   color: #FF0000;
   font-size: 20px;
   width: max-content;
   margin: 20px auto;
+}
+
+#submit-loads {
+  animation: Loading 0.7s infinite;
+  margin-right: 5px;
 }
 
 @media (max-width: 1025px) {

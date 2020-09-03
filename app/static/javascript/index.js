@@ -1,5 +1,6 @@
 const home = document.querySelector('.home');
 const loadMoreButton = document.querySelector('.load-more');
+const loads = document.querySelector('.loads');
 
 let page = 0;
 let totalPages = 0;
@@ -10,6 +11,7 @@ window.addEventListener('scroll', () => {
   const scrollCounter = (document.documentElement.scrollTop + window.innerHeight) >= document.documentElement.scrollHeight;
   if (scrollCounter === true && working === false) {
     if (totalPages === 0 || page < totalPages - 1) {
+      loads.style.visibility = 'visible';
       working = true;
       page = page + 1;
       const xhr = new XMLHttpRequest;
@@ -77,6 +79,7 @@ window.addEventListener('scroll', () => {
               pageElement.appendChild(restArt);
             };
             animationTime = 0.7;
+            loads.style.visibility = 'hidden';
             working = false;
           };
         };

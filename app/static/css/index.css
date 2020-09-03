@@ -156,6 +156,28 @@
   margin-left: 10px;
   font-size: 12px;
 }
+
+.loads {
+  user-select: none;
+  visibility: hidden;
+  display: flex;
+  width: max-content;
+  margin: 50px auto;
+  font-size: 18px;
+  color: #ffa31a;
+  text-shadow: 1px 1px 1px #EAEAEA;
+  font-weight: 700;
+  align-items: center;
+}
+
+.loads i {
+  color: #ffa31a;
+  font-size: 24px;
+  animation: Loading 0.7s infinite;
+  margin-right: 10px;
+}
+
+
 @media (max-width: 1025px) {
   .home .page .header-art {
     padding-bottom: 20px;

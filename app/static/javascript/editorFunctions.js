@@ -186,8 +186,6 @@ formSub.addEventListener('submit', () => {
     return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Adicione uma capa para a notícia!'
   };
 
-  console.log(imageCover.src)
-
   if (imageCover.src === location.origin + '/static/imageLoader.gif') {
     return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Algumas imagens ainda estão carregando!'
   };
@@ -198,9 +196,10 @@ formSub.addEventListener('submit', () => {
     return error.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Algumas imagens ainda estão carregando!'
   };
 
-  submit.innerHTML = 'Enviando...'
+  submit.innerHTML = '<i class="fas fa-spinner" id="submit-loads"></i> Enviando'
   submit.style.background = '#827189'
   submit.style.border = '1px solid #827189'
+  submit.disabled = true;
 
   const addedContents = document.getElementsByClassName('added-content');
 
@@ -278,7 +277,7 @@ formSub.addEventListener('submit', () => {
 
   const XHR = new XMLHttpRequest;
 
-  XHR.open('post', '/postagens/novo')
+  XHR.open('post', '/posts/new')
   XHR.onreadystatechange = () => {
     if (XHR.readyState === 4) {
       if (XHR.status === 200) {
@@ -288,6 +287,10 @@ formSub.addEventListener('submit', () => {
         } else {
           console.log('error');
         };
+        submit.innerHTML = '<i class="fas fa-spinner"></i> Enviando...'
+        submit.style.background = '#ffa31a;'
+        submit.style.border = '1px solid #ffa31a;'
+        submit.disabled = false;
       };
     };
   };
