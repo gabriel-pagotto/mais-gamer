@@ -18,7 +18,7 @@ searchInput.addEventListener('input', () => {
                     let renderNews = '';
                     allNews.map((news) => {
                         let newsData = `
-                            <a href="${location.origin + '/notícia/' + news.id}">
+                            <a href="${location.origin + '/news/' + news.id}">
                                 <div class="container">
                                     <div class="cover_image">
                                         <img src="${news.cover_image}" alt="">

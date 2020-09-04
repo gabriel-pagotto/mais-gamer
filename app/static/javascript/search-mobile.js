@@ -37,7 +37,7 @@ searchMobileInput.addEventListener('input', () => {
                     allNews.map((news) => {
                         let newsData = `
                             <div class="container">
-                                <a href="${location.origin + '/notícia/' + news.id}">
+                                <a href="${location.origin + '/news/' + news.id}">
                                     <div class="cover-image">
                                         <img src="${news.cover_image}" alt="">
                                     </div>
