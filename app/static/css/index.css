@@ -173,7 +173,7 @@
 .loads i {
   color: #ffa31a;
   font-size: 24px;
-  animation: Loading 0.7s infinite;
+  animation: Loading 0.7s infinite linear;
   margin-right: 10px;
 }
 

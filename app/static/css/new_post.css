@@ -186,7 +186,7 @@
 }
 
 #submit-loads {
-  animation: Loading 0.7s infinite;
+  animation: Loading 0.7s infinite linear;
   margin-right: 5px;
 }
 
