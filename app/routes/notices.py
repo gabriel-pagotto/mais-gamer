@@ -5,6 +5,7 @@ from app.utils.date_time import get_datetime_7_days
 from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
+
 @app.route('/news/<id>', methods=['GET'])
 def notice(id):
     all_posts = Posts.query.all()
@@ -37,7 +38,8 @@ def notice(id):
         more_news.append(all_posts_array[num])
 
     post = Posts.query.filter_by(id=id).first()
-    post_content = Post_Content.query.filter_by(post_id=id).order_by('position')
+    post_content = Post_Content.query.filter_by(
+        post_id=id).order_by('position')
     user = Users.query.filter_by(id=post.user_id).first()
 
     if post.views == None or not post.views:

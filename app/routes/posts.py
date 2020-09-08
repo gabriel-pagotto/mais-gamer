@@ -60,7 +60,6 @@ def post_new():
                 }
             })
 
-
         post = Posts(
             title=data['title'],
             subtitle=data['subtitle'],
@@ -77,7 +76,8 @@ def post_new():
 
         for content in contents:
             if content['type'] == 'IMG':
-                image = Files.query.filter_by(url=content['data']['content']).first()
+                image = Files.query.filter_by(
+                    url=content['data']['content']).first()
                 image.used = 1
             post_content = Post_Content(
                 content=content['data']['content'],
@@ -91,8 +91,8 @@ def post_new():
         database.session.commit()
         clearUploadCache()
         return jsonify({
-          'status': 'success',
-          'redirect': url_for('notice', id=post.id)
+            'status': 'success',
+            'redirect': url_for('notice', id=post.id)
         })
 
     return render_template(

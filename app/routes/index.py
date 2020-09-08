@@ -221,7 +221,6 @@ def e_sports():
     )
 
 
-
 @app.route('/trailer', methods=['GET'])
 def trailer():
     all_posts = Posts.query.order_by(desc('addedAt')).filter_by(category=3)
@@ -290,6 +289,7 @@ def trailer():
         title='Mais Gamer - Trailers',
         posts=posts,
     )
+
 
 @app.route('/stream', methods=['GET'])
 def stream():
