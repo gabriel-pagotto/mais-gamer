@@ -1,6 +1,7 @@
 import random
 from app import app, database
 from app.models import Users, Posts, Post_Content
+from app.utils.date_time import get_datetime_7_days
 from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
@@ -9,7 +10,7 @@ def notice(id):
     all_posts = Posts.query.all()
     all_posts_array = []
     for post in all_posts:
-        if post.id != id:
+        if post.id != id and get_datetime_7_days(post.addedAt) == True:
             all_posts_array.append(post)
 
     num_randons = []
