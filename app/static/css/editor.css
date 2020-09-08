@@ -109,10 +109,9 @@
   width: 80%;
 }
 
-#social-finder-container .socialFinderInput:focus{
+#social-finder-container .socialFinderInput:focus {
   outline: none;
 }
-
 
 #social-finder-container .social-finder-button {
   position: relative;

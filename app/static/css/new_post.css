@@ -1,171 +1,170 @@
 .web .payload .posts {
-    display: block;
-    user-select: none;
+  display: block;
+  user-select: none;
 }
 
 .posts .posts-actions .new-post {
-    display: block;
-    width: 70%;
-    max-width: 900px;
-    margin: 0 auto 60px auto;
-    height: fit-content;
-    padding: 15px;
+  display: block;
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  height: fit-content;
+  padding: 15px;
 }
 
 .posts .posts-actions .new-post .new-post-inputs {
-    display: block;
-    margin: 50px 50px;
+  display: block;
+  margin: 50px 50px;
 }
 
 .posts-actions .new-post .new-post-inputs #header {
-    -webkit-appearance: none;
-    display: block;
-    width: 95%;
-    padding: 1% 2.5%;
-    margin-bottom: 10px;
-    border: 1px solid #EAEAEA;
-    border-radius: 10px;
+  -webkit-appearance: none;
+  display: block;
+  width: 95%;
+  padding: 1% 2.5%;
+  margin-bottom: 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 10px;
 }
 
 .posts-actions .new-post .new-post-inputs #header:focus {
-    box-shadow: 0 0 5px #EAEAEA;
-    border: 1px solid #EAEAEA;
-    outline: 0;
+  box-shadow: 0 0 5px #EAEAEA;
+  border: 1px solid #EAEAEA;
+  outline: 0;
 }
 
 .posts-actions .new-post .new-post-inputs .cover_image {
-    display: none;
+  display: none;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover-select {
-    display: block;
-    width: max-content;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 1% 5%;
-    border: 1px solid #EAEAEA;
-    border-radius: 20px;
-    align-items: center;
-    transition: all 0.1s linear;
-    margin-bottom: 10px;
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 1% 5%;
+  border: 1px solid #EAEAEA;
+  border-radius: 20px;
+  align-items: center;
+  transition: all 0.1s linear;
+  margin-bottom: 10px;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover-select:hover {
-    cursor: pointer;
-    opacity: 0.6;
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover-select:active {
-    background-color: #EAEAEA;
+  background-color: #EAEAEA;
 }
 
 .posts-actions .new-post .new-post-inputs .image-cover {
-    display: none;
-    width: 90%;
-    margin: 0 auto 10px auto;
-    box-shadow: 0 0 5px #EAEAEA;
+  display: none;
+  width: 90%;
+  margin: 0 auto 10px auto;
+  box-shadow: 0 0 5px #EAEAEA;
 }
 
-
 .posts-actions .new-post .new-post-inputs .new-post-title {
-    font-weight: 600;
-    font-size: 29px;
-    resize: none;
+  font-weight: 600;
+  font-size: 29px;
+  resize: none;
 }
 
 .posts-actions .new-post .new-post-inputs .new-post-subtitle {
-    font-size: 22px;
-    resize: none;
+  font-size: 22px;
+  resize: none;
 }
 
 .posts-actions .new-post .new-post-inputs label {
-    display: block;
-    width: fit-content;
-    margin: 30px auto 5px auto;
-    font-size: 17px;
+  display: block;
+  width: fit-content;
+  margin: 30px auto 5px auto;
+  font-size: 17px;
 }
 
 .posts-actions .new-post .new-post-inputs select {
-    -webkit-appearance: none;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: max-content;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 1% 6%;
-    border: 1px solid #EAEAEA;
-    border-radius: 20px;
-    align-items: center;
-    transition: all 0.1s linear;
-    margin-bottom: 10px;
+  -webkit-appearance: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 1% 6%;
+  border: 1px solid #EAEAEA;
+  border-radius: 20px;
+  align-items: center;
+  transition: all 0.1s linear;
+  margin-bottom: 10px;
 }
 
 .posts-actions .new-post .new-post-inputs select:hover {
-    cursor: pointer;
-    opacity: 0.6;
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .posts-actions .new-post .new-post-inputs select:focus {
-    box-shadow: 0 0 5px #EAEAEA;
-    border: 0 solid none;
-    outline: 0;
+  box-shadow: 0 0 5px #EAEAEA;
+  border: 0 solid none;
+  outline: 0;
 }
 
 .posts-actions .new-post .new-post-inputs select option {
-    display: block;
-    width: max-content;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 1% 5%;
-    border: 1px solid #EAEAEA;
-    border-radius: 20px;
-    align-items: center;
-    transition: all 0.1s linear;
-    margin-bottom: 10px;
-    color: #111111;
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 1% 5%;
+  border: 1px solid #EAEAEA;
+  border-radius: 20px;
+  align-items: center;
+  transition: all 0.1s linear;
+  margin-bottom: 10px;
+  color: #111111;
 }
 
 .posts-actions .new-post .new-post-inputs .select-game option:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .posts-actions .new-post .new-post-inputs #CK1 {
-    display: none;
+  display: none;
 }
 
 .posts-actions .new-post .new-post-inputs .is-esport {
-    display: none;
-    width: 20px;
-    height: 20px;
-    -webkit-appearance: checkbox;
-    padding: 0 0;
-    margin-bottom: 10px;
-    border: 1px solid block;
-    border-radius: 5px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: checkbox;
+  padding: 0 0;
+  margin-bottom: 10px;
+  border: 1px solid block;
+  border-radius: 5px;
 }
 
 .posts-actions .new-post .new-post-inputs .submit {
-    border-radius: 0;
-    border: 0 none;
-    display: block;
-    width: fit-content;
-    height: fit-content;
-    padding: 7px 16px;
-    background: #ffa31a;
-    border: none;
-    border-radius: 3px;
-    font-size: 15px;
-    color: #FFFFFF;
-    margin: 30px auto 0 auto;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+  border-radius: 0;
+  border: 0 none;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 7px 16px;
+  background: #ffa31a;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #FFFFFF;
+  margin: 30px auto 0 auto;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .posts-actions .new-post .new-post-inputs .submit:hover {
-    opacity: 0.8;
-    cursor: pointer;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .posts-actions .new-post .new-post-inputs .submit:focus {
@@ -191,45 +190,45 @@
 }
 
 @media (max-width: 1025px) {
-    .posts .posts-actions .new-post {
-        width: 98%;
-        padding: 0;
-    }
-    .posts .posts-actions .new-post .new-info {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .posts .posts-actions .new-post .new-post-inputs {
-        margin: 0;
-    }
-    .posts-actions .new-post .new-post-inputs label {
-      display: block;
-        width: max-content;
-    }
-    .posts-actions .new-post .new-post-inputs input {
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-    }
-    .posts-actions .new-post .new-post-inputs .image-cover {
-        width: 90%;
-    }
-    .posts-actions .new-post .new-post-inputs .new-post-title {
-        font-size: 22px;
-    }
-    .posts-actions .new-post .new-post-inputs .new-post-subtitle {
-        font-size: 18px;
-    }
-    .posts-actions .new-post .new-post-inputs .select-game {
-        font-size: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .posts-actions .new-post .new-post-inputs .submit {
-        padding: 7px 16px;
-        border: 0 none;
-        border-radius: 0px;
-        -webkit-appearance: none;
-        font-size: 20px;
-    }
+  .posts .posts-actions .new-post {
+    width: 98%;
+    padding: 0;
+  }
+  .posts .posts-actions .new-post .new-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .posts .posts-actions .new-post .new-post-inputs {
+    margin: 0;
+  }
+  .posts-actions .new-post .new-post-inputs label {
+    display: block;
+    width: max-content;
+  }
+  .posts-actions .new-post .new-post-inputs input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .posts-actions .new-post .new-post-inputs .image-cover {
+    width: 90%;
+  }
+  .posts-actions .new-post .new-post-inputs .new-post-title {
+    font-size: 22px;
+  }
+  .posts-actions .new-post .new-post-inputs .new-post-subtitle {
+    font-size: 18px;
+  }
+  .posts-actions .new-post .new-post-inputs .select-game {
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .posts-actions .new-post .new-post-inputs .submit {
+    padding: 7px 16px;
+    border: 0 none;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    font-size: 20px;
+  }
 }

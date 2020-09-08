@@ -1,71 +1,71 @@
 .web {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 .web .payload {
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: #333333;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
 }
 
 .web .payload .admin {
-    margin: 70px auto;
-    width: 80%;
-    background-color: #151515;
-    border: 1px solid #ffa31a;
-    border-radius: 10px;
-    padding: 25px 50px 50px 50px;
+  margin: 70px auto;
+  width: 80%;
+  background-color: #151515;
+  border: 1px solid #ffa31a;
+  border-radius: 10px;
+  padding: 25px 50px 50px 50px;
 }
 
 .web .payload .admin h1 {
-    width: max-content;
-    margin: auto;
-    color: #FFFFFF;
-    font-size: 25px;
+  width: max-content;
+  margin: auto;
+  color: #FFFFFF;
+  font-size: 25px;
 }
 
 .web .payload .admin .admin-options {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .web .payload .admin .admin-options a {
-    text-align: center;
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: #ffa31a;
-    width: max-content;
-    margin: 13px auto;
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #ffa31a;
+  width: max-content;
+  margin: 13px auto;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .payload .admin .admin-options a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @media (max-width: 1025px) {
-    .web .payload .admin {
-        margin: 0;
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%;
-        border: none;
-        border-radius: 0;
-    }
-    .web .payload .admin h1 {
-        width: fit-content;
-        text-align: center;
-    }
-    .web .payload .admin .admin-options {
-        display: block;
-    }
-    .web .payload .admin .admin-options a {
-        display: block;
-        width: 100%;
-        font-size: 25px;
-    }
+  .web .payload .admin {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+  }
+  .web .payload .admin h1 {
+    width: fit-content;
+    text-align: center;
+  }
+  .web .payload .admin .admin-options {
+    display: block;
+  }
+  .web .payload .admin .admin-options a {
+    display: block;
+    width: 100%;
+    font-size: 25px;
+  }
 }
