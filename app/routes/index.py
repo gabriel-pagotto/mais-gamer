@@ -9,15 +9,20 @@ from app.utils.index import return_url_category
 @app.route('/', methods=['GET'])
 def index():
     all_posts = Posts.query.order_by(desc('addedAt')).all()
+    categories = PostCategory.query.all()
     users = Users.query.all()
 
     posts_list = []
 
     for post in all_posts:
-        post_user = ''
+        post_user = None
+        post_category = None
         for user in users:
             if user.id == post.user_id:
                 post_user = user
+        for category in categories:
+            if category.id == post.category:
+                post_category = category.name
 
         post = {
             'id': post.id,
@@ -27,7 +32,7 @@ def index():
             'addedAt': post.addedAt,
             'datePost': DatePost(post.addedAt),
             'category': {
-                'name': PostCategory.query.filter_by(id=post.category).first().name,
+                'name': post_category,
                 'url': return_url_category(post.category),
             },
             'posted_by': {
@@ -45,7 +50,7 @@ def index():
 
     posts_counter = 0
     page = {
-        'header': '',
+        'header': None,
         'notices': []
     }
 
@@ -59,7 +64,7 @@ def index():
             page['notices'].append(post)
             posts['pages'].append(page)
             page = {
-                'header': '',
+                'header': None,
                 'notices': []
             }
             posts_counter = 0
@@ -88,7 +93,7 @@ def gaming_news():
     posts_list = []
 
     for post in all_posts:
-        post_user = ''
+        post_user = None
         for user in users:
             if user.id == post.user_id:
                 post_user = user
@@ -115,7 +120,7 @@ def gaming_news():
 
     posts_counter = 0
     page = {
-        'header': '',
+        'header': None,
         'notices': []
     }
 
@@ -129,7 +134,7 @@ def gaming_news():
             page['notices'].append(post)
             posts['pages'].append(page)
             page = {
-                'header': '',
+                'header': None,
                 'notices': []
             }
             posts_counter = 0
@@ -159,7 +164,7 @@ def e_sports():
     posts_list = []
 
     for post in all_posts:
-        post_user = ''
+        post_user = None
         for user in users:
             if user.id == post.user_id:
                 post_user = user
@@ -186,7 +191,7 @@ def e_sports():
 
     posts_counter = 0
     page = {
-        'header': '',
+        'header': None,
         'notices': []
     }
 
@@ -200,7 +205,7 @@ def e_sports():
             page['notices'].append(post)
             posts['pages'].append(page)
             page = {
-                'header': '',
+                'header': None,
                 'notices': []
             }
             posts_counter = 0
@@ -229,7 +234,7 @@ def trailer():
     posts_list = []
 
     for post in all_posts:
-        post_user = ''
+        post_user = None
         for user in users:
             if user.id == post.user_id:
                 post_user = user
@@ -256,7 +261,7 @@ def trailer():
 
     posts_counter = 0
     page = {
-        'header': '',
+        'header': None,
         'notices': []
     }
 
@@ -270,7 +275,7 @@ def trailer():
             page['notices'].append(post)
             posts['pages'].append(page)
             page = {
-                'header': '',
+                'header': None,
                 'notices': []
             }
             posts_counter = 0
@@ -300,7 +305,7 @@ def stream():
     posts_list = []
 
     for post in all_posts:
-        post_user = ''
+        post_user = None
         for user in users:
             if user.id == post.user_id:
                 post_user = user
@@ -327,7 +332,7 @@ def stream():
 
     posts_counter = 0
     page = {
-        'header': '',
+        'header': None,
         'notices': []
     }
 
@@ -341,7 +346,7 @@ def stream():
             page['notices'].append(post)
             posts['pages'].append(page)
             page = {
-                'header': '',
+                'header': None,
                 'notices': []
             }
             posts_counter = 0
