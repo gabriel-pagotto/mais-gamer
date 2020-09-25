@@ -25,7 +25,9 @@ const addTwitterPost = document.querySelector('#add-twitter-post');
 const remove = document.querySelector('#remove');
 
 addTitle.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
   counterPosition = counterPosition + 1;
   const createdTitle = document.createElement('textarea');
   createdTitle.className = 'added-content';
@@ -38,7 +40,9 @@ addTitle.addEventListener('click', () => {
 });
 
 addParagraph.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
   counterPosition = counterPosition + 1;
   const createdTitle = document.createElement('textarea');
   createdTitle.className = 'added-content';
@@ -51,7 +55,9 @@ addParagraph.addEventListener('click', () => {
 });
 
 addImage.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };;
   const uploadFile = document.createElement('input');
   uploadFile.type = 'file';
   uploadFile.accept = '.png, .jpg, .jpeg';
@@ -88,7 +94,9 @@ addImage.addEventListener('click', () => {
 });
 
 addYoutubeVideo.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
   const socialFinderContainer = document.createElement('div');
   socialFinderContainer.className = 'added-content'
   socialFinderContainer.id = 'social-finder-container';
@@ -133,7 +141,9 @@ addYoutubeVideo.addEventListener('click', () => {
 });
 
 addTwitterPost.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
   const socialFinderContainer = document.createElement('div');
   socialFinderContainer.className = 'added-content'
   socialFinderContainer.id = 'social-finder-container';
@@ -298,20 +308,26 @@ formSub.addEventListener('submit', () => {
 });
 
 editor.addEventListener('contextmenu', (e) => {
-  const x = (e.pageX - 3) + 'px';
-  const y = (e.pageY - 2) + 'px';
-  editorOptions.style.left =  x;
-  editorOptions.style.top =  y;
-  editorOptions.style.visibility  = 'visible';
-  editorOptionsBackground.style.visibility = 'visible';
+  if (window.innerWidth > 1025) {
+    const x = (e.pageX - 3) + 'px';
+    const y = (e.pageY - 2) + 'px';
+    editorOptions.style.left =  x;
+    editorOptions.style.top =  y;
+    editorOptions.style.visibility  = 'visible';
+    editorOptionsBackground.style.visibility = 'visible';
+  };
 });
 
 editorOptionsBackground.addEventListener('click', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
 });
 
 editorOptionsBackground.addEventListener('mouseover', () => {
-  hiddeOptions();
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
 });
 
 function hiddeOptions() {
@@ -356,3 +372,12 @@ function loadingImages() {
     error.innerHTML = '';
   };
 };
+
+setInterval(() => {
+  if (window.innerWidth < 1025) {
+    editorOptions.style.left =  '0';
+    editorOptions.style.top =  'auto';
+    editorOptions.style.bottom = '0';
+    editorOptions.style.visibility  = 'visible';
+  };
+}, 1000);

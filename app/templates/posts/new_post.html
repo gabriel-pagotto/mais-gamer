@@ -31,19 +31,30 @@
                   <div class="contents"></div>
                   <div class="editor-options">
                     <ul class="options">
-                      <li id="add-title"><i class="fas fa-heading"></i></i>&nbsp;&nbsp;&nbsp;Adicionar um título</li>
-                      <li id="add-paragraph"><i class="fas fa-paragraph"></i>&nbsp;&nbsp;&nbsp;Adicionar um paragrafo
+                      <li id="add-title"><i class="fas fa-heading"></i></i>
+                        <p>&nbsp;&nbsp;&nbsp;Adicionar um título</p>
+                      </li>
+                      <li id="add-paragraph"><i class="fas fa-paragraph"></i>
+                        <p>&nbsp;&nbsp;&nbsp;Adicionar um paragrafo</p>
                       </li>
                       <!--<li id="add-list"><i class="fas fa-list"></i>&nbsp;&nbsp;&nbsp;Adicionar uma lista</li>
                       <li id="add-comment"><i class="fas fa-comment"></i>&nbsp;&nbsp;&nbsp;Adicionar um comentário</li>-->
-                      <li id="add-image"><i class="far fa-image"></i>&nbsp;&nbsp;&nbsp;Adicionar uma imagem</li>
-                      <li id="add-youtube-video"><i class="fab fa-youtube"></i>&nbsp;&nbsp;&nbsp;Adicionar um video do
-                        YouTube</li>
-                      <li id="add-twitter-post"><i class="fab fa-twitter"></i>&nbsp;&nbsp;&nbsp;Adicionar uma postagem
-                        do Twitter</li>
+                      <li id="add-image"><i class="far fa-image"></i>
+                        <p>&nbsp;&nbsp;&nbsp;Adicionar uma imagem</p>
+                      </li>
+                      <li id="add-youtube-video"><i class="fab fa-youtube"></i>
+                        <p>&nbsp;&nbsp;&nbsp;Adicionar um video do
+                          YouTube</p>
+                      </li>
+                      <li id="add-twitter-post"><i class="fab fa-twitter"></i>
+                        <p>&nbsp;&nbsp;&nbsp;Adicionar uma postagem
+                          do Twitter</p>
+                      </li>
                     </ul>
                     <ul>
-                      <li id="remove"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Apagar</li>
+                      <li id="remove"><i class="fas fa-trash-alt"></i>
+                        <p>&nbsp;&nbsp;&nbsp;Apagar</p>
+                      </li>
                     </ul>
                   </div>
                   <div class="editor-options-background"></div>
@@ -52,7 +63,7 @@
                   <label for="category">Qual a categoria desta notícia?</label>
                   <select id="category">
                     {% for category in post_categories %}
-                      <option value="{{ category.id }}">{{ category.name }}</option>
+                    <option value="{{ category.id }}">{{ category.name }}</option>
                     {% endfor %}
                   </select>
                 </div>
@@ -75,7 +86,6 @@
         </div>
       </div>
     </div>
-    {% include 'components/footer.html' %}
   </div>
 </body>
 
