@@ -69,6 +69,7 @@
                     {% endif %}
                 </div>
             </div>
+            {% if more_news != None %}
             <div class="more-notices">
                 <span class="more-notices-title">Mais notícias</span>
                 <div class="notices-in-more">
@@ -85,6 +86,7 @@
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
         </div>
         {% include 'components/footer.html' %}
 </body>

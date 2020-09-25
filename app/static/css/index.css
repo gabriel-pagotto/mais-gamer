@@ -193,18 +193,23 @@
     margin-bottom: 20px;
   }
   .home .page .rest-art .rest-pic {
-    width: 35vw;
+    width: 37vw;
     height: 22vw;
-    max-width: 35vw;
-    max-height: 22vw;
+    max-width: 200px;
+    max-height: 150px;
     margin-right: 10px;
     overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 0;
   }
   .home .page .rest-art .infos .rest-title a {
-    font-size: 19px;
+    font-size: 18px;
+    position: inherit;
+    max-width: 50%;
+    min-height: 85px;
   }
   .home .page .rest-art .infos .rest-subtitle a {
-    position: sticky;
-    font-size: 16px;
+    font-size: 14px;
   }
 }

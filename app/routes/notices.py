@@ -15,27 +15,29 @@ def notice(id):
             all_posts_array.append(post)
 
     num_randons = []
-
-    while len(num_randons) < 4:
-        if len(num_randons) == 0:
-            num_randons.append(random.randint(0, len(all_posts_array) - 1))
-        if len(num_randons) == 1:
-            num_selected = random.randint(0, len(all_posts_array) - 1)
-            if num_selected != num_randons[0]:
-                num_randons.append(num_selected)
-        if len(num_randons) == 2:
-            num_selected = random.randint(0, len(all_posts_array) - 1)
-            if num_selected != num_randons[0] and num_selected != num_randons[1]:
-                num_randons.append(num_selected)
-        if len(num_randons) == 3:
-            num_selected = random.randint(0, len(all_posts_array) - 1)
-            if num_selected != num_randons[0] and num_selected != num_randons[1] and num_selected != num_randons[2]:
-                num_randons.append(num_selected)
-
     more_news = []
+    try:
+        while len(num_randons) < 4:
+            if len(num_randons) == 0:
+                num_randons.append(random.randint(0, len(all_posts_array) - 1))
+            if len(num_randons) == 1:
+                num_selected = random.randint(0, len(all_posts_array) - 1)
+                if num_selected != num_randons[0]:
+                    num_randons.append(num_selected)
+            if len(num_randons) == 2:
+                num_selected = random.randint(0, len(all_posts_array) - 1)
+                if num_selected != num_randons[0] and num_selected != num_randons[1]:
+                    num_randons.append(num_selected)
+            if len(num_randons) == 3:
+                num_selected = random.randint(0, len(all_posts_array) - 1)
+                if num_selected != num_randons[0] and num_selected != num_randons[1] and num_selected != num_randons[2]:
+                    num_randons.append(num_selected)
 
-    for num in num_randons:
-        more_news.append(all_posts_array[num])
+        for num in num_randons:
+            more_news.append(all_posts_array[num])
+
+    except ValueError:
+        more_news = None
 
     post = Posts.query.filter_by(id=id).first()
     post_content = Post_Content.query.filter_by(
