@@ -4,9 +4,11 @@
 <head>
   {% include 'components/head.html' %}
   <meta name="description" content="Todas as últimas notícias sobre jogos, e-sports, guias de estratégia e trailers." />
-  <meta property="og:description" content="Todas as últimas notícias sobre jogos, e-sports, guias de estratégia e trailers.">
+  <meta property="og:description"
+    content="Todas as últimas notícias sobre jogos, e-sports, guias de estratégia e trailers.">
   <meta property="og:image" content="{{ url_for('static', filename='favicon.png') }}">
-  <meta property="twitter:description" content="Todas as últimas notícias sobre jogos, e-sports, guias de estratégia e trailers." />
+  <meta property="twitter:description"
+    content="Todas as últimas notícias sobre jogos, e-sports, guias de estratégia e trailers." />
   <meta property="twitter:image" content="{{ url_for('static', filename='favicon.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
@@ -17,47 +19,36 @@
     <div class="payload">
       <div class="home">
         <div class="page">
-          <article class="header-art">
-            <div class="category"><a href="{{ posts.pages[0].header.category.url }}">{{ posts.pages[0].header.category.name }}</a></div>
-            <h3 class="header-title">
-              <a href="{{ url_for('notice', id=posts.pages[0].header.id) }}">{{ posts.pages[0].header.title }}</a>
-            </h3>
-            <a href="{{ url_for('notice', id=posts.pages[0].header.id) }}">
-              <div class="header-pic">
-                <img src="{{ posts.pages[0].header.cover_image }}" alt="{{ posts.pages[0].header.title }}">
-              </div>
-            </a>
-            <p class="header-subtitle">
-              <a href="{{ url_for('notice', id=posts.pages[0].header.id) }}">{{ posts.pages[0].header.subtitle }}</a>
-            </p>
+          <a href="{{ url_for('notice', id=posts.pages[0].header.id) }}" class="header-art">
+            <div class="category">{{ posts.pages[0].header.category.name }}</div>
+            <h3 class="header-title">{{ posts.pages[0].header.title }}</h3>
+            <div class="header-pic">
+              <img src="{{ posts.pages[0].header.cover_image }}" alt="{{ posts.pages[0].header.title }}">
+            </div>
+            <p class="header-subtitle">{{ posts.pages[0].header.subtitle }}</p>
             <div class="infos">
-              <a class="postedBy" href=""><i class="fas fa-user-tag">
-                  {{ posts.pages[0].header.posted_by.name + ' ' + posts.pages[0].header.posted_by.surname }}</i></a>
+              <span class="postedBy"><i
+                  class="fas fa-user-tag">{{ posts.pages[0].header.posted_by.name + ' ' + posts.pages[0].header.posted_by.surname }}</i>
+              </span>
               <time datetime="{{ posts.pages[0].header.addedAt }}"><i class="far fa-clock">
                   {{ DatePost(posts.pages[0].header.addedAt) }}</i></time>
             </div>
-          </article>
+          </a>
           {% for post in posts.pages[0].notices %}
-          <article class="rest-art">
-            <a href="{{ url_for('notice', id=post.id) }}">
-              <div class="rest-pic">
-                <img src="{{ post.cover_image }}" alt="{{ post.title }}" title="{{ post.title }}">
-              </div>
-            </a>
+          <a class="rest-art" href="{{ url_for('notice', id=post.id) }}">
+            <div class="rest-pic">
+              <img src="{{ post.cover_image }}" alt="{{ post.title }}">
+            </div>
             <div class="infos">
-              <div class="category"><a href="{{ post.category.url }}">{{ post.category.name }}</a></div>
-              <h3 class="rest-title">
-                <a title="{{ post.title }}" href="{{ url_for('notice', id=post.id) }}">{{ post.title }}</a>
-              </h3>
-              <p class="rest-subtitle">
-                <a href="{{ url_for('notice', id=post.id) }}">{{ post.subtitle }}</a>
-              </p>
-              <a class="postedBy" href=""><i class="fas fa-user-tag">
-                  {{ post.posted_by.name + ' ' + post.posted_by.surname }}</i></a>
+              <div class="category">{{ post.category.name }}</div>
+              <h3 class="rest-title">{{ post.title }}</h3>
+              <p class="rest-subtitle">{{ post.subtitle }}</p>
+              <span class="postedBy"><i
+                  class="fas fa-user-tag">{{ post.posted_by.name + ' ' + post.posted_by.surname }}</i></span>
               <time datetime="{{ post.addedAt }}"><i class="far fa-clock">
                   {{ DatePost(post.addedAt) }}</i></time>
             </div>
-          </article>
+          </a>
           {% endfor %}
         </div>
       </div>

@@ -2,40 +2,33 @@
 <html lang="pt-br">
 
 <head>
-    {% include 'components/head.html' %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  {% include 'components/head.html' %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
 </head>
 
 <body>
-    <div class='web'>
-        {% include 'components/header.html' %}
-        <div class="payload">
-            <div class="profile">
-                <div class="profile-form">
-                    <form action="" method="post" novalidate>
-                        <h1>Meus Dados</h1>
-                        {{ form.hidden_tag() }} {% if current_user.icon %}
-                        <img class="user-icon" src="{{ current_user.icon }}" alt="{{ current_user.name }}"> {% else %}
-                        <i class="fas fa-user-circle" style="font-size: 200px;"></i> {% endif %}
-                        <div>
-                            <label for="">NOME DE USUÁRIO</label> {{ form.username(type="text", class="info-input") }}
-                        </div>
-                        <div>
-                            <label for="">NOME</label> {{ form.name(type="text", class="info-input") }}
-                        </div>
-                        <div>
-                            <label for="">SOBRENOME</label> {{ form.surname(type="text", class="info-input") }}
-                        </div>
-                        <div>
-                            <label for="">EMAIL</label> {{ form.email(type="text", class="info-input") }}
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
+  <div class='web'>
+    {% include 'components/header.html' %}
+    <div class="payload">
+      <div class="profile">
+        <h1 class="profile-title">Meus Dados</h1>
+        <div class="profile-data">
+          <form action="" class="change-data">
+            <input type="text" class="data" id="p-username" value="{{ current_user.username }}">
+            <input type="text" class="data" id="p-name" value="{{ current_user.name }}">
+            <input type="text" class="data" id="p-surname" value="{{ current_user.surname }}">
+            <input type="text" class="data" id="p-email" value="{{ current_user.email }}">
+          </form>
+          <button class="data-changer">Alterar meus dados</button>
         </div>
-        {% include 'components/footer.html' %}
+        <div class="change-password">
+          <button class="password-changer">Alterar minha senha</button>
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
     </div>
+    {% include 'components/footer.html' %}
+  </div>
 </body>
 
 </html>
