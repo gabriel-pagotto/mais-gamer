@@ -80,7 +80,7 @@ def index():
 
     return render_template(
         'index.html',
-        title='Mais Gamer - Notícias para Gamers',
+        title='Mais Gamer',
         posts=posts,
     )
 
