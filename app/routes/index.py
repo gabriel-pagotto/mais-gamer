@@ -157,7 +157,6 @@ def gaming_news():
 
 @app.route('/e-sports', methods=['GET'])
 def e_sports():
-    return redirect(url_for('index'))
     all_posts = Posts.query.order_by(desc('addedAt')).filter_by(category=2)
     users = Users.query.all()
 
