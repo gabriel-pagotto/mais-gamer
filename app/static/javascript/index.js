@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
                 <time datetime="${data.header.addedAt}"><i class="far fa-clock">
                 ${data.header.datePost}</i></time>
               </div>
-          `;
+            `;
             pageElement.appendChild(headerArt);
             const restNotices = data.notices;
             for (counter = 0; counter < restNotices.length; counter++) {
@@ -63,7 +63,7 @@ window.addEventListener('scroll', () => {
                   <time datetime="${element.addedAt}"><i class="far fa-clock">
                     ${element.datePost}</i></time>
                 </div>
-            `;
+              `;
               animationTime = animationTime + 0.2;
               const time = String(animationTime);
               restArt.style.animation = `loadsItems ${time}s  linear`

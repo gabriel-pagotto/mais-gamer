@@ -25,52 +25,43 @@ window.addEventListener('scroll', () => {
             const pageElement = document.createElement('div');
             pageElement.className = 'page';
             home.appendChild(pageElement);
-            const headerArt = document.createElement('article');
+            const headerArt = document.createElement('a');
             headerArt.className = 'header-art';
+            headerArt.href = '/news/' + data.header.id;
             headerArt.innerHTML = `
-            <h3 class="header-title">
-              <a href="${'/notícia/' + data.header.id}">${data.header.title}</a>
-            </h3>
-            <a href="${'/notícia/' + data.header.id}">
+              <h3 class="header-title">${data.header.title}</h3>
               <div class="header-pic">
                 <img src="${data.header.cover_image}" alt="${data.header.title}">
               </div>
-            </a>
-            <p class="header-subtitle">
-              <a href="${'/notícia/' + data.header.id}">${data.header.subtitle}</a>
-            </p>
-            <div class="infos">
-              <a class="postedBy" href=""><i class="fas fa-user-tag">
-              ${data.header.posted_by.name + ' ' + data.header.posted_by.surname}</i></a>
-              <time datetime="${data.header.addedAt}"><i class="far fa-clock">
-              ${data.header.datePost}</i></time>
-            </div>
-          `;
+              <p class="header-subtitle">${data.header.subtitle}</p>
+              <div class="infos">
+                <span class="postedBy"><i
+                    class="fas fa-user-tag">${data.header.posted_by.name + ' ' + data.header.posted_by.surname}</i>
+                </span>
+                <time datetime="${data.header.addedAt}"><i class="far fa-clock">
+                ${data.header.datePost}</i></time>
+              </div>
+            `;
             pageElement.appendChild(headerArt);
             const restNotices = data.notices;
             for (counter = 0; counter < restNotices.length; counter++) {
               const element = data.notices[counter];
-              const restArt = document.createElement('article');
+              const restArt = document.createElement('a');
               restArt.className = 'rest-art';
+              restArt.href = '/news/' + element.id;
               restArt.innerHTML = `
-              <a href="${'/notícia/' + element.id}">
                 <div class="rest-pic">
-                  <img src="${element.cover_image}" alt="${element.title}" title="${element.title}">
+                  <img src="${element.cover_image}" alt="${element.title}">
                 </div>
-              </a>
-              <div class="infos">
-                <h3 class="rest-title">
-                  <a title="${element.title}" href="${'/notícia/' + element.id}">${element.title}</a>
-                </h3>
-                <p class="rest-subtitle">
-                  <a href="${'/notícia/' + element.id}"> ${element.subtitle}</a>
-                </p>
-                <a class="postedBy" href=""><i class="fas fa-user-tag">
-                  ${element.posted_by.name + ' ' + element.posted_by.surname}</i></a>
-                <time datetime="${element.addedAt}"><i class="far fa-clock">
-                  ${element.datePost}</i></time>
-              </div>
-            `;
+                <div class="infos">
+                  <h3 class="rest-title">${element.title}</h3>
+                  <p class="rest-subtitle">${element.subtitle}</p>
+                  <span class="postedBy"><i
+                      class="fas fa-user-tag">${element.posted_by.name + ' ' + element.posted_by.surname}</i></span>
+                  <time datetime="${element.addedAt}"><i class="far fa-clock">
+                    ${element.datePost}</i></time>
+                </div>
+              `;
               animationTime = animationTime + 0.2;
               const time = String(animationTime);
               restArt.style.animation = `loadsItems ${time}s  linear`
