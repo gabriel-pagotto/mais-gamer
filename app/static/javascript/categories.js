@@ -8,7 +8,7 @@ let working = false;
 let animationTime = 0.7;
 
 window.addEventListener('scroll', () => {
-  const scrollCounter = (document.documentElement.scrollTop + window.innerHeight) >= document.documentElement.scrollHeight;
+  const scrollCounter = (document.documentElement.scrollTop + window.innerHeight) >= document.documentElement.scrollHeight - 550;
   if (scrollCounter === true && working === false) {
     if (totalPages === 0 || page < totalPages - 1) {
       loads.style.visibility = 'visible';
