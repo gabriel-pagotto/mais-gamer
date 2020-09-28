@@ -63,4 +63,4 @@ def notice(id):
 
 @app.route('/notícia/<id>', methods=['GET'])
 def notice_redirect(id):
-    return redirect('notice', id=id)
+    return redirect(url_for('notice', id=id))
