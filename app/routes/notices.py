@@ -59,3 +59,8 @@ def notice(id):
         user=user,
         more_news=more_news,
     )
+
+
+@app.route('/notícia/<id>', methods=['GET'])
+def notice_redirect(id):
+    return redirect('notice', id=id)
