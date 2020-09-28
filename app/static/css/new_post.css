@@ -210,6 +210,9 @@
     margin-right: auto;
     width: 90%;
   }
+  .posts-actions .new-post .new-post-inputs #header {
+    font-size: 18px;
+  }
   .posts-actions .new-post .new-post-inputs .image-cover {
     width: 90%;
   }
@@ -230,5 +233,6 @@
     border-radius: 0px;
     -webkit-appearance: none;
     font-size: 20px;
+    margin-bottom: 120px;
   }
 }

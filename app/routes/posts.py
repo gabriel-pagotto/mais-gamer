@@ -1,8 +1,9 @@
-import json
+import json, requests
 from app import app, database
 from app.models import Posts, Post_Content, Files
 from app.utils.aws_s3 import delete_file, clearUploadCache
 from app.utils.sub_header_options import sub_header
+from bs4 import BeautifulSoup
 from flask import render_template, redirect, request, url_for, jsonify
 from flask_login import current_user, login_required
 from sqlalchemy import desc
@@ -132,3 +133,28 @@ def delete_post(id):
     database.session.commit()
 
     return redirect(url_for('posts'))
+
+@app.route('/get-site-informations', methods=['post'])
+def getSiteInformations():
+    data = json.loads(request.data)
+
+    site_url = data['url']
+
+    httpOrHttps = data['url'].split('//')[0]
+
+    url = site_url.split(httpOrHttps + '//')
+    url = url[1].split('/')
+    url_origin = httpOrHttps + '//' + url[0]
+
+
+    page = requests.get(url_origin)
+    page = page.content
+
+    soup = BeautifulSoup(page, 'html.parser')
+
+    site_name = soup.find("meta",  property="og:site_name")['content']
+
+    return jsonify({
+        'site_name': site_name,
+        'site_url_origin': url_origin,
+    })

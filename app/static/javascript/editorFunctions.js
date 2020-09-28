@@ -60,7 +60,7 @@ addImage.addEventListener('click', () => {
   };;
   const uploadFile = document.createElement('input');
   uploadFile.type = 'file';
-  uploadFile.accept = '.png, .jpg, .jpeg';
+  uploadFile.accept = 'images/*';
   uploadFile.style.display = 'none';
   contents.appendChild(uploadFile);
   uploadFile.click();

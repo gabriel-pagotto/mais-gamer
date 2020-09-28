@@ -13,13 +13,28 @@
       <div class="profile">
         <h1 class="profile-title">Meus Dados</h1>
         <div class="profile-data">
-          <form action="" class="change-data">
-            <input type="text" class="data" id="p-username" value="{{ current_user.username }}">
-            <input type="text" class="data" id="p-name" value="{{ current_user.name }}">
-            <input type="text" class="data" id="p-surname" value="{{ current_user.surname }}">
-            <input type="text" class="data" id="p-email" value="{{ current_user.email }}">
-          </form>
-          <button class="data-changer">Alterar meus dados</button>
+          <div class="change-data">
+            <div class="data-container">
+              <label for="p-username">Nome de usuário </label>
+              <input type="text" class="data" id="p-username" value="{{ current_user.username }}">
+              <button class="username-changer">Alterar nome de usuário</button>
+            </div>
+            <div class="data-container">
+              <label for="p-name">Nome</label>
+              <input type="text" class="data" id="p-name" value="{{ current_user.name }}">
+              <button class="name-changer">Alterar nome</button>
+            </div>
+            <div class="data-container">
+              <label for="p-surname">Sobrenome</label>
+              <input type="text" class="data" id="p-surname" value="{{ current_user.surname }}">
+              <button class="surname-changer">Alterar sobrenome</button>
+            </div>
+            <div class="data-container">
+              <label for="p-email">Email</label>
+              <input type="text" class="data" id="p-email" value="{{ current_user.email }}">
+              <button class="email-changer">Alterar email</button>
+            </div>
+          </div>
         </div>
         <div class="change-password">
           <button class="password-changer">Alterar minha senha</button>

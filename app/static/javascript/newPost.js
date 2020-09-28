@@ -4,12 +4,13 @@ const sourceQuestion = document.querySelector('#source-question');
 const sourceName = document.querySelector('.source-name');
 const sourceUrl = document.querySelector('.source-url');
 const coverImageLabel = document.querySelector('.image-cover-select');
+const source = document.querySelector('.source');
 
 coverImageLabel.addEventListener('click', () => {
   event.preventDefault();
   const imageInput = document.createElement('input');
   imageInput.type = 'file';
-  imageInput.accept = '.png, .jpg, .jpeg';
+  imageInput.accept = 'images/*';
   imageInput.style.display = 'none';
   form.appendChild(imageInput);
   imageInput.click();
@@ -51,8 +52,49 @@ sourceQuestion.addEventListener('change', () => {
     sourceName.value = null;
     sourceUrl.value = null;
   } else {
-    sourceName.style.display = 'block';
     sourceUrl.style.display = 'block';
   };
 });
 
+sourceUrl.addEventListener('input', () => {
+  sourceUrl.style.display = 'none';
+  sourceName.style.display = 'none';
+
+  const loader = document.createElement('div');
+  loader.innerHTML = '<i class="fas fa-spinner"></i>';
+  loader.style = `
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    color: #ffa31a;
+    font-size: 23px;
+    width: max-content;
+    margin: 20px auto;
+    animation: Loading 0.7s infinite linear;
+  `;
+
+  source.appendChild(loader);
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('post', '/get-site-informations');
+  xhr.onload = () => {
+    if (xhr.status != 200) {
+      source.removeChild(loader);
+      sourceUrl.style.display = 'block';
+      sourceName.style.display = 'block';
+      sourceName.value = null;
+    };
+    if (xhr.status === 200 && xhr.readyState === 4) {
+      const response = JSON.parse(xhr.responseText);
+      source.removeChild(loader);
+      sourceUrl.style.display = 'block';
+      sourceUrl.value = response.site_url_origin;
+      sourceName.style.display = 'block';
+      sourceName.value = response.site_name;
+    };
+  };
+  xhr.send(JSON.stringify({
+    url: sourceUrl.value,
+  }));
+});
