@@ -43,10 +43,13 @@
 }
 
 @keyframes GlobalLoader {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  50% {
+    transform: rotate(270deg);
+  }
+  100%{
     transform: rotate(360deg);
   }
 }

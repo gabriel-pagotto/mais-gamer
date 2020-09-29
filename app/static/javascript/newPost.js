@@ -60,20 +60,8 @@ sourceUrl.addEventListener('input', () => {
   sourceUrl.style.display = 'none';
   sourceName.style.display = 'none';
 
-  const loader = document.createElement('div');
-  loader.innerHTML = '<i class="fas fa-spinner"></i>';
-  loader.style = `
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    color: #ffa31a;
-    font-size: 23px;
-    width: max-content;
-    margin: 20px auto;
-    animation: Loading 0.7s infinite linear;
-  `;
-
-  source.appendChild(loader);
+  const loader = document.querySelector('.source-loader');
+  loader.style.display = 'block';
 
   const xhr = new XMLHttpRequest();
 
@@ -87,7 +75,7 @@ sourceUrl.addEventListener('input', () => {
     };
     if (xhr.status === 200 && xhr.readyState === 4) {
       const response = JSON.parse(xhr.responseText);
-      source.removeChild(loader);
+      loader.style.display = 'none';
       sourceUrl.style.display = 'block';
       sourceUrl.value = response.site_url_origin;
       sourceName.style.display = 'block';

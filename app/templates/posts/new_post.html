@@ -75,6 +75,9 @@
                   </select>
                   <input type="text" id="header" class="source-name" placeholder="Nome da fonte usada como referência">
                   <input type="url" id="header" class="source-url" placeholder="Cole a url do site usado como fonte">
+                  <div class="source-loader" style="width: 100%; margin: 20px auto; display: none;">
+                    {% include 'components/loader.html' %}
+                  </div>
                 </div>
                 <button type="submit" class="submit"><i class="fas fa-paper-plane"></i> Enviar notícia</button>
                 <span class="error"></span>
