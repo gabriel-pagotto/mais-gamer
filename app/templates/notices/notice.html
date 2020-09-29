@@ -46,6 +46,8 @@
                         <h2>{{ content.content }}</h2>
                       {% elif content.type == 'TXT' %}
                         <pre>{{ content.content }}</pre>
+                      {% elif content.type == 'C' %}
+                        <cite>{{ content.content }}</cite>
                       {% elif content.type == 'P' %}
                         <p>{{ content.content }}</p>
                       {% elif content.type == 'YTB' %}

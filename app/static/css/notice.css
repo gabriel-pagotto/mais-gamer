@@ -67,6 +67,17 @@
   font-weight: 400;
 }
 
+.web .payload .notice cite {
+  display: block;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 20px auto;
+  width: 90%;
+  font-weight: 400;
+  border-left: 3px solid #EAEAEA;
+  padding: 0px 10px;
+}
+
 .web .payload .notice h2 {
   max-width: 100%;
   display: block;

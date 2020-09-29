@@ -88,6 +88,17 @@
   font-size: 18px;
 }
 
+.editor-container .contents #C {
+  display: block;
+  font-weight: 400;
+  font-size: 17px;
+  font-style: italic;
+  margin: 20px auto;
+  width: 90%;
+  border-left: 3px solid #EAEAEA;
+  padding: 0px 10px;
+}
+
 .editor-container .contents #social-finder-container {
   width: 95%;
   display: flex;

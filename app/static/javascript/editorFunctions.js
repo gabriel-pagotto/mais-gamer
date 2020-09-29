@@ -20,6 +20,7 @@ let loadingCounter = 0;
 const addTitle = document.querySelector('#add-title');
 const addParagraph = document.querySelector('#add-paragraph');
 const addImage = document.querySelector('#add-image');
+const addCite = document.querySelector('#add-cite')
 const addYoutubeVideo = document.querySelector('#add-youtube-video');
 const addTwitterPost = document.querySelector('#add-twitter-post');
 const remove = document.querySelector('#remove');
@@ -91,6 +92,21 @@ addImage.addEventListener('click', () => {
     formData.append('file', uploadFile.files[0]);
     XHR.send(formData)
   });
+});
+
+addCite.addEventListener('click', () => {
+  if (window.innerWidth > 1025) {
+    hiddeOptions();
+  };
+  counterPosition = counterPosition + 1;
+  const createdTitle = document.createElement('textarea');
+  createdTitle.className = 'added-content';
+  createdTitle.id = 'C';
+  createdTitle.name = counterPosition;
+  createdTitle.placeholder = 'Escreva a citação';
+  createdTitle.rows = '1';
+  contents.appendChild(createdTitle);
+  sizeTextAreas()
 });
 
 addYoutubeVideo.addEventListener('click', () => {
@@ -231,6 +247,17 @@ formSub.addEventListener('submit', () => {
     if (element.id === 'P') {
       contents.push({
         type: 'P',
+        position: element.name,
+        data: {
+          content: element.value,
+          url: '',
+        },
+      });
+    };
+
+    if (element.id === 'C') {
+      contents.push({
+        type: 'C',
         position: element.name,
         data: {
           content: element.value,
