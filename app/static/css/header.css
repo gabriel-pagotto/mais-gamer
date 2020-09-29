@@ -176,12 +176,17 @@
 }
 
 .web .header .header-2part .logo {
+  position: relative;
   width: 240px;
   align-self: center;
   color: #FFFFFF;
   user-select: none;
   margin-left: 10px;
   animation: loads 0.4s linear;
+}
+
+.web .header .header-2part .logo:active {
+  top: 1px;
 }
 
 .header .header-2part .search {
@@ -572,10 +577,14 @@
     color: #FFFFFF;
   }
   .header .header-mobile .logo {
+    position: relative;
     display: block;
     float: left;
     width: 175px;
     margin-left: 10px;
+  }
+  .header .header-mobile .logo:active {
+    top: 1px;
   }
   .header .header-mobile .options {
     justify-self: right;
