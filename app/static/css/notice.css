@@ -274,16 +274,18 @@
 }
 
 .notices-in-more .news-container-link .news-container .title {
-  display: block;
   font-size: 18px;
   font-weight: 600;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   color: #EAEAEA;
-  padding: 10px;
+  padding: 0 10px;
   text-shadow: 1px 1px 1px rgba(16,16,16,.8);
-      line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .news-container-link .news-container .cover_image {
