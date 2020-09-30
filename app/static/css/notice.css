@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   min-width: 700px;
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 20px;
@@ -24,11 +24,6 @@
   width: 85%;
   margin: auto;
   animation: loadsItems 1.9s linear;
-}
-
-.web .payload .notice img {
-  width: 100%;
-  margin: 10px auto;
 }
 
 .payload .notice .notice-body .source {
@@ -55,39 +50,51 @@
   word-wrap: break-word;
   margin: 10px auto;
   text-align: left;
-  font-size: 20px;
+  font-size: 1.1em;
   font-weight: 400;
   margin: 20px auto;
+  color: #202020;
+  line-height: 1.5;
+}
+
+.web .payload .notice img {
+  width: 100%;
+  margin: 0px auto 20px auto;
 }
 
 .web .payload .notice p {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 20px auto;
+  font-size: 1.1em;
+  margin: 0 auto 20px auto;
   font-weight: 400;
+  color: #202020;
+  line-height: 1.5;
 }
 
 .web .payload .notice cite {
   display: block;
-  font-size: 19px;
-  font-weight: 600;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   width: 90%;
   font-weight: 400;
   border-left: 3px solid #EAEAEA;
   padding: 0px 10px;
+  font-size: 1.03em;
+  margin: 0 auto 20px auto;
+  font-weight: 400;
+  color: #202020;
+  line-height: 1.5;
 }
 
 .web .payload .notice h2 {
   max-width: 100%;
   display: block;
-  margin: 0 auto 20px auto;
-  font-size: 24px;
+  margin: 40px auto 20px auto;
+  font-size: 1.5em;
   text-align: left;
   font-weight: 700;
-  color: #000000;
-  text-transform: capitalize;
+  color: #202020;
   text-decoration: none;
+  clear: both;
+  line-height: 1.1;
 }
 
 .web .payload .notice .vYtb {
@@ -100,12 +107,7 @@
 }
 
 .web .payload .notice .tweet {
-  margin: 10px auto;
-}
-
-.web .payload .notice .tweet .twitter-tweet {
-  display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 .payload .notice .notice-header {
@@ -117,17 +119,28 @@
 
 .payload .notice .notice-header .header-title {
   position: relative;
-  font-size: 38px;
   animation: loadsItems 0.7s linear;
+  max-width: 100%;
+  display: block;
+  margin: 40px auto 20px auto;
+  font-size: 2.3em;
+  text-align: left;
+  font-weight: 700;
+  color: #202020;
+  text-decoration: none;
+  clear: both;
+  line-height: 1.1;
 }
 
 .payload .notice .notice-header .notice-subtitle {
   position: relative;
-  font-size: 20px;
-  font-weight: 600;
   margin: 20px auto;
   font-weight: 400;
   animation: loadsItems 0.9s linear;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #202020;
+  line-height: 1.5;
 }
 
 .payload .notice .notice-header .game {
@@ -244,41 +257,50 @@
 }
 
 .notices-in-more .news-container-link .news-container {
+  position: relative;
   width: 80%;
   height: max-content;
   margin: 20px auto;
+  border: 1px solid #EAEAEA;
+}
+
+.notices-in-more .news-container-link .news-container .title-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -100px 30px -20px rgba(16,16,16,.8);
 }
 
 .notices-in-more .news-container-link .news-container .title {
   display: block;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 10px;
-}
-
-.notices-in-more .news-container-link .news-container .subtitle {
   font-size: 18px;
-  font-weight: 400;
-  color: #1a1a1a;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #EAEAEA;
+  padding: 10px;
+  text-shadow: 1px 1px 1px rgba(16,16,16,.8);
+      line-clamp: 3;
 }
 
 .news-container-link .news-container .cover_image {
-  margin: 0 auto;
-  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 11vw;
+  max-width: 100%;
+  max-height: 11vw;
   overflow: hidden;
-  display: block;
 }
 
 .news-container-link .news-container .cover_image img {
   width: 100%;
-  height: 100%;
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  transform: scale(1.03);
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  transition: all 0.1s linear;
+  transform: scale(1.1);
+  transition: opacity 0.2s linear;
 }
 
 @media (max-width: 1025px) {
@@ -323,7 +345,13 @@
   }
   .web .payload .more-notices .notices-in-more .news-container-link .news-container {
     width: 92%;
-    border-bottom: 1px solid #EBE8EC;
-    padding: 2%;
+  }
+  .news-container-link .news-container .cover_image {
+    max-height: 50vw;
+    height: 50vw;
+  }
+  .notices-in-more .news-container-link .news-container .title {
+    font-size: 1.4em;
+    line-height: 1.1;
   }
 }
