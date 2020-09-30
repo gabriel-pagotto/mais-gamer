@@ -193,8 +193,8 @@ addTwitterPost.addEventListener('click', () => {
     twtPost.name = counterPosition;
     contents.appendChild(twtPost);
     twtPost.innerHTML = code;
+    twtPost.value = code;
     twtPost.appendChild(scriptTwt);
-
   });
 });
 
@@ -293,7 +293,7 @@ formSub.addEventListener('submit', () => {
         type: 'TWT',
         position: element.name,
         data: {
-          content: element.innerHTML,
+          content: element.value,
           url: '',
         },
       });
