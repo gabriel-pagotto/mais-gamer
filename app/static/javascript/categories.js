@@ -67,6 +67,21 @@ window.addEventListener('scroll', () => {
               restArt.style.animation = `loadsItems ${time}s  linear`
               pageElement.appendChild(restArt);
             };
+            const adGoogle = document.createElement('div');
+            adGoogle.innerHTML = `
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- H-1 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1284323428666859"
+                 data-ad-slot="8676887631"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            `;
+            pageElement.appendChild(adGoogle);
             animationTime = 0.7;
             loads.style.visibility = 'hidden';
             working = false;
