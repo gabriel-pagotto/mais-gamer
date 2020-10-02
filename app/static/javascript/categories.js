@@ -67,7 +67,6 @@ window.addEventListener('scroll', () => {
               restArt.style.animation = `loadsItems ${time}s  linear`
               pageElement.appendChild(restArt);
             };
-            const adGoogle = document.createElement('div');
             const scriptAd = document.createElement('script');
             scriptAd.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
             scriptAd.async = true;
