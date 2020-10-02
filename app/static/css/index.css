@@ -9,8 +9,12 @@
   flex-direction: column;
 }
 
+.ads-pc {
+  margin-bottom: 20px;
+}
+
 .ads-mobile {
-  visibility: hidden;
+  margin-bottom: 20px;
 }
 
 .home .page .header-art {
@@ -238,11 +242,5 @@
   }
   .home .page .ad-h1 {
     width: 75%;
-  }
-  .ads-pc {
-    visibility: hidden;
-  }
-  .ads-mobile {
-   visibility: visible;
   }
 }
