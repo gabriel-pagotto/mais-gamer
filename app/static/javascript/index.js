@@ -70,9 +70,13 @@ window.addEventListener('scroll', () => {
               pageElement.appendChild(restArt);
 
             };
+            const scriptAd = document.createElement('script');
+            scriptAd.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            scriptAd.async = true;
             const adGoogle = document.createElement('div');
-            adGoogle.innerHTML = `
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            adGoogle.appendChild(scriptAd);
+            adGoogle.className = 'ad-h1';
+            adGoogle.innerHTML += `
             <!-- H-1 -->
             <ins class="adsbygoogle"
                  style="display:block"
