@@ -68,8 +68,13 @@ window.addEventListener('scroll', () => {
               pageElement.appendChild(restArt);
             };
             const adGoogle = document.createElement('div');
-            adGoogle.innerHTML = `
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            const scriptAd = document.createElement('script');
+            scriptAd.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            scriptAd.async = true;
+            const adGoogle = document.createElement('div');
+            adGoogle.appendChild(scriptAd);
+            adGoogle.className = 'ad-h1';
+            adGoogle.innerHTML += `
             <!-- H-1 -->
             <ins class="adsbygoogle"
                  style="display:block"
@@ -77,11 +82,11 @@ window.addEventListener('scroll', () => {
                  data-ad-slot="8676887631"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
             `;
+            const scriptAd2 = document.createElement('script');
+            scriptAd2.src = '/static/javascript/googleAds.js';
             pageElement.appendChild(adGoogle);
+            pageElement.appendChild(scriptAd2);
             animationTime = 0.7;
             loads.style.visibility = 'hidden';
             working = false;
