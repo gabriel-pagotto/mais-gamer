@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+.web {
+  margin-top: 90px;
+}
+
 .web .payload {
   min-height: 75vh;
 }
