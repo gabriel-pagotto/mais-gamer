@@ -307,7 +307,7 @@
 
 .googleAdsFooter {
   display: block;
-  width: 30%;
+  width: 60%;
   border: 1px solid #EAEAEA;
   margin: 20px auto;
 }
@@ -364,6 +364,6 @@
     line-height: 1.1;
   }
   .googleAdsFooter {
-    width: 70%;
+    width: 60%;
   }
 }
