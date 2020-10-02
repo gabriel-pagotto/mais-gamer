@@ -39,27 +39,46 @@
             </div>
           </div>
         </div>
+        {% set pAnt = False %}
+        {% set pCounter = 0 %}
         <div class="notice-body">
           {% for content in notice_content %}
-          {% if content.type == 'IMG' %}
-          <img src="{{ content.content }}" alt="{{ notice.title }}">
-          {% elif content.type == 'T' %}
-          <h2>{{ content.content }}</h2>
-          {% elif content.type == 'TXT' %}
-          <pre>{{ content.content }}</pre>
-          {% elif content.type == 'C' %}
-          <cite>{{ content.content }}</cite>
-          {% elif content.type == 'P' %}
-          <p>{{ content.content }}</p>
-          {% elif content.type == 'YTB' %}
-          <iframe class="vYtb" src="{{ 'https://www.youtube.com/embed/' + content.content }}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-          {% elif content.type == 'TWT' %}
-          <div data-embed-type="tweet" class="tweet">
-            {{ content.content|safe }}
-          </div>
-          {% endif %}
+
+            {% if content.type == 'IMG' %}
+              {% set pAnt = False %}
+              <img src="{{ content.content }}" alt="{{ notice.title }}">
+
+            {% elif content.type == 'T' %}
+              {% set pAnt = False %}
+              <h2>{{ content.content }}</h2>
+
+            {% elif content.type == 'TXT' %}
+              {% set pAnt = False %}
+              <pre>{{ content.content }}</pre>
+
+            {% elif content.type == 'C' %}
+              {% set pAnt = False %}
+              <cite>{{ content.content }}</cite>
+
+            {% elif content.type == 'P' %}
+              {% if pCounter > 4 %}
+                <cite>Eu SOu o fodido</cite>
+              {% endif %}
+              <p>{{ content.content }}</p>
+
+            {% elif content.type == 'YTB' %}
+              {% set pAnt = False %}
+              <iframe class="vYtb" src="{{ 'https://www.youtube.com/embed/' + content.content }}" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+
+            {% elif content.type == 'TWT' %}
+              {% set pAnt = False %}
+              <div data-embed-type="tweet" class="tweet">
+                {{ content.content|safe }}
+              </div>
+            {% endif %}
+
           {% endfor %}
           {% if notice.source_name != '' and notice.source_name != None %}
           <span class="source">

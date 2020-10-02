@@ -20,6 +20,11 @@
   text-decoration: none;
 }
 
+.home .page .ad-h1 {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
 .home .page .header-art:hover>.header-title {
   text-decoration: underline;
 }
@@ -225,5 +230,8 @@
   }
   .home .page .rest-art .infos .rest-subtitle {
     font-size: 14px;
+  }
+  .home .page .ad-h1 {
+    width: 80%;
   }
 }
