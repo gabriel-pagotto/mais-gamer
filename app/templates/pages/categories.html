@@ -40,6 +40,42 @@
             </script>
           </div>
           {% for post in posts.pages[0].notices %}
+          {% if loop.index0 == 3 %}
+          <script>
+            const pageElement = document.querySelector('.page');
+            if (window.innerWidth < 1025) {
+              const adsMobileScript1 = document.createElement('script');
+              adsMobileScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+              adsMobileScript1.async = true;
+              const adsMobile = document.createElement('div');
+              adsMobile.appendChild(adsMobileScript1);
+              adsMobile.className = 'ads-pc';
+              adsMobile.innerHTML = `
+                  <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
+                  data-ad-client="ca-pub-1284323428666859" data-ad-slot="6148256205"></ins>
+                  `;
+              const adsMobileScript2 = document.createElement('script');
+              adsMobileScript2.src = '/static/javascript/googleAds.js';
+              adsMobile.appendChild(adsMobileScript2);
+              pageElement.appendChild(adsMobile);
+            } else {
+              const adsPcScript1 = document.createElement('script');
+              adsPcScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+              adsPcScript1.async = true;
+              const adsPc = document.createElement('div');
+              adsPc.appendChild(adsPcScript1);
+              adsPc.className = 'ads-pc';
+              adsPc.innerHTML = `
+                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
+                      data-ad-client="ca-pub-1284323428666859" data-ad-slot="3556740125"></ins>
+                  `;
+              const adsPcScript2 = document.createElement('script');
+              adsPcScript2.src = '/static/javascript/googleAds.js';
+              adsPc.appendChild(adsPcScript2);
+              pageElement.appendChild(adsPc);
+            };
+          </script>
+          {% endif %}
           <a class="rest-art" href="{{ url_for('notice', id=post.id) }}">
             <div class="rest-pic">
               <img src="{{ post.cover_image }}" alt="{{ post.title }}">

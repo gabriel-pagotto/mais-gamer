@@ -29,7 +29,7 @@ window.addEventListener('scroll', () => {
             headerArt.className = 'header-art';
             headerArt.href = '/news/' + data.header.id;
             headerArt.innerHTML = `
-              <div class="category">${ data.header.category.name }</div>
+              <div class="category">${data.header.category.name}</div>
               <h3 class="header-title">${data.header.title}</h3>
               <div class="header-pic">
                 <img src="${data.header.cover_image}" alt="${data.header.title}">
@@ -45,21 +45,6 @@ window.addEventListener('scroll', () => {
             `;
             pageElement.appendChild(headerArt);
 
-            const adsMobileScript1 = document.createElement('script');
-            adsMobileScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-            adsMobileScript1.async = true;
-            const adsMobile = document.createElement('div');
-            adsMobile.appendChild(adsMobileScript1);
-            adsMobile.className = 'ads-pc';
-            adsMobile.innerHTML = `
-            <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
-            data-ad-client="ca-pub-1284323428666859" data-ad-slot="6148256205"></ins>
-            `;
-            const adsMobileScript2 = document.createElement('script');
-            adsMobileScript2.src = '/static/javascript/googleAds.js';
-            adsMobile.appendChild(adsMobileScript2);
-            pageElement.appendChild(adsMobile);
-
             const restNotices = data.notices;
             for (counter = 0; counter < restNotices.length; counter++) {
               const element = data.notices[counter];
@@ -71,7 +56,7 @@ window.addEventListener('scroll', () => {
                   <img src="${element.cover_image}" alt="${element.title}">
                 </div>
                 <div class="infos">
-                  <div class="category">${ element.category.name }</div>
+                  <div class="category">${element.category.name}</div>
                   <h3 class="rest-title">${element.title}</h3>
                   <p class="rest-subtitle">${element.subtitle}</p>
                   <span class="postedBy"><i
@@ -83,8 +68,40 @@ window.addEventListener('scroll', () => {
               animationTime = animationTime + 0.2;
               const time = String(animationTime);
               restArt.style.animation = `loadsItems ${time}s  linear`
+              if (counter === 3) {
+                if (window.innerWidth < 1025) {
+                  const adsMobileScript1 = document.createElement('script');
+                  adsMobileScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                  adsMobileScript1.async = true;
+                  const adsMobile = document.createElement('div');
+                  adsMobile.appendChild(adsMobileScript1);
+                  adsMobile.className = 'ads-pc';
+                  adsMobile.innerHTML = `
+                  <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
+                  data-ad-client="ca-pub-1284323428666859" data-ad-slot="6148256205"></ins>
+                  `;
+                  const adsMobileScript2 = document.createElement('script');
+                  adsMobileScript2.src = '/static/javascript/googleAds.js';
+                  adsMobile.appendChild(adsMobileScript2);
+                  pageElement.appendChild(adsMobile);
+                } else {
+                  const adsPcScript1 = document.createElement('script');
+                  adsPcScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                  adsPcScript1.async = true;
+                  const adsPc = document.createElement('div');
+                  adsPc.appendChild(adsPcScript1);
+                  adsPc.className = 'ads-pc';
+                  adsPc.innerHTML = `
+                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
+                      data-ad-client="ca-pub-1284323428666859" data-ad-slot="3556740125"></ins>
+                  `;
+                  const adsPcScript2 = document.createElement('script');
+                  adsPcScript2.src = '/static/javascript/googleAds.js';
+                  adsPc.appendChild(adsPcScript2);
+                  pageElement.appendChild(adsPc);
+                };
+              };
               pageElement.appendChild(restArt);
-
             };
             const scriptAd = document.createElement('script');
             scriptAd.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
