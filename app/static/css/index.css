@@ -22,7 +22,8 @@
 
 .home .page .ad-h1 {
   width: 80%;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
 .home .page .header-art:hover>.header-title {
@@ -232,6 +233,6 @@
     font-size: 14px;
   }
   .home .page .ad-h1 {
-    width: 80%;
+    width: 60%;
   }
 }
