@@ -364,3 +364,7 @@ def stream():
         title='Mais Gamer - Stream',
         posts=posts,
     )
+
+@app.route('/ads.txt', methods=['GET'])
+def ads_text():
+    return render_template('ads.txt')
