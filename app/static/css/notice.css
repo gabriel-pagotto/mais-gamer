@@ -305,6 +305,13 @@
   transition: opacity 0.2s linear;
 }
 
+.googleAdsFooter {
+  display: block;
+  width: 30%;
+  border: 1px solid #EAEAEA;
+  margin: 20px auto;
+}
+
 @media (max-width: 1025px) {
   .web .payload .notice {
     width: 90%;
@@ -355,5 +362,8 @@
   .notices-in-more .news-container-link .news-container .title {
     font-size: 1.4em;
     line-height: 1.1;
+  }
+  .googleAdsFooter {
+    width: 70%;
   }
 }
