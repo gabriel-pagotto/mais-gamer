@@ -311,6 +311,15 @@
   margin: 20px auto;
 }
 
+.ads-fixed {
+  display: block;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  right: 50px;
+}
+
 @media (max-width: 1025px) {
   .web .payload .notice {
     width: 90%;
@@ -364,5 +373,8 @@
   }
   .googleAdsFooter {
     width: 60%;
+  }
+  .ads-fixed {
+    display: none;
   }
 }
