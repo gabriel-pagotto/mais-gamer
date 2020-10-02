@@ -84,11 +84,11 @@ window.addEventListener('scroll', () => {
                  data-ad-slot="8676887631"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
             `;
+            const scriptAd2 = document.createElement('script');
+            scriptAd2.src = '/static/javascript/googleAds.js';
             pageElement.appendChild(adGoogle);
+            pageElement.appendChild(scriptAd2);
             animationTime = 0.7;
             loads.style.visibility = 'hidden';
             working = false;
