@@ -43,20 +43,6 @@ window.addEventListener('scroll', () => {
               </div>
             `;
             pageElement.appendChild(headerArt);
-            const adsPcScript1 = document.createElement('script');
-            adsPcScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-            adsPcScript1.async = true;
-            const adsPc = document.createElement('div');
-            adsPc.appendChild(adsPcScript1);
-            adsPc.className = 'ads-pc';
-            adsPc.innerHTML = `
-              <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5v+4k-d3+7b"
-                data-ad-client="ca-pub-1284323428666859" data-ad-slot="3556740125"></ins>
-            `;
-            const adsPcScript2 = document.createElement('script');
-            adsPcScript2.src = '/static/javascript/googleAds.js';
-            adsPc.appendChild(adsPcScript2);
-            pageElement.appendChild(adsPc);
 
             const adsMobileScript1 = document.createElement('script');
             adsMobileScript1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
