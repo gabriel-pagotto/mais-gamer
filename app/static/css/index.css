@@ -10,7 +10,7 @@
 }
 
 .ads-mobile {
-  display: none;
+  visibility: hidden;
 }
 
 .home .page .header-art {
@@ -240,9 +240,9 @@
     width: 75%;
   }
   .ads-pc {
-    display: none;
+    visibility: hidden;
   }
   .ads-mobile {
-    display: block;
+   visibility: visible;
   }
 }
