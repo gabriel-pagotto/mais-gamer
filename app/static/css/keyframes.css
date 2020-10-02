@@ -2,17 +2,7 @@
   0% {
     opacity: 0;
   }
-  25% {
-    left: 50px;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
   100% {
-    left: 0px;
     opacity: 1;
   }
 }
