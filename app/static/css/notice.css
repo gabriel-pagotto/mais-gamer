@@ -6,22 +6,32 @@
   background-color: #FFFFFF;
 }
 
+.web .payload .notice .notice-body-container {
+  display: flex;
+}
+
+.web .payload .notice .notice-body-container .ad1 {
+  display: block;
+  width: 200px;
+  margin-left: 20px;
+}
+
 .web .payload .notice {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 65%;
   margin: 0 auto 20px auto;
   min-width: 700px;
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .web .payload .notice .notice-body {
   position: relative;
-  width: 85%;
+  width: 75%;
   margin: auto;
   animation: loadsItems 1.9s linear;
 }
@@ -107,6 +117,7 @@
 }
 
 .web .payload .notice .tweet {
+  display: block;
   margin: 0 auto 20px auto;
 }
 
@@ -311,14 +322,6 @@
   margin: 20px auto;
 }
 
-.ads-fixed {
-  display: block;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 100px;
-  right: 50px;
-}
 
 @media (max-width: 1025px) {
   .web .payload .notice {
@@ -328,6 +331,9 @@
   .web .payload .notice .notice-body {
     width: 100%;
     margin: auto;
+  }
+  .web .payload .notice .notice-body-container .ad1 {
+    display: none;
   }
   .payload .notice .notice-header .header-title {
     font-size: 28px;

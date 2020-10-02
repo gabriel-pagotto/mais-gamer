@@ -17,15 +17,6 @@
   <div class='web'>
     {% include 'components/header.html' %}
     <div class="payload">
-      <div class="ads-fixed">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Q-1 -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1284323428666859"
-          data-ad-slot="1024261343" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
       <div class="notice">
         <div class="notice-header">
           <h1 class="header-title">{{ notice.title }}</h1>
@@ -50,51 +41,62 @@
         </div>
         {% set pAnt = False %}
         {% set pCounter = 0 %}
-        <div class="notice-body">
-          {% for content in notice_content %}
+        <div class="notice-body-container">
+          <div class="notice-body">
+            {% for content in notice_content %}
 
-          {% if content.type == 'IMG' %}
-          {% set pAnt = False %}
-          <img src="{{ content.content }}" alt="{{ notice.title }}">
+            {% if content.type == 'IMG' %}
+            {% set pAnt = False %}
+            <img src="{{ content.content }}" alt="{{ notice.title }}">
 
-          {% elif content.type == 'T' %}
-          {% set pAnt = False %}
-          <h2>{{ content.content }}</h2>
+            {% elif content.type == 'T' %}
+            {% set pAnt = False %}
+            <h2>{{ content.content }}</h2>
 
-          {% elif content.type == 'TXT' %}
-          {% set pAnt = False %}
-          <pre>{{ content.content }}</pre>
+            {% elif content.type == 'TXT' %}
+            {% set pAnt = False %}
+            <pre>{{ content.content }}</pre>
 
-          {% elif content.type == 'C' %}
-          {% set pAnt = False %}
-          <cite>{{ content.content }}</cite>
+            {% elif content.type == 'C' %}
+            {% set pAnt = False %}
+            <cite>{{ content.content }}</cite>
 
-          {% elif content.type == 'P' %}
-          {% if pCounter > 4 %}
-          <cite>Eu SOu o fodido</cite>
-          {% endif %}
-          <p>{{ content.content }}</p>
+            {% elif content.type == 'P' %}
+            {% if pCounter > 4 %}
+            <cite>Eu SOu o fodido</cite>
+            {% endif %}
+            <p>{{ content.content }}</p>
 
-          {% elif content.type == 'YTB' %}
-          {% set pAnt = False %}
-          <iframe class="vYtb" src="{{ 'https://www.youtube.com/embed/' + content.content }}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
+            {% elif content.type == 'YTB' %}
+            {% set pAnt = False %}
+            <iframe class="vYtb" src="{{ 'https://www.youtube.com/embed/' + content.content }}" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
 
-          {% elif content.type == 'TWT' %}
-          {% set pAnt = False %}
-          <div data-embed-type="tweet" class="tweet">
-            {{ content.content|safe }}
+            {% elif content.type == 'TWT' %}
+            {% set pAnt = False %}
+            <div data-embed-type="tweet" class="tweet">
+              {{ content.content|safe }}
+            </div>
+            {% endif %}
+
+            {% endfor %}
+            {% if notice.source_name != '' and notice.source_name != None %}
+            <span class="source">
+              <i class="far fa-newspaper"></i> Créditos:
+              <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a>
+            </span>
+            {% endif %}
           </div>
-          {% endif %}
-
-          {% endfor %}
-          {% if notice.source_name != '' and notice.source_name != None %}
-          <span class="source">
-            <i class="far fa-newspaper"></i> Créditos:
-            <a href="{{ notice.source_url }}" target="_blank">{{ notice.source_name }}</a>
-          </span>
-          {% endif %}
+          <div class="ad1">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Q-1 -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1284323428666859"
+              data-ad-slot="1024261343" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
         </div>
       </div>
       {% if more_news != None %}
