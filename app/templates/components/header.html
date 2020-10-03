@@ -86,50 +86,28 @@
         </label>
       </div>
       <ul class="options-mobile">
-        {% if current_user.is_admin == 1 %}
+        {% if current_user.is_poster == 1 %}
         <li>
           <a href="{{ url_for('posts') }}" id="mo" class="post">
-            <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('profile') }}" id="mo" class="post">
-            <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('logout') }}" id="mo" class="logout">
-            <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
-          </a>
-        </li>
-        {% elif current_user.is_poster == 1 %}
-        <li>
-          <a href="{{ url_for('posts') }}" id="mo" class="post">
-            <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('profile') }}" id="mo" class="post">
-            <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('logout') }}" id="mo" class="logout">
-            <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
-          </a>
-        </li>
-        {% else %}
-        <li>
-          <a href="{{ url_for('profile') }}" id="mo" class="post">
-            <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('logout') }}" id="mo" class="logout">
-            <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
+            <i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens
           </a>
         </li>
         {% endif %}
+        <li>
+          <a href="{{ url_for('groups') }}" id="mo" class="groups">
+            <i class="fas fa-gamepad" style="margin-right: 10px;"></i>Grupos para Gamers
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('profile') }}" id="mo" class="profile">
+            <i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('logout') }}" id="mo" class="logout">
+            <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão
+          </a>
+        </li>
       </ul>
     </div>
     {% else %}
@@ -199,50 +177,28 @@
           </svg>
         </a>
         <ul class="options">
-          {% if current_user.is_admin == 1 %}
+          {% if current_user.is_poster == 1 %}
           <li class="user-options">
             <a href="{{ url_for('posts') }}" class="post">
-              <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
-            </a>
-          </li>
-          <li class="user-options">
-            <a href="{{ url_for('profile') }}" id="mo" class="post">
-              <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-            </a>
-          </li>
-          <li class="user-options">
-            <a href="{{ url_for('logout') }}" class="logout">
-              <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
-            </a>
-          </li>
-          {% elif current_user.is_poster == 1 %}
-          <li class="user-options">
-            <a href="{{ url_for('posts') }}" class="post">
-              <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
-            </a>
-          </li>
-          <li class="user-options">
-            <a href="{{ url_for('profile') }}" id="mo" class="post">
-              <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-            </a>
-          </li>
-          <li class="user-options">
-            <a href="{{ url_for('logout') }}" class="logout">
-              <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
-            </a>
-          </li>
-          {% else %}
-          <li class="user-options">
-            <a href="{{ url_for('profile') }}" id="mo" class="post">
-              <i class="fas fa-user" style="margin-right: 10px;"></i> Meu usuário
-            </a>
-          </li>
-          <li class="user-options">
-            <a href="{{ url_for('logout') }}" class="logout">
-              <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Encerrar sessão
+              <i class="far fa-file-alt" style="margin-right: 10px;"></i>Postagens
             </a>
           </li>
           {% endif %}
+          <li class="user-options">
+            <a href="{{ url_for('groups') }}" id="mo" class="post">
+              <i class="fas fa-gamepad" style="margin-right: 10px;"></i>Grupos para Gamers
+            </a>
+          </li>
+          <li class="user-options">
+            <a href="{{ url_for('profile') }}" id="mo" class="post">
+              <i class="fas fa-user" style="margin-right: 10px;"></i>Meu usuário
+            </a>
+          </li>
+          <li class="user-options">
+            <a href="{{ url_for('logout') }}" class="logout">
+              <i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i>Encerrar sessão
+            </a>
+          </li>
         </ul>
       </div>
       {% else %}

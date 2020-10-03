@@ -38,17 +38,3 @@ class PostCategory(database.Model):
 
     def __repr__(self):
         return '<PostCategory>'.format(self.name)
-
-
-class PostTag(database.Model):
-    id = database.Column(database.Integer, primary_key=True)
-    name = database.Column(database.String(20))
-
-    def __repr__(self):
-        return '<PostTag>'.format(self.name)
-
-
-class PostTagRelation(database.Model):
-    id = database.Column(database.Integer, primary_key=True)
-    tag = database.Column(database.Integer, database.ForeignKey('post_tag.id'))
-    post = database.Column(database.Integer, database.ForeignKey('posts.id'))
