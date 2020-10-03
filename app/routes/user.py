@@ -14,7 +14,7 @@ def profile():
     form.email.data = current_user.email
 
     return render_template(
-        'user/profile.html',
+        'pages/profile.html',
         title=current_user.name,
         form=form,
     )

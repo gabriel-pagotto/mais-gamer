@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  {% include 'components/head.html' %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+
+<body>
+  <div class='web'>
+    {% include 'components/header.html' %}
+    <div class="payload">
+      <div class="login-container">
+        <div class="login-data">
+          <h1 class="login-title">Entrar</h1>
+          <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }} {% with messages = get_flashed_messages() %} {% if messages %}
+            {% for message in messages %} {% if message == 'Please log in to access this page.' %}
+            <span class="error">Faça o login para acessar essa página.</span>
+            {% elif message == 'Please reauthenticate to access this page.' %}
+            <span class="error">Autentique-se novamente para acessar essa página.</span> {% else %}
+            <span class="error">{{ message }}</span> {% endif %} {% endfor %} {% endif %} {% endwith %}
+            {{ form.username(class_="form-inputs", placeholder="Nome de usuário", maxlength="16", required=True) }} {{ form.password(class_="form-inputs",
+                        placeholder="Senha", maxlength="16") }}
+            <span class="no-account">Não tem uma conta?&nbsp;<a href="{{ url_for('register') }}"
+                class="create-account">Crie uma!</a></span> {{ form.submit(class_="submit", value="Acessar")}}
+          </form>
+        </div>
+      </div>
+    </div>
+    {% include 'components/footer.html' %}
+  </div>
+</body>
+
+</html>

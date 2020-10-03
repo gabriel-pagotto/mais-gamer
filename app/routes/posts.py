@@ -1,4 +1,5 @@
-import json, requests
+import json
+import requests
 from app import app, database
 from app.models import Posts, Post_Content, Files
 from app.utils.aws_s3 import delete_file, clearUploadCache
@@ -26,7 +27,7 @@ def posts():
         if posts.has_prev else None
 
     return render_template(
-        'posts/posts.html',
+        'pages/posts/posts.html',
         title='Postagens',
         selected='posts',
         sub_header=sub_header(1, 'posts'),
@@ -97,7 +98,7 @@ def post_new():
         })
 
     return render_template(
-        'posts/new_post.html',
+        'pages/posts/new_post.html',
         title='Nova postagem',
         selected='new',
         sub_header=sub_header(2, 'posts'),
@@ -134,6 +135,7 @@ def delete_post(id):
 
     return redirect(url_for('posts'))
 
+
 @app.route('/get-site-informations', methods=['post'])
 def getSiteInformations():
     data = json.loads(request.data)
@@ -145,7 +147,6 @@ def getSiteInformations():
     url = site_url.split(httpOrHttps + '//')
     url = url[1].split('/')
     url_origin = httpOrHttps + '//' + url[0]
-
 
     page = requests.get(url_origin)
     page = page.content

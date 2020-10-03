@@ -5,19 +5,19 @@ const checkboxSearch = document.querySelector('.checkbox-search');
 const backgroungSearch = document.querySelector('.background-search');
 
 searchInput.addEventListener('input', () => {
-    if (searchInput.value === '' || searchInput.value === '' || searchInput.value === null) {
-        containerResult.innerHTML = '';
-        resultTitle.innerHTML = 'Escreva para buscar';
-    } else {
-        let XHR = new XMLHttpRequest();
-        XHR.open('GET', location.origin + `/search?q=${searchInput.value}`, true);
-        XHR.onreadystatechange = () => {
-            if (XHR.readyState === 4) {
-                if (XHR.status === 200) {
-                    const allNews = JSON.parse(XHR.response);
-                    let renderNews = '';
-                    allNews.map((news) => {
-                        let newsData = `
+  if (searchInput.value === '' || searchInput.value === '' || searchInput.value === null) {
+    containerResult.innerHTML = '';
+    resultTitle.innerHTML = 'Escreva para buscar';
+  } else {
+    let XHR = new XMLHttpRequest();
+    XHR.open('GET', location.origin + `/search?q=${searchInput.value}`, true);
+    XHR.onreadystatechange = () => {
+      if (XHR.readyState === 4) {
+        if (XHR.status === 200) {
+          const allNews = JSON.parse(XHR.response);
+          let renderNews = '';
+          allNews.map((news) => {
+            let newsData = `
                             <a href="${location.origin + '/news/' + news.id}">
                                 <div class="container">
                                     <div class="cover_image">
@@ -31,38 +31,38 @@ searchInput.addEventListener('input', () => {
                             </a>
                         `;
 
-                        renderNews = renderNews + newsData;
-                    });
-                    containerResult.innerHTML = ' ';
-                    if (allNews.length === 0) {
-                        resultTitle.innerHTML = `Nada foi encontrado para "${searchInput.value}"`
-                    };
+            renderNews = renderNews + newsData;
+          });
+          containerResult.innerHTML = ' ';
+          if (allNews.length === 0) {
+            resultTitle.innerHTML = `Nada foi encontrado para "${searchInput.value}"`
+          };
 
-                    if (allNews.length === 1) {
-                        resultTitle.innerHTML = 'Resultado';
-                    };
+          if (allNews.length === 1) {
+            resultTitle.innerHTML = 'Resultado';
+          };
 
-                    if (allNews.length > 1) {
-                        resultTitle.innerHTML = 'Resultados';
-                    };
-                    containerResult.innerHTML = renderNews;
-                    containerResult.style.animation = ''
-                    containerResult.style.animation = 'loadsItems 0,4s linear'
+          if (allNews.length > 1) {
+            resultTitle.innerHTML = 'Resultados';
+          };
+          containerResult.innerHTML = renderNews;
+          containerResult.style.animation = ''
+          containerResult.style.animation = 'loadsItems 0,4s linear'
 
-                    if (searchInput.value === '') {
-                        resultTitle.innerHTML = 'Escreva para buscar';
-                    };
-                };
-            };
+          if (searchInput.value === '') {
+            resultTitle.innerHTML = 'Escreva para buscar';
+          };
         };
-        XHR.send();
+      };
     };
+    XHR.send();
+  };
 });
 
 searchInput.addEventListener('focus', () => {
-    checkboxSearch.checked = true;
+  checkboxSearch.checked = true;
 });
 
 backgroungSearch.addEventListener('click', () => {
-    checkboxSearch.checked = false;
+  checkboxSearch.checked = false;
 });

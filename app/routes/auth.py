@@ -30,7 +30,7 @@ def login():
             return redirect(url_for('index'))
         return redirect(next_page)
     return render_template(
-        'auth/login.html',
+        'pages/auth/login.html',
         title='Entrar',
         form=form,
     )
@@ -68,7 +68,7 @@ def register():
         return redirect(url_for('register_success'))
 
     return render_template(
-        'auth/register.html',
+        'pages/auth/register.html',
         title='Criar conta',
         form=form,
     )
@@ -78,7 +78,7 @@ def register():
 @login_required
 def register_success():
     return render_template(
-        'auth/register_success.html',
+        'pages/auth/register_success.html',
         title='Conta criada com sucesso',
     )
 

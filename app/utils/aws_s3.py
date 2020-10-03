@@ -28,6 +28,7 @@ def delete_file(file_url):
     client = boto3.client('s3')
     client.delete_object(Bucket=app.config['S3_BUCKET_NAME'], Key=key)
 
+
 def filesDatabaseControl(file_url):
     file = Files.query.filter_by(url=file_url).first()
     if file is None:
@@ -35,12 +36,13 @@ def filesDatabaseControl(file_url):
     if file.used == 1:
         database.session.delete(file)
     if file.used == 0:
-      delete_file(file.url)
-      database.session.delete(file)
+        delete_file(file.url)
+        database.session.delete(file)
+
 
 def clearUploadCache():
-  files = Files.query.all()
+    files = Files.query.all()
 
-  for file in files:
-      filesDatabaseControl(file.url)
-  database.session.commit()
+    for file in files:
+        filesDatabaseControl(file.url)
+    database.session.commit()

@@ -146,7 +146,7 @@ addYoutubeVideo.addEventListener('click', () => {
       ytbVideo.width = '100%';
       ytbVideo.height = '50vw';
       ytbVideo.src = `https://www.youtube.com/embed/${value[1]}`
-      ytbVideo.frameborder= '0';
+      ytbVideo.frameborder = '0';
       ytbVideo.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
       ytbVideo.allowFullscreen = true;
       contents.appendChild(ytbVideo);
@@ -231,7 +231,7 @@ formSub.addEventListener('submit', () => {
 
   let contents = [];
 
-  for (x = 0; x < addedContents.length; x ++) {
+  for (x = 0; x < addedContents.length; x++) {
     const element = addedContents[x];
     if (element.id === 'T') {
       contents.push({
@@ -338,9 +338,9 @@ editor.addEventListener('contextmenu', (e) => {
   if (window.innerWidth > 1025) {
     const x = (e.pageX - 3) + 'px';
     const y = (e.pageY - 2) + 'px';
-    editorOptions.style.left =  x;
-    editorOptions.style.top =  y;
-    editorOptions.style.visibility  = 'visible';
+    editorOptions.style.left = x;
+    editorOptions.style.top = y;
+    editorOptions.style.visibility = 'visible';
     editorOptionsBackground.style.visibility = 'visible';
   };
 });
@@ -358,12 +358,12 @@ editorOptionsBackground.addEventListener('mouseover', () => {
 });
 
 function hiddeOptions() {
-  editorOptions.style.visibility  = 'hidden';
+  editorOptions.style.visibility = 'hidden';
   editorOptionsBackground.style.visibility = 'hidden';
 };
 
 function orderInputs() {
-  for(var i = 0; i < filhos.length; i++){
+  for (var i = 0; i < filhos.length; i++) {
     console.log(filhos[i]);
   }
 };
@@ -371,13 +371,14 @@ function orderInputs() {
 function sizeTextAreas() {
   textAreas = document.getElementsByTagName('textarea');
 
-  for(x = 0; x < textAreas.length; x ++) {
-    textAreas[x].addEventListener('input', function() {
+  for (x = 0; x < textAreas.length; x++) {
+    textAreas[x].addEventListener('input', function () {
       while (this.scrollHeight > this.offsetHeight) {
         this.rows += 1;
       }
     }
-  )}
+    )
+  }
 };
 
 sizeTextAreas();
@@ -385,14 +386,14 @@ sizeTextAreas();
 function loadingImages() {
   const addedContents = document.getElementsByClassName('added-content');
   loadingCounter = 0;
-  for (x = 0; x < addedContents.length; x ++) {
+  for (x = 0; x < addedContents.length; x++) {
     const element = addedContents[x];
     if (element.src === location.origin + '/static/imageLoader.gif') {
       loadingCounter = loadingCounter + 1;
     };
   };
 
-  if ( loadingCounter > 0) {
+  if (loadingCounter > 0) {
     return;
   } else {
     loadingCounter = 0;
@@ -402,9 +403,9 @@ function loadingImages() {
 
 setInterval(() => {
   if (window.innerWidth < 1025) {
-    editorOptions.style.left =  '0';
-    editorOptions.style.top =  'auto';
+    editorOptions.style.left = '0';
+    editorOptions.style.top = 'auto';
     editorOptions.style.bottom = '0';
-    editorOptions.style.visibility  = 'visible';
+    editorOptions.style.visibility = 'visible';
   };
 }, 1000);

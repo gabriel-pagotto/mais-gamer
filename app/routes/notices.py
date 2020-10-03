@@ -52,7 +52,7 @@ def notice(id):
     database.session.commit()
 
     return render_template(
-        'notices/notice.html',
+        'pages/notice.html',
         title=post.title,
         notice=post,
         notice_content=post_content,

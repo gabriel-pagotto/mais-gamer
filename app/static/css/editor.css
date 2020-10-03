@@ -187,18 +187,15 @@
     max-height: 430px;
     height: 52vw;
   }
-
   #social-finder-container .social-finder-button {
     position: relative;
     left: -2px;
     padding: 5px 8px;
     display: flex;
   }
-
   #social-finder-container .social-finder-button i {
     margin-right: 10px;
   }
-
   .editor-container .editor-options {
     width: 100%;
     position: fixed;
@@ -211,18 +208,14 @@
     justify-content: center;
     border-radius: 0;
   }
-
   .editor-container .editor-options .options {
     display: flex;
     border: 1px solid #111111;
   }
-
   .editor-container .editor-options ul li {
     font-size: 18px;
   }
-
   .editor-container .editor-options ul li p {
     display: none;
   }
 }
-
