@@ -99,15 +99,26 @@
             </span>
             {% endif %}
           </div>
-          <div class="ad1">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Q-1 -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1284323428666859"
-              data-ad-slot="1024261343" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
+          <div class="ad1"></div>
+          <script>
+            const ad1 = document.querySelector('.ad1');
+            if (window.innerWidth > 1025) {
+              const googleAd1Script1 = document.createElement('script');
+              googleAd1Script1.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+              googleAd1Script1.async = true;
+              const googleAd1 = document.createElement('div');
+              googleAd1.appendChild(googleAd1Script1);
+              googleAd1.className = 'ads-pc';
+              googleAd1.innerHTML = `
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1284323428666859"
+                data-ad-slot="1024261343" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              `;
+              const googleAd1Script2 = document.createElement('script');
+              googleAd1Script2.src = '/static/javascript/googleAds.js';
+              googleAd1.appendChild(googleAd1Script2);
+              ad1.appendChild(googleAd1);
+            };
+          </script>
         </div>
       </div>
       {% if more_news != None %}
