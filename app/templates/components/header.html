@@ -88,11 +88,6 @@
       <ul class="options-mobile">
         {% if current_user.is_admin == 1 %}
         <li>
-          <a href="{{ url_for('admin') }}" id="mo" class="post">
-            <i class="fas fa-crown" style="margin-right: 10px;"></i> Painel de administrador
-          </a>
-        </li>
-        <li>
           <a href="{{ url_for('posts') }}" id="mo" class="post">
             <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
           </a>
@@ -205,11 +200,6 @@
         </a>
         <ul class="options">
           {% if current_user.is_admin == 1 %}
-          <li class="user-options">
-            <a href="{{ url_for('admin') }}" class="post">
-              <i class="fas fa-crown" style="margin-right: 10px;"></i> Painel de administrador
-            </a>
-          </li>
           <li class="user-options">
             <a href="{{ url_for('posts') }}" class="post">
               <i class="far fa-file-alt" style="margin-right: 10px;"></i> Postagens
