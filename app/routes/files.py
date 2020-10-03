@@ -3,9 +3,11 @@ from app import app, database
 from app.models import Files
 from flask import request, jsonify
 from app.utils.aws_s3 import save_image_and_get_url
+from flask_login import login_required
 
 
 @app.route("/upload", methods=['POST'])
+@login_required
 def upload():
     file = request.files['file']
     file_url = save_image_and_get_url(file)
