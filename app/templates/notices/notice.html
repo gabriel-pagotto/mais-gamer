@@ -64,12 +64,15 @@
             {% if pAnt.update({'counter': pAnt.counter + 1}) %}{% endif %}
             {% if pAnt.update({'bool': True}) %}{% endif %}
             {% if pAnt.counter > 3 and pAnt.bool == True %}
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-              data-ad-format="fluid" data-ad-client="ca-pub-1284323428666859" data-ad-slot="6810601184"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <div class="adsInNotice">
+              <!--<span class="continuePub">Continua após a publicidade</span>-->
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+                data-ad-format="fluid" data-ad-client="ca-pub-1284323428666859" data-ad-slot="6810601184"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
             {% if pAnt.update({'counter': 0}) %}{% endif %}
             {% if pAnt.update({'bool': False}) %}{% endif %}
             {% endif %}

@@ -383,4 +383,7 @@
   .ads-fixed {
     display: none;
   }
+  .adsInNotice {
+    width: 70%;
+  }
 }
