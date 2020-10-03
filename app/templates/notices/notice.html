@@ -39,42 +39,50 @@
             </div>
           </div>
         </div>
-        {% set pAnt = False %}
-        {% set pCounter = 0 %}
+        {% set pAnt = {'bool': False, 'counter': 0} %}
         <div class="notice-body-container">
           <div class="notice-body">
             {% for content in notice_content %}
 
             {% if content.type == 'IMG' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <img src="{{ content.content }}" alt="{{ notice.title }}">
 
             {% elif content.type == 'T' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <h2>{{ content.content }}</h2>
 
             {% elif content.type == 'TXT' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <pre>{{ content.content }}</pre>
 
             {% elif content.type == 'C' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <cite>{{ content.content }}</cite>
 
             {% elif content.type == 'P' %}
-            {% if pCounter > 4 %}
-            <cite>Eu SOu o fodido</cite>
+            {% if pAnt.update({'counter': pAnt.counter + 1}) %}{% endif %}
+            {% if pAnt.update({'bool': True}) %}{% endif %}
+            {% if pAnt.counter > 3 and pAnt.bool == True %}
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+              data-ad-format="fluid" data-ad-client="ca-pub-1284323428666859" data-ad-slot="6810601184"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            {% if pAnt.update({'counter': 0}) %}{% endif %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             {% endif %}
             <p>{{ content.content }}</p>
 
             {% elif content.type == 'YTB' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <iframe class="vYtb" src="{{ 'https://www.youtube.com/embed/' + content.content }}" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
 
             {% elif content.type == 'TWT' %}
-            {% set pAnt = False %}
+            {% if pAnt.update({'bool': False}) %}{% endif %}
             <div data-embed-type="tweet" class="tweet">
               {{ content.content|safe }}
             </div>
