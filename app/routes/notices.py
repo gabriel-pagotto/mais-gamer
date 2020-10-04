@@ -6,8 +6,9 @@ from flask import render_template, redirect, request, url_for
 from sqlalchemy import desc
 
 
-@app.route('/news/<id>', methods=['GET'])
-def notice(id):
+@app.route('/article', methods=['GET'])
+def notice():
+    id = request.args.get('q')
     all_posts = Posts.query.all()
     all_posts_array = []
     for post in all_posts:
@@ -63,4 +64,8 @@ def notice(id):
 
 @app.route('/notícia/<id>', methods=['GET'])
 def notice_redirect(id):
-    return redirect(url_for('notice', id=id))
+    return redirect(url_for('notice', q=id))
+
+@app.route('/news/<id>', methods=['GET'])
+def notice_redirect_news(id):
+    return redirect(url_for('notice', q=id))

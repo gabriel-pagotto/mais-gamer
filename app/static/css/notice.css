@@ -121,6 +121,12 @@
   margin: 0 auto 20px auto;
 }
 
+
+.web .payload .notice .tweet .twitter-tweet {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .payload .notice .notice-header {
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 20px;

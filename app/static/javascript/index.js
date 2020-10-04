@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
             home.appendChild(pageElement);
             const headerArt = document.createElement('a');
             headerArt.className = 'header-art';
-            headerArt.href = '/news/' + data.header.id;
+            headerArt.href = '/article?q=' + data.header.id;
             headerArt.innerHTML = `
               <div class="category">${data.header.category.name}</div>
               <h3 class="header-title">${data.header.title}</h3>
@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
               const element = data.notices[counter];
               const restArt = document.createElement('a');
               restArt.className = 'rest-art';
-              restArt.href = '/news/' + element.id;
+              restArt.href = '/article?q=' + element.id;
               restArt.innerHTML = `
                 <div class="rest-pic">
                   <img src="${element.cover_image}" alt="${element.title}">

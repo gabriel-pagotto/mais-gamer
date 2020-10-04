@@ -17,7 +17,7 @@
     <div class="payload">
       <div class="home">
         <div class="page">
-          <a href="{{ url_for('notice', id=posts.pages[0].header.id) }}" class="header-art">
+          <a href="{{ url_for('notice', q=posts.pages[0].header.id) }}" class="header-art">
             <h3 class="header-title">{{ posts.pages[0].header.title }}</h3>
             <div class="header-pic">
               <img src="{{ posts.pages[0].header.cover_image }}" alt="{{ posts.pages[0].header.title }}">
@@ -53,7 +53,7 @@
             };
           </script>
           {% endif %}
-          <a class="rest-art" href="{{ url_for('notice', id=post.id) }}">
+          <a class="rest-art" href="{{ url_for('notice', q=post.id) }}">
             <div class="rest-pic">
               <img src="{{ post.cover_image }}" alt="{{ post.title }}">
             </div>

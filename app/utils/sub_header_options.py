@@ -13,16 +13,16 @@ def sub_header(option_number, route_name):
             },
         }
 
-    elif route_name == 'admin_notices':
+    elif route_name == 'groups':
         sub_header_options = {
             1: {
-                'title': 'ADICIONAR UM GAME',
-                'url': 'posts',
+                'title': 'MEUS GRUPOS',
+                'url': 'groups',
                 'selected': False,
             },
             2: {
-                'title': 'DELETAR UMA NOTÍCIA',
-                'url': 'post_new',
+                'title': 'ADICIONAR UM GRUPO',
+                'url': 'groups_new',
                 'selected': False,
             },
         }

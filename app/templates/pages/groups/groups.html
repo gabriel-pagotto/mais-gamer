@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% include 'components/head.html' %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/new_group.css') }}">
+</head>
+<body>
+  <div class='web'>
+    {% include 'components/header.html' %}
+    <div class="payload">
+      <div class="sub_header">
+        {% include 'components/sub_header.html' %}
+        <div class="groups-body">
+          {% include 'pages/groups/new_group.html' %}
+        </div>
+      </div>
+    </div>
+    {% include 'components/footer.html' %}
+  </div>
+</body>
+</html>
