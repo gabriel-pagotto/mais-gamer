@@ -94,7 +94,7 @@ def post_new():
         clearUploadCache()
         return jsonify({
             'status': 'success',
-            'redirect': url_for('notice', id=post.id)
+            'redirect': url_for('notice', q=post.id)
         })
 
     return render_template(
