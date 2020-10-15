@@ -4,10 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_sslify import SSLify
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 SSLify(app)
+CORS(app)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config.from_object(Config)
 database = SQLAlchemy(app)

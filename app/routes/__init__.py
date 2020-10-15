@@ -1,5 +1,5 @@
 from app import app
-from app.routes import index, auth, notices, posts, user, search, files, groups
+from app.routes import index, auth, notices, posts, user, search, files, groups, api
 
 
 from app.utils.date_time import DatePost
