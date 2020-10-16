@@ -1,6 +1,6 @@
-from app import app
+from app import app, database
 from flask import jsonify, url_for, request
-from app.models import Posts, PostCategory, Users
+from app.models import Posts, PostCategory, Users, Post_Content
 from app.utils.date_time import DatePost
 from sqlalchemy import desc
 from app.utils.index import return_url_category
@@ -78,5 +78,23 @@ def api_all_articles():
         })
 
     return jsonify({
-      'posts': posts_list,
+      'response': posts_list,
+    })
+
+@app.route('/api/articles/contents', methods=['GET'])
+def api_get_contents():
+    id = request.args.get('q')
+    all_contents = Post_Content.query.filter_by(post_id=id).order_by('position')
+
+    contents = []
+
+    for content in all_contents:
+        contents.append({
+          'content': content.content,
+          'position': content.position,
+          'type': content.type,
+        })
+
+    return jsonify({
+      'response': contents,
     })
