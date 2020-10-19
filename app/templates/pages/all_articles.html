@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  {% include 'components/head.html' %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/allArticles.css') }}">
+</head>
+
+<body>
+  <div class='web'>
+    {% include 'components/header.html' %}
+    <div class="payload">
+      <div class="articles">
+        {% for post in posts %}
+          <a href="{{ url_for('notice', q=post.id) }}" class="article-container">
+            <div class="cover_container">
+              <img src="{{ post.cover_image }}" alt="{{ post.subtitle }}">
+            </div>
+            <div class="title-container">
+              <h3 class="title">{{ post.title }}</h3>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      {% include 'components/pagination.html' %}
+    </div>
+    {% include 'components/footer.html' %}
+</body>
+
+</html>

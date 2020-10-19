@@ -3,15 +3,15 @@
   <a href="{{ prev_url }}" class="opc" title="Página anterior"><i class="fas fa-arrow-circle-left"></i></a> {% endif %}
   <div class="page-numbers">
     {% if posts_pages.prev_num != None and posts_pages.prev_num - 1 > 0 %}
-    <a href="{{ url_for('posts', page=posts_pages.prev_num - 1) }}">{{ posts_pages.prev_num - 1 }}</a> {% endif %}
+    <a href="{{ url_for(route, page=posts_pages.prev_num - 1) }}">{{ posts_pages.prev_num - 1 }}</a> {% endif %}
     {% if posts_pages.prev_num %}
-    <a href="{{ url_for('posts', page=posts_pages.prev_num) }}" class="prev-page">{{ posts_pages.prev_num }}</a>
+    <a href="{{ url_for(route, page=posts_pages.prev_num) }}" class="prev-page">{{ posts_pages.prev_num }}</a>
     {% endif %}
     <a class="page-number">{{ page_number }}</a> {% if posts_pages.next_num %}
-    <a href="{{ url_for('posts', page=posts_pages.next_num) }}" class="next-page">{{ posts_pages.next_num }}</a>
+    <a href="{{ url_for(route, page=posts_pages.next_num) }}" class="next-page">{{ posts_pages.next_num }}</a>
     {% endif %}
     {% if posts_pages.next_num != None and posts_pages.next_num + 1<= posts_pages.pages %}
-    <a href="{{ url_for('posts', page=posts_pages.next_num + 1) }}">{{ posts_pages.next_num + 1 }}</a>
+    <a href="{{ url_for(route, page=posts_pages.next_num + 1) }}">{{ posts_pages.next_num + 1 }}</a>
     {% endif %}
   </div>
   {% if next_url %}

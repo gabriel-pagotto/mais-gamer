@@ -365,6 +365,7 @@ def stream():
         posts=posts,
     )
 
+
 @app.route('/strategy-guide', methods=['GET'])
 def strategy_guide():
     all_posts = Posts.query.order_by(desc('addedAt')).filter_by(category=5)
@@ -438,3 +439,26 @@ def strategy_guide():
 @app.route('/ads.txt', methods=['GET'])
 def ads_text():
     return render_template('ads.txt')
+
+
+@app.route('/articles/all', methods=['GET'])
+def all_articles():
+    page = request.args.get('page', 1, type=int)
+    posts = Posts.query.order_by(desc('addedAt')).paginate(page, 12, False)
+
+    next_url = url_for('all_articles', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('all_articles', page=posts.prev_num) \
+        if posts.has_prev else None
+
+    return render_template(
+        'pages/all_articles.html',
+        title='Todas as notícias',
+        posts=posts.items,
+        route='all_articles',
+        num_posts=len(posts.items),
+        posts_pages=posts,
+        page_number=page,
+        next_url=next_url,
+        prev_url=prev_url,
+    )

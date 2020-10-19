@@ -37,6 +37,7 @@ def posts():
         page_number=page,
         next_url=next_url,
         prev_url=prev_url,
+        route='posts',
     )
 
 

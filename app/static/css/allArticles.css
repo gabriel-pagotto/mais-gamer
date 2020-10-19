@@ -1,0 +1,77 @@
+.payload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payload .articles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.payload .articles .article-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 20vw;
+  height: 12vw;
+  margin: 10px;
+  border: 1px solid #111111;
+}
+
+.payload .articles .article-container .cover_container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.payload .articles .article-container:hover>.cover_container img {
+  opacity: 0.7;
+}
+
+.payload .articles .article-container:hover > .title-container .title {
+  text-decoration: underline;
+}
+
+.articles .article-container .cover_container img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.3);
+}
+
+.payload .articles .article-container .title-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -100px 30px -20px rgba(16, 16, 16, .8);
+}
+
+.payload .articles .article-container .title-container .title {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  right: 10px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 1px rgba(16, 16, 16, .8);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1025px) {
+  .payload .articles .article-container {
+    width: 100%;
+    height: 50vw;
+  }
+  .payload .articles .article-container .title-container .title {
+    font-size: 25px;
+  }
+}
