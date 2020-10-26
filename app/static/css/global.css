@@ -6,13 +6,16 @@
 }
 
 body {
+  margin-top: 80px;
   min-height: 100vh;
-  background: #FFFFFF;
+  background: #EAEAEA;
   overflow-x: hidden;
 }
 
 .web .payload {
   min-height: 75vh;
+  background: #FFFFFF;
+  padding-top: 10px;
 }
 
 body, input, button, textarea, select, option, pre {
@@ -29,4 +32,10 @@ input {
 
 input:focus {
   border: 0 none;
+}
+
+@media (max-width: 1025px) {
+  body {
+    margin-top: 65px;
+  }
 }
