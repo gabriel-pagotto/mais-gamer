@@ -193,14 +193,16 @@
 }
 
 .header .header-2part .search {
+  position: relative;
   display: flex;
   align-items: center;
-  display: block;
   color: #FFFFFF;
   font-size: 20px;
   user-select: none;
   z-index: 10;
   animation: loads 0.4s linear;
+  justify-content: center;
+  align-items: center;
 }
 
 .header .header-2part .search .checkbox-search {
@@ -209,8 +211,8 @@
 
 .header .header-2part .search .checkbox-search:checked~.results {
   visibility: visible;
-  max-height: 70vh;
-  width: 50%;
+  max-height: 85vh;
+  width: 60vw;
   height: max-content;
   overflow: hidden;
   overflow-y: auto;
@@ -290,21 +292,18 @@
   align-self: center;
   visibility: hidden;
   position: absolute;
-  top: 91px;
-  width: 300px;
-  height: 0;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  top: 35px;
   background-color: #111111;
   z-index: 8;
   box-shadow: 0px 0px 5px black;
   overflow: hidden;
   border: 1px solid #212121;
   border-radius: 5px;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+}
+
+.header .header-2part .search .results::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .header-2part .search .results a {
@@ -312,9 +311,9 @@
   text-decoration: none;
   padding: 20px 10px;
   border-bottom: 1px solid #212121;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  transition: all 0.1s linear;
+  -webkit-transition: background 0.1s linear;
+  -moz-transition: background 0.1s linear;
+  transition: background 0.1s linear;
 }
 
 .header-2part .search .results .container-result a:hover {
@@ -362,9 +361,6 @@
   -moz-transform: scale(1.03);
   -webkit-transform: scale(1.03);
   transform: scale(1.03);
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  transition: all 0.2s linear;
 }
 
 .container-result .container .data {

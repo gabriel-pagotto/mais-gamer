@@ -1,12 +1,13 @@
 from app import app
 from flask import request, jsonify
 from app.models import Posts
+from sqlalchemy import desc
 
 
 @app.route('/search', methods=['GET'])
 def search():
     def search(param):
-        all_news = Posts.query.all()
+        all_news = Posts.query.order_by(desc('addedAt')).all()
         data_in_list = param.split(' ')
         list_news = []
         for news in all_news:
@@ -42,17 +43,23 @@ def search():
             data = None
         else:
             for result in data:
-                results.append({
-                    'id': result.id,
-                    'title': result.title,
-                    'subtitle': result.subtitle,
-                    'cover_image': result.cover_image,
-                    'user_id': result.user_id,
-                    'addedAt': result.addedAt,
-                    'views': result.views,
-                    'source_name': result.source_name,
-                    'source_url': result.source_url,
-                })
+                exist = False
+                if len(results) > 0:
+                    for fresult in results:
+                        if result.id == fresult['id']:
+                            exist = True
+                if not exist:
+                    results.append({
+                        'id': result.id,
+                        'title': result.title,
+                        'subtitle': result.subtitle,
+                        'cover_image': result.cover_image,
+                        'user_id': result.user_id,
+                        'addedAt': result.addedAt,
+                        'views': result.views,
+                        'source_name': result.source_name,
+                        'source_url': result.source_url,
+                    })
     else:
         data = None
 
