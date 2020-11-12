@@ -196,7 +196,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: #FFFFFF;
+    color: #FFFFFF;
   font-size: 20px;
   user-select: none;
   z-index: 10;
