@@ -1,5 +1,5 @@
-from app.models import PostCategory
+from app.models import Categories
 
 
 def post_categories():
-    return PostCategory.query.order_by('id').all()
+    return Categories.query.order_by('id').all()

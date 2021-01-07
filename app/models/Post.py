@@ -10,8 +10,8 @@ class Posts(database.Model):
     user_id = database.Column(
         database.Integer, database.ForeignKey('users.id'))
     category = database.Column(
-        database.Integer, database.ForeignKey('post_category.id'))
-    addedAt = database.Column(database.DateTime, default=datetime_sao_paulo)
+        database.Integer, database.ForeignKey('categories.id'))
+    created_at = database.Column(database.DateTime, default=datetime_sao_paulo)
     views = database.Column(database.Integer, default=0)
     source_name = database.Column(database.String(50))
     source_url = database.Column(database.Text)
@@ -20,7 +20,7 @@ class Posts(database.Model):
         return '<Posts {}>'.format(self.posts)
 
 
-class Post_Content(database.Model):
+class PostContents(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     content = database.Column(database.Text)
     position = database.Column(database.Integer)
@@ -32,7 +32,7 @@ class Post_Content(database.Model):
         return '<Post_Content>'.format(self.post_content)
 
 
-class PostCategory(database.Model):
+class Categories(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     name = database.Column(database.String(20))
 

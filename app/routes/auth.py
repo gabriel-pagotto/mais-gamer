@@ -8,10 +8,10 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
 
-@app.route('/auth/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
     form = LoginForm()
     if form.validate_on_submit():
         username = Users.query.filter_by(username=form.username.data).first()
@@ -27,7 +27,7 @@ def login():
         login_user(username)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            return redirect(url_for('index'))
+            return redirect(url_for('posts'))
         return redirect(next_page)
     return render_template(
         'pages/auth/login.html',
@@ -36,10 +36,10 @@ def login():
     )
 
 
-@app.route('/auth/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.confirm_password.data:
@@ -65,7 +65,7 @@ def register():
         database.session.commit()
         new_user = Users.query.filter_by(username=form.username.data).first()
         login_user(new_user)
-        return redirect(url_for('register_success'))
+        return redirect(url_for('posts'))
 
     return render_template(
         'pages/auth/register.html',
@@ -73,17 +73,7 @@ def register():
         form=form,
     )
 
-
-@app.route('/auth/register/success', methods=['GET'])
-@login_required
-def register_success():
-    return render_template(
-        'pages/auth/register_success.html',
-        title='Conta criada com sucesso',
-    )
-
-
 @app.route('/auth/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))

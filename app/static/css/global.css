@@ -6,16 +6,14 @@
 }
 
 body {
-  margin-top: 80px;
   min-height: 100vh;
-  background: #EAEAEA;
+  background: #FFFFFF;
   overflow-x: hidden;
 }
 
 .web .payload {
-  min-height: 75vh;
+  min-height: 100vh;
   background: #FFFFFF;
-  padding-top: 10px;
 }
 
 body, input, button, textarea, select, option, pre {

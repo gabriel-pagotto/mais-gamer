@@ -11,7 +11,7 @@ class Users(UserMixin, database.Model):
     email = database.Column(database.String(120), unique=True)
     password = database.Column(database.String(128))
     icon = database.Column(database.Text)
-    createdAt = database.Column(database.DateTime, default=datetime_sao_paulo)
+    created_at = database.Column(database.DateTime, default=datetime_sao_paulo)
     is_admin = database.Column(database.Boolean, default=False)
     is_poster = database.Column(database.Boolean, default=False)
 

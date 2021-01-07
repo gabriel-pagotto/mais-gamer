@@ -1,13 +1,13 @@
 import json
 import requests
 from app import app, database
-from app.models import Posts, Post_Content, Files
+from app.models import Posts, PostContents, Files
 from app.utils.aws_s3 import delete_file, clearUploadCache
 from app.utils.sub_header_options import sub_header
 from bs4 import BeautifulSoup
 from flask import render_template, redirect, request, url_for, jsonify
 from flask_login import current_user, login_required
-from sqlalchemy import desc
+from sqlalchemy import desc, text
 
 
 @app.route('/posts', methods=['GET'])
@@ -16,15 +16,18 @@ def posts():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
     page = request.args.get('page', 1, type=int)
     posts = Posts.query.filter_by(user_id=current_user.id).order_by(
-        desc('addedAt')).paginate(page, 9, True)
+        desc(text('created_at'))).paginate(page, 9, True)
 
     next_url = url_for('posts', page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('posts', page=posts.prev_num) \
         if posts.has_prev else None
+
+    def to_string(param):
+        return str(param)
 
     return render_template(
         'pages/posts/posts.html',
@@ -38,6 +41,7 @@ def posts():
         next_url=next_url,
         prev_url=prev_url,
         route='posts',
+        to_string=to_string,
     )
 
 
@@ -47,7 +51,7 @@ def post_new():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
 
     if request.method == 'POST':
         data = json.loads(request.data)
@@ -82,7 +86,7 @@ def post_new():
                 image = Files.query.filter_by(
                     url=content['data']['content']).first()
                 image.used = 1
-            post_content = Post_Content(
+            post_content = PostContents(
                 content=content['data']['content'],
                 position=content['position'],
                 type=content['type'],
@@ -95,7 +99,7 @@ def post_new():
         clearUploadCache()
         return jsonify({
             'status': 'success',
-            'redirect': url_for('notice', q=post.id)
+            'redirect': 'https://maisgamer.com.br/article?q=' + str(post.id)
         })
 
     return render_template(
@@ -118,10 +122,10 @@ def delete_post(id):
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     if current_user.is_admin != 1 and current_user.is_poster != 1:
-        return redirect(url_for('index'))
+        return redirect(url_for('posts'))
 
     post = Posts.query.filter_by(id=id).first()
-    posts_content = Post_Content.query.filter_by(post_id=id).all()
+    posts_content = PostContents.query.filter_by(post_id=id).all()
 
     for post_content in posts_content:
         if post_content.type == 'IMG':
