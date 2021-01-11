@@ -320,7 +320,7 @@ formSub.addEventListener('submit', () => {
       if (XHR.status === 200) {
         const data = JSON.parse(XHR.responseText);
         if (data.status === 'success') {
-          return window.location = data.redirect;
+          return window.open(data.redirect, '_blank');
         } else {
           console.log('error');
         };

@@ -99,7 +99,7 @@ def post_new():
         clearUploadCache()
         return jsonify({
             'status': 'success',
-            'redirect': 'https://maisgamer.com.br/article?q=' + str(post.id)
+            'redirect': 'https://maisgamer.com/article?q=' + str(post.id)
         })
 
     return render_template(
