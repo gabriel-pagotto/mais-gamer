@@ -13,8 +13,11 @@
       <div class="sub_header">
         {% include 'components/sub_header.html' %}
       </div>
-      {% if selected == 'posts' %} {% include 'pages/posts/my_posts.html' %} {% elif selected == 'new' %}
-      {% include 'pages/posts/new_post.html' %} {% endif %}
+      {% if selected == 'posts' %}
+        {% include 'pages/posts/my_posts.html' %}
+      {% elif selected == 'new' %}
+        {% include 'pages/posts/new_post.html' %}
+      {% endif %}
     </div>
   </div>
 </body>
